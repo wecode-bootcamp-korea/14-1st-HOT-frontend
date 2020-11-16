@@ -1,0 +1,16 @@
+.categoryContainer {
+  margin-top: 100px;
+  .categoryMainContainer {
+    display: flex;
+    justify-content: center;
+    .categorySideBarContainer {
+      width: 267px;
+      border: 1px solid red;
+    }
+
+    .categoryFeedContainer {
+      width: 803px;
+      border: 1px solid red;
+    }
+  }
+}
