@@ -4,3 +4,14 @@
   letter-spacing: -0.4px;
   box-sizing: border-box;
 }
+
+.flexSpaceBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
