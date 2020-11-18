@@ -11,76 +11,97 @@
       width: 160px;
       margin: 0 0 0 10px;
 
-      .categoryList,
-      .categoryTitleName {
-        margin: 0 0 19px 0;
-        font-size: 21px;
-        font-weight: 700;
+      .categoryOtherListBox {
+        .categoryList {
+          margin: 0 0 19px 0;
+          font-size: 21px;
+          font-weight: 700;
+        }
       }
+      .categoryListTitle {
+        .categoryTitleName {
+          margin: 0 0 19px 0;
+          font-size: 21px;
+          font-weight: 700;
+        }
 
-      .categoryList:hover {
-        color: gray;
-        cursor: pointer;
-      }
+        .categorySubTitle {
+          padding: 0 0 14px 0;
+          margin: 28px 0 28px 0;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 23px;
+          border-bottom: 1px solid rgb(216, 216, 216);
+          cursor: pointer;
 
-      .categorySubTitle {
-        padding: 0 0 14px 0;
-        margin: 28px 0 28px 0;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 23px;
-        border-bottom: 1px solid rgb(216, 216, 216);
-        cursor: pointer;
-
-        .categorySubTitleMenubox {
-          display: flex;
-          align-items: center;
-          height: 20px;
-          margin-bottom: 13px;
-
-          .categorySubTitleList {
+          .categorySubTitleMenubox {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            width: 100%;
-          }
-          .categorySubTitleList:hover {
-            color: gray;
-            cursor: pointer;
-          }
+            flex-direction: column;
 
-          .categorySubTitleButtonBox {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 20px;
-
-            .showButtonBox {
+            .categorySubTitleMenuAndButton {
               display: flex;
-              justify-content: center;
+              justify-content: space-between;
               align-items: center;
+              flex-direction: row;
               width: 100%;
+              height: auto;
+              margin-bottom: 10px;
 
-              .showButton {
-                width: 10px;
+              .categorySubTitleList {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+              }
+
+              .categorySubTitleList:hover {
+                opacity: 50%;
+                cursor: pointer;
+              }
+
+              .categorySubTitleButtonBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 20px;
+
+                .showButtonBox {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 100%;
+
+                  .showButton {
+                    width: 10px;
+                  }
+                }
+              }
+            }
+            .suSubTitleListBox {
+              height: 0px;
+              overflow: hidden;
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+
+              .categorySusubTitleList {
+                margin-left: 10px;
+                margin-bottom: 10px;
+                font-weight: 400;
+              }
+
+              .categorySusubTitleList:hover {
+                opacity: 50%;
+                cursor: pointer;
+                font-weight: 700;
               }
             }
           }
         }
-
-        .categorySusubTitleList {
-          margin-left: 10px;
-          margin-bottom: 10px;
-          font-weight: 400;
-        }
-
-        .categorySusubTitleList:hover {
-          color: gray;
-          cursor: pointer;
-        }
       }
     }
   }
+
   .categoryFeedContainer {
     width: 867px;
 
@@ -424,5 +445,5 @@
 
 .targetColor {
   color: RGB(55, 197, 239);
-  font-weight: 900;
+  font-weight: 700;
 }

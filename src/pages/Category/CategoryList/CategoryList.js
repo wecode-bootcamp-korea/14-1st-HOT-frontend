@@ -43,8 +43,8 @@ class CategoryList extends Component {
     return (
       <>
         <div className='categoryListBox'>
-          <CategoryListTitle title={categoryTitle} />
-          <CategoryListOther other={categoryOther} />
+          <CategoryListTitle title={categoryTitle && categoryTitle} />
+          <CategoryListOther other={categoryOther && categoryOther} />
         </div>
       </>
     );
