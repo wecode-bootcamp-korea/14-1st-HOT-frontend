@@ -6,25 +6,28 @@ class CategoryListTitle extends Component {
     super();
     this.state = {
       switch: [false, false, false, false, false, false, false, false],
+      title: '',
+      subTitle: '',
     };
   }
-  componentDidMount = () => {
-    this.changeSubtitleColor();
-  };
 
-  hideCategoryList = (ele) => {
+  hideCategoryList = (e, ele) => {
     const prevSwitch = [...this.state.switch];
     prevSwitch[ele.id] = !prevSwitch[ele.id];
     this.setState({ switch: prevSwitch });
-    console.log(this.state.switch);
+    this.setState({ title: e.target.innerText });
+    console.log(this.state.title, this.state.subTitle);
   };
 
-  changeSubtitleColor = () => {};
+  selectTarget = (e) => {
+    this.setState({ subTitle: e.target.innerText });
+    e.target.className = 'categorySusubTitleList targetColor';
+  };
 
   render() {
     const { title, subtitle } = this.props.title;
     return (
-      <>
+      <div className='categoryListTitle'>
         <div className='categoryTitleName'>
           <span>{title}</span>
         </div>
@@ -35,13 +38,13 @@ class CategoryListTitle extends Component {
                 <div className='categorySubTitleMenubox flexSpaceBox'>
                   <button
                     className='categorySubTitleList'
-                    onClick={() => this.hideCategoryList(ele)}>
+                    onClick={(e) => this.hideCategoryList(e, ele)}>
                     {ele.subTitle}
                   </button>
                   <div className='categorySubTitleButtonBox'>
                     <button
                       className='showButtonBox'
-                      onClick={() => this.hideCategoryList(ele)}>
+                      onClick={(e) => this.hideCategoryList(e, ele)}>
                       <img
                         src={
                           this.state.switch[ele.id]
@@ -54,17 +57,20 @@ class CategoryListTitle extends Component {
                     </button>
                   </div>
                 </div>
-                {ele.susubtitle.map((ele2) =>
-                  this.state.switch[index] ? (
-                    <div className='categorySusubTitleList'>
-                      {ele2.susubTitle}
-                    </div>
-                  ) : null
+                {ele.susubtitle.map(
+                  (ele2) =>
+                    this.state.switch[index] && (
+                      <div
+                        className={'categorySusubTitleList'}
+                        onClick={this.selectTarget}>
+                        {ele2.susubTitle}
+                      </div>
+                    )
                 )}
               </>
             ))}
         </div>
-      </>
+      </div>
     );
   }
 }

@@ -42,11 +42,9 @@ class CategoryList extends Component {
     const { categoryTitle, categoryOther } = this.state;
     return (
       <>
-        <div className='categorySideBarContainer'>
-          <div className='categoryListBox'>
-            <CategoryListTitle title={categoryTitle} />
-            <CategoryListOther other={categoryOther} />
-          </div>
+        <div className='categoryListBox'>
+          <CategoryListTitle title={categoryTitle} />
+          <CategoryListOther other={categoryOther} />
         </div>
       </>
     );
