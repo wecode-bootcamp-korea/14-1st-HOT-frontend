@@ -37,6 +37,7 @@
           .categorySubTitleMenubox {
             display: flex;
             flex-direction: column;
+            height: auto;
 
             .categorySubTitleMenuAndButton {
               display: flex;
@@ -78,7 +79,7 @@
               }
             }
             .suSubTitleListBox {
-              height: 0px;
+              max-height: 0;
               overflow: hidden;
               display: flex;
               align-items: flex-start;
@@ -443,7 +444,34 @@
   }
 }
 
-.targetColor {
+.changeColorEvent {
   color: RGB(55, 197, 239);
   font-weight: 700;
+}
+
+.moveDropEvent {
+  animation: dropMove 1s 0.1s ease-in;
+  animation-fill-mode: both;
+}
+.moveCloseEvent {
+  animation: closeMove 1s ease-in;
+  animation-fill-mode: both;
+}
+
+@keyframes dropMove {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 500px;
+  }
+}
+
+@keyframes closeMove {
+  from {
+    max-height: 500px;
+  }
+  to {
+    max-height: 0px;
+  }
 }

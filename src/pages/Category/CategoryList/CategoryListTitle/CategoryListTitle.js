@@ -11,12 +11,11 @@ class CategoryListTitle extends Component {
     };
   }
 
-  selectedCategoty = (e, subtitleElement) => {
-    console.log(e.target);
+  selectedCategoty = (subtitleElement) => {
     this.setState({ selectedCategory: subtitleElement.subTitle });
   };
 
-  selectedSubcategory = (e, susubTitleElement) => {
+  selectedSubcategory = (susubTitleElement) => {
     this.setState({ selectedSubcategory: susubTitleElement.susubTitle });
   };
 
@@ -36,13 +35,13 @@ class CategoryListTitle extends Component {
         <div className='categorySubTitle'>
           {subtitle &&
             subtitle.map((subtitleElement) => (
-              <div className='categorySubTitleMenubox '>
+              <div className={'categorySubTitleMenubox '}>
                 <div className='categorySubTitleMenuAndButton flexSpaceBox'>
                   <button
-                    onClick={(e) => this.selectedCategoty(e, subtitleElement)}
+                    onClick={() => this.selectedCategoty(subtitleElement)}
                     className={
                       selectedCategory === subtitleElement.subTitle
-                        ? 'categorySubTitleList targetColor'
+                        ? 'categorySubTitleList changeColorEvent '
                         : 'categorySubTitleList'
                     }>
                     {subtitleElement.subTitle}
@@ -50,9 +49,7 @@ class CategoryListTitle extends Component {
                   <button className='categorySubTitleButtonBox'>
                     <div
                       className='showButtonBox'
-                      onClick={(e) =>
-                        this.selectedCategoty(e, subtitleElement)
-                      }>
+                      onClick={() => this.selectedCategoty(subtitleElement)}>
                       <img
                         src={
                           openCategorySwitch
@@ -65,15 +62,20 @@ class CategoryListTitle extends Component {
                     </div>
                   </button>
                 </div>
-                <div className='suSubTitleListBox'>
+                <div
+                  className={
+                    selectedCategory === subtitleElement.subTitle
+                      ? 'suSubTitleListBox moveDropEvent'
+                      : 'suSubTitleListBox moveCloseEvent'
+                  }>
                   {subtitleElement.susubtitle.map((susubTitleElement) => (
                     <button
-                      onClick={(e) =>
-                        this.selectedSubcategory(e, susubTitleElement)
+                      onClick={() =>
+                        this.selectedSubcategory(susubTitleElement)
                       }
                       className={
                         selectedSubcategory === susubTitleElement.susubTitle
-                          ? 'categorySusubTitleList targetColor'
+                          ? 'categorySusubTitleList changeColorEvent'
                           : 'categorySusubTitleList'
                       }>
                       {susubTitleElement.susubTitle}
