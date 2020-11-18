@@ -1,0 +1,12 @@
+.ReReplyComponent {
+  background-color: rgba(0, 0, 0, 0.04);
+  display: flex;
+
+  div {
+    margin-right: 10px;
+  }
+  .ReReplyUser {
+    width: 25px;
+    height: 25px;
+  }
+}

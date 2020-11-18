@@ -94,6 +94,10 @@ ol,
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 
 blockquote,
 q {
@@ -103,7 +107,7 @@ q {
 blockquote {
   &:before,
   &:after {
-    content: '';
+    content: "";
     content: none;
   }
 }
@@ -111,7 +115,7 @@ blockquote {
 q {
   &:before,
   &:after {
-    content: '';
+    content: "";
     content: none;
   }
 }
@@ -123,4 +127,9 @@ table {
 
 * {
   box-sizing: border-box;
+}
+
+input,
+button {
+  outline: none;
 }

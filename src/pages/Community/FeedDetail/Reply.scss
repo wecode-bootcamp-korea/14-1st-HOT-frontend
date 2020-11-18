@@ -1,0 +1,54 @@
+.feedReplyList {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 40px 0;
+
+  .ReplyList {
+    margin: 5px;
+
+    .ReplyContent {
+      .ReplyText {
+        display: flex;
+        align-items: center;
+
+        .ReplyUserName {
+          display: flex;
+          align-items: center;
+          margin: 5px 5px 5px 0px;
+
+          .ReplyUserProfile {
+            margin: 5px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+          }
+          .ReplyUserId {
+            margin: 5px;
+          }
+        }
+      }
+
+      .ReplyFooter {
+        font-size: 11px;
+        color: rgba(0, 0, 0, 0.5);
+
+        .ReplyLike {
+          border: none;
+          background-color: white;
+          margin: 0 2px;
+          font-weight: 700;
+          font-size: 12px;
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
