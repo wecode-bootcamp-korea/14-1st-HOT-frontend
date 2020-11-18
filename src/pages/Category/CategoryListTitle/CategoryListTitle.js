@@ -5,13 +5,12 @@ class CategoryListTitle extends Component {
   constructor() {
     super();
     this.state = {
-      openCategorySwitch: false,
       selectedCategory: '',
       selectedSubcategory: '',
     };
   }
 
-  selectedCategoty = (subtitleElement) => {
+  selectedCategoty = (e, subtitleElement) => {
     this.setState({ selectedCategory: subtitleElement.subTitle });
   };
 
@@ -38,7 +37,7 @@ class CategoryListTitle extends Component {
               <div className={'categorySubTitleMenubox '}>
                 <div className='categorySubTitleMenuAndButton flexSpaceBox'>
                   <button
-                    onClick={() => this.selectedCategoty(subtitleElement)}
+                    onClick={(e) => this.selectedCategoty(e, subtitleElement)}
                     className={
                       selectedCategory === subtitleElement.subTitle
                         ? 'categorySubTitleList changeColorEvent '
@@ -49,7 +48,9 @@ class CategoryListTitle extends Component {
                   <button className='categorySubTitleButtonBox'>
                     <div
                       className='showButtonBox'
-                      onClick={() => this.selectedCategoty(subtitleElement)}>
+                      onClick={(e) =>
+                        this.selectedCategoty(e, subtitleElement)
+                      }>
                       <img
                         src={
                           openCategorySwitch
