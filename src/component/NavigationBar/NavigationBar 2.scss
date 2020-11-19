@@ -1,0 +1,56 @@
+.NavigationBar {
+  width: auto;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  background-color: #ffffff;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .Nav {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid #ededed;
+    z-index: 100;
+    margin: 0;
+    padding: 0 150px 10px 150px;
+
+    .logoIcon {
+      padding-right: 10px;
+    }
+
+    .categories {
+      padding: 14px 6px;
+      font-size: 18px;
+      display: inline-block;
+      margin: 6px 10px 0;
+      line-height: 26px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #4b4b4b;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .menu {
+        padding: 15px;
+      }
+    }
+
+    .searchIcon {
+    }
+
+    .management {
+    }
+  }
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
