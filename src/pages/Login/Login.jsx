@@ -11,9 +11,10 @@ class Login extends React.Component {
   }
 
   handleInputChange = (e) => {
-    e.target.className === "id"
-      ? this.setState({ id: e.target.value })
-      : this.setState({ pw: e.target.value });
+    const { className, value } = e.target;
+    className === "id"
+      ? this.setState({ id: value })
+      : this.setState({ pw: value });
   };
 
   handleKeyPress = (e) => {
@@ -37,11 +38,11 @@ class Login extends React.Component {
 
   render() {
     return (
-      <main className="Login">
-        <section className="Container">
+      <main className="login">
+        <section className="container">
           <div className="loginLogo">
             <img className="logo" src="./images/logo.png" alt="logo" />
-            {/* <img className="ohou" src="./images/ohou.png" alt="logo" /> */}
+            <img className="thou" src="./images/logo_text.png" alt="logo" />
           </div>
           <input
             type="text"

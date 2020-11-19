@@ -5,13 +5,11 @@
   background-color: #fafafa;
 }
 
-.Login {
+.login {
   margin-top: 120px;
 
-  .Container {
+  .container {
     max-width: 360px;
-    width: 100%;
-    height: auto;
     padding: 40px 30px;
     margin: 0 auto;
     border: none;
@@ -27,6 +25,12 @@
       width: 50px;
       height: 50px;
       align-self: center;
+    }
+
+    .thou {
+      width: 102px;
+      height: 40px;
+      margin: 0 0 5px 10px;
     }
 
     .id {
@@ -142,10 +146,8 @@
     }
     .nonMembership {
       width: 100%;
-      // margin: 30px 0 0;
       padding: 30px 0 0;
       border-top: 1px solid #dbdbdb;
-      // display: block;
 
       .nonMember {
         display: block;
@@ -164,8 +166,3 @@
     }
   }
 }
-
-// .ohou {
-//   position: absolute;
-//   top: 35px;
-// }
