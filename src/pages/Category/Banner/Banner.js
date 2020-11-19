@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import './Banner.scss';
 
-class CategoryBanner extends Component {
+class Banner extends Component {
   render() {
     return (
       <>
-        <div className='categoryBannerTitle'>
-          <span className='categoryBannerTitletext'>가구</span>
+        <div className='bannerTitle'>
+          <span className='bannerTitletext'>가구</span>
           <span> {'>'} </span>
-          <span className='categoryBannerTitletext'>소파/거실</span>
+          <span className='bannerTitletext'>소파/거실</span>
         </div>
-        <div className='categoryBannerImageBox'>
+        <div className='bannerImageBox'>
           <img
             src='/images/bannerSample.png'
-            className='categoryBannerImage'
+            className='bannerImage'
             alt='rollingBanner'
           />
           <button>
@@ -45,4 +46,4 @@ class CategoryBanner extends Component {
   }
 }
 
-export default CategoryBanner;
+export default Banner;

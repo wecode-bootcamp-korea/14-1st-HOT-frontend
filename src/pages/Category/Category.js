@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import CategoryListTitle from './CategoryListTitle/CategoryListTitle';
-import CategoryListOther from './CategoryListOther/CategoryListOther';
-import CategoryBanner from './CategoryBanner/CategoryBanner';
+import ListTitle from './ListTitle/ListTitle';
+import ListOther from './ListOther/ListOther';
+import Banner from './Banner/Banner';
 import ProductList from './ProductList/ProductList';
-import Navigation from '../../component/NavigationBar/NavigationBar';
 
 class Category extends Component {
   constructor() {
@@ -42,17 +41,16 @@ class Category extends Component {
     const { categoryTitle, categoryOther } = this.state;
     return (
       <>
-        <Navigation />
-        <section className='categoryContainer'>
-          <aside className='categoryAsidContainer'>
-            <div className='categoryListBox'>
-              <CategoryListTitle title={categoryTitle} />
-              <CategoryListOther other={categoryOther} />
+        <section className='container'>
+          <aside className='asidContainer'>
+            <div className='listBox'>
+              <ListTitle title={categoryTitle} />
+              <ListOther other={categoryOther} />
             </div>
           </aside>
-          <article className='categoryFeedContainer'>
-            <div className='categoryBannerbar'>
-              <CategoryBanner />
+          <article className='feedContainer'>
+            <div className='bannerbar'>
+              <Banner />
               <ProductList />
             </div>
           </article>

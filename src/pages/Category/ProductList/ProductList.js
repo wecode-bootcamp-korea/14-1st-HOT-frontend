@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Product from './Product/Product';
-import SmallProduct from './SmallProducts/SmallProduct';
+import RandomProduct from './RandomProducts/RandomProducts';
+import './ProductList.scss';
 
 class ProductList extends Component {
   constructor() {
@@ -36,8 +37,9 @@ class ProductList extends Component {
           <div className='mdPickText'>MD's PICK</div>
         </div>
         <div className='smallProductList'>
+          {/* 샘플로 원래 Product 넣어듬, 랜덤으로 보여줄 State로 변경 예정 */}
           {products.map((productElement, productIndex) => (
-            <SmallProduct key={productIndex} product={productElement} />
+            <RandomProduct key={productIndex} product={productElement} />
           ))}
         </div>
         <div className='productFilterButtonBox'>

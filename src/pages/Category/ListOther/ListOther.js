@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './CategoryListOther.scss';
+import './ListOther.scss';
 
-class CategoryListOther extends Component {
+class ListOther extends Component {
   render() {
     const { other } = this.props;
     return (
       <>
-        <div className='categoryOtherListBox'>
+        <div className='otherListBox'>
           {other.map((otherElement, otherIndex) => (
             <div className='' key={otherIndex}>
-              <div className='categoryList'>
+              <div className='otherList'>
                 <span>{otherElement.title}</span>
               </div>
             </div>
@@ -20,4 +20,4 @@ class CategoryListOther extends Component {
   }
 }
 
-export default CategoryListOther;
+export default ListOther;
