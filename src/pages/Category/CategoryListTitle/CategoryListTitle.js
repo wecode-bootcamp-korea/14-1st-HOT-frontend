@@ -14,7 +14,7 @@ class CategoryListTitle extends Component {
     this.setState({ selectedCategory: subtitleElement.subTitle });
   };
 
-  selectedSubcategory = (susubTitleElement) => {
+  selectedSubcategory = (e, susubTitleElement) => {
     this.setState({ selectedSubcategory: susubTitleElement.susubTitle });
   };
 
@@ -73,8 +73,8 @@ class CategoryListTitle extends Component {
                     (susubTitleElement, susubTitleIndex) => (
                       <button
                         key={susubTitleIndex}
-                        onClick={() =>
-                          this.selectedSubcategory(susubTitleElement)
+                        onClick={(e) =>
+                          this.selectedSubcategory(e, susubTitleElement)
                         }
                         className={
                           selectedSubcategory === susubTitleElement.susubTitle
