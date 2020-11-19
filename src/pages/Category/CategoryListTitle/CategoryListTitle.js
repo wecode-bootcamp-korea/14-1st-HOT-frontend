@@ -33,8 +33,8 @@ class CategoryListTitle extends Component {
         </div>
         <div className='categorySubTitle'>
           {subtitle &&
-            subtitle.map((subtitleElement) => (
-              <div className={'categorySubTitleMenubox '}>
+            subtitle.map((subtitleElement, subtitleIndex) => (
+              <div key={subtitleIndex} className={'categorySubTitleMenubox '}>
                 <div className='categorySubTitleMenuAndButton flexSpaceBox'>
                   <button
                     onClick={(e) => this.selectedCategoty(e, subtitleElement)}
@@ -69,19 +69,22 @@ class CategoryListTitle extends Component {
                       ? 'suSubTitleListBox moveDropEvent'
                       : 'suSubTitleListBox moveCloseEvent'
                   }>
-                  {subtitleElement.susubtitle.map((susubTitleElement) => (
-                    <button
-                      onClick={() =>
-                        this.selectedSubcategory(susubTitleElement)
-                      }
-                      className={
-                        selectedSubcategory === susubTitleElement.susubTitle
-                          ? 'categorySusubTitleList changeColorEvent'
-                          : 'categorySusubTitleList'
-                      }>
-                      {susubTitleElement.susubTitle}
-                    </button>
-                  ))}
+                  {subtitleElement.susubtitle.map(
+                    (susubTitleElement, susubTitleIndex) => (
+                      <button
+                        key={susubTitleIndex}
+                        onClick={() =>
+                          this.selectedSubcategory(susubTitleElement)
+                        }
+                        className={
+                          selectedSubcategory === susubTitleElement.susubTitle
+                            ? 'categorySusubTitleList changeColorEvent'
+                            : 'categorySusubTitleList'
+                        }>
+                        {susubTitleElement.susubTitle}
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
             ))}

@@ -7,10 +7,10 @@ class CategoryListOther extends Component {
     return (
       <>
         <div className='categoryOtherListBox'>
-          {other.map((ele) => (
-            <div className=''>
+          {other.map((otherElement, otherIndex) => (
+            <div className='' key={otherIndex}>
               <div className='categoryList'>
-                <span>{ele.title}</span>
+                <span>{otherElement.title}</span>
               </div>
             </div>
           ))}

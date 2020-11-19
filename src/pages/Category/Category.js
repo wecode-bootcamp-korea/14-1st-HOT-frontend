@@ -3,10 +3,6 @@ import CategoryListTitle from './CategoryListTitle/CategoryListTitle';
 import CategoryListOther from './CategoryListOther/CategoryListOther';
 import CategoryBanner from './CategoryBanner/CategoryBanner';
 import ProductList from './ProductList/ProductList';
-import '../../styles/common.scss';
-import '../../styles/reset.scss';
-import '../../config';
-import './Category.scss';
 
 class Category extends Component {
   constructor() {
@@ -47,12 +43,12 @@ class Category extends Component {
       <>
         <img src='/images/sample.png' alt='sample' width='100%'></img>
         <section className='categoryContainer'>
-          <asid className='categoryAsidContainer'>
+          <aside className='categoryAsidContainer'>
             <div className='categoryListBox'>
               <CategoryListTitle title={categoryTitle} />
               <CategoryListOther other={categoryOther} />
             </div>
-          </asid>
+          </aside>
           <article className='categoryFeedContainer'>
             <div className='categoryBannerbar'>
               <CategoryBanner />

@@ -36,15 +36,15 @@ class ProductList extends Component {
           <div className='mdPickText'>MD's PICK</div>
         </div>
         <div className='smallProductList'>
-          {products.map((ele) => (
-            <SmallProduct product={ele} />
+          {products.map((productElement, productIndex) => (
+            <SmallProduct key={productIndex} product={productElement} />
           ))}
         </div>
         <div className='productFilterButtonBox'>
-          {buttonText.map((ele) => (
-            <div className='productFilterButtons'>
+          {buttonText.map((buttonTextElement, buttonTextIndex) => (
+            <div key={buttonTextIndex} className='productFilterButtons'>
               <button className='productFilterButton'>
-                <span>{ele}</span>
+                <span>{buttonTextElement}</span>
                 <img
                   src='/images/showIcon.png'
                   className='filterButton'
@@ -72,8 +72,8 @@ class ProductList extends Component {
           </div>
         </div>
         <div className='productList'>
-          {products.map((ele) => (
-            <Product product={ele} />
+          {products.map((productElement, productIndex) => (
+            <Product key={productIndex} product={productElement} />
           ))}
         </div>
       </>
