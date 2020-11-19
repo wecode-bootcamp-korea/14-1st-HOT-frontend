@@ -1,9 +1,8 @@
-.feedReplyList {
-  display: flex;
-  flex-direction: column-reverse;
-  margin: 40px 0;
-
+.Reply {
   .ReplyList {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 40px 0;
     margin: 5px;
 
     .ReplyContent {
@@ -22,6 +21,7 @@
             height: 30px;
             border-radius: 50%;
           }
+
           .ReplyUserId {
             margin: 5px;
           }
@@ -43,12 +43,79 @@
       }
     }
   }
-}
 
-.hide {
-  display: none;
-}
+  .hide {
+    display: none;
+  }
 
-.show {
-  display: block;
+  .show {
+    display: block;
+
+    .reReplyWrap {
+      margin: 0 60px;
+      box-sizing: border-box;
+      font-size: 18px;
+
+      .reReplyList {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .replyCommentComponent {
+          display: flex;
+          align-items: center;
+          margin: 5px 0;
+          padding: 20px 10px;
+          background-color: rgba(0, 0, 0, 0.03);
+          border-radius: 15px;
+
+          .replyCommentUser {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px 0 0;
+
+            .replyCommentUserPicture {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+
+      .reReplyForm {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        height: 40px;
+
+        .reReplyUser {
+          width: 40px;
+          margin-right: 10px;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+
+        .reReplyText {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 625px;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+
+          input {
+            width: 550px;
+            margin: 10px 0 10px 10px;
+            font-size: 16px;
+          }
+          button {
+            color: rgb(64, 151, 246);
+          }
+        }
+      }
+    }
+  }
 }

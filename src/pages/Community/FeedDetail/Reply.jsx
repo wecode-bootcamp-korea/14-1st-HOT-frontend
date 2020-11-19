@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { BsHeart } from "react-icons/bs";
 import ReReply from "./ReReply";
 class Reply extends Component {
@@ -10,9 +10,11 @@ class Reply extends Component {
       list: [],
     };
   }
+
   reReply = () => {
     this.setState({ showlist: false });
   };
+
   handleInput = (e) => {
     this.setState({ text: e.target.value });
   };
@@ -20,7 +22,7 @@ class Reply extends Component {
   addReReply = (e) => {
     e.preventDefault();
     const { text, list } = this.state;
-    if (text.length > 0) {
+    if (text.length) {
       this.setState({
         list: [...list, text],
         text: "",
@@ -29,20 +31,17 @@ class Reply extends Component {
   };
 
   render() {
+    const { id, image, username, comment } = this.props;
     return (
       <div className="Reply">
         <li className="ReplyList">
           <article className="ReplyContent">
             <p className="ReplyText">
               <a className="ReplyUserName" href="/">
-                <img
-                  className="ReplyUserProfile"
-                  src={this.props.profileImage}
-                  alt=""
-                />
-                <span className="ReplyUserId">{this.props.userId}</span>
+                <img className="ReplyUserProfile" src={image} alt="" />
+                <span className="ReplyUserId">{username}</span>
               </a>
-              <span className="ReplyPostText">{this.props.comment}</span>
+              <span className="ReplyPostText">{comment}</span>
             </p>
             <footer className="ReplyFooter">
               <time className="ReplyFooterTime">몇분전</time>
@@ -59,16 +58,23 @@ class Reply extends Component {
             </footer>
           </article>
         </li>
-        <div className={this.state.showlist === true ? "hide" : "show"}>
+        <div className={this.state.showlist ? "hide" : "show"}>
           <div className="reReplyWrap">
             <ul className="reReplyList">
-              {this.state.list.map((text) => {
-                return <ReReply comment={text} />;
-              })}
+              {/* {this.state.list.map((text, idx) => {
+                return (
+                  <ReReply
+                    key={idx}
+                    comment={text}
+                    userId={userid}
+                    userImage={userimage}
+                  />
+                );
+              })} */}
             </ul>
             <form onSubmit={this.addReReply} className="reReplyForm">
               <div className="reReplyUser">
-                <img src="" alt="" />
+                <img src="/images/Communityimages/chair.jpg" alt="" />
               </div>
               <div className="reReplyText">
                 <input

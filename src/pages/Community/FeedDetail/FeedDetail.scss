@@ -1,5 +1,5 @@
 @import "./Reply.scss";
-%display {
+%displayCenter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,12 +10,12 @@
 
 .FeedDetail {
   width: 100%;
-  @extend %display;
+  @extend %displayCenter;
 
   .container {
-    width: 1155px;
     display: flex;
     justify-content: center;
+    width: 1155px;
 
     .feedLeft {
       width: 767px;
@@ -23,16 +23,16 @@
 
       .feedLetfArticle {
         .feedHeader {
+          display: flex;
+          justify-content: space-between;
           margin: 40px 0 30px;
           font-size: 15px;
           line-height: 21px;
-          display: flex;
-          justify-content: space-between;
         }
 
         .feedImageWrap {
+          @extend %displayCenter;
           width: 767px;
-          @extend %display;
 
           img {
             width: 100%;
@@ -40,22 +40,22 @@
         }
 
         .furnitureWrap {
-          width: 767px;
-          height: 140px;
-          margin-top: 10px;
           display: flex;
           align-items: center;
-          margin-bottom: 35px;
+          width: 767px;
+          height: 140px;
+          margin: 10px 0 35px 0;
+          overflow-x: scroll;
 
           .furnitureList {
             display: flex;
 
             .furniture {
+              @extend %displayCenter;
               width: 100px;
               height: 100px;
               margin: 0px 5px;
-              @extend%display;
-              @extend%borderset;
+              @extend %borderset;
               border-radius: 30px;
 
               a {
@@ -86,8 +86,8 @@
         }
 
         .views {
-          color: rgba(0, 0, 0, 0.5);
           margin-top: 50px;
+          color: rgba(0, 0, 0, 0.5);
           font-size: 14px;
 
           button {
@@ -114,6 +114,8 @@
 
         .replyTypingForm {
           display: flex;
+          align-items: center;
+          margin: 10px 0;
           width: 750px;
           height: 40px;
 
@@ -124,6 +126,7 @@
             .feedReplyUser {
               width: 30px;
               height: 30px;
+              border-radius: 50%;
             }
           }
 
@@ -133,7 +136,7 @@
             justify-content: space-between;
             width: 667px;
             height: 38px;
-            @extend%borderset;
+            @extend %borderset;
             border-radius: 5px;
             padding: 5px;
 
@@ -147,19 +150,24 @@
               width: 40px;
               height: 34px;
               border: none;
+              color: rgb(64, 151, 246);
               background-color: white;
             }
           }
+        }
+        .feedReplyList {
+          display: flex;
+          flex-direction: column-reverse;
         }
       }
     }
 
     .feedRight {
-      width: 300px;
       display: flex;
       flex-direction: column;
-      padding-left: 40px;
+      width: 300px;
       margin-left: 20px;
+      padding-left: 40px;
       border-left: 1px solid #ededed;
 
       .rightSideBar {
@@ -185,12 +193,12 @@
           align-items: center;
 
           .UserProfileWriter {
-            width: 305px;
-            height: 50px;
-            padding-left: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 305px;
+            height: 50px;
+            padding-left: 10px;
           }
         }
 

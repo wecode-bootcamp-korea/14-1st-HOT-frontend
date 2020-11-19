@@ -8,13 +8,11 @@ import FeedDetail from "./pages/Community/FeedDetail/FeedDetail.js";
 class Routes extends React.Component {
   render() {
     return (
-      <>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={FeedDetail} />
-          </Switch>
-        </Router>
-      </>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={FeedDetail} />
+        </Switch>
+      </Router>
     );
   }
 }
