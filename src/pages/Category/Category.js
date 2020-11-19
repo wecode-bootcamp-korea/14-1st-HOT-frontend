@@ -3,6 +3,7 @@ import ListTitle from './ListTitle/ListTitle';
 import ListOther from './ListOther/ListOther';
 import Banner from './Banner/Banner';
 import ProductList from './ProductList/ProductList';
+import NavigationBar from '../../component/NavigationBar/NavigationBar';
 
 class Category extends Component {
   constructor() {
@@ -41,6 +42,7 @@ class Category extends Component {
     const { categoryTitle, categoryOther } = this.state;
     return (
       <>
+        <NavigationBar />
         <section className='container'>
           <aside className='asidContainer'>
             <div className='listBox'>

@@ -12,7 +12,7 @@ class Banner extends Component {
         </div>
         <div className='bannerImageBox'>
           <img
-            src='/images/bannerSample.png'
+            src='/images/event1.png'
             className='bannerImage'
             alt='rollingBanner'
           />

@@ -9,10 +9,12 @@
 }
 .bannerImageBox {
   position: relative;
+
   width: 847px;
 
   .bannerImage {
     width: 100%;
+    border-radius: 8px;
   }
 
   .leftArrowIcon {
