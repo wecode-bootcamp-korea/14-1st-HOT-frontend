@@ -27,8 +27,8 @@ class ListTitle extends Component {
     } = this.state;
 
     return (
-      <div className='ListTitle'>
-        <div className='LitleName'>
+      <div className='listTitle'>
+        <div className='litleName'>
           <span>{title}</span>
         </div>
         <div className='subTitle'>
