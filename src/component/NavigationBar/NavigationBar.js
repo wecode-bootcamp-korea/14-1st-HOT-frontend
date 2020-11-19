@@ -11,38 +11,52 @@ class NavigationBar extends React.Component {
     return (
       <>
         <div className="navBackgruond">
-          <nav className="NavigationBar">
+          <div className="NavigationBar">
             <div className="Nav">
-              <div className="logoIcon">
-                <img src="./images/ohou.png" alt="home" />
-              </div>
-              <div className="categories">
-                <Link className="category" to="">
-                  커뮤니티
-                </Link>
-                <Link className="category" to="">
-                  스토어
-                </Link>
-                <Link className="category" to="">
-                  인테리어시공
-                </Link>
-              </div>
-              <div className="searchIcon">
-                <input type="text" placeholder="오늘의집 통합검색" />
-                <img src="./images/loupe.png" alt="search" />
-              </div>
-              <div className="management">
-                <div className="cart">
-                  <img src="./images/shopping-cart.png" alt="cart" />
+              <div className="categoriesBox">
+                <div className="logoIcon">
+                  <img src="./images/logo_text.png" alt="home" />
                 </div>
-                <div className="enterPage">
-                  <span className="navLogin">로그인</span>
-                  <span className="navSignup">회원가입</span>
+                <div className="categories">
+                  <Link className="category" to="">
+                    커뮤니티
+                  </Link>
+                  <Link className="category" to="">
+                    스토어
+                  </Link>
+                  <Link className="category" to="">
+                    인테리어시공
+                  </Link>
                 </div>
-                <button className="button">글쓰기</button>
+              </div>
+              <div className="managementBox">
+                <div className="searchBar">
+                  <input type="text" placeholder="오늘의집 통합검색" />
+                  <img src="./images/loupe.png" alt="search" />
+                </div>
+                <div className="management">
+                  <div className="cart">
+                    <img src="./images/shopping-cart.png" alt="cart" />
+                  </div>
+                  <div className="enterPage">
+                    <span className="navLogin">로그인</span>
+                    <span className="navDivLine">⎮</span>
+                    <span className="navSignup">회원가입</span>
+                  </div>
+                  <button className="button">
+                    글쓰기
+                    <div className="showIconBox">
+                      <img
+                        src="/images/showIcon_white.png"
+                        className="showIcon"
+                        alt="showIcon"
+                      />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
-          </nav>
+          </div>
           <div className="navBarBorder"></div>
           <div className="subNav">
             <div className="subNavContents ">
