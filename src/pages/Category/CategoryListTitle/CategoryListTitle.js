@@ -10,11 +10,11 @@ class CategoryListTitle extends Component {
     };
   }
 
-  selectedCategoty = (e, subtitleElement) => {
+  selectedCategoty = (subtitleElement) => {
     this.setState({ selectedCategory: subtitleElement.subTitle });
   };
 
-  selectedSubcategory = (e, susubTitleElement) => {
+  selectedSubcategory = (susubTitleElement) => {
     this.setState({ selectedSubcategory: susubTitleElement.susubTitle });
   };
 
