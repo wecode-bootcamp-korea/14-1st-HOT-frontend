@@ -66,7 +66,7 @@ class Reply extends Component {
                   <ReReply
                     key={idx}
                     comment={text}
-                    userId={userid}
+                    userId={username}
                     userImage={userimage}
                   />
                 );

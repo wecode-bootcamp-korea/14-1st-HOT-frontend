@@ -114,6 +114,7 @@
 
         .replyTypingForm {
           display: flex;
+          justify-content: center;
           align-items: center;
           margin: 10px 0;
           width: 750px;
@@ -179,11 +180,12 @@
           margin-bottom: 40px;
 
           button {
-            margin: 0px 4px;
             width: 145px;
             height: 50px;
+            margin: 0px 4px;
             border: none;
             border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.03);
           }
         }
 
@@ -192,6 +194,12 @@
           justify-content: space-between;
           align-items: center;
 
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+
           .UserProfileWriter {
             display: flex;
             justify-content: space-between;
@@ -199,6 +207,17 @@
             width: 305px;
             height: 50px;
             padding-left: 10px;
+            font-size: 16px;
+            font-weight: 700;
+
+            button {
+              width: 30%;
+              height: 30px;
+              border-radius: 5px;
+              font-size: 12px;
+              background-color: rgba(64, 151, 246, 0.8);
+              color: white;
+            }
           }
         }
 
