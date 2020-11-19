@@ -3,6 +3,7 @@ import CategoryListTitle from './CategoryListTitle/CategoryListTitle';
 import CategoryListOther from './CategoryListOther/CategoryListOther';
 import CategoryBanner from './CategoryBanner/CategoryBanner';
 import ProductList from './ProductList/ProductList';
+import Navigation from '../../component/NavigationBar/NavigationBar';
 
 class Category extends Component {
   constructor() {
@@ -41,7 +42,7 @@ class Category extends Component {
     const { categoryTitle, categoryOther } = this.state;
     return (
       <>
-        <img src='/images/sample.png' alt='sample' width='100%'></img>
+        <Navigation />
         <section className='categoryContainer'>
           <aside className='categoryAsidContainer'>
             <div className='categoryListBox'>
