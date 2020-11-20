@@ -25,7 +25,6 @@ class ListTitle extends Component {
       selectedSubcategory,
       openCategorySwitch,
     } = this.state;
-
     return (
       <div className='listTitle'>
         <div className='litleName'>

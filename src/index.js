@@ -5,5 +5,7 @@ import './styles/common.scss';
 import './styles/reset.scss';
 import './config';
 import './pages/Category/Category.scss';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 ReactDOM.render(<Routes />, document.getElementById('thou'));
