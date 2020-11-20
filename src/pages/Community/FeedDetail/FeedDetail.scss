@@ -9,8 +9,8 @@
 }
 
 .FeedDetail {
-  width: 100%;
   @extend %displayCenter;
+  width: 100%;
 
   .container {
     display: flex;
@@ -43,7 +43,6 @@
           display: flex;
           align-items: center;
           width: 767px;
-          height: 140px;
           margin: 10px 0 35px 0;
           overflow-x: scroll;
 
@@ -54,14 +53,11 @@
               @extend %displayCenter;
               width: 100px;
               height: 100px;
-              margin: 0px 5px;
+              margin: 7px 7px;
               @extend %borderset;
               border-radius: 30px;
 
               a {
-                width: 100px;
-                height: 100px;
-
                 .furnitureLink {
                   width: 100px;
                   height: 100px;
@@ -118,7 +114,6 @@
           align-items: center;
           margin: 10px 0;
           width: 750px;
-          height: 40px;
 
           .feedReplyProfile {
             width: 40px;
@@ -135,24 +130,22 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 667px;
-            height: 38px;
+            width: 100%;
+            padding: 12px 0;
+
             @extend %borderset;
-            border-radius: 5px;
-            padding: 5px;
+            border-radius: 10px;
 
             input {
-              width: 600px;
-              height: 35px;
+              width: 90%;
+              margin: 0px 10;
               border: none;
             }
 
             button {
-              width: 40px;
-              height: 34px;
+              width: 10%;
               border: none;
               color: rgb(64, 151, 246);
-              background-color: white;
             }
           }
         }
@@ -164,8 +157,7 @@
     }
 
     .feedRight {
-      display: flex;
-      flex-direction: column;
+      display: block;
       width: 300px;
       margin-left: 20px;
       padding-left: 40px;
@@ -205,7 +197,6 @@
             justify-content: space-between;
             align-items: center;
             width: 305px;
-            height: 50px;
             padding-left: 10px;
             font-size: 16px;
             font-weight: 700;
@@ -213,6 +204,7 @@
             button {
               width: 30%;
               height: 30px;
+              margin: 5px 0;
               border-radius: 5px;
               font-size: 12px;
               background-color: rgba(64, 151, 246, 0.8);

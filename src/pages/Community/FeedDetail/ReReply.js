@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./ReReply.scss";
 import { BsHeart } from "react-icons/bs";
+
 class ReReply extends Component {
   render() {
     return (
