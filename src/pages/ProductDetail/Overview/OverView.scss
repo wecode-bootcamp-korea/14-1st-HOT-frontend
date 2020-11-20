@@ -1,28 +1,26 @@
-.productionBox {
+.overview {
   display: flex;
   justify-content: center;
   width: auto;
-  height: 5000px;
+  height: 1000px;
 
-  .production {
+  .overviewBox {
     width: 1136px;
-    height: 695.25px;
+    height: auto;
     margin: 20px;
-    border: 1px solid red;
 
     .category {
       width: 1136px;
       height: 18px;
-      border: 1px solid red;
     }
-    .production {
+    .overviewCover {
       display: flex;
+      margin: 40px 0 0 0;
 
       .coverImageBox {
         display: flex;
         width: 663px;
         height: 560px;
-        margin: 40px 0 0 0;
 
         .coverImageListBox {
           width: 56px;
@@ -32,12 +30,16 @@
           width: 560px;
           height: 560px;
           margin-left: 10px;
+          border: 1px solid red;
+          border-radius: 10px;
         }
       }
 
-      .overViewBox {
+      .overViewList {
         display: flex;
         flex-direction: column;
+        width: 475px;
+        height: 100%;
       }
     }
   }
