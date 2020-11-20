@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import Reply from "./Reply.jsx";
+import Reply from "./Reply.js";
 import Furniture from "./Furniture";
-import "./FeedDetail.scss";
+import "./PostDetail.scss";
 
 const API = "http://10.58.0.153:8000/post/1";
+
 class FeedDetail extends Component {
   constructor(props) {
     super(props);
@@ -31,8 +32,6 @@ class FeedDetail extends Component {
           data: result,
           replyList: result.results.comments,
         });
-        console.log("hu", this.state.data.results.post_images[0].image_url);
-        // console.log("set", this.state.replyList);
       });
   }
 
@@ -43,7 +42,7 @@ class FeedDetail extends Component {
   pressForPost = (e) => {
     e.preventDefault();
     const { reply, replyList } = this.state;
-    if (reply.length > 0) {
+    if (reply.length) {
       let replyToAdd = {
         id: 0,
         author: {
@@ -65,10 +64,8 @@ class FeedDetail extends Component {
   };
 
   render() {
-    // console.log("check", this.state.detail?.results?.post_images[0].image_url);
-
     return (
-      <body className="FeedDetail">
+      <section className="FeedDetail">
         <div className="container">
           <div className="feedLeft">
             <article className="feedLetfArticle">
@@ -193,7 +190,7 @@ class FeedDetail extends Component {
             </div>
           </div>
         </div>
-      </body>
+      </section>
     );
   }
 }

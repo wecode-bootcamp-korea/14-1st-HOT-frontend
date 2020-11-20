@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BsHeart } from "react-icons/bs";
-import ReReply from "./ReReply";
+import ReplyComments from "./ReplyComments";
 
 class Reply extends Component {
   constructor() {

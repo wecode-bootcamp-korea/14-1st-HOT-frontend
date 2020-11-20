@@ -2,11 +2,12 @@ import React, { Component } from "react";
 
 class Furniture extends Component {
   render() {
+    const { link, image } = this.props;
     return (
       <li className="furniture">
-        <a href={this.props.link}>
+        <a href={link}>
           <div className="furnitureLink">
-            <img src={this.props.image} alt="" />
+            <img src={image} alt="furniturePicture" />
           </div>
         </a>
       </li>

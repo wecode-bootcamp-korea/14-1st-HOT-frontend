@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import "./ReReply.scss";
+import "./ReplyComments.scss";
 import { BsHeart } from "react-icons/bs";
 
-class ReReply extends Component {
+class ReplyComments extends Component {
   render() {
+    const { userId, comment } = this.props;
     return (
       <div className="replyCommentComponentWrap">
         <li className="replyCommentComponent">
@@ -14,12 +15,12 @@ class ReReply extends Component {
               alt=""
             />
           </div>
-          <div className="replyCommentUserId">{this.props.userId}</div>
-          <div className="replyCommentComment">{this.props.comment}</div>
+          <div className="replyCommentUserId">{userId}</div>
+          <div className="replyCommentComment">{comment}</div>
         </li>
       </div>
     );
   }
 }
 
-export default ReReply;
+export default ReplyComments;
