@@ -1,0 +1,44 @@
+.productionBox {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 5000px;
+
+  .production {
+    width: 1136px;
+    height: 695.25px;
+    margin: 20px;
+    border: 1px solid red;
+
+    .category {
+      width: 1136px;
+      height: 18px;
+      border: 1px solid red;
+    }
+    .production {
+      display: flex;
+
+      .coverImageBox {
+        display: flex;
+        width: 663px;
+        height: 560px;
+        margin: 40px 0 0 0;
+
+        .coverImageListBox {
+          width: 56px;
+        }
+
+        .coverImageWrap {
+          width: 560px;
+          height: 560px;
+          margin-left: 10px;
+        }
+      }
+
+      .overViewBox {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
