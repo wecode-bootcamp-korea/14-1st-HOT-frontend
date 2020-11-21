@@ -7,40 +7,353 @@
   .overviewBox {
     width: 1136px;
     height: auto;
-    margin: 20px;
+    margin: 23px;
 
     .category {
       width: 1136px;
       height: 18px;
+      font-size: 15px;
+      color: gray;
     }
     .overviewCover {
       display: flex;
-      margin: 40px 0 0 0;
+      margin: 38px 0 0 0;
 
       .coverImageBox {
         display: flex;
         width: 663px;
         height: 560px;
+        margin-right: 50px;
 
         .coverImageListBox {
           width: 56px;
+
+          .coverImageBox {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 9px;
+
+            .miniCoverImage {
+              width: 100%;
+              border-radius: 5px;
+              overflow: hidden;
+            }
+          }
         }
 
         .coverImageWrap {
           width: 560px;
           height: 560px;
           margin-left: 10px;
-          border: 1px solid red;
-          border-radius: 10px;
+
+          .coverImage {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+          }
         }
       }
 
       .overViewList {
         display: flex;
         flex-direction: column;
-        width: 475px;
-        height: 100%;
+        width: 100%;
+
+        .seller {
+          color: RGB(55, 197, 239);
+          font-size: 15px;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+
+        .title {
+          font-size: 27px;
+          line-height: 34px;
+          font-weight: 400;
+        }
+
+        .spaceReviewBox {
+          .reviewBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .reviewScore {
+              display: flex;
+              align-items: center;
+              .scoreBox {
+                width: 90px;
+                margin-right: 10px;
+                .scoreImage {
+                  width: 100%;
+                }
+              }
+              .reviewCount {
+                font-size: 13px;
+                font-weight: 700;
+                color: RGB(55, 197, 239);
+              }
+            }
+            .scrapBox {
+              display: flex;
+
+              .bookMarkBox {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                width: 26px;
+                margin: 3px 17px 0 0;
+
+                .bookmarkImage {
+                  position: absolute;
+                  width: 100%;
+                }
+                .bookmarkCount {
+                  position: absolute;
+                  top: 35px;
+                  font-size: 12px;
+                  color: gray;
+                }
+              }
+
+              .shareBox {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                width: 26px;
+                margin: 3px 5px 0 0;
+
+                .shareImage {
+                  position: absolute;
+                  width: 100%;
+                }
+                .shareCount {
+                  position: absolute;
+                  top: 35px;
+                  font-size: 12px;
+                  color: gray;
+                }
+              }
+            }
+          }
+        }
+        .priceBox {
+          margin: 17px 0 0 0;
+
+          .priceBar {
+            display: flex;
+            align-items: flex-end;
+            width: auto;
+            height: auto;
+            margin-bottom: 5px;
+            font-family: Tahoma, sans-serif;
+
+            .sale {
+              display: flex;
+              align-items: flex-end;
+              margin-right: 10px;
+
+              .salePercent {
+                font-size: 44px;
+                font-weight: 900;
+                color: RGB(55, 197, 239);
+              }
+              .percent {
+                font-size: 20px;
+                font-weight: 400;
+                color: RGB(55, 197, 239);
+              }
+            }
+            .price {
+              .prevPrice {
+                display: flex;
+                font-size: 15px;
+                color: gray;
+              }
+              .currentPriceBox {
+                display: flex;
+                font-size: 32px;
+                font-weight: 900;
+
+                .won {
+                  margin-right: 7px;
+                  font-weight: 400;
+                }
+              }
+            }
+            .lowestPrice {
+              width: 38px;
+
+              .lowestPriceImage {
+                width: 100%;
+              }
+            }
+          }
+
+          .couponPrice {
+            display: flex;
+            align-items: flex-end;
+            width: auto;
+            margin: 0 0 0 85px;
+            font-family: Tahoma, sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: RGB(55, 197, 239);
+
+            .won {
+              margin-right: 7px;
+              font-weight: 400;
+            }
+
+            .earlybirdSalePriceView {
+              font-size: 14px;
+              font-weight: 500;
+            }
+          }
+
+          .reserveBox {
+            font-size: 14px;
+            color: #757575;
+            border-bottom: 1px solid #dfdfdf;
+            padding: 19px 0;
+            .reserveText {
+              margin-bottom: 3px;
+              .reservePoint {
+                color: RGB(55, 197, 239);
+                font-weight: 700;
+              }
+            }
+            .reserveAddPoint,
+            .interestFreePoint {
+              display: flex;
+              align-items: flex-end;
+              height: 19px;
+
+              .gold {
+                width: 15px;
+                margin-right: 3px;
+              }
+            }
+          }
+          .deliveryInfoBox {
+            height: 130px;
+            padding: 19px 0;
+            border-bottom: 1px solid #dfdfdf;
+            .deliveryInfo {
+              display: flex;
+              margin-bottom: 6px;
+              color: #575757;
+
+              .line {
+                margin: 0 4px;
+                font-size: 15px;
+                color: #c9c9c9;
+              }
+            }
+
+            .deliveryStickyBox {
+              width: 53px;
+              margin-bottom: 15px;
+
+              .deliverySticky {
+                width: 100%;
+              }
+            }
+
+            .precautions {
+              font-size: 13px;
+              color: gray;
+
+              .precautionsList {
+                margin-bottom: 5px;
+              }
+            }
+          }
+          .brandHome {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 16px 0;
+
+            .brandIconBox {
+              width: 16px;
+              margin-right: 5px;
+
+              .brandHomeIcon {
+                width: 100%;
+              }
+            }
+            .brandName {
+              color: RGB(55, 197, 239);
+            }
+          }
+          .selectBox {
+            position: relative;
+
+            .selectColorBox {
+              width: 100%;
+              height: 40px;
+              padding: 0 15px;
+              margin-bottom: 17px;
+              border-color: RGB(55, 197, 239);
+              border-radius: 4px;
+              font-size: 15px;
+              color: rgb(66, 66, 66);
+              -webkit-appearance: none;
+
+              &:focus {
+                outline: none;
+                border-color: RGB(55, 197, 239);
+              }
+
+              &:hover {
+                background-color: rgb(247, 247, 247);
+              }
+            }
+
+            .optionIconBox {
+              position: absolute;
+              top: 11px;
+              right: 11px;
+              width: 15px;
+
+              .optionIcon {
+                width: 100%;
+              }
+            }
+          }
+
+          .calculationBox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 40px;
+
+            .calculationText {
+              font-size: 14px;
+              font-weight: 700;
+            }
+
+            .totalPrice {
+              font-family: Tahoma, sans-serif;
+              font-size: 20px;
+              font-weight: 700;
+            }
+          }
+        }
       }
     }
+  }
+}
+
+.linkReset {
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
   }
 }

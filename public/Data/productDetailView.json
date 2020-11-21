@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "seller": "지네트가구",
+      "title": "[쿠폰할인] 클레어 LED 수납침대 3colors(SS/Q)",
+      "image": [
+        "/images/product1.png",
+        "/images/product2.png",
+        "/images/product3.png",
+        "/images/product4.png",
+        "/images/product5.png"
+      ],
+      "price": 469000,
+      "sale": "20%",
+      "point": "4.6",
+      "review": [
+        "이거 완전 별로임",
+        "사지마셈",
+        "ㅋㅋㅋㅋㅋㅋ",
+        "졸립다",
+        "리뷰는 5개가 최고임"
+      ],
+      "bookMark": 12345,
+      "share": 2134,
+      "color": [
+        {
+          "id:": 0,
+          "label": "클레어 LED 수납침대 (화이트)",
+          "price": 422100
+        },
+        {
+          "id:": 1,
+          "label": "클레어 LED 수납침대 (블랙)",
+          "price": 422100
+        },
+        {
+          "id:": 2,
+          "label": "클레어 LED 수납침대 (아이보리)",
+          "price": 422100
+        }
+      ]
+    }
+  ]
+}
