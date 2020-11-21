@@ -1,6 +1,8 @@
 import React from "react";
 import "./Login.scss";
 
+const API = "dsajkfklasdjfklads";
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -59,7 +61,7 @@ class Login extends React.Component {
           />
           <button
             className="loginButton"
-            onClick={this.checkValidation}
+            onClick={(this.checkValidation, this.handleClick)}
             onKeyPress={this.handleKeyPress}
           >
             로그인
