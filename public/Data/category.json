@@ -1,0 +1,132 @@
+{
+  "category": [
+    {
+      "title": "가구",
+      "subtitle": [
+        {
+          "id": 0,
+          "subTitle": "소파/거실가구",
+          "susubtitle": [
+            { "susubTitle": "소파" },
+            { "susubTitle": "리클라이너 소파" },
+            { "susubTitle": "거실수납장/TV장" },
+            { "susubTitle": "거실/소파테이블" },
+            { "susubTitle": "의자" }
+          ]
+        },
+        {
+          "id": 1,
+          "subTitle": "침실가구",
+          "susubtitle": [
+            { "susubTitle": "침대" },
+            { "susubTitle": "매트리스" },
+            { "susubTitle": "화장대/콘솔" },
+            { "susubTitle": "서랍장" },
+            { "susubTitle": "거울" },
+            { "susubTitle": "협탁" }
+          ]
+        },
+        {
+          "id": 2,
+          "subTitle": "드레스룸",
+          "susubtitle": [
+            { "susubTitle": "소파" },
+            { "susubTitle": "리클라이너 소파" },
+            { "susubTitle": "거실수납장/TV장" },
+            { "susubTitle": "거실/소파테이블" },
+            { "susubTitle": "의자" }
+          ]
+        },
+        {
+          "id": 3,
+          "subTitle": "주방가구",
+          "susubtitle": [
+            { "susubTitle": "소파" },
+            { "susubTitle": "리클라이너 소파" },
+            { "susubTitle": "거실수납장/TV장" },
+            { "susubTitle": "거실/소파테이블" },
+            { "susubTitle": "의자" }
+          ]
+        },
+        {
+          "id": 4,
+          "subTitle": "학생/서재가구",
+          "susubtitle": [
+            { "susubTitle": "소파" },
+            { "susubTitle": "리클라이너 소파" },
+            { "susubTitle": "거실수납장/TV장" },
+            { "susubTitle": "거실/소파테이블" },
+            { "susubTitle": "의자" }
+          ]
+        },
+        {
+          "id": 5,
+          "subTitle": "수납가구",
+          "susubtitle": [
+            { "susubTitle": "소파" },
+            { "susubTitle": "리클라이너 소파" },
+            { "susubTitle": "거실수납장/TV장" },
+            { "susubTitle": "거실/소파테이블" },
+            { "susubTitle": "의자" }
+          ]
+        },
+        {
+          "id": 6,
+          "subTitle": "테이블",
+          "susubtitle": [
+            { "susubTitle": "소파" },
+            { "susubTitle": "리클라이너 소파" },
+            { "susubTitle": "거실수납장/TV장" },
+            { "susubTitle": "거실/소파테이블" },
+            { "susubTitle": "의자" }
+          ]
+        },
+        {
+          "id": 7,
+          "subTitle": "의자/스툴",
+          "susubtitle": [
+            { "susubTitle": "소파" },
+            { "susubTitle": "리클라이너 소파" },
+            { "susubTitle": "거실수납장/TV장" },
+            { "susubTitle": "거실/소파테이블" },
+            { "susubTitle": "의자" }
+          ]
+        },
+        {
+          "id": 8,
+          "subTitle": "유아동가구",
+          "susubtitle": [
+            { "susubTitle": "소파" },
+            { "susubTitle": "리클라이너 소파" },
+            { "susubTitle": "거실수납장/TV장" },
+            { "susubTitle": "거실/소파테이블" },
+            { "susubTitle": "의자" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "패브릭",
+      "subtitle": [
+        "소파/거실가구",
+        "침실가구",
+        "드레스룸",
+        "주방가구",
+        "학생/서재가구",
+        "수납가구",
+        "테이블",
+        "의자/스툴",
+        "유아동가구"
+      ]
+    },
+    { "id": 3, "title": "홈데코/조명" },
+    { "id": 4, "title": "가전" },
+    { "id": 5, "title": "생활" },
+    { "id": 6, "title": "주방" },
+    { "id": 7, "title": "DIY/공구" },
+    { "id": 8, "title": "인테리어시공" },
+    { "id": 9, "title": "반려동물" },
+    { "id": 10, "title": "캠핑용품" }
+  ]
+}
