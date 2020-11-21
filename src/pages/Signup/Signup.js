@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Signup.scss";
+import Simplesignup from "./Simplesignup.js";
 
 class Signup extends Component {
   constructor(props) {
@@ -7,27 +8,19 @@ class Signup extends Component {
 
     this.state = {
       email: "",
-      pw: "",
-      re_pw: "",
-      nickname: "",
     };
   }
 
-  handleInputChange = (e) => {
-    e.target.className === "pw"
-      ? this.setState({ pw: e.target.value })
-      : this.setState({ rePw: e.target.value });
-  };
-
-  checkValidation = (e) => {
-    const { pw, rePw } = this.state;
-    const checkpw = pw.length >= 8;
-    const checkrePw = (pw = rePw);
+  handleChangeEmail = (e) => {
+    const { value } = e.target;
+    this.setState({ email: value });
   };
 
   render() {
+    const { email } = this.state;
+
+    console.log(this.state.email);
     return (
-      // const { pwInput, rePwInput } = this.state;
       <div className="page">
         <section className="container">
           <div className="logo">
@@ -35,30 +28,15 @@ class Signup extends Component {
             <img className="text" src="./images/logo_text.png" alt="text" />
           </div>
           <section className="box">
-            <div className="userInfo">
-              <div className="signUp">회원가입</div>
-              <div className="simple">
-                <div className="simpleSignup">
-                  SNS계정으로 간편하게 회원가입
-                </div>
-                <div className="icons">
-                  <img
-                    className="icon"
-                    src="./images/facebook.png"
-                    alt="facebook"
-                  />
-                  <img className="icon" src="./images/kakao.png" alt="kakao" />
-                  <img
-                    className="icon"
-                    src="./images/naver.png"
-                    alt="facebook"
-                  />
-                </div>
-              </div>
-            </div>
+            <Simplesignup />
             <section className="emailAddress">
               <div className="email">이메일</div>
-              <input className="emailInput" type="text" placeholder="이메일" />
+              <input
+                className="emailInput"
+                type="text"
+                placeholder="이메일"
+                onChange={(e) => this.handleChangeEmail(e)}
+              />
               <span className="at">@</span>
               <select>
                 <option value="선택해주세요" selected="selected">
@@ -100,9 +78,11 @@ class Signup extends Component {
                 다른 유저와 겹치지 않는 별명을 입력해주세요. (2~15자)
               </div>
               <input
-                className="nicknameInput"
+                // className={activateButton ? "nicknameActivate" : "nicknameDeactivate"}
                 type="text"
                 placeholder="별명 (2~15자)"
+                value={this.state.nickname}
+                onChange={this.handleNickname}
               />
             </section>
             <section className="agree">
