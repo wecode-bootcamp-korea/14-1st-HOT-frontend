@@ -1,25 +1,23 @@
 import React, { Component } from "react";
 import "./Signup.scss";
 import Simplesignup from "./Simplesignup.js";
+import Select from "./Select";
 
 class Signup extends Component {
-  constructor(props) {
-    super(props);
-
+  constructor() {
+    super();
     this.state = {
-      email: "",
+      idValue: "",
     };
   }
 
   handleChangeEmail = (e) => {
     const { value } = e.target;
-    this.setState({ email: value });
+    this.setState({ idValue: value });
   };
 
   render() {
-    const { email } = this.state;
-
-    console.log(this.state.email);
+    console.log(this.state.idValue);
     return (
       <div className="page">
         <section className="container">
@@ -38,20 +36,7 @@ class Signup extends Component {
                 onChange={(e) => this.handleChangeEmail(e)}
               />
               <span className="at">@</span>
-              <select>
-                <option value="선택해주세요" selected="selected">
-                  선택해주세요
-                </option>
-                <option value="naver.com">naver.com</option>
-                <option value="hanmail.net">hanmail.net</option>
-                <option value="daum.net">daum.net</option>
-                <option value="gmail.com">gmail.com</option>
-                <option value="nate.com">nate.com</option>
-                <option value="hotmail.com">hotmail.com</option>
-                <option value="outlook.com">outlook.com</option>
-                <option value="icloud.com">icloud.com</option>
-                <option value="_manual">직접입력</option>
-              </select>
+              <Select />
             </section>
             <section className="pwAddress">
               <div className="pw">비밀번호</div>
@@ -78,6 +63,7 @@ class Signup extends Component {
                 다른 유저와 겹치지 않는 별명을 입력해주세요. (2~15자)
               </div>
               <input
+                className="nicknameActivate"
                 // className={activateButton ? "nicknameActivate" : "nicknameDeactivate"}
                 type="text"
                 placeholder="별명 (2~15자)"
