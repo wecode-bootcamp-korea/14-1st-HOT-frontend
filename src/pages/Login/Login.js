@@ -18,8 +18,7 @@ class Login extends React.Component {
 
   handleClick = (e) => {
     const { id, pw } = this.state;
-    // console.log(this.state.id, this.state.pw);
-    // console.log("hi");
+
     fetch(API, {
       method: "POST",
       body: JSON.stringify({
@@ -81,7 +80,7 @@ class Login extends React.Component {
           <button
             className="loginButton"
             onClick={(this.checkValidation, this.handleClick)}
-            onKeyPress={this.handleKeyPress}
+            onKeyPress={(this.handleKeyPress, this.handleClick)}
           >
             로그인
           </button>
