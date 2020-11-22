@@ -1,34 +1,26 @@
-// @extend
-
 .nav {
   width: 100%;
   height: 60px;
-  // background-color: royalblue;
 }
+
 .postContainer {
   display: flex;
   justify-content: center;
   width: 100%;
-  // border: 1px solid black;
 
   .postWrap {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     width: 1157px;
     margin: 0 260px;
-
-    // border: 1px solid brown;
 
     .itemWrap {
       width: 270px;
       padding: 0 0 40px;
-      // border: 1px solid purple;
       margin-right: 15px;
       .item {
-        // border: 1px solid blue;
-
         .itemUser {
           display: flex;
           justify-content: space-between;
@@ -78,6 +70,7 @@
               height: 100%;
               border-radius: 10px;
               transform: scale(1);
+
               -webkit-transform: scale(1);
               transition: all 0.1s ease-in-out;
             }
@@ -92,6 +85,7 @@
             margin: 16px 0;
             padding: 0 10px;
             position: relative;
+
             .counts {
               margin-left: 3px;
               position: absolute;
@@ -104,17 +98,21 @@
               align-items: center;
               width: 33%;
             }
+
             .goToComment {
               margin: 10px 10px;
             }
           }
+
           .itemContentParagraph {
             color: rgba(0, 0, 0, 0.7);
           }
+
           .itemContentComment {
             display: flex;
             align-items: center;
             margin: 10px 0 0 0;
+
             img {
               width: 30px;
               height: 30px;
