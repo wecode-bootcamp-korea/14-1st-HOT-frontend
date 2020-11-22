@@ -4,11 +4,12 @@
       "seller": "지네트가구",
       "title": "[쿠폰할인] 클레어 LED 수납침대 3colors(SS/Q)",
       "image": [
-        "/images/product1.png",
-        "/images/product2.png",
-        "/images/product3.png",
-        "/images/product4.png",
-        "/images/product5.png"
+        "/images/princessMin2.jpg",
+        "/images/princessMin1.jpg",
+        "/images/princessMin3.jpg",
+        "/images/princessMin4.jpg",
+        "/images/princessMin5.jpg",
+        "/images/princessMin6.jpg"
       ],
       "price": 469000,
       "sale": "20%",
@@ -38,7 +39,8 @@
           "label": "클레어 LED 수납침대 (아이보리)",
           "price": 422100
         }
-      ]
+      ],
+      "count": 0
     }
   ]
 }

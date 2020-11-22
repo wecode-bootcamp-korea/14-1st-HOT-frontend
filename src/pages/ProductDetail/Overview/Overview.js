@@ -29,10 +29,6 @@ class Summary extends Component {
       });
   };
 
-  getDiscountedPrice = (e) => {
-    console.log(e.target.value);
-  };
-
   getSelectedProduct = (e) => {
     const { options, selectedIndex, value } = e.target;
     const { selectedProducts } = this.state;
@@ -47,11 +43,19 @@ class Summary extends Component {
       selectedProduct.push({
         label: options[selectedIndex].innerHTML,
         value: value,
+        count: 1,
       });
       this.setState({
         selectedProducts: selectedProduct,
       });
     }
+  };
+
+  getProductCount = (product, count) => {
+    const selectedProducts = [...this.state.selectedProducts];
+    const idx = selectedProducts.indexOf(product);
+    selectedProducts[idx].count = parseInt(count);
+    this.setState({ selectedProducts });
   };
 
   render() {
@@ -66,7 +70,8 @@ class Summary extends Component {
       color,
     } = this.state.productList;
     const { selectedProducts } = this.state;
-    const { getSelectedProduct, getDiscountedPrice } = this;
+    const { getSelectedProduct } = this;
+    const salePrice = Math.floor(price - (price * this.state.sale) / 100);
     console.log(selectedProducts);
     return (
       <div className='overview'>
@@ -157,7 +162,7 @@ class Summary extends Component {
                       </div>
                       <div className='currentPriceBox'>
                         <div className='currentPrice'>
-                          {Math.floor(price - (price * this.state.sale) / 100)
+                          {salePrice
                             .toString()
                             .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                         </div>
@@ -274,18 +279,22 @@ class Summary extends Component {
                       <SelectedProduct
                         key={productIndex}
                         product={productInfo}
-                        passValue={getDiscountedPrice}
+                        productValue={this.getProductCount}
                       />
                     ))}
                   <div className='calculationBox'>
                     <div className='calculationText'>주문금액</div>
                     <div className='totalPrice'>
-                      {selectedProducts[0] &&
-                        selectedProducts.reduce(
-                          (accumulator, currentValue) =>
-                            accumulator + Number(currentValue.value),
-                          0
-                        )}
+                      {selectedProducts &&
+                        selectedProducts
+                          .reduce(
+                            (accumulator, currentValue) =>
+                              accumulator +
+                              parseInt(currentValue.value * currentValue.count),
+                            0
+                          )
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                       {'원'}
                     </div>
                   </div>

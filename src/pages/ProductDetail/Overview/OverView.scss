@@ -32,11 +32,11 @@
             width: 56px;
             height: 56px;
             margin-bottom: 9px;
+            overflow: hidden;
 
             .miniCoverImage {
               width: 100%;
               border-radius: 5px;
-              overflow: hidden;
             }
           }
         }
