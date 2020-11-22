@@ -10,7 +10,7 @@ class SelectedProduct extends Component {
     const counts = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     const { giveSelectedProducts } = this.props;
     const { getSelectedProduct } = this;
-    console.log(this.props.giveSelectedProducts);
+    // console.log(this.props.giveSelectedProducts);
     return (
       <>
         {giveSelectedProducts[0] &&

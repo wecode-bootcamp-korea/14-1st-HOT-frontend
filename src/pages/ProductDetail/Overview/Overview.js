@@ -11,6 +11,7 @@ class Summary extends Component {
       coverImageSrc: '',
       productList: [],
       selectedProducts: [],
+      selectedProduct: [],
     };
   }
 
@@ -19,18 +20,21 @@ class Summary extends Component {
   }
 
   getProductList = () => {
-    fetch('/Data/productDetailView.json', {
+    fetch('http://10.58.1.6:8000/store/1', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((result) => {
         this.setState({
-          productList: result.products[0],
-          coverImageSrc: result.products[0].image[0],
+          productList: result.result[0],
         });
       });
   };
 
+  // this.setState({
+  //   productList: result.products[0],
+  //   coverImageSrc: result.products[0].image[0],
+  // });
   getSelectedProduct = (e) => {
     const { options, selectedIndex, value } = e.target;
     const selectedProducts = [...this.state.selectedProducts];
@@ -52,7 +56,7 @@ class Summary extends Component {
     }
   };
 
-  getProductCount = (targetProduct, countString) => {
+  getTargetProductCount = (targetProduct, countString) => {
     const countNumber = parseInt(countString);
     const selectedProducts = [...this.state.selectedProducts];
     const index = selectedProducts.indexOf(targetProduct);
@@ -67,17 +71,17 @@ class Summary extends Component {
   render() {
     const {
       seller,
-      title,
+      product_name,
       image,
       price,
-      review,
-      bookMark,
-      share,
+      number_of_reviews,
+      number_of_product_bookmarks,
+      number_of_shares,
     } = this.state.productList;
     const { productList, coverImageSrc, selectedProducts } = this.state;
     const { changeCoverImage, getSelectedProduct, getProductCount } = this;
     const salePrice = Math.floor(price - (price * this.state.sale) / 100);
-    console.log(selectedProducts);
+    console.log(this.state.productList[0] && this.state.productList[0]);
     return (
       <>
         <div className='overview'>
@@ -110,7 +114,7 @@ class Summary extends Component {
               </div>
               <div className='overViewList'>
                 <div className='seller'>{seller}</div>
-                <div className='title'>{title}</div>
+                <div className='title'>{product_name}</div>
                 <div className='spaceReviewBox'>
                   <div className='reviewBox'>
                     <div className='reviewScore'>
@@ -122,7 +126,7 @@ class Summary extends Component {
                         />
                       </div>
                       <div className='reviewCount'>
-                        {review && review.length}
+                        {number_of_reviews && number_of_reviews}
                         {'개 리뷰'}
                       </div>
                     </div>
@@ -134,8 +138,8 @@ class Summary extends Component {
                           alt='bookmarkImage'
                         />
                         <div className='bookmarkCount'>
-                          {bookMark &&
-                            bookMark
+                          {number_of_product_bookmarks &&
+                            number_of_product_bookmarks
                               .toString()
                               .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                         </div>
@@ -147,8 +151,8 @@ class Summary extends Component {
                           alt='shareImage'
                         />
                         <div className='shareCount'>
-                          {share &&
-                            share
+                          {number_of_shares &&
+                            number_of_shares
                               .toString()
                               .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                         </div>
