@@ -1,13 +1,33 @@
 import React, { Component } from "react";
 import "./Posting.scss";
-// import axios from "axios";
+import axios from "axios";
 
 class Posting extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       selectedFile: null,
     };
+  }
+
+  handleFileInput(e) {
+    this.setState({
+      selectedFile: e.target.files[0],
+    });
+  }
+
+  handlePost() {
+    const formData = new FormData();
+    formData.append("file", this.state.selectedFile);
+
+    return axios
+      .post("/api/upload", formData)
+      .then((res) => {
+        alert("성공");
+      })
+      .catch((err) => {
+        alert("실패");
+      });
   }
 
   render() {
@@ -55,16 +75,22 @@ class Posting extends Component {
           </div>
           <div className="card">
             <div className="buttonPhoto">
-              <input type="file" className="addImg">
-                <div className="content">
-                  <img src="./images/photo-camera.png" alt="camera" />
-                  <div className="text">
-                    <div>사진 올리기</div>
-                    <div>* 최대10장까지</div>
-                  </div>
+              <input
+                type="file"
+                name="file"
+                className="addImg"
+                onChange={(e) => this.handleFileInput(e)}
+              />
+              <button type="button" onClick={this.handlePost()} />
+              <div className="content">
+                <img src="./images/photo-camera.png" alt="camera" />
+                <div className="text">
+                  <div>사진 올리기</div>
+                  <div>* 최대10장까지</div>
                 </div>
-              </input>
+              </div>
             </div>
+
             <section className="cardContent">
               <select className="topSelect">
                 <option selected="selected">공간 (선택)</option>
