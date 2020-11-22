@@ -103,7 +103,7 @@ q {
 blockquote {
   &:before,
   &:after {
-    content: '';
+    content: "";
     content: none;
   }
 }
@@ -111,7 +111,7 @@ blockquote {
 q {
   &:before,
   &:after {
-    content: '';
+    content: "";
     content: none;
   }
 }
@@ -123,4 +123,9 @@ table {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
 }
