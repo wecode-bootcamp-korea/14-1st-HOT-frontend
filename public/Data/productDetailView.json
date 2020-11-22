@@ -2,11 +2,11 @@
   "products": [
     {
       "seller": "지네트가구",
-      "title": "[쿠폰할인] 클레어 LED 수납침대 3colors(SS/Q)",
+      "title": "[쿠폰할인] 공주민의 러블리 핑크 공주 침대 3colors(SS/Q)",
       "image": [
         "/images/princessMin2.jpg",
         "/images/princessMin1.jpg",
-        "/images/princessMin3.jpg",
+        "/images/princessMin2.jpg",
         "/images/princessMin4.jpg",
         "/images/princessMin5.jpg",
         "/images/princessMin6.jpg"
@@ -26,17 +26,17 @@
       "color": [
         {
           "id:": 0,
-          "label": "클레어 LED 수납침대 (화이트)",
+          "label": "공주 침대 (러블리핑크)",
           "price": 422100
         },
         {
           "id:": 1,
-          "label": "클레어 LED 수납침대 (블랙)",
+          "label": "공주 침대 (핑크핑크)",
           "price": 422100
         },
         {
           "id:": 2,
-          "label": "클레어 LED 수납침대 (아이보리)",
+          "label": "공주 침대 (러블리핫핑크)",
           "price": 422100
         }
       ],
