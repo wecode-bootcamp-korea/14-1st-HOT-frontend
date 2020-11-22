@@ -88,10 +88,6 @@
           cursor: pointer;
         }
 
-        // &::selection {
-        //   background-image: url("interior.jpg");
-        // }
-
         .content {
           img {
             width: 48px;
@@ -146,10 +142,11 @@
         position: relative;
 
         .keyword {
+          font-size: 17px;
           margin: 9px 0;
           box-sizing: content-box;
           width: 44px;
-          height: 27px;
+          height: 25px;
           padding: 5px 8px 6px 20px;
           border: none;
           background-color: #f5f5f5;
@@ -159,6 +156,10 @@
           &:focus {
             outline: none;
             // border: 3px solid red;
+          }
+
+          &::placeholder {
+            color: #c5c5c5;
           }
         }
 
@@ -179,35 +180,38 @@
     border: 1px solid #dbdbdb;
     padding: 0 10px;
   }
-  .underBar {
-    box-sizing: border-box;
-    position: fixed;
-    height: 70px;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10000;
-    padding: 10px 20px;
-    border-top: 1px solid #dbdbdb;
-    background-color: hsla(0, 0%, 100%, 0.94);
+}
 
-    .postButton {
-      background-color: #09addb;
-      border-color: #09addb;
-      padding: 11px 30px;
-      font-weight: 600;
-      line-height: 26px;
-      color: #fff;
-      text-align: center;
-      border-radius: 4px;
+.underBar {
+  position: fixed;
+  display: flex;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-top: 1px solid #dbdbdb;
+  margin: 0;
+  height: 50px;
+  justify-content: space-between;
 
-      &:hover {
-        cursor: pointer;
-      }
+  .postButton {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 11px 30px;
+    font-size: 17px;
+    line-height: 26px;
+    background-color: #35c5f0;
+    border: #35c5f0;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 4px;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

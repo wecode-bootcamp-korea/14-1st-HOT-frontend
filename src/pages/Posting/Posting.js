@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import "./Posting.scss";
+// import axios from "axios";
 
 class Posting extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedFile: null,
+    };
+  }
+
   render() {
     return (
       <div className="Posting">
@@ -47,7 +55,7 @@ class Posting extends Component {
           </div>
           <div className="card">
             <div className="buttonPhoto">
-              <button type="button" className="addImg">
+              <input type="file" className="addImg">
                 <div className="content">
                   <img src="./images/photo-camera.png" alt="camera" />
                   <div className="text">
@@ -55,7 +63,7 @@ class Posting extends Component {
                     <div>* 최대10장까지</div>
                   </div>
                 </div>
-              </button>
+              </input>
             </div>
             <section className="cardContent">
               <select className="topSelect">
@@ -88,9 +96,9 @@ class Posting extends Component {
           </div>
           <input type="text" className="urlInput" placeholder="URL" />
         </div>
-        {/* <div className="underBar">
+        <footer className="underBar">
           <button className="postButton">올리기</button>
-        </div> */}
+        </footer>
       </div>
     );
   }
