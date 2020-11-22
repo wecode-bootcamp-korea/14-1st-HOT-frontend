@@ -86,10 +86,11 @@ class Posting extends Component {
               </div>
             </section>
           </div>
+          <input type="text" className="urlInput" placeholder="URL" />
         </div>
-        <div className="underBar">
+        {/* <div className="underBar">
           <button className="postButton">올리기</button>
-        </div>
+        </div> */}
       </div>
     );
   }

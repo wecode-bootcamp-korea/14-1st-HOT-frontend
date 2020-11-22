@@ -88,6 +88,10 @@
           cursor: pointer;
         }
 
+        // &::selection {
+        //   background-image: url("interior.jpg");
+        // }
+
         .content {
           img {
             width: 48px;
@@ -167,6 +171,13 @@
         }
       }
     }
+  }
+  .urlInput {
+    width: 440px;
+    height: 40px;
+    margin-top: 10px;
+    border: 1px solid #dbdbdb;
+    padding: 0 10px;
   }
   .underBar {
     box-sizing: border-box;
