@@ -60,8 +60,8 @@ class NavigationBar extends React.Component {
             </div>
             <div className='navBarBorder'></div>
             <div className='subNav'>
-              <div className='subNavContents '>
-                <div className='flexibleComtainer'>
+              <div className='subNavContents'>
+                <div className='flexibleContainer'>
                   <Link className='subNavContent' to=''>
                     사진
                   </Link>
@@ -85,7 +85,7 @@ class NavigationBar extends React.Component {
                   </Link>
                 </div>
 
-                <div className='subNavContentss '>
+                <div className='subNavContentss'>
                   <Link className='subNavContent' to=''>
                     카테고리
                   </Link>
