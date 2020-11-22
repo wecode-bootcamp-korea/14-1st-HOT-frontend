@@ -8,6 +8,7 @@ class Summary extends Component {
     super();
     this.state = {
       sale: 10,
+      lowestPrice: 0,
       coverImageSrc: '',
       productList: [],
       selectedProducts: [],
@@ -20,21 +21,19 @@ class Summary extends Component {
   }
 
   getProductList = () => {
-    fetch('http://10.58.1.6:8000/store/1', {
+    fetch('/Data/productDetailView.json', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((result) => {
         this.setState({
           productList: result.result[0],
+          coverImageSrc: result.result[0].product_images[0],
+          lowestPrice: result.result[0].details[0].price,
         });
       });
   };
 
-  // this.setState({
-  //   productList: result.products[0],
-  //   coverImageSrc: result.products[0].image[0],
-  // });
   getSelectedProduct = (e) => {
     const { options, selectedIndex, value } = e.target;
     const selectedProducts = [...this.state.selectedProducts];
@@ -56,7 +55,7 @@ class Summary extends Component {
     }
   };
 
-  getTargetProductCount = (targetProduct, countString) => {
+  getProductCount = (targetProduct, countString) => {
     const countNumber = parseInt(countString);
     const selectedProducts = [...this.state.selectedProducts];
     const index = selectedProducts.indexOf(targetProduct);
@@ -69,19 +68,24 @@ class Summary extends Component {
   };
 
   render() {
+    console.log(this.state.selectedProducts);
     const {
       seller,
       product_name,
-      image,
-      price,
+      product_images,
       number_of_reviews,
       number_of_product_bookmarks,
       number_of_shares,
     } = this.state.productList;
-    const { productList, coverImageSrc, selectedProducts } = this.state;
+    const {
+      sale,
+      lowestPrice,
+      productList,
+      coverImageSrc,
+      selectedProducts,
+    } = this.state;
     const { changeCoverImage, getSelectedProduct, getProductCount } = this;
-    const salePrice = Math.floor(price - (price * this.state.sale) / 100);
-    console.log(this.state.productList[0] && this.state.productList[0]);
+    const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
     return (
       <>
         <div className='overview'>
@@ -92,8 +96,8 @@ class Summary extends Component {
             <div className='overviewCover'>
               <div className='coverImagesBox'>
                 <div className='coverImageListBox'>
-                  {image &&
-                    image.map((coverImageList, coverImageIndex) => (
+                  {product_images &&
+                    product_images.map((coverImageList, coverImageIndex) => (
                       <button key={coverImageIndex} className='coverImageBox'>
                         <img
                           src={coverImageList}
@@ -126,7 +130,7 @@ class Summary extends Component {
                         />
                       </div>
                       <div className='reviewCount'>
-                        {number_of_reviews && number_of_reviews}
+                        {number_of_reviews && number_of_reviews.length}
                         {'개 리뷰'}
                       </div>
                     </div>
@@ -162,12 +166,12 @@ class Summary extends Component {
                   <div className='priceBox'>
                     <div className='priceBar'>
                       <div className='sale'>
-                        <div className='salePercent'>{this.state.sale}</div>
+                        <div className='salePercent'>{sale}</div>
                         <div className='percent'>{'%'}</div>
                       </div>
                       <div className='price'>
                         <div className='prevPrice'>
-                          {Math.floor(price && price)
+                          {Math.floor(lowestPrice && lowestPrice)
                             .toString()
                             .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                         </div>
@@ -190,7 +194,7 @@ class Summary extends Component {
                     </div>
                     <div className='couponPrice'>
                       <div className='earlybirdSalePrice'>
-                        {Math.floor(price - price / this.state.sale - 20000)
+                        {Math.floor(lowestPrice - lowestPrice / sale - 20000)
                           .toString()
                           .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                       </div>
@@ -203,7 +207,7 @@ class Summary extends Component {
                     <div className='reserveBox'>
                       <div className='reserveText'>
                         <span class='reservePoint'>
-                          {Math.floor((price - price / this.state.sale) / 100)
+                          {Math.floor((lowestPrice - lowestPrice / sale) / 100)
                             .toString()
                             .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                         </span>{' '}
@@ -219,7 +223,7 @@ class Summary extends Component {
                       </div>
                       <div className='interestFreePoint'>
                         {'월'}{' '}
-                        {Math.floor((price - price / this.state.sale) / 7)
+                        {Math.floor((lowestPrice - lowestPrice / sale) / 7)
                           .toString()
                           .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
                         {'(7개월)'} {'무이자할부 >'}
@@ -274,21 +278,25 @@ class Summary extends Component {
         </div>
         <div className='menuTab'>
           <div className='menuTabContainer'>
-            <div className='productInfo'>상품정보</div>
-            <div className='review'>리뷰</div>
-            <div className='question'>문의</div>
-            <div className='delivery'>배송/환불</div>
-            <div className='recommant'>추천</div>
+            <div className='flexmenuTabContainer'>
+              <div className='productInfo'>상품정보</div>
+              <div className='review'>리뷰</div>
+              <div className='question'>문의</div>
+              <div className='delivery'>배송/환불</div>
+              <div className='recommant'>추천</div>
+            </div>
           </div>
-          <div className='aaa'>
-            <div className='menuTabViewContainer'></div>
+          <div className='smallSelectOptionContainer'>
+            <div className='menuTabViewContainer'>zz</div>
             <div className='selectOptionContainer'>
-              <SelectOption
-                giveProductInfo={productList}
-                giveSelectedProducts={selectedProducts}
-                takeSelectedProducts={getSelectedProduct}
-                takeSelectedProductsValue={getProductCount}
-              />
+              <div className='stickyContainer'>
+                <SelectOption
+                  giveProductInfo={productList}
+                  giveSelectedProducts={selectedProducts}
+                  takeSelectedProducts={getSelectedProduct}
+                  takeSelectedProductsValue={getProductCount}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -10,10 +10,10 @@ class SelectedProduct extends Component {
     const counts = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     const { giveSelectedProducts } = this.props;
     const { getSelectedProduct } = this;
-    // console.log(this.props.giveSelectedProducts);
+    console.log(this.props.giveSelectedProducts);
     return (
       <>
-        {giveSelectedProducts[0] &&
+        {giveSelectedProducts &&
           giveSelectedProducts.map((targetProductInfo, productIndex) => (
             <div key={productIndex} className='selectedProductBox'>
               <div className='selectedProductInnerBox'>
@@ -25,6 +25,7 @@ class SelectedProduct extends Component {
                 </div>
                 <div className='flexSelectedProductPriceBox'>
                   <select
+                    value={targetProductInfo.count}
                     className='selectProductCount'
                     onChange={(e) => getSelectedProduct(e, targetProductInfo)}>
                     {counts.map((countNumber, countIndex) => (
@@ -34,7 +35,7 @@ class SelectedProduct extends Component {
                     ))}
                   </select>
                   <div className='selectedProductPrice'>
-                    {(targetProductInfo.value * giveSelectedProducts.count)
+                    {(targetProductInfo.value * targetProductInfo.count)
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원'}
                   </div>

@@ -2,55 +2,65 @@ import React, { Component } from 'react';
 import SelectedProduct from './SelectedProduct/SelectedProduct';
 
 class SelectOption extends Component {
-  constructor() {
-    super();
-    this.state = {
-      productList: [],
-    };
-  }
-
-  componentDidMount = () => {
-    this.setState({ productList: this.props.giveProductInfo });
-  };
-
   getProductCount = (targetProduct, countString) => {
     this.props.takeSelectedProductsValue(targetProduct, countString);
   };
 
   render() {
-    const { color } = this.props.giveProductInfo;
-    const { giveSelectedProducts, takeSelectedProducts } = this.props;
+    const {
+      giveSelectedProducts,
+      giveProductInfo,
+      takeSelectedProducts,
+    } = this.props;
     const { getProductCount } = this;
     return (
       <>
-        <div className='selectBox'>
-          <select className='selectColorBox' onChange={takeSelectedProducts}>
-            <option
-              value='disabled'
-              defaultSelected='true'
-              hidden='true'
-              selected='true'>
-              옵션: 색상
-            </option>
-            {color &&
-              color.map((colorElement) => (
+        <div>
+          <div className='flexSelectBox'>
+            <div className='selectBox'>
+              <select
+                className='selectColorBox'
+                onChange={takeSelectedProducts}>
                 <option
-                  key={colorElement.label}
-                  label={colorElement.label}
-                  value={colorElement.price}>
-                  {'선택: '}
-                  {colorElement.label}
+                  value='disabled'
+                  defaultSelected='true'
+                  hidden='true'
+                  selected='true'>
+                  옵션: 색상
                 </option>
-              ))}
-          </select>
-          <span class='optionIconBox'>
-            <img src='/images/option.png' className='optionIcon' alt='option' />
-          </span>
+                {giveProductInfo.details &&
+                  giveProductInfo.details.map(
+                    (firstOptionElement, firstOptionindex) => (
+                      <option
+                        key={firstOptionindex}
+                        label={
+                          firstOptionElement.color +
+                          ' ' +
+                          firstOptionElement.size
+                        }
+                        value={firstOptionElement.price}>
+                        {'선택: '}
+                        {firstOptionElement.color +
+                          ' ' +
+                          firstOptionElement.size}
+                      </option>
+                    )
+                  )}
+              </select>
+              <span class='optionIconBox'>
+                <img
+                  src='/images/option.png'
+                  className='optionIcon'
+                  alt='option'
+                />
+              </span>
+            </div>
+            <SelectedProduct
+              giveSelectedProducts={giveSelectedProducts}
+              takeCountValue={getProductCount}
+            />
+          </div>
         </div>
-        <SelectedProduct
-          giveSelectedProducts={giveSelectedProducts}
-          takeCountValue={getProductCount}
-        />
         <div className='purchaseContainer'>
           <form action='' className='purchaseEvenform'>
             <div className='calculationBox'>

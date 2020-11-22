@@ -1,46 +1,142 @@
 {
-  "products": [
+  "result": [
     {
-      "seller": "지네트가구",
-      "title": "[쿠폰할인] 공주민의 러블리 핑크 공주 침대 3colors(SS/Q)",
-      "image": [
+      "product_id": 1,
+      "product_name": "공주민의 핑크핑크 공주 침대",
+      "product_images": [
         "/images/princessMin2.jpg",
         "/images/princessMin1.jpg",
-        "/images/princessMin2.jpg",
+        "/images/princessMin3.jpg",
         "/images/princessMin4.jpg",
         "/images/princessMin5.jpg",
         "/images/princessMin6.jpg"
       ],
-      "price": 469000,
-      "sale": "20%",
-      "point": "4.6",
-      "review": [
-        "이거 완전 별로임",
-        "사지마셈",
-        "ㅋㅋㅋㅋㅋㅋ",
-        "졸립다",
-        "리뷰는 5개가 최고임"
-      ],
-      "bookMark": 12345,
-      "share": 2134,
-      "color": [
+      "number_of_shares": 0,
+      "number_of_reviews": 0,
+      "number_of_product_bookmarks": 0,
+      "seller": "핑크공주",
+      "details": [
         {
-          "id:": 0,
-          "label": "공주 침대 (러블리핑크)",
-          "price": 422100
+          "product_detail_id": 1,
+          "color": ["아이보리"],
+          "size": ["싱글"],
+          "price": "152000.00"
         },
         {
-          "id:": 1,
-          "label": "공주 침대 (핑크핑크)",
-          "price": 422100
+          "product_detail_id": 2,
+          "color": ["아이보리"],
+          "size": ["트윈"],
+          "price": "239000.00"
         },
         {
-          "id:": 2,
-          "label": "공주 침대 (러블리핫핑크)",
-          "price": 422100
+          "product_detail_id": 3,
+          "color": ["아이보리"],
+          "size": ["퀸"],
+          "price": "321000.00"
+        },
+        {
+          "product_detail_id": 4,
+          "color": ["아이보리"],
+          "size": ["킹"],
+          "price": "489000.00"
+        },
+        {
+          "product_detail_id": 5,
+          "color": ["블랙"],
+          "size": ["싱글"],
+          "price": "152000.00"
+        },
+        {
+          "product_detail_id": 6,
+          "color": ["블랙"],
+          "size": ["트윈"],
+          "price": "239000.00"
+        },
+        {
+          "product_detail_id": 7,
+          "color": ["블랙"],
+          "size": ["퀸"],
+          "price": "321000.00"
+        },
+        {
+          "product_detail_id": 8,
+          "color": ["블랙"],
+          "size": ["킹"],
+          "price": "489000.00"
+        },
+        {
+          "product_detail_id": 9,
+          "color": ["화이트"],
+          "size": ["싱글"],
+          "price": "152000.00"
+        },
+        {
+          "product_detail_id": 10,
+          "color": ["화이트"],
+          "size": ["트윈"],
+          "price": "239000.00"
+        },
+        {
+          "product_detail_id": 11,
+          "color": ["화이트"],
+          "size": ["퀸"],
+          "price": "321000.00"
+        },
+        {
+          "product_detail_id": 12,
+          "color": ["화이트"],
+          "size": ["킹"],
+          "price": "489000.00"
+        },
+        {
+          "product_detail_id": 13,
+          "color": ["파스텔블루"],
+          "size": ["싱글"],
+          "price": "152000.00"
+        },
+        {
+          "product_detail_id": 14,
+          "color": ["파스텔블루"],
+          "size": ["트윈"],
+          "price": "239000.00"
+        },
+        {
+          "product_detail_id": 15,
+          "color": ["파스텔블루"],
+          "size": ["퀸"],
+          "price": "321000.00"
+        },
+        {
+          "product_detail_id": 16,
+          "color": ["파스텔블루"],
+          "size": ["킹"],
+          "price": "489000.00"
+        },
+        {
+          "product_detail_id": 17,
+          "color": ["베이비핑크"],
+          "size": ["싱글"],
+          "price": "152000.00"
+        },
+        {
+          "product_detail_id": 18,
+          "color": ["베이비핑크"],
+          "size": ["트윈"],
+          "price": "239000.00"
+        },
+        {
+          "product_detail_id": 19,
+          "color": ["베이비핑크"],
+          "size": ["퀸"],
+          "price": "321000.00"
+        },
+        {
+          "product_detail_id": 20,
+          "color": ["베이비핑크"],
+          "size": ["킹"],
+          "price": "489000.00"
         }
-      ],
-      "count": 0
+      ]
     }
   ]
 }
