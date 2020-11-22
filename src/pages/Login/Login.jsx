@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.scss";
 
-const API = "dsajkfklasdjfklads";
+const API = "http://10.58.0.125:8000/user/login";
 
 class Login extends React.Component {
   constructor() {
@@ -11,6 +11,25 @@ class Login extends React.Component {
       pw: "",
     };
   }
+
+  componentDidMount() {
+    this.handleClick();
+  }
+
+  handleClick = (e) => {
+    const { id, pw } = this.state;
+    // console.log(this.state.id, this.state.pw);
+    // console.log("hi");
+    fetch(API, {
+      method: "POST",
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+  };
 
   handleInputChange = (e) => {
     const { className, value } = e.target;
