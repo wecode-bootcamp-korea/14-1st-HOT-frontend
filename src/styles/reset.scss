@@ -95,6 +95,10 @@ ol,
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 
 blockquote,
 q {
@@ -131,14 +135,10 @@ table {
   box-sizing: border-box;
 }
 
+input,
 button {
-  border: none;
   background-color: white;
   border: 0;
   outline: 0;
   cursor: pointer;
-  
-    &:focus {
-      outline: none;
-    }
 }
