@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Community extends Component {
   render() {
     return (
       <div>
-        <span>hihi</span>
+        <span></span>
       </div>
     );
   }
