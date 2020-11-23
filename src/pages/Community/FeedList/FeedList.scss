@@ -11,16 +11,21 @@
   .postWrap {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     flex-wrap: wrap;
     width: 1157px;
     margin: 0 260px;
 
     .itemWrap {
       width: 270px;
+      height: 515px;
       padding: 0 0 40px;
       margin-right: 15px;
+
       .item {
+        :hover {
+          opacity: 80%;
+        }
         .itemUser {
           display: flex;
           justify-content: space-between;
@@ -30,7 +35,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
             border: none;
 
             img {
@@ -50,6 +54,10 @@
               color: rgba(10, 172, 218, 0.8);
               font-size: 16px;
               font-weight: 700;
+              border: 1px solid white;
+            }
+            button:focus {
+              color: rgba(10, 172, 218, 0.3);
             }
           }
         }
@@ -112,7 +120,8 @@
             display: flex;
             align-items: center;
             margin: 10px 0 0 0;
-
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.7);
             img {
               width: 30px;
               height: 30px;

@@ -62,12 +62,12 @@ class FeedList extends Component {
                 <ItemWrap
                   userName={el.post_author_username}
                   userImage={el.post_author_profile}
-                  postImage={el.post_author_profile}
-                  countlikes={el.post_likes}
-                  countbookmarks={el.post_bookmarks}
-                  postwrite={el.post_comments}
-                  postcontent={el.post_content}
-                  // countcomments={{el.post_comments}
+                  postImage={el.post_mainimage_url}
+                  countlikes={el.post_likes_count}
+                  countbookmarks={el.post_bookmarks_count}
+                  postwrite={el.post_content}
+                  countcomments={el.post_comments_count}
+                  comment={el.comment}
                 />
               );
             })}

@@ -1,9 +1,17 @@
-.icon {
+.heart,
+.comment {
   font-size: 25px;
-
-  // background-color: red;
+}
+.clickedHeart {
+  font-size: 25px;
+  color: rgb(10, 172, 218);
 }
 
-.icon2 {
+.bookmark {
   font-size: 30px;
+}
+
+.clickedBookmark {
+  font-size: 30px;
+  color: rgb(10, 172, 218);
 }
