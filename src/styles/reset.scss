@@ -77,6 +77,7 @@ summary,
 time,
 mark,
 audio,
+button,
 video {
   margin: 0;
   padding: 0;
@@ -94,6 +95,10 @@ ol,
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 
 blockquote,
 q {
@@ -103,7 +108,7 @@ q {
 blockquote {
   &:before,
   &:after {
-    content: '';
+    content: "";
     content: none;
   }
 }
@@ -111,9 +116,14 @@ blockquote {
 q {
   &:before,
   &:after {
-    content: '';
+    content: "";
     content: none;
   }
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 table {
@@ -135,4 +145,11 @@ button {
 input {
   text-decoration: none;
   border: 0px;
+  
+}
+button {
+  background-color: white;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
 }

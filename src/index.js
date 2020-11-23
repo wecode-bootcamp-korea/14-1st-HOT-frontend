@@ -5,4 +5,4 @@ import './styles/common.scss';
 import './styles/reset.scss';
 import './config';
 
-ReactDOM.render(<Routes />, document.getElementById('thou'));
+ReactDOM.render(<Routes />, document.getElementById("thou"));
