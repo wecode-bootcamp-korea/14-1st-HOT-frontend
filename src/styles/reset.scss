@@ -77,6 +77,7 @@ summary,
 time,
 mark,
 audio,
+button,
 video {
   margin: 0;
   padding: 0;
@@ -120,6 +121,11 @@ q {
   }
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -131,7 +137,9 @@ table {
 
 input,
 button {
-  outline: none;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
+  background-color: white;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
 }

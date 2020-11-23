@@ -2,4 +2,16 @@
   font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', '맑은 고딕',
     'Malgun Gothic', 'sans-serif';
   letter-spacing: -0.4px;
+  box-sizing: border-box;
+}
+
+.flexSpaceBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
