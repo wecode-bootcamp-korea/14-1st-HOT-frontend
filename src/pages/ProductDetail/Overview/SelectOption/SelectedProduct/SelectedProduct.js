@@ -6,11 +6,15 @@ class SelectedProduct extends Component {
     this.props.takeCountValue(targetProductInfo, e.target.value);
   };
 
+  handleDeleteButton = (productIndex) => {
+    this.props.takeDeleteFuction(productIndex);
+  };
+
   render() {
     const counts = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     const { giveSelectedProducts } = this.props;
-    const { getSelectedProduct } = this;
-    console.log(this.props.giveSelectedProducts);
+    const { getSelectedProduct, handleDeleteButton } = this;
+    console.log(giveSelectedProducts);
     return (
       <>
         {giveSelectedProducts &&
@@ -21,7 +25,11 @@ class SelectedProduct extends Component {
                   <div className='selectedProductName'>
                     {targetProductInfo.label}
                   </div>
-                  <button className='deleteButton'>X</button>
+                  <button
+                    className='deleteButton'
+                    onClick={() => handleDeleteButton(productIndex)}>
+                    X
+                  </button>
                 </div>
                 <div className='flexSelectedProductPriceBox'>
                   <select

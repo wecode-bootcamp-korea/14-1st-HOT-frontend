@@ -5,14 +5,16 @@ class SelectOption extends Component {
   getProductCount = (targetProduct, countString) => {
     this.props.takeSelectedProductsValue(targetProduct, countString);
   };
-
+  handleDelete = (productIndex) => {
+    this.props.takeSelectedProductsDelIndex(productIndex);
+  };
   render() {
     const {
       giveSelectedProducts,
       giveProductInfo,
       takeSelectedProducts,
     } = this.props;
-    const { getProductCount } = this;
+    const { getProductCount, handleDelete } = this;
     return (
       <>
         <div>
@@ -58,6 +60,7 @@ class SelectOption extends Component {
             <SelectedProduct
               giveSelectedProducts={giveSelectedProducts}
               takeCountValue={getProductCount}
+              takeDeleteFuction={handleDelete}
             />
           </div>
         </div>

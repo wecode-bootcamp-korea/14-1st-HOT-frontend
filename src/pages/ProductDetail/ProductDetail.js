@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../../component/NavigationBar/NavigationBar';
-import Infomation from './Infomation/Infomation';
+import Footer from '../../component/Footer/Footer';
 import Overview from './Overview/Overview';
 
 class ProductDetail extends Component {
@@ -10,7 +10,7 @@ class ProductDetail extends Component {
         <Nav />
         <div className='ProductDetail'>
           <Overview />
-          <Infomation />
+          <Footer />
         </div>
       </div>
     );

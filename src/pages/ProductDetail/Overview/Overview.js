@@ -12,7 +12,6 @@ class Summary extends Component {
       coverImageSrc: '',
       productList: [],
       selectedProducts: [],
-      selectedProduct: [],
     };
   }
 
@@ -66,7 +65,12 @@ class Summary extends Component {
   changeCoverImage = (e) => {
     this.setState({ coverImageSrc: e.target.src });
   };
-
+  handleDeleteProduct = (targetIndex) => {
+    const selectedProductsIndex = this.state.selectedProducts.filter(
+      (_, index) => index !== targetIndex
+    );
+    this.setState({ selectedProducts: selectedProductsIndex });
+  };
   render() {
     console.log(this.state.selectedProducts);
     const {
@@ -84,8 +88,14 @@ class Summary extends Component {
       coverImageSrc,
       selectedProducts,
     } = this.state;
-    const { changeCoverImage, getSelectedProduct, getProductCount } = this;
+    const {
+      changeCoverImage,
+      getSelectedProduct,
+      getProductCount,
+      handleDeleteProduct,
+    } = this;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
+    console.log(selectedProducts);
     return (
       <>
         <div className='overview'>
@@ -269,6 +279,7 @@ class Summary extends Component {
                       giveSelectedProducts={selectedProducts}
                       takeSelectedProducts={getSelectedProduct}
                       takeSelectedProductsValue={getProductCount}
+                      takeSelectedProductsDelIndex={handleDeleteProduct}
                     />
                   </div>
                 </div>
@@ -299,6 +310,7 @@ class Summary extends Component {
                   giveSelectedProducts={selectedProducts}
                   takeSelectedProducts={getSelectedProduct}
                   takeSelectedProductsValue={getProductCount}
+                  takeSelectedProductsDelIndex={handleDeleteProduct}
                 />
               </div>
             </div>
