@@ -59,13 +59,11 @@ class FooterList extends React.Component {
   }
   render() {
     return (
-      <>
-        <div className="footerlist">
-          {FOOTERLIST.map((element) => {
-            return <div className="content">{element.name}</div>;
-          })}
-        </div>
-      </>
+      <div className="footerlist">
+        {FOOTERLIST.map((element) => {
+          return <div className="content">{element.name}</div>;
+        })}
+      </div>
     );
   }
 }

@@ -5,8 +5,8 @@ import FOOTERLIST from "./FooterList";
 class Footer extends React.Component {
   constructor() {
     super();
-    this.state = {};
   }
+
   render() {
     return (
       <div className="homeFooter">
