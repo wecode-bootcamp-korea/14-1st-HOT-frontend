@@ -394,13 +394,14 @@
   height: 100%;
   .menuTabContainer {
     position: sticky;
-    top: 130px;
+    top: 129px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     background-color: rgb(247, 247, 247);
+    border: 1px solid rgb(228, 228, 228);
     .flexmenuTabContainer {
       display: flex;
       justify-content: flex-start;
@@ -438,8 +439,8 @@
     justify-content: center;
     .menuTabViewContainer {
       width: 760px;
-      height: 2000px;
-      padding: 40px;
+      height: auto;
+      padding: 40px 40px 0 40px;
     }
     .selectOptionContainer {
       .stickyContainer {
@@ -447,10 +448,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        top: 160px;
+        top: 183px;
         width: 375px;
-        height: 800px;
-        padding: 40px;
+        height: 700px;
+        padding: 30px 40px 0px 40px;
         .flexSelectBox {
           .selectBox {
             position: relative;

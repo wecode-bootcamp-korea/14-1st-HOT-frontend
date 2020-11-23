@@ -130,7 +130,7 @@ class Summary extends Component {
                         />
                       </div>
                       <div className='reviewCount'>
-                        {number_of_reviews && number_of_reviews.length}
+                        {number_of_reviews && number_of_reviews}
                         {'개 리뷰'}
                       </div>
                     </div>
@@ -287,7 +287,11 @@ class Summary extends Component {
             </div>
           </div>
           <div className='smallSelectOptionContainer'>
-            <div className='menuTabViewContainer'>zz</div>
+            <div className='menuTabViewContainer'>
+              <img src='/images/productInfo1.png' alt='sample' width='100%' />
+              <img src='/images/productInfo2.png' alt='sample' width='100%' />
+              <img src='/images/productInfo3.png' alt='sample' width='100%' />
+            </div>
             <div className='selectOptionContainer'>
               <div className='stickyContainer'>
                 <SelectOption

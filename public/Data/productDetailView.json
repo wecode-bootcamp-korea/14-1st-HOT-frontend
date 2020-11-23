@@ -2,7 +2,7 @@
   "result": [
     {
       "product_id": 1,
-      "product_name": "공주민의 핑크핑크 공주 침대",
+      "product_name": "[기획전] 공주민의 핑크핑크 공주 침대",
       "product_images": [
         "/images/princessMin2.jpg",
         "/images/princessMin1.jpg",
@@ -11,9 +11,9 @@
         "/images/princessMin5.jpg",
         "/images/princessMin6.jpg"
       ],
-      "number_of_shares": 0,
-      "number_of_reviews": 0,
-      "number_of_product_bookmarks": 0,
+      "number_of_shares": 30,
+      "number_of_reviews": 12,
+      "number_of_product_bookmarks": 15,
       "seller": "핑크공주",
       "details": [
         {
