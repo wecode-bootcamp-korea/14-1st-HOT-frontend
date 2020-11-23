@@ -23,9 +23,7 @@ class PostDetail extends Component {
   }
 
   componentDidMount() {
-    fetch(API, {
-      method: "GET",
-    })
+    fetch(API, {})
       .then((response) => response.json())
       .then((result) => {
         this.setState({
@@ -109,9 +107,9 @@ class PostDetail extends Component {
                 </ul>
               </div>
               <div className="views">
-                <span className="countViews">조회수1회&nbsp;&nbsp;&nbsp;</span>
-                <span className="countReply">댓글 1개&nbsp;&nbsp;&nbsp;</span>
-                <span className="countShare">공유 1회&nbsp;&nbsp;&nbsp;</span>
+                <span className="countViews">조회수1회</span>
+                <span className="countReply">댓글 1개</span>
+                <span className="countShare">공유 1회</span>
                 <button className="report">신고</button>
               </div>
             </article>

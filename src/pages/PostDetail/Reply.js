@@ -82,8 +82,8 @@ class Reply extends Component {
                   value={this.state.text}
                   className="reReplyInput"
                   onChange={this.handleInput}
-                  type=""
-                ></input>
+                  type="text"
+                />
                 <button className="reReplyButton">등록</button>
               </div>
             </form>

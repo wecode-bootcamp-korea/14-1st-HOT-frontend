@@ -6,13 +6,13 @@ class ReplyComments extends Component {
   render() {
     const { userId, comment } = this.props;
     return (
-      <div className="replyCommentComponentWrap">
-        <li className="replyCommentComponent">
-          <div className="replyCommentUser">
+      <div className="ReplyComments">
+        <li className="Component">
+          <div className="ReplyUser">
             <img
-              className="replyCommentUserPicture"
+              className="UserPicture"
               src="/images/Communityimages/chair.jpg"
-              alt=""
+              alt="댓글 유저 프로필"
             />
           </div>
           <div className="replyCommentUserId">{userId}</div>
