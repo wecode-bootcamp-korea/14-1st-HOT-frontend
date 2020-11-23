@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.scss";
 
-const API = "http://10.58.0.125:8000/user/login";
+const API = "http://10.58.3.106:8000/user/signin";
 
 class Login extends React.Component {
   constructor() {
