@@ -26,7 +26,7 @@ class Signup extends Component {
   handleClick = (e) => {
     const { id, pw, name } = this.state;
 
-    fetch("http://10.58.3.106:8000/user/register", {
+    fetch("http://10.58.3.106/user/register", {
       method: "POST",
       body: JSON.stringify({
         email: id,
