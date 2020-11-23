@@ -1,16 +1,71 @@
 .Mypage {
-  .userProfile {
-    margin-top: 20px;
-    padding: 30px 25px 0;
-    border-radius: 4px;
-    border: 1px solid #dadce0;
-    box-shadow: 0 2px 4px 0 rgba(63, 71, 77, 0.06);
+  .bigContainer {
+    margin: 0 auto 40px;
+    width: 1136px;
 
     .userProfileContainer {
-      margin: 0 0 20px;
+      width: 216px;
+      height: 388px;
+      margin-top: 20px;
+      padding: 30px 25px 0;
+      border-radius: 4px;
+      border: 1px solid #dadce0;
+      box-shadow: 0 2px 4px 0 rgba(63, 71, 77, 0.06);
 
-      img {
-        margin: 0 0 24px;
+      .userProfile {
+        margin: 0 0 20px;
+        align-items: center;
+        border-bottom: 1px solid #dbdbdb;
+        // position: relative;
+
+        .userImg {
+          // position: absolute;
+          right: 20px;
+          margin: 0 0 24px;
+          width: 120px;
+          height: 120px;
+        }
+
+        .userInfo {
+          text-align: center;
+
+          .username {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #292929;
+            font-weight: 700;
+          }
+
+          .following {
+            font-size: 13px;
+            font-weight: 400;
+            // padding: 0 10px;
+
+            .follower {
+              margin-right: 10px;
+            }
+
+            .line {
+              margin: 0 3px;
+            }
+
+            .following {
+              margin-left: 10px;
+            }
+          }
+          .button {
+            width: 62px;
+            height: 31px;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #eaebef;
+            color: #292929;
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 15px;
+            margin-bottom: 15px;
+          }
+        }
       }
     }
   }
