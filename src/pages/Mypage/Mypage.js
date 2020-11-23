@@ -24,6 +24,8 @@ class Mypage extends Component {
             </div>
             <div className="userLink">
               <div className="scrap">
+                <img src="" alt="scrap" />
+              </div>
                 <img
               </div>
             </div>
