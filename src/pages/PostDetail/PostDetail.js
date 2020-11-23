@@ -5,7 +5,7 @@ import "./PostDetail.scss";
 
 const API = "http://10.58.0.153:8000/post/1";
 
-class FeedDetail extends Component {
+class PostDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -195,4 +195,4 @@ class FeedDetail extends Component {
   }
 }
 
-export default FeedDetail;
+export default PostDetail;
