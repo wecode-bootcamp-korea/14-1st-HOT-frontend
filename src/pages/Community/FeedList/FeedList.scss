@@ -1,0 +1,126 @@
+.postContainer {
+  display: flex;
+  justify-content: center;
+
+  .postWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 1157px;
+    margin: 0 260px;
+
+    .itemWrap {
+      width: 270px;
+      height: 515px;
+      padding-bottom: 40px;
+      margin-right: 15px;
+
+      :hover {
+        opacity: 80%;
+      }
+      .itemUser {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+
+        .itemUserImage {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+
+        .itemUserName {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          width: 80%;
+
+          button {
+            color: rgba(10, 172, 218, 0.8);
+            font-size: 16px;
+            font-weight: 700;
+            border: 1px solid white;
+          }
+          button:focus {
+            color: rgba(10, 172, 218, 0.3);
+          }
+        }
+      }
+
+      .itemContent {
+        .itemContentImage {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 271px;
+          border-radius: 10px;
+          object-fit: cover;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transform: scale(1);
+
+            transition: all 0.1s ease-in-out;
+          }
+          img:hover {
+            transform: scale(1.1);
+          }
+        }
+        .itemContentLikes {
+          display: flex;
+          justify-content: space-between;
+          margin: 16px 0;
+          padding: 0 10px;
+          position: relative;
+
+          .counts {
+            margin-left: 3px;
+            position: absolute;
+            bottom: 17px;
+          }
+
+          button .goToComment {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33%;
+          }
+
+          .goToComment {
+            margin: 10px 10px;
+          }
+        }
+
+        .itemContentParagraph {
+          color: rgba(0, 0, 0, 0.7);
+        }
+
+        .itemContentComment {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.7);
+          img {
+            width: 30px;
+            height: 30px;
+            margin-right: 7px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

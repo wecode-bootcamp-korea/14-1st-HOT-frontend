@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "seller": "지네트가구",
+      "title": "[기간한정] 로미노 3인/4인 가죽 카우치 소파",
+      "image": "images/product1.jpeg",
+      "price": "469,000",
+      "sale": "20%",
+      "point": "4.6"
+    },
+    {
+      "seller": "레벤",
+      "title": "폴만 3인용 가죽소파 4컬러",
+      "image": "images/product2.jpeg",
+      "price": "1,329,000",
+      "sale": "66%",
+      "point": "4.6"
+    },
+    {
+      "seller": "삼익가구",
+      "title": "[쿠폰할인] 포르테 리프트업 소파 테이블",
+      "image": "images/product3.jpeg",
+      "price": "232,000",
+      "sale": "50%",
+      "point": "4.6"
+    },
+    {
+      "seller": "듀커",
+      "title": "노르마니 LED 익스텐션 모던 거실장",
+      "image": "images/product4.jpeg",
+      "price": "144,000",
+      "sale": "50%",
+      "point": "4.6"
+    },
+    {
+      "seller": "보니애가구",
+      "title": "프라제르 아쿠아텍스 4인용 소파 스툴 무료증정",
+      "image": "images/product5.jpeg",
+      "price": "355,000",
+      "sale": "35%",
+      "point": "4.6"
+    },
+    {
+      "seller": "시몬스",
+      "title": "이벤 아쿠아텍스 4인용 카우치 소파 4colors",
+      "image": "images/product6.jpeg",
+      "price": "100,000,000",
+      "sale": "43%",
+      "point": "4.6"
+    },
+    {
+      "seller": "솔리에",
+      "title": "[오늘의딜] 베스트 붙박이장 모음전(15cm/30cm) 무료배송",
+      "image": "images/product7.jpeg",
+      "price": "580,000",
+      "sale": "12%",
+      "point": "4.6"
+    },
+    {
+      "seller": "큐브",
+      "title": "맞춤제작 시스템 드레스룸",
+      "image": "images/product8.jpeg",
+      "price": "11,400",
+      "sale": "20%",
+      "point": "4.6"
+    },
+    {
+      "seller": "퀵슬립",
+      "title": "유로탑 롤팩 매트리스 2size",
+      "image": "images/product9.jpeg",
+      "price": "234,900",
+      "sale": "20%",
+      "point": "4.6"
+    },
+    {
+      "seller": "SR100",
+      "title": "(예약주문) 11월 20일 순차 배송, 라움 세븐트리 원목 침대",
+      "image": "images/product10.png",
+      "price": "376,000",
+      "sale": "12%",
+      "point": "4.6"
+    },
+    {
+      "seller": "두닷",
+      "title": "콰트로 에이 데스크",
+      "image": "images/product11.jpeg",
+      "price": "111,000",
+      "sale": "43%",
+      "point": "4.6"
+    },
+    {
+      "seller": "시몬스",
+      "title": "이벤 아쿠아텍스 4인용 카우치 소파 4colors",
+      "image": "images/product12.jpeg",
+      "price": "100,000",
+      "sale": "41%",
+      "point": "4.6"
+    }
+  ]
+}
