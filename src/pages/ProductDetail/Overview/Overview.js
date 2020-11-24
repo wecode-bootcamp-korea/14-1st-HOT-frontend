@@ -37,16 +37,15 @@ class Summary extends Component {
   };
 
   postProductId = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     fetch('/Data/productDetailView.json', {
       method: 'POST',
-      body: JSON.stringify(e),
+      body: JSON.stringify(this.state.productList.product_id),
     })
       .then((res) => res.json())
       .then((result) => {
-        result = this.state.productList;
+        console.log(result);
       });
-    console.log('aaa');
   };
 
   getSelectedProduct = (e) => {

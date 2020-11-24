@@ -10,16 +10,14 @@ class SelectOption extends Component {
     this.props.takeSelectedProductsDelIndex(productIndex);
   };
 
-  handleBookmark = (e) => {
-    this.props.takeBookmarkEvent(e);
-  };
   render() {
     const {
       giveSelectedProducts,
       giveProductInfo,
       takeSelectedProducts,
+      takeBookmarkEvent,
     } = this.props;
-    const { getProductCount, handleDelete, handleBookmark } = this;
+    const { getProductCount, handleDelete } = this;
     return (
       <>
         <div>
@@ -88,7 +86,7 @@ class SelectOption extends Component {
               </div>
             </div>
             <div className='purchaseButtonBox'>
-              <button className='bookmarkBox' onClick={handleBookmark}>
+              <button className='bookmarkBox' onClick={takeBookmarkEvent}>
                 <img
                   src='/images/bookmark.png'
                   className='bookmark'
