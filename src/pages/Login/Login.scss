@@ -1,67 +1,63 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #fafafa;
-}
-
-.login {
-  margin-top: 120px;
-
-  .container {
+.Login {
+  .loginContainer {
+    margin: 170px auto;
     max-width: 360px;
+    width: 100%;
     padding: 40px 30px;
-    margin: 0 auto;
-    border: none;
-    background-color: #fafafa;
-    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
 
-    .logo {
-      width: 50px;
-      height: 50px;
-      align-self: center;
+    .loginLogo {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .tomorrowHouse {
+        width: 102px;
+        height: 40px;
+        margin: 0 0 5px 10px;
+      }
     }
 
-    .thou {
-      width: 102px;
-      height: 40px;
-      margin: 0 0 5px 10px;
-    }
-
-    .id {
-      width: 100%;
-      height: 50px;
-      margin: 30px 0 0 0;
-      padding: 0 15px;
-      display: block;
-      background-color: #ffffff;
-      border: 1px solid #e6e6e6;
-      border-radius: 4px 4px 0 0;
-      font-size: 15px;
-      color: #424242;
-      box-sizing: border-box;
-      transition: 0.2s border-color, 0.2s box-shadow, 0.2s background-color;
-    }
-
+    .id,
     .pw {
       width: 100%;
       height: 50px;
-      margin: 0;
       padding: 0 15px;
       display: block;
       background-color: #ffffff;
       border: 1px solid #e6e6e6;
-      border-radius: 0 0 4px 4px;
-      border-top: 0px;
       font-size: 15px;
       color: #424242;
       box-sizing: border-box;
       transition: 0.2s border-color, 0.2s box-shadow, 0.2s background-color;
+      box-shadow: 1px 1px rgba(50, 50, 93, 0.5), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+      &:hover {
+        cursor: text;
+      }
+
+      &:focus {
+        background-color: #fafafa;
+      }
+    }
+
+    .id {
+      margin: 30px 0 0 0;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .pw {
+      margin: 0;
+      border-radius: 0 0 4px 4px;
+      border-top: 0px;
     }
 
     .loginButton {
@@ -81,11 +77,12 @@
 
       &:hover {
         cursor: pointer;
+        background-color: #12baeb;
       }
     }
 
     .newJoin {
-      margin: 10px 0;
+      margin: 20px 0;
       text-align: center;
       color: #424242;
       font-size: 15px;
@@ -116,25 +113,25 @@
 
     .snsLogin {
       display: block;
+      text-align: center;
       margin: 0 0 30px 0;
 
       .simpleLogin {
-        margin: 15px 0;
+        margin: 17px 0;
         color: #757575;
         font-size: 12px;
         line-height: 1.33;
-        text-align: center;
         font-weight: normal;
       }
 
       .iconList {
-        width: 200px;
+        width: 300px;
         height: 48px;
-        text-align: center;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        padding: 0 60px;
 
-        .snsIcon {
+        img {
           width: 48px;
           height: 48px;
 

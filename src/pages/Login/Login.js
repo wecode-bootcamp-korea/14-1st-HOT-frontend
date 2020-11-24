@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.scss";
 
-const API = "http://10.58.3.106:8000/user/signin";
+// const API = "http://10.58.3.106:8000/user/signin";
 
 class Login extends React.Component {
   constructor() {
@@ -12,57 +12,64 @@ class Login extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.handleClick();
-  }
+  // handleClick = (e) => {
+  //   const { id, pw } = this.state;
 
-  handleClick = (e) => {
-    const { id, pw } = this.state;
-
-    fetch(API, {
-      method: "POST",
-      body: JSON.stringify({
-        email: id,
-        password: pw,
-      }),
-    })
-      .then((res) => res.json())
-      .then((result) => console.log(result));
-  };
+  //   fetch(API, {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email: id,
+  //       password: pw,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => console.log(result));
+  // };
 
   handleInputChange = (e) => {
     const { className, value } = e.target;
-    className === "id"
-      ? this.setState({ id: value })
-      : this.setState({ pw: value });
+    this.setState({ [className]: value });
   };
 
   handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      this.checkValidation();
-    }
-  };
-
-  checkValidation = () => {
     const { id, pw } = this.state;
 
-    if (id && pw) {
-      alert("성공적으로 로그인했습니다.");
-      this.props.history.push("/main");
-    }
+    if (e.key === "Enter") {
+      if (id && pw) {
+        alert("성공적으로 로그인했습니다.");
+        this.props.history.push("/main");
+      }
 
-    if (!id || !pw) {
-      alert("이메일 주소나 비밀번호가 틀립니다.");
+      if (!id || !pw) {
+        alert("이메일 주소나 비밀번호가 틀립니다.");
+      }
     }
   };
+
+  // checkValidation = () => {
+  // const { id, pw } = this.state;
+
+  // if (id && pw) {
+  //   alert("성공적으로 로그인했습니다.");
+  //   this.props.history.push("/main");
+  // }
+
+  // if (!id || !pw) {
+  //   alert("이메일 주소나 비밀번호가 틀립니다.");
+  // }
+  // };
 
   render() {
     return (
-      <main className="login">
-        <section className="container">
+      <main className="Login">
+        <section className="loginContainer">
           <div className="loginLogo">
-            <img className="logo" src="./images/logo.png" alt="logo" />
-            <img className="thou" src="./images/logo_text.png" alt="logo" />
+            <img src="./images/logo.png" alt="logo" />
+            <img
+              className="tomorrowHouse"
+              src="./images/logo_text.png"
+              alt="logo"
+            />
           </div>
           <input
             type="text"
