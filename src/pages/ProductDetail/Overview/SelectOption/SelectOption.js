@@ -28,11 +28,7 @@ class SelectOption extends Component {
         <div className='flexSelectBox'>
           <div className='selectBox'>
             <select className='selectColorBox' onChange={takeSelectedColor}>
-              <option
-                value='disabled'
-                defaultSelected='true'
-                hidden='true'
-                selected='true'>
+              <option hidden selected>
                 옵션: 색상
               </option>
               {giveProductInfo.color &&
@@ -45,12 +41,8 @@ class SelectOption extends Component {
                 )}
             </select>
             <select className='selectOptionBox' onChange={takeSelectedOption}>
-              <option
-                value='disabled'
-                defaultSelected='true'
-                hidden='true'
-                selected='true'>
-                옵션: 종류
+              <option hidden selected>
+                옵션: 사이즈
               </option>
               {giveProductInfo.details &&
                 giveProductInfo.details.map(

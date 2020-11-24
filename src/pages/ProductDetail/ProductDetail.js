@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Nav from '../../component/NavigationBar/NavigationBar';
+// import Nav from '../../component/NavigationBar/NavigationBar';
 import Footer from '../../component/Footer/Footer';
 import Overview from './Overview/Overview';
 import Modal from '../../component/Modal/Modal';
@@ -24,7 +24,7 @@ class ProductDetail extends Component {
         {this.state.modalSwitch ? (
           <Modal takeModalEvent={handleModalSwitch} />
         ) : null}
-        <Nav />
+        {/* <Nav /> */}
         <div className='ProductDetail'>
           <Overview takeModalEvent={handleModalSwitch} />
           <Footer />

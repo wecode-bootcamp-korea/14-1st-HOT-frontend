@@ -67,7 +67,8 @@ class Summary extends Component {
     if (
       selectedProducts.some(
         (ele) => ele.label === options[selectedIndex].innerHTML
-      )
+      ) ||
+      selectedProducts.some((ele) => ele.color) === this.state.selectedColor
     ) {
       alert('이미 선택한 옵션입니다.');
     } else {
