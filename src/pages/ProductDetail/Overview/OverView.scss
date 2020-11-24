@@ -359,6 +359,10 @@
                 justify-content: space-between;
                 margin-bottom: 50px;
 
+                .bookmarkBox {
+                  display: none;
+                }
+
                 .cart {
                   width: 225px;
                   height: 50px;
@@ -402,6 +406,7 @@
     width: 100%;
     background-color: rgb(247, 247, 247);
     border: 1px solid rgb(228, 228, 228);
+    z-index: 9;
     .flexmenuTabContainer {
       display: flex;
       justify-content: flex-start;
@@ -437,6 +442,61 @@
   .smallSelectOptionContainer {
     display: flex;
     justify-content: center;
+
+    .feedContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .feedTitleBox {
+        width: 680px;
+
+        .feedTitle {
+          font-size: 18px;
+          font-weight: 700;
+          margin: 70px 0 20px 0;
+        }
+      }
+
+      .userPostContainer {
+        display: flex;
+        flex-direction: column;
+        width: 680px;
+        height: 580px;
+
+        .feedBox {
+          width: 600px;
+          height: 600px;
+          border-radius: 10px;
+          overflow: hidden;
+
+          .feed {
+            width: 100%;
+            margin: 4px;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      .feedTextContainer {
+        width: 680px;
+        margin-top: 50px;
+
+        .feedTextTop {
+          font-size: 18px;
+          font-weight: 700;
+          margin: 50px 0px 20px 0;
+        }
+
+        .feedText {
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          font-weight: 300;
+          height: 25px;
+        }
+      }
+    }
     .menuTabViewContainer {
       width: 760px;
       height: auto;
@@ -450,8 +510,8 @@
         justify-content: space-between;
         top: 183px;
         width: 375px;
-        height: 700px;
-        padding: 30px 40px 0px 40px;
+        height: 730px;
+        padding: 30px 40px 20px 40px;
         .flexSelectBox {
           .selectBox {
             position: relative;
@@ -514,9 +574,24 @@
               display: flex;
               justify-content: space-between;
 
+              .bookmarkBox {
+                width: 80px;
+                border: 1px solid rgb(224, 224, 224);
+                margin-right: 5px;
+
+                .bookmark {
+                  width: 50%;
+                }
+              }
+
+              .bookmarkBox:hover {
+                background-color: rgb(219, 219, 219);
+              }
+
               .cart {
-                width: 225px;
+                width: 205px;
                 height: 50px;
+                margin-right: 5px;
                 color: RGB(55, 197, 239);
                 background-color: white;
                 border: 1px solid RGB(55, 197, 239);
@@ -526,7 +601,7 @@
               }
 
               .purchase {
-                width: 225px;
+                width: 205px;
                 height: 50px;
                 color: white;
                 background-color: RGB(55, 197, 239);

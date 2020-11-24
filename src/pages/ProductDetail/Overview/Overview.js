@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './OverView.scss';
+import Slider from 'react-slick';
 import SelectOption from './SelectOption/SelectOption';
+import PrevArrow from '../../../component/Slick/PrevArrow';
+import NextArrow from '../../../component/Slick/NextArrow';
 
 class Summary extends Component {
   constructor() {
@@ -71,8 +74,22 @@ class Summary extends Component {
     );
     this.setState({ selectedProducts: selectedProductsIndex });
   };
+
   render() {
-    console.log(this.state.selectedProducts);
+    const settings = {
+      arrows: true,
+      className: 'center',
+      centerMode: true,
+      infinite: true,
+      centerPadding: '60px',
+      slidesToShow: 1,
+      speed: 500,
+      rows: 1,
+      slidesPerRow: 1,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+    };
+
     const {
       seller,
       product_name,
@@ -95,7 +112,6 @@ class Summary extends Component {
       handleDeleteProduct,
     } = this;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
-    console.log(selectedProducts);
     return (
       <>
         <div className='overview'>
@@ -298,10 +314,56 @@ class Summary extends Component {
             </div>
           </div>
           <div className='smallSelectOptionContainer'>
-            <div className='menuTabViewContainer'>
-              <img src='/images/productInfo1.png' alt='sample' width='100%' />
-              <img src='/images/productInfo2.png' alt='sample' width='100%' />
-              <img src='/images/productInfo3.png' alt='sample' width='100%' />
+            <div className='feedContainer'>
+              <div className='feedTitleBox'>
+                <div className='feedTitle'>유저 스타일링 샷</div>
+              </div>
+              <div className='userPostContainer'>
+                <Slider {...settings}>
+                  <div class='feedBox'>
+                    <img
+                      src='images/samplebed1.jpg'
+                      alt='feedBox'
+                      className='feed'
+                    />
+                  </div>
+                  <div class='feedBox'>
+                    <img
+                      src='images/samplebed2.jpg'
+                      alt='feedBox'
+                      className='feed'
+                    />
+                  </div>
+                  <div class='feedBox'>
+                    <img
+                      src='images/samplebed3.jpg'
+                      alt='feedBox'
+                      className='feed'
+                    />
+                  </div>
+                  <div class='feedBox'>
+                    <img
+                      src='images/samplebed4.jpg'
+                      alt='feedBox'
+                      className='feed'
+                    />
+                  </div>
+                </Slider>
+              </div>
+              <div className='feedTextContainer'>
+                <div className='feedTextTop'>상품정보</div>
+                <div className='feedText'>
+                  배송까지 최대 15일 (주말과 공휴일 제외) 소요됩니다.
+                </div>
+                <div className='feedText'>
+                  주문확인 이후에는 구매 취소와 배송지 변경이 불가합니다.
+                </div>
+              </div>
+              <div className='menuTabViewContainer'>
+                <img src='/images/productInfo1.png' alt='sample' width='100%' />
+                <img src='/images/productInfo2.png' alt='sample' width='100%' />
+                <img src='/images/productInfo3.png' alt='sample' width='100%' />
+              </div>
             </div>
             <div className='selectOptionContainer'>
               <div className='stickyContainer'>

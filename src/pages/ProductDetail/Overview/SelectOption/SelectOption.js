@@ -83,6 +83,13 @@ class SelectOption extends Component {
               </div>
             </div>
             <div className='purchaseButtonBox'>
+              <button className='bookmarkBox'>
+                <img
+                  src='/images/bookmark.png'
+                  className='bookmark'
+                  alt='bookMarkIcon'
+                />
+              </button>
               <button className='cart'>장바구니</button>
               <button className='purchase'>바로구매</button>
             </div>
