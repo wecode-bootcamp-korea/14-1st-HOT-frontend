@@ -1,13 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Firstcategory from "./Firstcategory";
+import Secondcategory from "./Secondcategory";
 import "./NavigationBar.scss";
 
 class NavigationBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  state = {
+    communitytoggle: true,
+    storetoggle: false,
+  };
+
+  handleEnterCommunity = (e) => {
+    this.setState({ communitytoggle: true });
+    this.setState({ storetoggle: false });
+  };
+
+  handleEnterStore = (e) => {
+    this.setState({ communitytoggle: false });
+    this.setState({ storetoggle: true });
+  };
+
   render() {
+    const { communitytoggle, storetoggle } = this.state;
+
     return (
       <div className="navBackgruond">
         <div className="NavigationBar">
@@ -17,15 +32,25 @@ class NavigationBar extends React.Component {
                 <img src="./images/logo_text.png" alt="home" />
               </div>
               <div className="categories">
-                <Link className="category" to="">
+                <button
+                  className="category"
+                  to=""
+                  onMouseLeave={this.handleLeaveCommunity}
+                  onMouseEnter={this.handleEnterCommunity}
+                >
                   커뮤니티
-                </Link>
-                <Link className="category" to="">
+                </button>
+                <button
+                  className="category"
+                  to=""
+                  onMouseLeave={this.handleLeaveStore}
+                  onMouseEnter={this.handleEnterStore}
+                >
                   스토어
-                </Link>
-                <Link className="category" to="">
+                </button>
+                <button className="category" to="">
                   인테리어시공
-                </Link>
+                </button>
               </div>
             </div>
             <div className="managementBox">
@@ -34,8 +59,11 @@ class NavigationBar extends React.Component {
                 <img src="./images/loupe.png" alt="search" />
               </div>
               <div className="management">
-                <div className="cart">
+                <Link className="cart" to="/pages/Mypage/Mypage">
                   <img src="./images/shopping-cart.png" alt="cart" />
+                </Link>
+                <div className="mypage">
+                  <img src="./images/profileimg.png" alt="mypage" />
                 </div>
                 <div className="enterPage">
                   <span className="navLogin">로그인</span>
@@ -58,52 +86,10 @@ class NavigationBar extends React.Component {
         </div>
         <div className="navBarBorder"></div>
         <div className="subNav">
-          <div className="subNavContents ">
-            <Link className="subNavContent" to="">
-              사진
-            </Link>
-            <Link className="subNavContent" to="">
-              집들이
-            </Link>
-            <Link className="subNavContent" to="">
-              노하우
-            </Link>
-            <Link className="subNavContent" to="">
-              전문가집들이
-            </Link>
-            <Link className="subNavContent" to="">
-              셀프가이드
-            </Link>
-            <Link className="subNavContent" to="">
-              질문과답변
-            </Link>
-            <Link className="subNavContent" to="">
-              이벤트
-            </Link>
-          </div>
-          <div className="subNavContentss ">
-            <Link className="subNavContent" to="">
-              카테고리
-            </Link>
-            <Link className="subNavContent" to="">
-              신혼가구
-            </Link>
-            <Link className="subNavContent" to="">
-              베스트
-            </Link>
-            <Link className="subNavContent" to="">
-              오늘의딜
-            </Link>
-            <Link className="subNavContent" to="">
-              겨울빅세일
-            </Link>
-            <Link className="subNavContent" to="">
-              크리스마스
-            </Link>
-            <Link className="subNavContent" to="">
-              기획전
-            </Link>
-          </div>
+          {communitytoggle && (
+            <Firstcategory onEnter={this.handleEnterCommunity} />
+          )}
+          {storetoggle && <Secondcategory onEnter={this.handleEnterStore} />}
         </div>
       </div>
     );
