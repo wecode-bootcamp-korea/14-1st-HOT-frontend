@@ -1,13 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PostDetail from "./pages/PostDetail/PostDetail";
+import post from "./pages/PostDetail/PostDetail";
+import FeedList from "./pages/Community/FeedList/FeedList";
+import PinPoint from "./pages/PostDetail/PinPoint/PinPoint";
 
 class Routes extends React.Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={PostDetail} />
+          <Route exact path="/" component={PinPoint} />
+          <Route exact path="/posts" component={FeedList} />
+          <Route exact path="/posts/:id" component={post} />
         </Switch>
       </Router>
     );

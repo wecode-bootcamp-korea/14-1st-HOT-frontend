@@ -7,13 +7,14 @@ class Reply extends Component {
     super();
     this.state = {
       showlist: true,
+
       text: "",
       list: [],
     };
   }
 
   reReply = () => {
-    this.setState({ showlist: false });
+    this.setState({ showlist: !this.state.showlist });
   };
 
   handleInput = (e) => {
@@ -62,16 +63,17 @@ class Reply extends Component {
         <div className={this.state.showlist ? "hide" : "show"}>
           <div className="reReplyWrap">
             <ul className="reReplyList">
-              {/* {this.state.list.map((text, idx) => {
+              {this.state.list.map((text, idx) => {
                 return (
-                  <ReReply
+                  <ReplyComments
                     key={idx}
+                    id={id}
                     comment={text}
                     userId={username}
-                    userImage={userimage}
+                    userImage={image}
                   />
                 );
-              })} */}
+              })}
             </ul>
             <form onSubmit={this.addReReply} className="reReplyForm">
               <div className="reReplyUser">

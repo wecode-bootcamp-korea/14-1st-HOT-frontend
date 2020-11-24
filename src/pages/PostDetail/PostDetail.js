@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Reply from "./Reply.js";
 import Furniture from "./Furniture";
+import PinPoint from "./PinPoint/PinPoint";
 import "./PostDetail.scss";
 
-const API = "http://10.58.0.153:8000/post/1";
 
-class PostDetail extends Component {
+class post extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,21 +15,24 @@ class PostDetail extends Component {
         {
           link: "https://www.naver.com",
           image:
-            "https://images.unsplash.com/photo-1583335513577-225dc0dee59e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1583335513577-225dc0dee59e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
         },
       ],
-      data: {},
+      data: [],
+      mouseHover: false,
     };
   }
 
   componentDidMount() {
-    fetch(API, {})
+    fetch(`http://10.58.6.6:8000/posts/${this.props.match.params.id}`)
       .then((response) => response.json())
-      .then((result) => {
-        this.setState({
-          data: result,
-          replyList: result.results.comments,
-        });
+      .then((res) => {
+        this.setState(
+          {
+            data: res.results,
+          },
+          () => console.log("URL", this.state.data)
+        );
       });
   }
 
@@ -44,8 +47,8 @@ class PostDetail extends Component {
       let replyToAdd = {
         id: 0,
         author: {
-          author_id: 0,
-          username: "seung_yun",
+          author_id: this.state.data.author.author_id,
+          username: this.state.data.author.author_username,
           profile_image: null,
         },
         content: reply,
@@ -61,23 +64,38 @@ class PostDetail extends Component {
     }
   };
 
+  handleMouseMove = () => {
+    this.setState({ mouseHover: !this.state.mouseHover });
+  };
+
   render() {
     return (
       <section className="FeedDetail">
         <div className="container">
           <div className="feedLeft">
             <article className="feedLetfArticle">
-              <header className="feedHeader">
-                <div className="headerLeft">20평대</div>
-                <div>어제</div>
-              </header>
-              <div className="feedImageWrap">
-                {this.state.data.length !== 0 && (
-                  <img
-                    className="sofa"
-                    src={this.state.data.results?.post_images[0].image_url}
-                    alt="MainImage"
-                  />
+              <div
+                className="feedImageWrap"
+                onMouseEnter={this.handleMouseMove}
+                onMouseLeave={this.handleMouseMove}
+              >
+                {this.state.data.post_images && (
+                  <div>
+                    <img
+                      className="postMainImage"
+                      src={this.state.data.post_images[0].image_url}
+                      alt="MainImage"
+                    />
+                    <div className="pinPointWrap" style={pinpointPosition}>
+                      {this.state.dat.map((el)=>{
+                      <PinPoint isHovered={this.state.mouseHover} 
+                      productId={el.}
+                      productImage={el.}
+                      productName={el.}
+                      />
+                      })}
+                    </div>
+                  </div>
                 )}
               </div>
 
@@ -99,24 +117,18 @@ class PostDetail extends Component {
                 <ul>
                   {/* map 들어갈 자리  해쉬태그 클릭시 해당 상품 구매 페이지로 넘어가야하기 때문에 링크로 만들었음 */}
                   <li>
-                    <a href="">
+                    <a href="/">
                       <span>{this.props.hashtags}</span>
                       <span># 위코드</span>
                     </a>
                   </li>
                 </ul>
               </div>
-              <div className="views">
-                <span className="countViews">조회수1회</span>
-                <span className="countReply">댓글 1개</span>
-                <span className="countShare">공유 1회</span>
-                <button className="report">신고</button>
-              </div>
             </article>
             {/* 댓글창  */}
             <section className="feedReplyWrap">
               <h1 className="feedReplyHeader">
-                댓글&nbsp;<span className="feedReplyHeaderCount">1</span>
+                댓글&nbsp;<span className="feedReplyHeaderCount"></span>
               </h1>
               <form
                 className="replyTypingForm"
@@ -142,20 +154,19 @@ class PostDetail extends Component {
                 </div>
               </form>
               <ul className="feedReplyList">
-                {this.state.replyList.length !== 0 &&
-                  this.state.replyList.map((reply, idx) => {
+                {this.state.data.comment?.length &&
+                  this.state.data.comment.map((el, idx) => {
                     return (
                       <Reply
-                        // user={}
-                        id={reply.id}
-                        comment={reply.content}
-                        image={reply.author.profile_image}
-                        username={reply.author.username}
+                        key={idx}
+                        id={el.author_id}
+                        comment={el.content}
+                        image={el.author.profile_image}
+                        username={el.author.username}
                       />
                     );
                   })}
               </ul>
-              {/* <ul className="feedReplyPaginator"></ul> */}
             </section>
           </div>
           <div className="feedRight">
@@ -167,11 +178,14 @@ class PostDetail extends Component {
               <div className="feedUserProfile">
                 <div className="UserProfilePic">
                   <a href="/">
-                    <img src="/images/Communityimages/chair.jpg" />
+                    <img
+                      src={this.state.data.author?.profile_image}
+                      alt="proFile"
+                    />
                   </a>
                 </div>
                 <div className="UserProfileWriter">
-                  <span></span>
+                  <span>{this.state.data.author?.username}</span>
                   <button>팔로잉</button>
                 </div>
               </div>
@@ -193,4 +207,4 @@ class PostDetail extends Component {
   }
 }
 
-export default PostDetail;
+export default post;

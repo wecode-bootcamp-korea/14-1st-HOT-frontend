@@ -22,19 +22,17 @@
       margin-right: 35px;
 
       .feedLetfArticle {
-        .feedHeader {
-          display: flex;
-          justify-content: space-between;
-          margin: 40px 0 30px;
-          font-size: 15px;
-          line-height: 21px;
-        }
+        margin-top: 60px;
 
         .feedImageWrap {
           @extend %displayCenter;
           width: 767px;
 
-          img {
+          .pinPointWrap {
+            position: relative;
+          }
+
+          .postMainImage {
             width: 100%;
           }
         }
@@ -75,10 +73,6 @@
 
         .feedPostWrite {
           margin: 35px 0;
-        }
-
-        .feedHashTags {
-          color: blue;
         }
 
         .views {

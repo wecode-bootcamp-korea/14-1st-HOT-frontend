@@ -1,0 +1,57 @@
+.showInfo {
+  position: absolute;
+  .PinPoint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 285px;
+    border: none;
+    border-radius: 5px;
+
+    .circlePlus {
+      width: 25px;
+      height: 25px;
+      margin-bottom: 7px;
+      opacity: 70%;
+    }
+    .productInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 285px;
+      background-color: rgba(128, 128, 128, 0.5);
+      border-radius: 8px;
+
+      .productImage {
+        width: 81px;
+        height: 81px;
+        margin: 10px 12px 10px 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      .infoText {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 184px;
+        font-size: 14px;
+        font-weight: 400;
+        div {
+          margin: 10px 0;
+        }
+
+        .name {
+          opacity: 80%;
+        }
+
+        .price {
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+.hideInfo {
+  display: none;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 import { BsHeart } from "react-icons/bs";
 import { BsBookmark } from "react-icons/bs";
@@ -7,6 +8,7 @@ import { BsHeartFill } from "react-icons/bs";
 import { BsBookmarkFill } from "react-icons/bs";
 import "./FeedList.scss";
 import "./itemWrap.scss";
+import post from "../../PostDetail/PostDetail";
 
 class ItemWrap extends Component {
   constructor() {
@@ -16,12 +18,9 @@ class ItemWrap extends Component {
       bookmark: true,
     };
   }
-  goToWriterProfile = () => {
-    this.props.history();
-  };
 
   goToDetail = () => {
-    this.props.history();
+    this.props.history.push(`/posts/${this.props.id}`);
   };
 
   countLikes = () => {
@@ -40,6 +39,7 @@ class ItemWrap extends Component {
 
   render() {
     const {
+      id,
       userImage,
       userName,
       postImage,
@@ -47,7 +47,6 @@ class ItemWrap extends Component {
       countBookmarks,
       countComments,
       postWrite,
-      postContent,
       comment,
     } = this.props;
     console.log(comment);
@@ -55,7 +54,7 @@ class ItemWrap extends Component {
       <div className="itemWrap">
         <article className="item">
           <div className="itemUser">
-            <div onClick={this.goToWriterProfile} className="itemUserImage">
+            <div className="itemUserImage">
               <img src={userImage} alt="userProfile" />
             </div>
             <div className="itemUserName">
@@ -111,4 +110,4 @@ class ItemWrap extends Component {
   }
 }
 
-export default ItemWrap;
+export default withRouter(ItemWrap);
