@@ -27,9 +27,10 @@
         .feedImageWrap {
           @extend %displayCenter;
           width: 767px;
+          position: relative;
 
           .pinPointWrap {
-            position: relative;
+            position: absolute;
           }
 
           .postMainImage {

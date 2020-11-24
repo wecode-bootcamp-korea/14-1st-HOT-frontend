@@ -1,5 +1,5 @@
 .showInfo {
-  position: absolute;
+  //   position: absolute;
   .PinPoint {
     display: flex;
     flex-direction: column;
@@ -53,5 +53,9 @@
   }
 }
 .hideInfo {
+  display: none;
+}
+
+.hidieInformation {
   display: none;
 }

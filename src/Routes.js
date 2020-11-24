@@ -10,7 +10,7 @@ class Routes extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/" component={PinPoint} />
-          <Route exact path="/posts" component={FeedList} />
+          <Route exact path="/FeedList" component={FeedList} />
           <Route exact path="/posts/:id" component={post} />
         </Switch>
       </Router>
