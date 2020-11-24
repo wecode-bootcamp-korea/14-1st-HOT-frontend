@@ -1,29 +1,54 @@
 .Mypage {
   .bigContainer {
+    position: relative;
     margin: 0 auto 40px;
-    width: 1136px;
+    width: 1156px;
+
+    // .leftContainer {
+    //   border: 1px solid lightslategray;
+    //   padding: 30px 10px 0;
+    //   width: 268px;
+    //   height: 420px;
 
     .userProfileContainer {
-      width: 216px;
-      height: 388px;
+      position: relative;
+      justify-content: center;
+      width: 220px;
+      height: 380px;
       margin-top: 20px;
       padding: 30px 25px 0;
       border-radius: 4px;
       border: 1px solid #dadce0;
       box-shadow: 0 2px 4px 0 rgba(63, 71, 77, 0.06);
 
-      .userProfile {
-        margin: 0 0 20px;
-        align-items: center;
-        border-bottom: 1px solid #dbdbdb;
-        // position: relative;
-
-        .userImg {
-          // position: absolute;
+      .share {
+        img {
+          position: absolute;
+          width: 24px;
+          height: 24px;
           right: 20px;
-          margin: 0 0 24px;
-          width: 120px;
-          height: 120px;
+          top: 15px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .userProfile {
+        justify-content: center;
+        border-bottom: 1px solid #dbdbdb;
+
+        .userimage {
+          display: flex;
+          justify-content: center;
+          img {
+            left: 30px;
+            margin: 0 0 24px;
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+          }
         }
 
         .userInfo {
@@ -39,10 +64,14 @@
           .following {
             font-size: 13px;
             font-weight: 400;
-            // padding: 0 10px;
 
             .follower {
-              margin-right: 10px;
+              margin-right: 5px;
+            }
+
+            .followerNumber {
+              font-weight: 700;
+              margin-right: 2px;
             }
 
             .line {
@@ -50,9 +79,15 @@
             }
 
             .following {
-              margin-left: 10px;
+              margin-left: 5px;
+            }
+
+            .followingNumber {
+              font-weight: 700;
+              margin-left: 2px;
             }
           }
+
           .button {
             width: 62px;
             height: 31px;
@@ -63,7 +98,109 @@
             font-size: 12px;
             font-weight: 400;
             margin-top: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .userLink {
+        display: flex;
+        padding: 18px 0;
+        text-align: center;
+        justify-content: center;
+
+        .box {
+          width: 73px;
+          height: 73px;
+
+          .img {
+            margin: 0 0 4px;
+            width: 25px;
+            height: 25px;
+          }
+
+          .content {
+            font-size: 13px;
+            font-weight: 400;
+            text-align: center;
+            color: #424242;
+          }
+
+          .number {
+            width: 63px;
+            height: 21px;
+            margin: 0 2px;
+            padding-top: 5px;
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .getCoupon {
+      margin-top: 14px;
+      width: 269px;
+      height: 20px;
+      padding: 15px 0;
+      font-size: 14px;
+      line-height: 1.5;
+      letter-spacing: -0.28px;
+      background-color: #effbff;
+      border: 1px solid #effbff;
+      color: #3f474d;
+      border-radius: 4px;
+      font-weight: 400;
+      min-width: 28px;
+      text-align: center;
+      transition: background-color 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #c7f1fa;
+      }
+
+      .point {
+        margin: 0 5px;
+        color: #35c5f0;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: -0.28px;
+        text-align: center;
+      }
+
+      .arrow {
+        margin-left: 12px;
+        margin-top: 1px;
+        width: 9px;
+        height: 11px;
+      }
+    }
+  }
+
+  .rightContainer {
+    order: 2;
+    margin-left: 8.33333333%;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    .rightFeed {
+      padding: 20px 0;
+
+      .Feed {
+        display: flex;
+        flex-wrap: wrap;
+
+        .feedImg {
+          img {
+            display: grid;
+            grid-template-columns: 10px 10px 10px;
+            grid-template-rows: 10px 10px 10px;
+            justify-items: stretch;
           }
         }
       }
