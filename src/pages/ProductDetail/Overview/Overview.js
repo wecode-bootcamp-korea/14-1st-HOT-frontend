@@ -15,6 +15,7 @@ class Summary extends Component {
       coverImageSrc: '',
       productList: [],
       selectedProducts: [],
+      bookMarkInfo: [],
     };
   }
 
@@ -38,9 +39,14 @@ class Summary extends Component {
 
   postProductId = (e) => {
     e.preventDefault();
+    console.log('버튼 작동 정상');
     fetch('/Data/productDetailView.json', {
       method: 'POST',
-      body: JSON.stringify(this.state.productList.product_id),
+      body: JSON.stringify({ productName: this.state.productList.product_id }),
+      header: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU',
+      },
     })
       .then((res) => res.json())
       .then((result) => {
