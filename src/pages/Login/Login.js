@@ -46,19 +46,6 @@ class Login extends React.Component {
     }
   };
 
-  // checkValidation = () => {
-  // const { id, pw } = this.state;
-
-  // if (id && pw) {
-  //   alert("성공적으로 로그인했습니다.");
-  //   this.props.history.push("/main");
-  // }
-
-  // if (!id || !pw) {
-  //   alert("이메일 주소나 비밀번호가 틀립니다.");
-  // }
-  // };
-
   render() {
     return (
       <main className="Login">

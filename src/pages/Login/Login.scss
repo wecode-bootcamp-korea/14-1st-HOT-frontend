@@ -1,14 +1,14 @@
 .Login {
   .loginContainer {
-    margin: 170px auto;
-    max-width: 360px;
-    width: 100%;
-    padding: 40px 30px;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 360px;
+    margin: 170px auto;
+    padding: 40px 30px;
 
     .loginLogo {
       display: flex;
@@ -28,17 +28,17 @@
 
     .id,
     .pw {
+      display: block;
       width: 100%;
       height: 50px;
       padding: 0 15px;
-      display: block;
+      color: #424242;
       background-color: #ffffff;
       border: 1px solid #e6e6e6;
-      font-size: 15px;
-      color: #424242;
       box-sizing: border-box;
-      transition: 0.2s border-color, 0.2s box-shadow, 0.2s background-color;
       box-shadow: 1px 1px rgba(50, 50, 93, 0.5), 0 1px 3px rgba(0, 0, 0, 0.08);
+      font-size: 15px;
+      transition: 0.2s border-color, 0.2s box-shadow, 0.2s background-color;
 
       &:hover {
         cursor: text;
@@ -62,17 +62,17 @@
 
     .loginButton {
       display: block;
+      text-align: center;
       width: 100%;
       height: 50px;
       margin: 20px 0;
       padding: 13px 15px;
-      font-size: 17px;
-      line-height: 1.41;
-      text-align: center;
       background-color: #35c4f0;
       border: 1px solid #35c4f0;
-      color: #ffffff;
       border-radius: 4px;
+      color: #ffffff;
+      font-size: 17px;
+      line-height: 1.41;
       font-weight: bold;
 
       &:hover {
@@ -125,10 +125,10 @@
       }
 
       .iconList {
-        width: 300px;
-        height: 48px;
         display: flex;
         justify-content: space-between;
+        width: 300px;
+        height: 48px;
         padding: 0 60px;
 
         img {
