@@ -14,6 +14,7 @@ class SelectedProduct extends Component {
     const counts = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     const { giveSelectedProducts } = this.props;
     const { getSelectedProduct, handleDeleteButton } = this;
+    console.log(giveSelectedProducts);
     return (
       <>
         {giveSelectedProducts &&
@@ -22,7 +23,7 @@ class SelectedProduct extends Component {
               <div className='selectedProductInnerBox'>
                 <div className='flexSelectedProductBox'>
                   <div className='selectedProductName'>
-                    {targetProductInfo.label}
+                    {targetProductInfo.color + ' ' + targetProductInfo.label}
                   </div>
                   <button
                     className='deleteButton'

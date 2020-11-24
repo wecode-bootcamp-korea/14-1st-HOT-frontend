@@ -15,126 +15,22 @@
       "number_of_reviews": 12,
       "number_of_product_bookmarks": 15,
       "seller": "핑크공주",
+      "color": ["핫핑크", "아이보리", "화이트"],
       "details": [
         {
           "product_detail_id": 1,
-          "color": ["아이보리"],
-          "size": ["싱글"],
+          "size": "싱글",
           "price": "152000.00"
         },
         {
           "product_detail_id": 2,
-          "color": ["아이보리"],
-          "size": ["트윈"],
+          "size": "트윈",
           "price": "239000.00"
         },
         {
           "product_detail_id": 3,
-          "color": ["아이보리"],
-          "size": ["퀸"],
+          "size": "퀸",
           "price": "321000.00"
-        },
-        {
-          "product_detail_id": 4,
-          "color": ["아이보리"],
-          "size": ["킹"],
-          "price": "489000.00"
-        },
-        {
-          "product_detail_id": 5,
-          "color": ["블랙"],
-          "size": ["싱글"],
-          "price": "152000.00"
-        },
-        {
-          "product_detail_id": 6,
-          "color": ["블랙"],
-          "size": ["트윈"],
-          "price": "239000.00"
-        },
-        {
-          "product_detail_id": 7,
-          "color": ["블랙"],
-          "size": ["퀸"],
-          "price": "321000.00"
-        },
-        {
-          "product_detail_id": 8,
-          "color": ["블랙"],
-          "size": ["킹"],
-          "price": "489000.00"
-        },
-        {
-          "product_detail_id": 9,
-          "color": ["화이트"],
-          "size": ["싱글"],
-          "price": "152000.00"
-        },
-        {
-          "product_detail_id": 10,
-          "color": ["화이트"],
-          "size": ["트윈"],
-          "price": "239000.00"
-        },
-        {
-          "product_detail_id": 11,
-          "color": ["화이트"],
-          "size": ["퀸"],
-          "price": "321000.00"
-        },
-        {
-          "product_detail_id": 12,
-          "color": ["화이트"],
-          "size": ["킹"],
-          "price": "489000.00"
-        },
-        {
-          "product_detail_id": 13,
-          "color": ["파스텔블루"],
-          "size": ["싱글"],
-          "price": "152000.00"
-        },
-        {
-          "product_detail_id": 14,
-          "color": ["파스텔블루"],
-          "size": ["트윈"],
-          "price": "239000.00"
-        },
-        {
-          "product_detail_id": 15,
-          "color": ["파스텔블루"],
-          "size": ["퀸"],
-          "price": "321000.00"
-        },
-        {
-          "product_detail_id": 16,
-          "color": ["파스텔블루"],
-          "size": ["킹"],
-          "price": "489000.00"
-        },
-        {
-          "product_detail_id": 17,
-          "color": ["베이비핑크"],
-          "size": ["싱글"],
-          "price": "152000.00"
-        },
-        {
-          "product_detail_id": 18,
-          "color": ["베이비핑크"],
-          "size": ["트윈"],
-          "price": "239000.00"
-        },
-        {
-          "product_detail_id": 19,
-          "color": ["베이비핑크"],
-          "size": ["퀸"],
-          "price": "321000.00"
-        },
-        {
-          "product_detail_id": 20,
-          "color": ["베이비핑크"],
-          "size": ["킹"],
-          "price": "489000.00"
         }
       ]
     }

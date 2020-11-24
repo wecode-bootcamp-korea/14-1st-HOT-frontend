@@ -10,12 +10,13 @@ class Summary extends Component {
   constructor() {
     super();
     this.state = {
+      productList: [],
       sale: 10,
       lowestPrice: 0,
-      coverImageSrc: '',
-      productList: [],
+      selectedColor: '',
       selectedProducts: [],
-      bookMarkInfo: [],
+      bookMarkSwitch: false,
+      product_image_url: '',
     };
   }
 
@@ -31,21 +32,21 @@ class Summary extends Component {
       .then((result) => {
         this.setState({
           productList: result.result[0],
-          coverImageSrc: result.result[0].product_images[0],
           lowestPrice: result.result[0].details[0].price,
+          product_image_url: result.result[0].product_images[0],
         });
       });
   };
 
-  postProductId = (e) => {
-    e.preventDefault();
-    console.log('버튼 작동 정상');
-    fetch('/Data/productDetailView.json', {
+  postProductId = () => {
+    fetch(this.state.bookMarkSwitch ? '/user/bookmark' : '/user/unbookmark', {
       method: 'POST',
-      body: JSON.stringify({ productName: this.state.productList.product_id }),
-      header: {
+      body: JSON.stringify({
+        product_id: this.state.productList.product_id,
+      }),
+      headers: {
         Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU',
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
       },
     })
       .then((res) => res.json())
@@ -54,7 +55,13 @@ class Summary extends Component {
       });
   };
 
-  getSelectedProduct = (e) => {
+  getSelectedProductColor = (e) => {
+    const { options, selectedIndex } = e.target;
+    const selectedColor = options[selectedIndex].innerHTML;
+    this.setState({ selectedColor });
+  };
+
+  getSelectedProductOption = (e) => {
     const { options, selectedIndex, value } = e.target;
     const selectedProducts = [...this.state.selectedProducts];
     if (
@@ -65,6 +72,7 @@ class Summary extends Component {
       alert('이미 선택한 옵션입니다.');
     } else {
       selectedProducts.push({
+        color: this.state.selectedColor,
         label: options[selectedIndex].innerHTML,
         value: value,
         count: 1,
@@ -86,11 +94,18 @@ class Summary extends Component {
   changeCoverImage = (e) => {
     this.setState({ coverImageSrc: e.target.src });
   };
+
   handleDeleteProduct = (targetIndex) => {
     const selectedProductsIndex = this.state.selectedProducts.filter(
       (_, index) => index !== targetIndex
     );
     this.setState({ selectedProducts: selectedProductsIndex });
+  };
+
+  handleBookmarkEvent = (e) => {
+    e.preventDefault();
+    this.setState({ bookMarkSwitch: !this.state.bookMarkSwitch });
+    this.postProductId();
   };
 
   render() {
@@ -107,42 +122,47 @@ class Summary extends Component {
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
     };
-
     const {
       seller,
       product_name,
-      product_images,
       number_of_reviews,
-      number_of_product_bookmarks,
+      number_of_post_bookmarks,
       number_of_shares,
+      menu,
+      category,
+      subcategory,
     } = this.state.productList;
     const {
       sale,
-      lowestPrice,
       productList,
-      coverImageSrc,
       selectedProducts,
+      lowestPrice,
+      product_image_url,
+      bookMarkSwitch,
     } = this.state;
     const {
       changeCoverImage,
-      getSelectedProduct,
       getProductCount,
+      getSelectedProductColor,
+      getSelectedProductOption,
       handleDeleteProduct,
-      postProductId,
+      handleBookmarkEvent,
     } = this;
+    const { takeModalEvent } = this.props;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
+    console.log(selectedProducts);
     return (
       <>
         <div className='overview'>
           <div className='overviewBox'>
             <div className='category'>
-              {'가구'} {'>'} {'소파/거실가구'} {'>'} {'소파'} {'>'} {'일반소파'}
+              {menu} {'>'} {category} {'>'} {subcategory}
             </div>
             <div className='overviewCover'>
               <div className='coverImagesBox'>
                 <div className='coverImageListBox'>
-                  {product_images &&
-                    product_images.map((coverImageList, coverImageIndex) => (
+                  {[] &&
+                    [].map((coverImageList, coverImageIndex) => (
                       <button key={coverImageIndex} className='coverImageBox'>
                         <img
                           src={coverImageList}
@@ -155,7 +175,7 @@ class Summary extends Component {
                 </div>
                 <div className='coverImageWrap'>
                   <img
-                    src={coverImageSrc}
+                    src={product_image_url}
                     alt='coverImage'
                     className='coverImage'
                   />
@@ -175,22 +195,19 @@ class Summary extends Component {
                         />
                       </div>
                       <div className='reviewCount'>
-                        {number_of_reviews && number_of_reviews}
+                        {number_of_reviews}
                         {'개 리뷰'}
                       </div>
                     </div>
                     <div className='scrapBox'>
                       <div className='bookMarkBox'>
                         <img
-                          src='/images/bookmark.png'
+                          src='/images/unBookmark.png'
                           className='bookmarkImage'
                           alt='bookmarkImage'
                         />
                         <div className='bookmarkCount'>
-                          {number_of_product_bookmarks &&
-                            number_of_product_bookmarks
-                              .toString()
-                              .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                          {number_of_post_bookmarks}
                         </div>
                       </div>
                       <div className='shareBox'>
@@ -199,12 +216,7 @@ class Summary extends Component {
                           className='shareImage'
                           alt='shareImage'
                         />
-                        <div className='shareCount'>
-                          {number_of_shares &&
-                            number_of_shares
-                              .toString()
-                              .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                        </div>
+                        <div className='shareCount'>{number_of_shares}</div>
                       </div>
                     </div>
                   </div>
@@ -312,7 +324,10 @@ class Summary extends Component {
                     <SelectOption
                       giveProductInfo={productList}
                       giveSelectedProducts={selectedProducts}
-                      takeSelectedProducts={getSelectedProduct}
+                      giveBookmarkColor={bookMarkSwitch}
+                      takeModalEvent={takeModalEvent}
+                      takeSelectedColor={getSelectedProductColor}
+                      takeSelectedOption={getSelectedProductOption}
                       takeSelectedProductsValue={getProductCount}
                       takeSelectedProductsDelIndex={handleDeleteProduct}
                     />
@@ -389,10 +404,13 @@ class Summary extends Component {
                 <SelectOption
                   giveProductInfo={productList}
                   giveSelectedProducts={selectedProducts}
-                  takeSelectedProducts={getSelectedProduct}
+                  giveBookmarkColor={bookMarkSwitch}
+                  takeModalEvent={takeModalEvent}
+                  takeSelectedColor={getSelectedProductColor}
+                  takeSelectedOption={getSelectedProductOption}
                   takeSelectedProductsValue={getProductCount}
                   takeSelectedProductsDelIndex={handleDeleteProduct}
-                  takeBookmarkEvent={postProductId}
+                  takeBookmarkEvent={handleBookmarkEvent}
                 />
               </div>
             </div>

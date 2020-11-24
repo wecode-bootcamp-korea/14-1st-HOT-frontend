@@ -10,15 +10,11 @@ class SelectOption extends Component {
     this.props.takeSelectedProductsDelIndex(productIndex);
   };
 
-  aaa = () => {};
-
   render() {
     const {
       giveSelectedProducts,
       giveProductInfo,
-      giveBookmarkColor,
-      takeSelectedColor,
-      takeSelectedOption,
+      takeSelectedProducts,
       takeBookmarkEvent,
       takeModalEvent,
     } = this.props;
@@ -27,7 +23,7 @@ class SelectOption extends Component {
       <>
         <div className='flexSelectBox'>
           <div className='selectBox'>
-            <select className='selectColorBox' onChange={takeSelectedColor}>
+            <select className='selectColorBox' onChange={takeSelectedProducts}>
               <option
                 value='disabled'
                 defaultSelected='true'
@@ -35,31 +31,17 @@ class SelectOption extends Component {
                 selected='true'>
                 옵션: 색상
               </option>
-              {giveProductInfo.color &&
-                giveProductInfo.color.map(
-                  (firstColorElement, firstOptionindex) => (
-                    <option key={firstOptionindex} label={firstColorElement}>
-                      {firstColorElement}
-                    </option>
-                  )
-                )}
-            </select>
-            <select className='selectOptionBox' onChange={takeSelectedOption}>
-              <option
-                value='disabled'
-                defaultSelected='true'
-                hidden='true'
-                selected='true'>
-                옵션: 종류
-              </option>
               {giveProductInfo.details &&
                 giveProductInfo.details.map(
                   (firstOptionElement, firstOptionindex) => (
                     <option
                       key={firstOptionindex}
-                      label={firstOptionElement.size}
+                      label={
+                        firstOptionElement.color + ' ' + firstOptionElement.size
+                      }
                       value={firstOptionElement.price}>
-                      {firstOptionElement.size}
+                      {'선택: '}
+                      {firstOptionElement.color + ' ' + firstOptionElement.size}
                     </option>
                   )
                 )}
@@ -68,13 +50,6 @@ class SelectOption extends Component {
               <img
                 src='/images/option.png'
                 className='optionIcon'
-                alt='option'
-              />
-            </span>
-            <span class='optionIconBox2'>
-              <img
-                src='/images/option.png'
-                className='optionIcon2'
                 alt='option'
               />
             </span>
@@ -106,11 +81,7 @@ class SelectOption extends Component {
             <div className='purchaseButtonBox'>
               <button className='bookmarkBox' onClick={takeBookmarkEvent}>
                 <img
-                  src={
-                    giveBookmarkColor
-                      ? '/images/bookmark.png'
-                      : '/images/unBookmark.png'
-                  }
+                  src='/images/bookmark.png'
                   className='bookmark'
                   alt='bookMarkIcon'
                 />

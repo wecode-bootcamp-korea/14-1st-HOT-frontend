@@ -320,6 +320,27 @@
               }
             }
 
+            .selectOptionBox {
+              width: 100%;
+              height: 40px;
+              padding: 0 15px;
+              margin-bottom: 17px;
+              border-color: RGB(55, 197, 239);
+              border-radius: 4px;
+              font-size: 15px;
+              color: rgb(66, 66, 66);
+              -webkit-appearance: none;
+
+              &:focus {
+                outline: none;
+                border-color: RGB(55, 197, 239);
+              }
+
+              &:hover {
+                background-color: rgb(247, 247, 247);
+              }
+            }
+
             .optionIconBox {
               position: absolute;
               top: 11px;
@@ -327,6 +348,17 @@
               width: 15px;
 
               .optionIcon {
+                width: 100%;
+              }
+            }
+
+            .optionIconBox2 {
+              position: absolute;
+              top: 69px;
+              right: 11px;
+              width: 15px;
+
+              .optionIcon2 {
                 width: 100%;
               }
             }
@@ -363,6 +395,10 @@
                   display: none;
                 }
 
+                .unBookmarkBox {
+                  display: none;
+                }
+
                 .cart {
                   width: 225px;
                   height: 50px;
@@ -396,6 +432,7 @@
 .menuTab {
   width: 100%;
   height: 100%;
+
   .menuTabContainer {
     position: sticky;
     top: 129px;
@@ -407,6 +444,7 @@
     background-color: rgb(247, 247, 247);
     border: 1px solid rgb(228, 228, 228);
     z-index: 9;
+
     .flexmenuTabContainer {
       display: flex;
       justify-content: flex-start;
@@ -510,11 +548,34 @@
         justify-content: space-between;
         top: 183px;
         width: 375px;
-        height: 730px;
-        padding: 30px 40px 20px 40px;
+        height: 710px;
+        padding: 30px 40px 0 40px;
+
         .flexSelectBox {
           .selectBox {
             position: relative;
+
+            .selectColorBox {
+              width: 100%;
+              height: 40px;
+              padding: 0 15px;
+              margin-bottom: 17px;
+              border-color: RGB(55, 197, 239);
+              border-radius: 4px;
+              font-size: 15px;
+              color: rgb(66, 66, 66);
+              -webkit-appearance: none;
+
+              &:focus {
+                outline: none;
+                border-color: RGB(55, 197, 239);
+              }
+
+              &:hover {
+                background-color: rgb(247, 247, 247);
+              }
+            }
+
             .selectColorBox {
               width: 100%;
               height: 40px;
@@ -539,6 +600,16 @@
             .optionIconBox {
               position: absolute;
               top: 11px;
+              right: 11px;
+              width: 15px;
+
+              .optionIcon {
+                width: 100%;
+              }
+            }
+            .optionIconBox2 {
+              position: absolute;
+              top: 60px;
               right: 11px;
               width: 15px;
 
@@ -577,6 +648,7 @@
               .bookmarkBox {
                 width: 80px;
                 border: 1px solid rgb(224, 224, 224);
+                border-radius: 4px;
                 margin-right: 5px;
 
                 .bookmark {
