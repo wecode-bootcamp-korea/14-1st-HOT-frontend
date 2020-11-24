@@ -5,8 +5,13 @@ class SelectOption extends Component {
   getProductCount = (targetProduct, countString) => {
     this.props.takeSelectedProductsValue(targetProduct, countString);
   };
+
   handleDelete = (productIndex) => {
     this.props.takeSelectedProductsDelIndex(productIndex);
+  };
+
+  handleBookmark = (e) => {
+    this.props.takeBookmarkEvent(e);
   };
   render() {
     const {
@@ -14,7 +19,7 @@ class SelectOption extends Component {
       giveProductInfo,
       takeSelectedProducts,
     } = this.props;
-    const { getProductCount, handleDelete } = this;
+    const { getProductCount, handleDelete, handleBookmark } = this;
     return (
       <>
         <div>
@@ -83,7 +88,7 @@ class SelectOption extends Component {
               </div>
             </div>
             <div className='purchaseButtonBox'>
-              <button className='bookmarkBox'>
+              <button className='bookmarkBox' onClick={handleBookmark}>
                 <img
                   src='/images/bookmark.png'
                   className='bookmark'

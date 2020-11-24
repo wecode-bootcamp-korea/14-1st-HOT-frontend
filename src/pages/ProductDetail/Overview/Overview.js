@@ -36,6 +36,19 @@ class Summary extends Component {
       });
   };
 
+  postProductId = (e) => {
+    e.preventdefault();
+    fetch('/Data/productDetailView.json', {
+      method: 'POST',
+      body: JSON.stringify(e),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        result = this.state.productList;
+      });
+    console.log('aaa');
+  };
+
   getSelectedProduct = (e) => {
     const { options, selectedIndex, value } = e.target;
     const selectedProducts = [...this.state.selectedProducts];
@@ -110,6 +123,7 @@ class Summary extends Component {
       getSelectedProduct,
       getProductCount,
       handleDeleteProduct,
+      postProductId,
     } = this;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
     return (
@@ -373,6 +387,7 @@ class Summary extends Component {
                   takeSelectedProducts={getSelectedProduct}
                   takeSelectedProductsValue={getProductCount}
                   takeSelectedProductsDelIndex={handleDeleteProduct}
+                  takeBookmarkEvent={postProductId}
                 />
               </div>
             </div>
