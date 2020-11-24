@@ -4,7 +4,6 @@ import Furniture from "./Furniture";
 import PinPoint from "./PinPoint/PinPoint";
 import "./PostDetail.scss";
 
-
 class post extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +14,7 @@ class post extends Component {
         {
           link: "https://www.naver.com",
           image:
-          "https://images.unsplash.com/photo-1583335513577-225dc0dee59e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+            "https://images.unsplash.com/photo-1583335513577-225dc0dee59e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
         },
       ],
       data: [],
@@ -87,13 +86,14 @@ class post extends Component {
                       alt="MainImage"
                     />
                     <div className="pinPointWrap" style={pinpointPosition}>
-                      {this.state.dat.map((el)=>{
-                      <PinPoint isHovered={this.state.mouseHover} 
-                      productId={el.}
-                      productImage={el.}
-                      productName={el.}
+                      {/* {this.state.dat.map((el)=>{ */}
+                      <PinPoint
+                        isHovered={this.state.mouseHover}
+                        // productId={el.}
+                        // productImage={el.}
+                        // productName={el.}
                       />
-                      })}
+                      {/* })} */}
                     </div>
                   </div>
                 )}

@@ -33,7 +33,7 @@ class PinPoint extends Component {
               className="productImage"
             />
             <div className={this.state.isHide ? "hideInformation" : "infoText"}>
-              <div className="name">{}우리집 안방 쇼파</div>
+              <div className="name">{/*{}*/}우리집 안방 쇼파</div>
             </div>
           </div>
         </div>
