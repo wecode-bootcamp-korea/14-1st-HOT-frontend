@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Signup.scss";
 import Simplesignup from "./Simplesignup.js";
 
-// const API = "http://10.58.0.125:8000/user/register";
+const API = "http://10.58.3.106:8000/user/register";
 
 class Signup extends Component {
   state = {
@@ -19,14 +19,10 @@ class Signup extends Component {
     };
   }
 
-  componentDidMount() {
-    this.handleClick();
-  }
-
   handleClick = (e) => {
     const { id, pw, name } = this.state;
 
-    fetch("http://10.58.3.106/user/register", {
+    fetch("http://10.58.3.106:8000/user/register", {
       method: "POST",
       body: JSON.stringify({
         email: id,
