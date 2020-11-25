@@ -64,7 +64,7 @@ class Summary extends Component {
         body: JSON.stringify(this.state.selectedProducts),
         headers: {
           Authorization:
-            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU',
         },
       })
         .then((res) => res.json())
@@ -175,7 +175,6 @@ class Summary extends Component {
       postCartInfo,
     } = this;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
-    console.log(selectedProducts);
     return (
       <>
         <div className='overview'>

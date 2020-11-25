@@ -17,7 +17,7 @@ class ProductDetail extends Component {
   };
 
   render() {
-    const { handleModalSwitch, postCartInfo } = this;
+    const { handleModalSwitch } = this;
     console.log(this.state.SelectedProducts);
     return (
       <div>
