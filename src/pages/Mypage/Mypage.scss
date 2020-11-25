@@ -1,205 +1,221 @@
 .Mypage {
+  display: flex;
+  justify-content: center;
+
   .bigContainer {
+    display: flex;
+    flex-direction: row;
     position: relative;
-    margin: 0 auto 40px;
     width: 1156px;
+    margin-top: 40px;
 
-    // .leftContainer {
-    //   border: 1px solid lightslategray;
-    //   padding: 30px 10px 0;
-    //   width: 268px;
-    //   height: 420px;
+    .profileContainer {
+      display: flex;
+      flex-direction: column;
 
-    .userProfileContainer {
-      position: relative;
-      justify-content: center;
-      width: 220px;
-      height: 380px;
-      margin-top: 20px;
-      padding: 30px 25px 0;
-      border-radius: 4px;
-      border: 1px solid #dadce0;
-      box-shadow: 0 2px 4px 0 rgba(63, 71, 77, 0.06);
-
-      .share {
-        img {
-          position: absolute;
-          width: 24px;
-          height: 24px;
-          right: 20px;
-          top: 15px;
-
-          &:hover {
-            cursor: pointer;
-          }
-        }
-      }
-
-      .userProfile {
+      .userProfileContainer {
+        position: relative;
         justify-content: center;
-        border-bottom: 1px solid #dbdbdb;
+        width: 270px;
+        height: 420px;
+        padding: 30px 25px 0;
+        border-radius: 4px;
+        border: 1px solid #dadce0;
+        box-shadow: 0 2px 4px 0 rgba(63, 71, 77, 0.06);
 
-        .userimage {
-          display: flex;
-          justify-content: center;
+        .share {
           img {
-            left: 30px;
-            margin: 0 0 24px;
-            width: 120px;
-            height: 120px;
-            border-radius: 100%;
-          }
-        }
-
-        .userInfo {
-          text-align: center;
-
-          .username {
-            font-size: 26px;
-            margin-bottom: 10px;
-            color: #292929;
-            font-weight: 700;
-          }
-
-          .following {
-            font-size: 13px;
-            font-weight: 400;
-
-            .follower {
-              margin-right: 5px;
-            }
-
-            .followerNumber {
-              font-weight: 700;
-              margin-right: 2px;
-            }
-
-            .line {
-              margin: 0 3px;
-            }
-
-            .following {
-              margin-left: 5px;
-            }
-
-            .followingNumber {
-              font-weight: 700;
-              margin-left: 2px;
-            }
-          }
-
-          .button {
-            width: 62px;
-            height: 31px;
-            background-color: #fff;
-            border-radius: 4px;
-            border: 1px solid #eaebef;
-            color: #292929;
-            font-size: 12px;
-            font-weight: 400;
-            margin-top: 15px;
-            margin-bottom: 20px;
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: 20px;
+            top: 15px;
 
             &:hover {
               cursor: pointer;
             }
           }
         }
-      }
 
-      .userLink {
-        display: flex;
-        padding: 18px 0;
-        text-align: center;
-        justify-content: center;
+        .userProfile {
+          justify-content: center;
+          border-bottom: 1px solid #dbdbdb;
 
-        .box {
-          width: 73px;
-          height: 73px;
-
-          .img {
-            margin: 0 0 4px;
-            width: 25px;
-            height: 25px;
+          .userimage {
+            display: flex;
+            justify-content: center;
+            img {
+              left: 30px;
+              margin: 0 0 24px;
+              width: 120px;
+              height: 120px;
+              border-radius: 100%;
+            }
           }
 
-          .content {
-            font-size: 13px;
-            font-weight: 400;
+          .userInfo {
             text-align: center;
-            color: #424242;
-          }
 
-          .number {
-            width: 63px;
-            height: 21px;
-            margin: 0 2px;
-            padding-top: 5px;
-            font-size: 15px;
-            font-weight: 600;
+            .username {
+              font-size: 26px;
+              margin-bottom: 10px;
+              color: #292929;
+              font-weight: 700;
+            }
+
+            .following {
+              font-size: 13px;
+              font-weight: 400;
+
+              .follower {
+                margin-right: 5px;
+              }
+
+              .followerNumber {
+                font-weight: 700;
+                margin-right: 2px;
+              }
+
+              .line {
+                margin: 0 3px;
+              }
+
+              .following {
+                margin-left: 5px;
+              }
+
+              .followingNumber {
+                font-weight: 700;
+                margin-left: 2px;
+              }
+            }
+
+            .button {
+              width: 62px;
+              height: 31px;
+              background-color: #fff;
+              border-radius: 4px;
+              border: 1px solid #eaebef;
+              color: #292929;
+              font-size: 12px;
+              padding: 6px 16px;
+              font-weight: 400;
+              margin-top: 15px;
+              margin-bottom: 20px;
+
+              &:hover {
+                cursor: pointer;
+                background-color: #fafafa;
+              }
+            }
+          }
+        }
+
+        .userLink {
+          display: flex;
+          padding-top: 25px;
+          text-align: center;
+          justify-content: center;
+
+          .box {
+            width: 73px;
+            height: 73px;
+
+            .img {
+              margin: 0 0 4px;
+              width: 25px;
+              height: 25px;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+
+            .content {
+              font-size: 13px;
+              font-weight: 400;
+              text-align: center;
+              color: #424242;
+              line-height: 2;
+            }
+
+            .number {
+              width: 63px;
+              height: 21px;
+              margin: 0 2px;
+              padding-top: 5px;
+              font-size: 15px;
+              font-weight: 600;
+            }
           }
         }
       }
-    }
 
-    .getCoupon {
-      margin-top: 14px;
-      width: 269px;
-      height: 20px;
-      padding: 15px 0;
-      font-size: 14px;
-      line-height: 1.5;
-      letter-spacing: -0.28px;
-      background-color: #effbff;
-      border: 1px solid #effbff;
-      color: #3f474d;
-      border-radius: 4px;
-      font-weight: 400;
-      min-width: 28px;
-      text-align: center;
-      transition: background-color 0.3s;
-
-      &:hover {
-        cursor: pointer;
-        background-color: #c7f1fa;
-      }
-
-      .point {
-        margin: 0 5px;
-        color: #35c5f0;
-        font-weight: 700;
+      .getCoupon {
+        margin-top: 14px;
+        width: 270px;
+        height: 50px;
+        padding: 15px 0;
         font-size: 14px;
+        line-height: 1.5;
         letter-spacing: -0.28px;
+        background-color: #effbff;
+        border: 1px solid #effbff;
+        color: #3f474d;
+        border-radius: 4px;
+        font-weight: 400;
+        min-width: 28px;
         text-align: center;
-      }
+        transition: background-color 0.3s;
 
-      .arrow {
-        margin-left: 12px;
-        margin-top: 1px;
-        width: 9px;
-        height: 11px;
+        &:hover {
+          cursor: pointer;
+          background-color: #c7f1fa;
+        }
+
+        .point {
+          margin: 0 5px;
+          color: #35c5f0;
+          font-weight: 700;
+          font-size: 14px;
+          letter-spacing: -0.28px;
+          text-align: center;
+        }
+
+        .arrow {
+          margin-left: 12px;
+          margin-top: 1px;
+          width: 9px;
+          height: 11px;
+        }
       }
     }
-  }
+    .MypageFeed {
+      width: 886px;
+      height: auto;
+      .rightContaienr {
+        height: 200px;
+        margin-left: 8.33333333%;
+        padding-right: 10px;
+        padding-left: 10px;
 
-  .rightContainer {
-    order: 2;
-    margin-left: 8.33333333%;
-    padding-right: 10px;
-    padding-left: 10px;
+        .Feed {
+          display: flex;
+          flex-wrap: wrap;
 
-    .rightFeed {
-      padding: 20px 0;
-      display: flex;
-      flex-wrap: wrap;
+          .feedImgBox {
+            width: 264px;
+            height: 264px;
+            padding: 5px;
+            .feedImg {
+              width: 100%;
+              overflow: hidden;
 
-      .Feed {
-        .feedImg {
-          // img {
-          width: 260px;
-          height: 260px;
-          padding: 10px;
-          // }
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
         }
       }
     }

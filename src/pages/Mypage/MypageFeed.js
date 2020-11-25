@@ -1,59 +1,21 @@
 import "./Mypage.scss";
 import React, { Component } from "react";
 
-const Mypage = [
-  {
-    id: 0,
-    src: "./images/1.webp",
-    alt: "img",
-  },
-  {
-    id: 1,
-    src: "./images/1.webp",
-    alt: "img",
-  },
-  {
-    id: 2,
-    src: "./images/1.webp",
-    alt: "img",
-  },
-  {
-    id: 3,
-    src: "./images/1.webp",
-    alt: "img",
-  },
-  {
-    id: 4,
-    src: "./images/1.webp",
-    alt: "img",
-  },
-  {
-    id: 5,
-    src: "./images/1.webp",
-    alt: "img",
-  },
-  {
-    id: 6,
-    src: "./images/1.webp",
-    alt: "img",
-  },
-];
-
 class MypageFeed extends Component {
   render() {
+    const { myPageImage } = this.props;
+    console.log(myPageImage);
     return (
       <div className="MypageFeed">
         <div className="rightContaienr">
-          <div className="rightFeed">
-            <div className="Feed">
-              {Mypage.map((el) => {
-                return (
-                  <div>
-                    <img className="feedImg" src={el.src} alt={el.alt} />
-                  </div>
-                );
-              })}
-            </div>
+          <div className="Feed">
+            {myPageImage.map((el) => {
+              return (
+                <div className="feedImgBox">
+                  <img className="feedImg" src={el.image_url} alt={el.id} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

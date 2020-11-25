@@ -1,0 +1,90 @@
+{
+  "context": {
+    "username": "프린스 용",
+    "user_image": "https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_960_720.png",
+    "follower": 0,
+    "following": 0,
+    "bookmark_count": 15,
+    "like_count": 2,
+    "bookmark_posts": [
+      {
+        "post_id": 1,
+        "image_url": "1.jpg"
+      },
+      {
+        "post_id": 3,
+        "image_url": "4.jpg"
+      },
+      {
+        "post_id": 2,
+        "image_url": "3.jpg"
+      }
+    ],
+    "bookmark_products": [
+      {
+        "product_id": 3,
+        "image_url": "https://ak1.ostkcdn.com/images/products/is/images/direct/10cd4a8f18152bf66fc4d917d22f7bbeb1b9dfec/Carson-Carrington-Blaney-Queen-Solid-Pine-Wooden-Spindle-Bed.jpg"
+      },
+      {
+        "product_id": 4,
+        "image_url": "https://cdn.shopify.com/s/files/1/0396/8269/products/linen-venice-set-white-000.JPG?v=1591917282_1440x.jpg"
+      },
+      {
+        "product_id": 2,
+        "image_url": "https://cdn.remodelista.com/wp-content/uploads/2019/11/shou-sugi-ban-house-debbie-kropf-architecture-hotel-hamptons-long-island-new-york-3jpg-1466x1955.jpg"
+      },
+      {
+        "product_id": 1,
+        "image_url": "https://i1.wp.com/poshpennies.com/wp-content/uploads/2020/08/retro-hannah-bed-.jpg"
+      },
+      {
+        "product_id": 3,
+        "image_url": "https://ak1.ostkcdn.com/images/products/is/images/direct/10cd4a8f18152bf66fc4d917d22f7bbeb1b9dfec/Carson-Carrington-Blaney-Queen-Solid-Pine-Wooden-Spindle-Bed.jpg"
+      },
+      {
+        "product_id": 4,
+        "image_url": "https://cdn.shopify.com/s/files/1/0396/8269/products/linen-venice-set-white-000.JPG?v=1591917282_1440x.jpg"
+      },
+      {
+        "product_id": 2,
+        "image_url": "https://cdn.remodelista.com/wp-content/uploads/2019/11/shou-sugi-ban-house-debbie-kropf-architecture-hotel-hamptons-long-island-new-york-3jpg-1466x1955.jpg"
+      },
+      {
+        "product_id": 1,
+        "image_url": "https://i1.wp.com/poshpennies.com/wp-content/uploads/2020/08/retro-hannah-bed-.jpg"
+      },
+      {
+        "product_id": 2,
+        "image_url": "https://cdn.remodelista.com/wp-content/uploads/2019/11/shou-sugi-ban-house-debbie-kropf-architecture-hotel-hamptons-long-island-new-york-3jpg-1466x1955.jpg"
+      }
+    ],
+    "bookmark_collections": [
+      {
+        "collection_id": 3,
+        "image_url": "https://images.unsplash.com/photo-1589884629038-b631346a23c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80"
+      },
+      {
+        "collection_id": 4,
+        "image_url": "https://images.unsplash.com/photo-1577509690643-15691207e526?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+      },
+      {
+        "collection_id": 2,
+        "image_url": "https://i1.wp.com/poshpennies.com/wp-content/uploads/2020/08/retro-hannah-bed-.jpg"
+      },
+      {
+        "collection_id": 1,
+        "image_url": "https://dnwdt2n2p011ycoep3azqyo4-wpengine.netdna-ssl.com/wp-content/uploads/2019/01/1792DAC5-465E-4DB1-9716-0A2769BFE4E8.jpeg"
+      }
+    ],
+    "like": [
+      {
+        "post_id": 1,
+        "image_url": "1.jpg"
+      },
+      {
+        "post_id": 2,
+        "image_url": "3.jpg"
+      }
+    ]
+  }
+}
