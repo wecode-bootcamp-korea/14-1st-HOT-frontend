@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import './Product.scss';
 
 class Product extends Component {
+  goProductDetail = () => {
+    this.props.history.push(
+      `http://10.58.1.135:8000/store/categories?menu=1/${this.props.product_id}`
+    );
+  };
   render() {
+    console.log(this.props.product);
     return (
-      <div className='productContainer' type='button'>
+      <button className='productContainer' onClick={this.goProductDetail}>
         <div className='productImageBox'>
           <img
             src={this.props.product.image}
@@ -43,7 +49,7 @@ class Product extends Component {
             />
           </div>
         </div>
-      </div>
+      </button>
     );
   }
 }
