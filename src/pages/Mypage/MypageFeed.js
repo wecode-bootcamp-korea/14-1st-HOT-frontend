@@ -48,8 +48,8 @@ class MypageFeed extends Component {
             <div className="Feed">
               {Mypage.map((el) => {
                 return (
-                  <div className="feedImg">
-                    <img src={el.src} alt={el.alt} />
+                  <div>
+                    <img className="feedImg" src={el.src} alt={el.alt} />
                   </div>
                 );
               })}

@@ -190,18 +190,16 @@
 
     .rightFeed {
       padding: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
 
       .Feed {
-        display: flex;
-        flex-wrap: wrap;
-
         .feedImg {
-          img {
-            display: grid;
-            grid-template-columns: 10px 10px 10px;
-            grid-template-rows: 10px 10px 10px;
-            justify-items: stretch;
-          }
+          // img {
+          width: 260px;
+          height: 260px;
+          padding: 10px;
+          // }
         }
       }
     }
