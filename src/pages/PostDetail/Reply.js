@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { BsHeart } from "react-icons/bs";
-import ReplyComments from "./ReplyComments";
+// import { BsHeart } from "react-icons/bs";
+// import ReplyComments from "./ReplyComments";
 
 class Reply extends Component {
   constructor() {
@@ -47,7 +47,7 @@ class Reply extends Component {
             <footer className="ReplyFooter">
               <time className="ReplyFooterTime">몇분전</time>
               <button className="ReplyLike">
-                <BsHeart />
+                {/* <BsHeart /> */}
                 좋아요
               </button>
               <button className="AddReReply" onClick={this.reReply}>
