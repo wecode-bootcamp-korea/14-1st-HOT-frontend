@@ -59,12 +59,12 @@ class Category extends Component {
         <section className='container'>
           <aside className='asidContainer'>
             <div className='listBox'>
-              {/* <ListTitle title={categoryTitle} />
+              <ListTitle title={categoryTitle} />
               <ListOther
                 other={categoryOther.filter(
                   (ele) => ele.menu_name !== categoryTitle[0].menu_name
                 )}
-              /> */}
+              />
             </div>
           </aside>
           <article className='feedContainer'>
