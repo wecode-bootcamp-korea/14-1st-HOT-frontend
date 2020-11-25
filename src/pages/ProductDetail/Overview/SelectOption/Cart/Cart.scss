@@ -25,43 +25,7 @@
           flex-direction: row;
           position: relative;
           height: 25px;
-
-          input[type='checkbox'] {
-            display: none;
-          }
-
-          input[type='checkbox'] + label {
-            color: rgb(99, 99, 99);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 25px;
-            margin-left: 35px;
-            cursor: pointer;
-          }
-
-          input[type='checkbox'] + label:before {
-            content: '';
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            left: 1px;
-            background-color: #f7f7f7;
-            border: 1px solid rgb(221, 221, 221);
-            border-radius: 2px;
-            box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.3),
-              0px 1px 0px 0px rgba(255, 255, 255, 0.8);
-          }
-
-          input[type='checkbox']:checked + label:before {
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-            font-size: 18px;
-            font-weight: 600;
-            color: #fff;
-            background-color: RGB(55, 197, 239);
-            text-align: center;
-            border: 1px solid rgb(221, 221, 221);
-          }
+          margin-right: 20px;
         }
       }
 
