@@ -1,6 +1,8 @@
 .Mypage {
   display: flex;
   justify-content: center;
+  margin-top: 80px;
+  border-top: 1px solid rgb(224, 224, 224);
 
   .bigContainer {
     display: flex;
@@ -193,6 +195,7 @@
     .MypageFeed {
       width: 886px;
       height: auto;
+
       .rightContaienr {
         height: 200px;
         margin-left: 8.33333333%;
@@ -207,8 +210,11 @@
             width: 264px;
             height: 264px;
             padding: 5px;
+            overflow: hidden;
+
             .feedImg {
-              width: 100%;
+              width: 360px;
+              height: auto;
               overflow: hidden;
 
               &:hover {
