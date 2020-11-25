@@ -3,7 +3,6 @@
 
   .userContainer {
     width: 1136px;
-    // max-width: 100%;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -65,6 +64,7 @@
           }
         }
       }
+
       .emailAddress {
         margin: 0 0 30px;
 
@@ -81,8 +81,6 @@
           border-radius: 4px;
           border: 1px solid #dbdbdb;
           padding: 0 15px;
-          // line-height: 40px;
-          // color: #dbdbdb;
 
           &:active {
             background-color: #fafafa;
@@ -111,6 +109,7 @@
           padding: 0 30px 0 15px;
         }
       }
+
       .pwAddress {
         margin: 0 0 30px;
 
@@ -227,7 +226,6 @@
             border-bottom: 1px solid #dbdbdb;
 
             .checkBox {
-              // zoom: 2;
               border: 1px solid #dbdbdb;
               border-radius: 4px;
             }
@@ -330,6 +328,3 @@
     }
   }
 }
-// .private input[type="checkbox"]:checked {
-//   background-color: red;
-// }
