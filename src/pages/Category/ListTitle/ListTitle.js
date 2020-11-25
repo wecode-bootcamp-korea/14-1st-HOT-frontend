@@ -25,10 +25,11 @@ class ListTitle extends Component {
       selectedSubcategory,
       openCategorySwitch,
     } = this.state;
+    console.log(this.state.title && this.state.title);
     return (
       <div className='listTitle'>
         <div className='litleName'>
-          <span>{menu_name}</span>
+          <span>{this.props.title[0].menu_name}</span>
         </div>
         <div className='subTitle'>
           {subtitle &&

@@ -16,21 +16,32 @@ class Category extends Component {
   }
 
   componentDidMount() {
-    this.getCategoryMenu();
+    this.getCategoryOtherMenu();
+    this.getCategoryTitleMenu();
   }
 
-  getCategoryMenu = () => {
+  getCategoryOtherMenu = () => {
     fetch('http://10.58.1.135:8000/store/categories', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.result[0]);
+        console.log(res.result);
         this.setState({
           categoryOther: res.result,
         });
+      });
+  };
+
+  getCategoryTitleMenu = () => {
+    fetch('http://10.58.1.135:8000/store/categories?menu=1', {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res.result);
         this.setState({
-          categoryTitle: res.result[0],
+          categoryTitle: res.result,
         });
       });
   };
@@ -41,6 +52,7 @@ class Category extends Component {
 
   render() {
     const { categoryTitle, categoryOther } = this.state;
+    console.log(categoryOther, categoryTitle);
     return (
       <>
         <NavigationBar />
@@ -50,7 +62,7 @@ class Category extends Component {
               <ListTitle title={categoryTitle} />
               <ListOther
                 other={categoryOther.filter(
-                  (ele) => ele.menu_name !== this.state.categoryTitle.menu_name
+                  (ele) => ele.menu_name !== categoryTitle[0].menu_name
                 )}
               />
             </div>
