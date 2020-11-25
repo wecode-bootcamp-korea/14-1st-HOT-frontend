@@ -72,6 +72,8 @@ class Summary extends Component {
       alert('이미 선택한 옵션입니다.');
     } else {
       selectedProducts.push({
+        product_id: this.state.productList.product_id,
+        sale: this.state.sale,
         color: this.state.selectedColor,
         label: options[selectedIndex].innerHTML,
         value: value,
@@ -108,6 +110,9 @@ class Summary extends Component {
     this.postProductId();
   };
 
+  pushSelectedProductIndo = (e, giveSelectedProducts) => {
+    this.props.takeModalEvent(e, giveSelectedProducts);
+  };
   render() {
     const settings = {
       arrows: true,
@@ -147,8 +152,8 @@ class Summary extends Component {
       getSelectedProductOption,
       handleDeleteProduct,
       handleBookmarkEvent,
+      pushSelectedProductIndo,
     } = this;
-    const { takeModalEvent } = this.props;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
     return (
       <>
@@ -326,7 +331,7 @@ class Summary extends Component {
                       giveProductInfo={productList}
                       giveSelectedProducts={selectedProducts}
                       giveBookmarkColor={bookMarkSwitch}
-                      takeModalEvent={takeModalEvent}
+                      takeModalEvent={pushSelectedProductIndo}
                       takeSelectedColor={getSelectedProductColor}
                       takeSelectedOption={getSelectedProductOption}
                       takeSelectedProductsValue={getProductCount}
@@ -406,7 +411,7 @@ class Summary extends Component {
                   giveProductInfo={productList}
                   giveSelectedProducts={selectedProducts}
                   giveBookmarkColor={bookMarkSwitch}
-                  takeModalEvent={takeModalEvent}
+                  takeModalEvent={pushSelectedProductIndo}
                   takeSelectedColor={getSelectedProductColor}
                   takeSelectedOption={getSelectedProductOption}
                   takeSelectedProductsValue={getProductCount}

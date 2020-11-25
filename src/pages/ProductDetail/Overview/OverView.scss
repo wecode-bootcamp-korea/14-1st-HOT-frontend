@@ -203,7 +203,7 @@
             display: flex;
             align-items: flex-end;
             width: auto;
-            margin: 0 0 0 85px;
+            margin: 0 0 0 75px;
             color: RGB(55, 197, 239);
             font-family: Tahoma, sans-serif;
             font-size: 32px;
@@ -435,7 +435,7 @@
 
   .menuTabContainer {
     position: sticky;
-    top: 129px;
+    top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -546,10 +546,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        top: 183px;
+        top: 143px;
         width: 375px;
-        height: 710px;
+        height: 750px;
         padding: 30px 40px 0 40px;
+        margin-bottom: 30px;
 
         .flexSelectBox {
           .selectBox {

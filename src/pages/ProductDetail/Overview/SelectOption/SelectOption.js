@@ -6,11 +6,12 @@ class SelectOption extends Component {
     this.props.takeSelectedProductsValue(targetProduct, countString);
   };
 
+  pushSelectedProductIndo = (e, giveSelectedProducts) => {
+    this.props.takeModalEvent(e, giveSelectedProducts);
+  };
   handleDelete = (productIndex) => {
     this.props.takeSelectedProductsDelIndex(productIndex);
   };
-
-  aaa = () => {};
 
   render() {
     const {
@@ -20,9 +21,8 @@ class SelectOption extends Component {
       takeSelectedColor,
       takeSelectedOption,
       takeBookmarkEvent,
-      takeModalEvent,
     } = this.props;
-    const { getProductCount, handleDelete } = this;
+    const { getProductCount, handleDelete, pushSelectedProductIndo } = this;
     return (
       <>
         <div className='flexSelectBox'>
@@ -107,7 +107,11 @@ class SelectOption extends Component {
                   alt='bookMarkIcon'
                 />
               </button>
-              <button className='cart' onClick={takeModalEvent}>
+              <button
+                className='cart'
+                onClick={(e) =>
+                  pushSelectedProductIndo(e, giveSelectedProducts)
+                }>
                 장바구니
               </button>
               <button className='purchase'>바로구매</button>
