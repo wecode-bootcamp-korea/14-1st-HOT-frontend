@@ -6,7 +6,7 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/signup" component="" />
+          <Route exact path="/" component="" />
         </Switch>
       </Router>
     );
