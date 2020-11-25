@@ -22,7 +22,7 @@ class Product extends Component {
               />
             </div>
             <div className='flexTitle'>
-              <div className='title'>레브 리프트업 협탁11</div>
+              <div className='title'>레브 리프트업 협탁</div>
               <div className='titleOption'>판매자직접배송 | 무료배송</div>
             </div>
           </div>

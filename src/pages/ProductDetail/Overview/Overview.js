@@ -16,6 +16,7 @@ class Summary extends Component {
       selectedColor: '',
       selectedProducts: [],
       bookMarkSwitch: false,
+      coverImageSrc: '',
       product_image_url: '',
     };
   }
@@ -25,15 +26,16 @@ class Summary extends Component {
   }
 
   getProductList = () => {
-    fetch('/Data/productDetailView.json', {
+    fetch('http://10.58.1.135:8000/store/1', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((result) => {
+        console.log(result);
         this.setState({
           productList: result.result[0],
           lowestPrice: result.result[0].details[0].price,
-          product_image_url: result.result[0].product_images[0],
+          coverImageSrc: result.result[0].product_image_url[0],
         });
       });
   };
@@ -124,7 +126,7 @@ class Summary extends Component {
       prevArrow: <PrevArrow />,
     };
     const {
-      seller,
+      product_seller,
       product_name,
       number_of_reviews,
       number_of_post_bookmarks,
@@ -138,7 +140,7 @@ class Summary extends Component {
       productList,
       selectedProducts,
       lowestPrice,
-      product_image_url,
+      coverImageSrc,
       bookMarkSwitch,
     } = this.state;
     const {
@@ -151,7 +153,7 @@ class Summary extends Component {
     } = this;
     const { takeModalEvent } = this.props;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
-    console.log(selectedProducts);
+    console.log(productList);
     return (
       <>
         <div className='overview'>
@@ -162,28 +164,30 @@ class Summary extends Component {
             <div className='overviewCover'>
               <div className='coverImagesBox'>
                 <div className='coverImageListBox'>
-                  {[] &&
-                    [].map((coverImageList, coverImageIndex) => (
-                      <button key={coverImageIndex} className='coverImageBox'>
-                        <img
-                          src={coverImageList}
-                          alt='coverImage'
-                          className='miniCoverImage'
-                          onMouseOver={changeCoverImage}
-                        />
-                      </button>
-                    ))}
+                  {productList.product_image_url &&
+                    productList.product_image_url.map(
+                      (coverImageList, coverImageIndex) => (
+                        <button key={coverImageIndex} className='coverImageBox'>
+                          <img
+                            src={coverImageList}
+                            alt='coverImage'
+                            className='miniCoverImage'
+                            onMouseOver={changeCoverImage}
+                          />
+                        </button>
+                      )
+                    )}
                 </div>
                 <div className='coverImageWrap'>
                   <img
-                    src={product_image_url}
+                    src={coverImageSrc && coverImageSrc}
                     alt='coverImage'
                     className='coverImage'
                   />
                 </div>
               </div>
               <div className='overViewList'>
-                <div className='seller'>{seller}</div>
+                <div className='seller'>{product_seller}</div>
                 <div className='title'>{product_name}</div>
                 <div className='spaceReviewBox'>
                   <div className='reviewBox'>
@@ -319,7 +323,7 @@ class Summary extends Component {
                         />
                       </div>
                       <Link to='/' className='linkReset brandName'>
-                        {seller + ' 브랜드홈'}
+                        {product_seller + ' 브랜드홈'}
                       </Link>
                     </div>
                     <SelectOption
