@@ -9,9 +9,6 @@
     position: relative;
     background-color: #ffffff;
 
-    &:hover {
-    }
-
     .Nav {
       display: flex;
       justify-content: space-between;
@@ -19,9 +16,11 @@
       width: 1255px;
       height: 80px;
       padding: 0 60px 0 60px;
+
       .categoriesBox {
         display: flex;
         justify-content: space-between;
+        height: 100%;
 
         .logoIcon {
           display: flex;
@@ -41,6 +40,7 @@
           display: flex;
           justify-content: center;
           width: 300px;
+          height: 100%;
           font-size: 18.5px;
           margin: 0 0 0 35px;
           line-height: 26px;
@@ -50,7 +50,9 @@
 
           .category {
             margin-top: 7px;
-            padding: 15px 16px 10px;
+            height: 100%;
+            margin-right: 20px;
+            background-color: rgba($color: #000000, $alpha: 0);
             text-decoration: none;
 
             &:visited {
@@ -65,21 +67,21 @@
           }
         }
 
-        // .store {
-        //   padding: 15px;
+        .store {
+          padding: 15px;
 
-        //   &:hover {
-        //     color: #35c4f0;
-        //   }
-        // }
+          &:hover {
+            color: #35c4f0;
+          }
+        }
 
-        // .interior {
-        //   padding: 15px;
+        .interior {
+          padding: 15px;
 
-        //   &:hover {
-        //     color: #35c4f0;
-        //   }
-        // }
+          &:hover {
+            color: #35c4f0;
+          }
+        }
       }
       .managementBox {
         display: flex;
@@ -95,7 +97,6 @@
             font-size: 15px;
             line-height: 20px;
             background-color: #fff;
-            // color: #dbdbdb;
             border: 1px solid #dbdbdb;
             border-radius: 4px;
 
@@ -105,10 +106,6 @@
 
             &::placeholder {
               color: lightgray;
-            }
-
-            &:hover {
-              // background-color: rgb(59, 59, 59, 0.3);
             }
           }
 
@@ -137,7 +134,20 @@
               &:hover {
                 cursor: pointer;
               }
-              // align-items: center;
+            }
+          }
+
+          .mypage {
+            img {
+              width: 36px;
+              height: 36px;
+              padding: 3px;
+              color: lightgray;
+              border-radius: 100%;
+
+              &:hover {
+                cursor: pointer;
+              }
             }
           }
 
@@ -147,20 +157,7 @@
             align-items: center;
             width: 130px;
 
-            // top: 5px;
-
-            .navLogin {
-              color: #757575;
-              font-size: 16px;
-              font-weight: 700;
-              line-height: 20px;
-
-              &:hover {
-                cursor: pointer;
-                color: #35c4f0;
-              }
-            }
-
+            .navLogin,
             .navSignup {
               color: #757575;
               font-size: 16px;
@@ -180,7 +177,6 @@
             align-items: center;
             width: 95px;
             margin: 0 0 0 20px;
-            border: none;
             border-radius: 4px;
             background-color: #35c4f0;
             color: #fff;
@@ -219,18 +215,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding: 0 200px;
   top: 80px;
   height: 50px;
   width: 100%;
   border-bottom: 1px solid #ededed;
-  // background-color: orange;
 
   .store {
     display: none;
   }
 
-  .subNavContents {
+  .firstCategory {
     display: flex;
     align-items: center;
     width: 1255px;
@@ -259,12 +253,11 @@
     }
   }
 
-  .subNavContentss {
+  .secondCategory {
     width: 1255px;
     padding: 0 60px;
     display: flex;
     flex-direction: flex-start;
-    display: none;
 
     .subNavContent {
       padding: 15px 10px 10px;
