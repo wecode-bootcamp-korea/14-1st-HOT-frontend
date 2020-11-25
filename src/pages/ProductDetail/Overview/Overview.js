@@ -31,7 +31,6 @@ class Summary extends Component {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         this.setState({
           productList: result.result[0],
           lowestPrice: result.result[0].details[0].price,
@@ -52,9 +51,7 @@ class Summary extends Component {
       },
     })
       .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-      });
+      .then((result) => {});
   };
 
   getSelectedProductColor = (e) => {
@@ -153,7 +150,6 @@ class Summary extends Component {
     } = this;
     const { takeModalEvent } = this.props;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
-    console.log(productList);
     return (
       <>
         <div className='overview'>
