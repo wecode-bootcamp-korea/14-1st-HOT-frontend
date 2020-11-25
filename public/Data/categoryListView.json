@@ -1,0 +1,82 @@
+{
+    "result": [
+        {
+            "menu_id": 1,
+            "menu_name": "가구",
+            "categories": [
+                {
+                    "category_id": 1,
+                    "category_name": "소파/거실가구",
+                    "sub_categories": [
+                        {
+                            "sub_category_id": 4,
+                            "sub_category_name": "소파"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "menu_id": 1,
+            "menu_name": "가구",
+            "categories": [
+                {
+                    "category_id": 2,
+                    "category_name": "침실가구",
+                    "sub_categories": [
+                        {
+                            "sub_category_id": 1,
+                            "sub_category_name": "침대"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "menu_id": 1,
+            "menu_name": "가구",
+            "categories": []
+        },
+        {
+            "menu_id": 1,
+            "menu_name": "가구",
+            "categories": []
+        },
+        {
+            "menu_id": 1,
+            "menu_name": "가구",
+            "categories": [
+                {
+                    "category_id": 5,
+                    "category_name": "학생/서재가구",
+                    "sub_categories": [
+                        {
+                            "sub_category_id": 2,
+                            "sub_category_name": "책상"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "menu_id": 1,
+            "menu_name": "가구",
+            "categories": []
+        },
+        {
+            "menu_id": 1,
+            "menu_name": "가구",
+            "categories": []
+        },
+        {
+            "menu_id": 1,
+            "menu_name": "가구",
+            "categories": []
+        },
+        {
+            "menu_id": 1,
+            "menu_name": "가구",
+            "categories": []
+        }
+    ]
+}

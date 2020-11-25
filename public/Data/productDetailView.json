@@ -1,38 +1,51 @@
 {
-  "result": [
-    {
-      "product_id": 1,
-      "product_name": "[기획전] 공주민의 핑크핑크 공주 침대",
-      "product_images": [
-        "/images/princessMin2.jpg",
-        "/images/princessMin1.jpg",
-        "/images/princessMin3.jpg",
-        "/images/princessMin4.jpg",
-        "/images/princessMin5.jpg",
-        "/images/princessMin6.jpg"
-      ],
-      "number_of_shares": 30,
-      "number_of_reviews": 12,
-      "number_of_product_bookmarks": 15,
-      "seller": "핑크공주",
-      "color": ["핫핑크", "아이보리", "화이트"],
-      "details": [
+    "result": [
         {
-          "product_detail_id": 1,
-          "size": "싱글",
-          "price": "152000.00"
-        },
-        {
-          "product_detail_id": 2,
-          "size": "트윈",
-          "price": "239000.00"
-        },
-        {
-          "product_detail_id": 3,
-          "size": "퀸",
-          "price": "321000.00"
+            "menu": "가구",
+            "category": "침실가구",
+            "subcategory": "침대",
+            "collection": "민짱 침대 풀세트(S/SS/D/Q/K)",
+            "product_id": 1,
+            "product_name": "we코드 침대",
+            "product_seller": "민짱풀스택",
+            "product_image_url": [
+                "https://i1.wp.com/poshpennies.com/wp-content/uploads/2020/08/retro-hannah-bed-.jpg"
+            ],
+            "additional_products": [
+                "프라그미 데스크",
+                "공주노레잇 시계",
+                "아구라 패브릭 소파",
+                "무비 차렵 이불"
+            ],
+            "number_of_reviews": 0,
+            "product_rates": [],
+            "number_of_post_bookmarks": 0,
+            "number_of_shares": 0,
+            "color": [
+                "아이보리",
+                "블랙",
+                "화이트",
+                "파스텔블루",
+                "베이비핑크"
+            ],
+            "details": [
+                {
+                    "size": "싱글",
+                    "price": "152000.00"
+                },
+                {
+                    "size": "트윈",
+                    "price": "239000.00"
+                },
+                {
+                    "size": "퀸",
+                    "price": "321000.00"
+                },
+                {
+                    "size": "킹",
+                    "price": "489000.00"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

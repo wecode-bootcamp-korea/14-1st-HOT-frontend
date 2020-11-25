@@ -1,0 +1,104 @@
+{
+    "result": [
+        {
+            "product_id": 49,
+            "product": "무비 차렵 이불",
+            "collection": "장고 공부하다 이거 덥고 자면 딱 모음",
+            "product_seller": "모던승윤디자인",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        },
+        {
+            "product_id": 50,
+            "product": "게드 알러지 케어 이불",
+            "collection": "장고 공부하다 이거 덥고 자면 딱 모음",
+            "product_seller": "노드디자인",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        },
+        {
+            "product_id": 51,
+            "product": "말로우 캉캉 침구",
+            "collection": "연두네 이불 모음 ",
+            "product_seller": "노드디자인",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        },
+        {
+            "product_id": 52,
+            "product": "고밀도 SQL 이불",
+            "collection": "연두네 이불 모음 ",
+            "product_seller": "노드디자인",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        },
+        {
+            "product_id": 53,
+            "product": "에브리나잇 코튼 침구",
+            "collection": "연두네 이불 모음 ",
+            "product_seller": "민짱풀스택",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        },
+        {
+            "product_id": 54,
+            "product": "댱고 디피컬트 침구",
+            "collection": "영국에서 가져온 이불 되판다 모음 ",
+            "product_seller": "민짱풀스택",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        },
+        {
+            "product_id": 55,
+            "product": "프랜드플라워 침구",
+            "collection": "영국에서 가져온 이불 되판다 모음 ",
+            "product_seller": "민짱풀스택",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        },
+        {
+            "product_id": 56,
+            "product": "내츄럴 모던 침구",
+            "collection": "영국에서 가져온 이불 되판다 모음 ",
+            "product_seller": "연두퍼니쳐",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        },
+        {
+            "product_id": 57,
+            "product": "마르코 침구",
+            "collection": "장고 공부하다 이거 덥고 자면 딱 모음",
+            "product_seller": "연두퍼니쳐",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        },
+        {
+            "product_id": 58,
+            "product": "로맨틱 혁명 순면 침구",
+            "collection": "장고 공부하다 이거 덥고 자면 딱 모음",
+            "product_seller": "연두퍼니쳐",
+            "number_of_reviews": 0,
+            "rates": [],
+            "number_of_post_bookmarks": 0,
+            "is_bookmarked": false
+        }
+    ]
+}

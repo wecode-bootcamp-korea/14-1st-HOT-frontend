@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ProductOptions.scss';
 
 class ProductOptions extends Component {
   render() {
@@ -6,7 +7,7 @@ class ProductOptions extends Component {
       <>
         <div className='productOption'>
           <div className='flexOptionBox'>
-            <div className='sizeOption'>오크화이트</div>
+            <div className='sizeOption'>오크화이트11</div>
             <div className='deleteButton'>X</div>
           </div>
           <div className='countOption'>
