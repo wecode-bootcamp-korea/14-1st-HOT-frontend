@@ -3,20 +3,9 @@ import Slider from 'react-slick';
 import './Banner.scss';
 
 class Banner extends Component {
-  SamplePrevArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: 'block', background: 'green' }}
-        onClick={onClick}
-      />
-    );
-  };
-
   render() {
     const settings = {
-      arrows: true,
+      arrows: false,
       dots: true,
       infinite: true,
       autoplay: true,
@@ -50,30 +39,6 @@ class Banner extends Component {
               );
             })}
           </Slider>
-          <button>
-            <img
-              src='/images/leftarrow2.png'
-              className='leftArrowIcon'
-              alt='arrowIcon'
-            />
-            <img
-              src='/images/leftarrow.png'
-              className='leftArrowIcon'
-              alt='arrowIcon'
-            />
-          </button>
-          <button>
-            <img
-              src='/images/rightarrow2.png'
-              className='rightArrowIcon'
-              alt='arrowIcon'
-            />
-            <img
-              src='/images/rightarrow.png'
-              className='rightArrowIcon'
-              alt='arrowIcon'
-            />
-          </button>
         </div>
       </>
     );
