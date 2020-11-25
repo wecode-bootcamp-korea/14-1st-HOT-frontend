@@ -1,5 +1,5 @@
-import React, { Component } from "react";
 import "./Mypage.scss";
+import React, { Component } from "react";
 
 const Mypage = [
   {
