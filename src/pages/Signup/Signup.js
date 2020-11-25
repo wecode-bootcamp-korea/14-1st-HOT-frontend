@@ -17,7 +17,6 @@ class Signup extends Component {
       id: "",
       pw: "",
       name: "",
-      // passwordcheck: "",
     };
   }
 
@@ -43,30 +42,12 @@ class Signup extends Component {
     }
   };
 
-  handleChangeEmail = (e) => {
-    const { value } = e.target;
-    this.setState({ id: value });
-  };
-
-  handleChangePw = (e) => {
-    const { value } = e.target;
-    this.setState({ pw: value });
-  };
-
-  // handleChangePwCheck = (e) => {
-  //   const { value } = e.target;
-  //   this.setState({ passwordcheck: value });
-  // };
-
-  handleChangeName = (e) => {
-    const { value } = e.target;
-    this.setState({ name: value });
+  handleInputChange = (e) => {
+    const { value, name } = e.target;
+    this.setState({ [name]: value });
   };
 
   render() {
-    const { id, pw, name, passwordcheck } = this.state;
-    console.log(id, pw, name, passwordcheck);
-
     return (
       <div className="Signup">
         <section className="userContainer">
@@ -83,7 +64,7 @@ class Signup extends Component {
                 type="email"
                 name="email"
                 placeholder="이메일"
-                onChange={this.handleChangeEmail}
+                onChange={this.handleInputChange}
               />
             </section>
             <section className="pwAddress">
@@ -92,8 +73,9 @@ class Signup extends Component {
               <input
                 className="pwInput"
                 type="password"
+                name="pw"
                 placeholder="비밀번호"
-                onChange={this.handleChangePw}
+                onChange={this.handleInputChange}
               />
             </section>
             <section className="rePwAddress">
@@ -101,8 +83,9 @@ class Signup extends Component {
               <input
                 className="rePwInput"
                 type="password"
+                name="pwCheck"
                 placeholder="비밀번호 확인"
-                onChange={this.handleChangePwCheck}
+                onChange={this.handleInputChange}
               />
             </section>
             <section className="nickname">
@@ -112,17 +95,15 @@ class Signup extends Component {
               </div>
               <input
                 className="nicknameActivate"
-                // className={activateButton ? "nicknameActivate" : "nicknameDeactivate"}
                 type="text"
+                name="nickname"
                 placeholder="별명 (2~15자)"
-                value={this.state.nickname}
-                onChange={this.handleChangeName}
+                onChange={this.handleInputChange}
               />
             </section>
             <Agree />
             <button
               className="signupButton"
-              // onKeyPress={this.checkValidation}
               onClick={(e) => this.handleClick(e)}
             >
               회원가입 완료

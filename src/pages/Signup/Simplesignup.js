@@ -4,7 +4,7 @@ import "./Signup.scss";
 class Simplesignup extends Component {
   render() {
     return (
-      <div className="userInfo">
+      <div className="Simplesignup">
         <div className="signUp">회원가입</div>
         <div className="simple">
           <div className="simpleSignup">SNS계정으로 간편하게 회원가입</div>
