@@ -1,82 +1,256 @@
 {
-    "result": [
+  "result": [
+    {
+      "menu_id": 1,
+      "menu_name": "가구",
+      "categories": [
         {
-            "menu_id": 1,
-            "menu_name": "가구",
-            "categories": [
-                {
-                    "category_id": 1,
-                    "category_name": "소파/거실가구",
-                    "sub_categories": [
-                        {
-                            "sub_category_id": 4,
-                            "sub_category_name": "소파"
-                        }
-                    ]
-                }
-            ]
+          "category_id": 1,
+          "category_name": "소파/거실가구",
+          "sub_categories": [
+            {
+              "sub_category_id": 1,
+              "sub_category_name": "소파"
+            },
+            {
+              "sub_category_id": 2,
+              "sub_category_name": "리클라이너 소파"
+            },
+            {
+              "sub_category_id": 3,
+              "sub_category_name": "거실수납장/TV장"
+            },
+            {
+              "sub_category_id": 4,
+              "sub_category_name": "거실/소파테이블"
+            },
+            {
+              "sub_category_id": 5,
+              "sub_category_name": "의자"
+            }
+          ]
         },
         {
-            "menu_id": 1,
-            "menu_name": "가구",
-            "categories": [
-                {
-                    "category_id": 2,
-                    "category_name": "침실가구",
-                    "sub_categories": [
-                        {
-                            "sub_category_id": 1,
-                            "sub_category_name": "침대"
-                        }
-                    ]
-                }
-            ]
+          "category_id": 2,
+          "category_name": "침실가구",
+          "sub_categories": [
+            {
+              "sub_category_id": 1,
+              "sub_category_name": "침대"
+            },
+            {
+              "sub_category_id": 2,
+              "sub_category_name": "매트리스"
+            },
+            {
+              "sub_category_id": 3,
+              "sub_category_name": "화장대/콘솔"
+            },
+            {
+              "sub_category_id": 4,
+              "sub_category_name": "서랍장"
+            },
+            {
+              "sub_category_id": 5,
+              "sub_category_name": "거울"
+            },
+            {
+              "sub_category_id": 6,
+              "sub_category_name": "협탁"
+            }
+          ]
         },
         {
-            "menu_id": 1,
-            "menu_name": "가구",
-            "categories": []
-        },
-        {
-            "menu_id": 1,
-            "menu_name": "가구",
-            "categories": []
-        },
-        {
-            "menu_id": 1,
-            "menu_name": "가구",
-            "categories": [
-                {
-                    "category_id": 5,
-                    "category_name": "학생/서재가구",
-                    "sub_categories": [
-                        {
-                            "sub_category_id": 2,
-                            "sub_category_name": "책상"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "menu_id": 1,
-            "menu_name": "가구",
-            "categories": []
-        },
-        {
-            "menu_id": 1,
-            "menu_name": "가구",
-            "categories": []
-        },
-        {
-            "menu_id": 1,
-            "menu_name": "가구",
-            "categories": []
-        },
-        {
-            "menu_id": 1,
-            "menu_name": "가구",
-            "categories": []
+          "category_id": 3,
+          "category_name": "드레스룸",
+          "sub_categories": [
+            {
+              "sub_category_id": 1,
+              "sub_category_name": "드레스룸"
+            },
+            {
+              "sub_category_id": 2,
+              "sub_category_name": "옷장"
+            },
+            {
+              "sub_category_id": 3,
+              "sub_category_name": "행거"
+            },
+            {
+              "sub_category_id": 4,
+              "sub_category_name": "붙박이장"
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "menu_id": 2,
+      "menu_name": "패브릭",
+      "categories": [
+        {
+          "category_id": 1,
+          "category_name": "소파/거실가구",
+          "sub_categories": [
+            {
+              "sub_category_id": 1,
+              "sub_category_name": "소파"
+            },
+            {
+              "sub_category_id": 2,
+              "sub_category_name": "리클라이너 소파"
+            },
+            {
+              "sub_category_id": 3,
+              "sub_category_name": "거실수납장/TV장"
+            },
+            {
+              "sub_category_id": 4,
+              "sub_category_name": "거실/소파테이블"
+            },
+            {
+              "sub_category_id": 5,
+              "sub_category_name": "의자"
+            }
+          ]
+        },
+        {
+          "category_id": 2,
+          "category_name": "침실가구",
+          "sub_categories": [
+            {
+              "sub_category_id": 1,
+              "sub_category_name": "침대"
+            },
+            {
+              "sub_category_id": 2,
+              "sub_category_name": "매트리스"
+            },
+            {
+              "sub_category_id": 3,
+              "sub_category_name": "화장대/콘솔"
+            },
+            {
+              "sub_category_id": 4,
+              "sub_category_name": "서랍장"
+            },
+            {
+              "sub_category_id": 5,
+              "sub_category_name": "거울"
+            },
+            {
+              "sub_category_id": 6,
+              "sub_category_name": "협탁"
+            }
+          ]
+        },
+        {
+          "category_id": 3,
+          "category_name": "드레스룸",
+          "sub_categories": [
+            {
+              "sub_category_id": 1,
+              "sub_category_name": "드레스룸"
+            },
+            {
+              "sub_category_id": 2,
+              "sub_category_name": "옷장"
+            },
+            {
+              "sub_category_id": 3,
+              "sub_category_name": "행거"
+            },
+            {
+              "sub_category_id": 4,
+              "sub_category_name": "붙박이장"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 3,
+      "menu_name": "조명",
+      "categories": [
+        {
+          "category_id": 1,
+          "category_name": "소파/거실가구",
+          "sub_categories": [
+            {
+              "sub_category_id": 1,
+              "sub_category_name": "소파"
+            },
+            {
+              "sub_category_id": 2,
+              "sub_category_name": "리클라이너 소파"
+            },
+            {
+              "sub_category_id": 3,
+              "sub_category_name": "거실수납장/TV장"
+            },
+            {
+              "sub_category_id": 4,
+              "sub_category_name": "거실/소파테이블"
+            },
+            {
+              "sub_category_id": 5,
+              "sub_category_name": "의자"
+            }
+          ]
+        },
+        {
+          "category_id": 2,
+          "category_name": "침실가구",
+          "sub_categories": [
+            {
+              "sub_category_id": 1,
+              "sub_category_name": "침대"
+            },
+            {
+              "sub_category_id": 2,
+              "sub_category_name": "매트리스"
+            },
+            {
+              "sub_category_id": 3,
+              "sub_category_name": "화장대/콘솔"
+            },
+            {
+              "sub_category_id": 4,
+              "sub_category_name": "서랍장"
+            },
+            {
+              "sub_category_id": 5,
+              "sub_category_name": "거울"
+            },
+            {
+              "sub_category_id": 6,
+              "sub_category_name": "협탁"
+            }
+          ]
+        },
+        {
+          "category_id": 3,
+          "category_name": "드레스룸",
+          "sub_categories": [
+            {
+              "sub_category_id": 1,
+              "sub_category_name": "드레스룸"
+            },
+            {
+              "sub_category_id": 2,
+              "sub_category_name": "옷장"
+            },
+            {
+              "sub_category_id": 3,
+              "sub_category_name": "행거"
+            },
+            {
+              "sub_category_id": 4,
+              "sub_category_name": "붙박이장"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

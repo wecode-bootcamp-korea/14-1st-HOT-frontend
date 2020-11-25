@@ -8,7 +8,6 @@ class Product extends Component {
     );
   };
   render() {
-    console.log(this.props.product);
     return (
       <button className='productContainer' onClick={this.goProductDetail}>
         <div className='productImageBox'>

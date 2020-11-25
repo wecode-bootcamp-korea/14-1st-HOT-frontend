@@ -29,7 +29,7 @@ class ProductList extends Component {
   };
 
   render() {
-    const buttonText = ['색상', '우드톤', '소재', '사용 인원', '가격', '배송'];
+    const BUTTONTEXT = ['색상', '우드톤', '소재', '사용 인원', '가격', '배송'];
     const { products } = this.state;
     return (
       <>
@@ -37,13 +37,12 @@ class ProductList extends Component {
           <div className='mdPickText'>MD's PICK</div>
         </div>
         <div className='smallProductList'>
-          {/* 샘플로 원래 Product 넣어듬, 랜덤으로 보여줄 State로 변경 예정 */}
           {products.map((productElement, productIndex) => (
             <RandomProduct key={productIndex} product={productElement} />
           ))}
         </div>
         <div className='productFilterButtonBox'>
-          {buttonText.map((buttonTextElement, buttonTextIndex) => (
+          {BUTTONTEXT.map((buttonTextElement, buttonTextIndex) => (
             <div key={buttonTextIndex} className='productFilterButtons'>
               <button className='productFilterButton'>
                 <span>{buttonTextElement}</span>

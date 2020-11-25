@@ -4,6 +4,7 @@ import ListOther from './ListOther/ListOther';
 import Banner from './Banner/Banner';
 import ProductList from './ProductList/ProductList';
 import NavigationBar from '../../component/NavigationBar/NavigationBar';
+import './Category.scss';
 
 class Category extends Component {
   constructor() {
@@ -21,33 +22,29 @@ class Category extends Component {
   }
 
   getCategoryOtherMenu = () => {
-    fetch('http://10.58.1.135:8000/store/categories', {
+    fetch('/Data/categoryListView.json', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.result);
+        console.log(this.state.categoryOther);
         this.setState({
-          categoryOther: res.result,
+          // categoryOther: res.result,
         });
       });
   };
 
   getCategoryTitleMenu = () => {
-    fetch('http://10.58.1.135:8000/store/categories?menu=1', {
+    fetch('/Data/categoryListView.json', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.result);
+        console.log(this.state.categoryOther);
         this.setState({
-          categoryTitle: res.result,
+          // categoryTitle: res.result,
         });
       });
-  };
-
-  getOnclickMenu = (e) => {
-    e.preventDefault();
   };
 
   render() {
@@ -56,15 +53,11 @@ class Category extends Component {
     return (
       <>
         <NavigationBar />
-        <section className='container'>
+        <section className='Category'>
           <aside className='asidContainer'>
             <div className='listBox'>
               <ListTitle title={categoryTitle} />
-              <ListOther
-                other={categoryOther.filter(
-                  (ele) => ele.menu_name !== categoryTitle[0].menu_name
-                )}
-              />
+              <ListOther other={categoryOther} />
             </div>
           </aside>
           <article className='feedContainer'>

@@ -10,7 +10,7 @@ class ListTitle extends Component {
     };
   }
 
-  selectedCategoty = (subtitleElement) => {
+  selectedCategory = (subtitleElement) => {
     this.setState({ selectedCategory: subtitleElement.subTitle });
   };
 
@@ -19,17 +19,16 @@ class ListTitle extends Component {
   };
 
   render() {
-    const { menu_name, subtitle } = this.props.title;
+    const { subtitle } = this.props.title;
     const {
       selectedCategory,
       selectedSubcategory,
       openCategorySwitch,
     } = this.state;
-    console.log(this.state.title && this.state.title);
     return (
       <div className='listTitle'>
         <div className='litleName'>
-          <span>{this.props.title[0].menu_name}</span>
+          <span>{this.props.title}</span>
         </div>
         <div className='subTitle'>
           {subtitle &&
@@ -37,7 +36,7 @@ class ListTitle extends Component {
               <div key={subtitleIndex} className={'subTitleMenubox'}>
                 <div className='subTitleMenuAndButton'>
                   <button
-                    onClick={() => this.selectedCategoty(subtitleElement)}
+                    onClick={() => this.selectedCategory(subtitleElement)}
                     className={
                       selectedCategory === subtitleElement.subTitle
                         ? 'subTitleList changeColorEvent '
@@ -48,7 +47,7 @@ class ListTitle extends Component {
                   <button className='subTitleButtonBox'>
                     <div
                       className='showButtonBox'
-                      onClick={() => this.selectedCategoty(subtitleElement)}>
+                      onClick={() => this.selectedCategory(subtitleElement)}>
                       <img
                         src={
                           openCategorySwitch
