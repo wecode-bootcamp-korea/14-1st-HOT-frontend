@@ -13,7 +13,7 @@ class FeedList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.6.6:8000/posts")
+    fetch("http://10.58.1.148:8000/posts")
       .then((response) => response.json())
       .then((res) => {
         this.setState(

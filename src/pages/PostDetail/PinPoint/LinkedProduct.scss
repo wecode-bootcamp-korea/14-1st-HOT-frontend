@@ -1,0 +1,30 @@
+.LinkedProduct {
+  width: 285px;
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color: rgba(250, 250, 250, 0.8);
+  .show {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .productImage {
+      width: 91px;
+      height: 91px;
+      padding: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .productInfo {
+      margin: 10px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  .hide {
+    display: none;
+  }
+}

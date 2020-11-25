@@ -4,7 +4,7 @@ import Furniture from "./Furniture";
 import PinPoint from "./PinPoint/PinPoint";
 import "./PostDetail.scss";
 
-class post extends Component {
+class posts extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,15 +23,12 @@ class post extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.6.6:8000/posts/${this.props.match.params.id}`)
+    fetch(`http://10.58.1.148:8000/posts/${this.props.match.params.id}`)
       .then((response) => response.json())
       .then((res) => {
-        this.setState(
-          {
-            data: res.results,
-          },
-          () => console.log("URL", this.state.data)
-        );
+        this.setState({
+          data: res.results,
+        });
       });
   }
 
@@ -42,27 +39,26 @@ class post extends Component {
   pressForPost = (e) => {
     e.preventDefault();
     const { reply, replyList } = this.state;
-    if (reply.length) {
-      let replyToAdd = {
-        id: 0,
-        author: {
-          author_id: this.state.data.author.author_id,
-          username: this.state.data.author.author_username,
-          profile_image: null,
-        },
-        content: reply,
-        created_at: "",
-        updated_at: "",
-        parent_id: null,
-      };
+    // if (reply.length) {
+    //   let replyToAdd = {
+    //     id: 0,
+    //     author: {
+    //       author_id: this.state.data.author.author_id,
+    //       username: this.state.data.author.author_username,
+    //       profile_image: null,
+    //     },
+    //     content: reply,
+    //     created_at: "",
+    //     updated_at: "",
+    //     parent_id: null,
+    //   };
 
-      this.setState({
-        replyList: [...replyList, replyToAdd],
-        reply: "",
-      });
-    }
+    //   this.setState({
+    //     replyList: [...replyList, replyToAdd],
+    //     reply: "",
+    //   });
+    // }
   };
-
   handleMouseMove = () => {
     this.setState({ mouseHover: !this.state.mouseHover });
   };
@@ -79,22 +75,34 @@ class post extends Component {
                 onMouseLeave={this.handleMouseMove}
               >
                 {this.state.data.post_images && (
-                  <div>
+                  <div style={{ position: "relative" }}>
                     <img
                       className="postMainImage"
                       src={this.state.data.post_images[0].image_url}
                       alt="MainImage"
                     />
-                    <div className="pinPointWrap" style={pinpointPosition}>
-                      {/* {this.state.dat.map((el)=>{ */}
-                      <PinPoint
-                        isHovered={this.state.mouseHover}
-                        // productId={el.}
-                        // productImage={el.}
-                        // productName={el.}
-                      />
-                      {/* })} */}
-                    </div>
+                    {this.state.data.linked_products.map((el) => {
+                      return (
+                        <div
+                          className={
+                            this.state.mouseHover
+                              ? "circulerPlus"
+                              : "circleNone"
+                          }
+                          style={{
+                            position: "absolute",
+                            left: `${el.left}px`,
+                            top: `${el.top}px `,
+                          }}
+                        >
+                          <PinPoint
+                            productId={el.product_id}
+                            imageURL={el.image_url}
+                            productName={el.product_name}
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -207,4 +215,4 @@ class post extends Component {
   }
 }
 
-export default post;
+export default posts;
