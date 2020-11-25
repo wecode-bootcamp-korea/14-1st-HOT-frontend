@@ -20,16 +20,17 @@ class Category extends Component {
   }
 
   getCategoryMenu = () => {
-    fetch('/Data/category.json', {
+    fetch('http://10.58.1.135:8000/store/categories', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res.result[0]);
         this.setState({
-          categoryOther: res.category,
+          categoryOther: res.result,
         });
         this.setState({
-          categoryTitle: res.category[0],
+          categoryTitle: res.result[0],
         });
       });
   };
@@ -47,7 +48,11 @@ class Category extends Component {
           <aside className='asidContainer'>
             <div className='listBox'>
               <ListTitle title={categoryTitle} />
-              <ListOther other={categoryOther} />
+              <ListOther
+                other={categoryOther.filter(
+                  (ele) => ele.menu_name !== this.state.categoryTitle.menu_name
+                )}
+              />
             </div>
           </aside>
           <article className='feedContainer'>

@@ -19,7 +19,7 @@ class ListTitle extends Component {
   };
 
   render() {
-    const { title, subtitle } = this.props.title;
+    const { menu_name, subtitle } = this.props.title;
     const {
       selectedCategory,
       selectedSubcategory,
@@ -28,7 +28,7 @@ class ListTitle extends Component {
     return (
       <div className='listTitle'>
         <div className='litleName'>
-          <span>{title}</span>
+          <span>{menu_name}</span>
         </div>
         <div className='subTitle'>
           {subtitle &&
