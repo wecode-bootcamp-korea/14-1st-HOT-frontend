@@ -10,7 +10,6 @@ class Modal extends Component {
   render() {
     const { goCart } = this;
     const { takeModalEvent } = this.props;
-    console.log();
     return (
       <div className='showMonalPage'>
         <div className='cartButtonBox'>

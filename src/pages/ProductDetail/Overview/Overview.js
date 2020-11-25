@@ -51,7 +51,28 @@ class Summary extends Component {
       },
     })
       .then((res) => res.json())
-      .then((result) => {});
+      .then((result) => {
+        console.log(result);
+      });
+  };
+
+  postCartInfo = (e) => {
+    if (this.state.selectedProducts.length) {
+      e.preventDefault();
+      fetch('http://10.58.5.85:8000/order/cart', {
+        method: 'POST',
+        body: JSON.stringify(this.state.selectedProducts),
+        headers: {
+          Authorization:
+            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+        },
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
+        });
+      this.props.takeModalEvent();
+    }
   };
 
   getSelectedProductColor = (e) => {
@@ -112,9 +133,6 @@ class Summary extends Component {
     this.postProductId();
   };
 
-  pushSelectedProductIndo = (e, giveSelectedProducts) => {
-    this.props.takeModalEvent(e, giveSelectedProducts);
-  };
   render() {
     const settings = {
       arrows: true,
@@ -154,9 +172,10 @@ class Summary extends Component {
       getSelectedProductOption,
       handleDeleteProduct,
       handleBookmarkEvent,
-      pushSelectedProductIndo,
+      postCartInfo,
     } = this;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
+    console.log(selectedProducts);
     return (
       <>
         <div className='overview'>
@@ -333,11 +352,11 @@ class Summary extends Component {
                       giveProductInfo={productList}
                       giveSelectedProducts={selectedProducts}
                       giveBookmarkColor={bookMarkSwitch}
-                      takeModalEvent={pushSelectedProductIndo}
                       takeSelectedColor={getSelectedProductColor}
                       takeSelectedOption={getSelectedProductOption}
                       takeSelectedProductsValue={getProductCount}
                       takeSelectedProductsDelIndex={handleDeleteProduct}
+                      takeSelectedProductsCart={postCartInfo}
                     />
                   </div>
                 </div>
@@ -413,12 +432,12 @@ class Summary extends Component {
                   giveProductInfo={productList}
                   giveSelectedProducts={selectedProducts}
                   giveBookmarkColor={bookMarkSwitch}
-                  takeModalEvent={pushSelectedProductIndo}
                   takeSelectedColor={getSelectedProductColor}
                   takeSelectedOption={getSelectedProductOption}
                   takeSelectedProductsValue={getProductCount}
                   takeSelectedProductsDelIndex={handleDeleteProduct}
                   takeBookmarkEvent={handleBookmarkEvent}
+                  takeSelectedProductsCart={postCartInfo}
                 />
               </div>
             </div>

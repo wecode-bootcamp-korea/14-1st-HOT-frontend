@@ -1,23 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
-import Categories from './pages/Category/Category';
-import Cart from './pages/ProductDetail/Overview/SelectOption/Cart/Cart';
+import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
+import Agree from './pages/Signup/Agree';
+import Cart from './pages/ProductDetail/Overview/SelectOption/Cart/Cart';
 
 class Routes extends React.Component {
   render() {
     return (
-      <>
-        <Router>
-          <Switch>
-            <Route exact path='/' component={ProductDetail} />
-            <Route exact path='/categories' component={Categories} />
-            <Route exact path='/cart' component={Cart} />
-            <Route exact path='/login' component={Login} />
-          </Switch>
-        </Router>
-      </>
+      <Router>
+        <Switch>
+          <Route exact path='/signup' component={Signup} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/productdetail' component={ProductDetail} />
+          <Route exact path='/agree' component={Agree} />
+          <Route exact path='/cart' component={Cart} />
+        </Switch>
+      </Router>
     );
   }
 }
