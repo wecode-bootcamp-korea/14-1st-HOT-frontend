@@ -80,9 +80,11 @@
         border-radius: 4px;
       }
     }
+
     .totalCountBox {
       display: flex;
       flex-direction: column;
+
       .calculator {
         width: 365px;
         height: 210px;
@@ -111,10 +113,11 @@
 
           .totalPriceCount {
             font-size: 25px;
-            font-weight: 700;
+            font-weight: 900;
           }
         }
       }
+
       .buyingButton {
         width: 365px;
         height: 50px;

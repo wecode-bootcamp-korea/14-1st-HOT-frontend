@@ -2,33 +2,65 @@
   "cart": [
     {
       "product_id": "1",
-      "product_name": "민짱풀스택침대",
+      "product_name": "몬스터에너지",
+      "seller": "해태",
       "sale": 10,
-      "color": "블랙",
-      "label": "킹",
-      "value": "300000",
-      "count": "1",
-      "seller": "민짱셀러"
-    },
-    {
-      "product_id": "1",
-      "product_name": "민짱풀스택침대",
-      "sale": 10,
-      "color": "블랙",
-      "label": "킹",
-      "value": "300000",
-      "count": "1",
-      "seller": "민짱셀러"
+      "options": [
+        {
+          "color": "핑크",
+          "label": "싱글",
+          "value": 1103000,
+          "count": 2
+        },
+        {
+          "sale": 10,
+          "color": "아이보리",
+          "label": "퀸",
+          "value": 3211000,
+          "count": 1
+        }
+      ]
     },
     {
       "product_id": "2",
-      "product_name": "민서네중고쇼파",
+      "product_name": "민짱침대",
+      "seller": "민짱",
       "sale": 10,
-      "color": "아이보리",
-      "label": "킹",
-      "value": "400000",
-      "count": "2",
-      "seller": "나는 판매자다"
+      "options": [
+        {
+          "color": "핑크",
+          "label": "싱글",
+          "value": 1030000,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "product_id": "3",
+      "product_name": "공주밈침대",
+      "seller": "주님",
+      "sale": 10,
+      "options": [
+        {
+          "color": "핫핑크",
+          "label": "싱글",
+          "value": 1030000,
+          "count": 2
+        },
+        {
+          "sale": 10,
+          "color": "화이트",
+          "label": "퀸",
+          "value": 3210000,
+          "count": 1
+        },
+        {
+          "color": "러블리핑크",
+          "label": "상글",
+          "value": 1030000,
+          "count": 2
+        }
+      ]
     }
   ]
 }

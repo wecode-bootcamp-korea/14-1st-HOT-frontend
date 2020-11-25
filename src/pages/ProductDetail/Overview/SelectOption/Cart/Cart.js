@@ -71,7 +71,19 @@ class Cart extends Component {
                     총 상품금액
                   </div>
                   <div className='totalProductPriceCount flexBox'>
-                    5,045,050원
+                    {selectProduct.length &&
+                      selectProduct
+                        .map((ele) =>
+                          ele.options.reduce(
+                            (accumulator, currentValue) =>
+                              accumulator +
+                              parseInt(currentValue.value * currentValue.count),
+                            0
+                          )
+                        )
+                        .reduce((acc, val) => acc + val)
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원'}
                   </div>
                 </div>
                 <div className='totalDilivery flexSpaceBox'>
@@ -80,14 +92,51 @@ class Cart extends Component {
                 </div>
                 <div className='totalSale flexSpaceBox'>
                   <div className='totalSaleText flexBox'>총 할인금액</div>
-                  <div className='totalSaleCount flexBox'>- 1,812,950원</div>
+                  <div className='totalSaleCount flexBox'>
+                    {selectProduct.length &&
+                      selectProduct
+                        .map((ele) =>
+                          ele.options.reduce(
+                            (accumulator, currentValue) =>
+                              accumulator +
+                              parseInt(
+                                currentValue.value * currentValue.count
+                              ) /
+                                10,
+                            0
+                          )
+                        )
+                        .reduce((acc, val) => acc + val)
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원'}
+                  </div>
                 </div>
                 <div className='totalPrice flexSpaceBox'>
                   <div className='totalPriceText flexBox'>결제금액</div>
-                  <div className='totalPriceCount flexBox'>3,322,100원</div>
+                  <div className='totalPriceCount flexBox'>
+                    {selectProduct.length &&
+                      selectProduct
+                        .map((ele) =>
+                          ele.options.reduce(
+                            (accumulator, currentValue) =>
+                              accumulator +
+                              (parseInt(
+                                currentValue.value * currentValue.count
+                              ) /
+                                10) *
+                                9,
+                            0
+                          )
+                        )
+                        .reduce((acc, val) => acc + val)
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원'}
+                  </div>
                 </div>
               </div>
-              <button className='buyingButton'>{'4' + ' 개 구매하기'}</button>
+              <button className='buyingButton'>
+                {selectProduct.length + ' 개 구매하기'}
+              </button>
             </div>
           </div>
         </div>

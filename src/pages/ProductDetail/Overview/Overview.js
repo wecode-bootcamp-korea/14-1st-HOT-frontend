@@ -26,7 +26,7 @@ class Summary extends Component {
   }
 
   getProductList = () => {
-    fetch('http://10.58.1.135:8000/store/1', {
+    fetch('/Data/productDetailView.json', {
       method: 'GET',
     })
       .then((res) => res.json())
@@ -65,9 +65,11 @@ class Summary extends Component {
     const selectedProducts = [...this.state.selectedProducts];
     if (
       selectedProducts.some(
-        (ele) => ele.label === options[selectedIndex].innerHTML
+        (selectedProduct) =>
+          selectedProduct.label === options[selectedIndex].innerHTML
       ) ||
-      selectedProducts.some((ele) => ele.color) === this.state.selectedColor
+      selectedProducts.some((selectedProduct) => selectedProduct.color) ===
+        this.state.selectedColor
     ) {
       alert('이미 선택한 옵션입니다.');
     } else {
