@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import NextArrow from '../../../component/Slick/NextArrow';
+import PrevArrow from '../../../component/Slick/PrevArrow';
 import './Banner.scss';
 
 class Banner extends Component {
   render() {
     const settings = {
-      arrows: false,
+      arrows: true,
       dots: true,
       infinite: true,
       autoplay: true,
       autoplaySpeed: 4000,
       speed: 500,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
     };
+
     const slideSampleImage = [
       { id: 1, url: 'images/event1.png' },
       { id: 2, url: 'images/event1.png' },

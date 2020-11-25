@@ -1,0 +1,24 @@
+.prevArrowBox {
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: -2%;
+  width: 40px;
+
+  .prevArrow {
+    position: absolute;
+    width: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .prevArrow:hover {
+    opacity: 0%;
+    position: absolute;
+  }
+
+  .prevHideArrow {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+}
