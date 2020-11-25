@@ -3,11 +3,12 @@ import './ProductOptions.scss';
 
 class ProductOptions extends Component {
   render() {
+    const { product_name } = this.props.option;
     return (
       <>
         <div className='productOption'>
           <div className='flexOptionBox'>
-            <div className='sizeOption'>오크화이트11</div>
+            <div className='sizeOption'>{product_name}</div>
             <div className='deleteButton'>X</div>
           </div>
           <div className='countOption'>

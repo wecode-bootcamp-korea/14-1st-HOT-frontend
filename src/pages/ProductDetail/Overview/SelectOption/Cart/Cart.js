@@ -5,7 +5,38 @@ import Footer from '../../../../../component/Footer/Footer';
 import Product from './Product/Product';
 
 class Cart extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectProduct: [],
+    };
+  }
+
+  componentDidMount() {
+    this.getProductList();
+  }
+
+  getProductList = () => {
+    fetch('/Data/cart.json', {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        this.setState({
+          selectProduct: result.cart,
+        });
+      });
+  };
+
+  handleDelete = (e) => {
+    const selectProduct = [...this.state.selectProduct];
+    selectProduct.filter();
+    this.setState({ selectProduct });
+  };
+
   render() {
+    const { selectProduct } = this.state;
+    const { handleDelete } = this;
     return (
       <>
         <NavigationBar />
@@ -22,11 +53,16 @@ class Cart extends Component {
                   />
                   <label for='selectAll'>모두선택</label>
                 </div>
-                <div className='selectCheck'>선택삭제</div>
+                <div className='selectCheck' onClick={handleDelete}>
+                  선택삭제
+                </div>
               </div>
-              <div className='productsContainer'>
-                <Product />
-              </div>
+              {selectProduct &&
+                selectProduct.map((productElement) => (
+                  <div className='productsContainer'>
+                    <Product product={productElement} />
+                  </div>
+                ))}
             </div>
             <div className='totalCountBox'>
               <div className='calculator'>

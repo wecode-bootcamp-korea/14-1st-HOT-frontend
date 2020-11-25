@@ -21,8 +21,8 @@ class NavigationBar extends React.Component {
     const { communitytoggle, storetoggle } = this.state;
 
     return (
-      <div className='NavigationBar'>
-        <div className='navBackgruond'>
+      <>
+        <div className='backgourndContainer'>
           <div className='NavigationBar'>
             <div className='Nav'>
               <div className='categoriesBox'>
@@ -76,15 +76,14 @@ class NavigationBar extends React.Component {
               </div>
             </div>
           </div>
-          <div className='navBarBorder'></div>
-          <div className='subNav'>
-            {communitytoggle && (
-              <Firstcategory onEnter={this.handleEnterCommunity} />
-            )}
-            {storetoggle && <Secondcategory onEnter={this.handleEnterStore} />}
-          </div>
         </div>
-      </div>
+        <div className='subNav'>
+          {communitytoggle && (
+            <Firstcategory onEnter={this.handleEnterCommunity} />
+          )}
+          {storetoggle && <Secondcategory onEnter={this.handleEnterStore} />}
+        </div>
+      </>
     );
   }
 }
