@@ -7,17 +7,14 @@ import "./NavigationBar.scss";
 class NavigationBar extends React.Component {
   state = {
     communitytoggle: true,
-    storetoggle: false,
   };
 
   handleEnterCommunity = (e) => {
-    this.setState({ communitytoggle: true });
-    this.setState({ storetoggle: false });
+    this.setState({ communitytoggle: true, storetoggle: false });
   };
 
   handleEnterStore = (e) => {
-    this.setState({ communitytoggle: false });
-    this.setState({ storetoggle: true });
+    this.setState({ communitytoggle: false, storetoggle: true });
   };
 
   render() {
@@ -34,16 +31,12 @@ class NavigationBar extends React.Component {
               <div className="categories">
                 <button
                   className="category"
-                  to=""
-                  onMouseLeave={this.handleLeaveCommunity}
                   onMouseEnter={this.handleEnterCommunity}
                 >
                   커뮤니티
                 </button>
                 <button
                   className="category"
-                  to=""
-                  onMouseLeave={this.handleLeaveStore}
                   onMouseEnter={this.handleEnterStore}
                 >
                   스토어
@@ -59,12 +52,12 @@ class NavigationBar extends React.Component {
                 <img src="./images/loupe.png" alt="search" />
               </div>
               <div className="management">
-                <Link className="cart" to="/pages/Mypage/Mypage">
+                <Link className="cart">
                   <img src="./images/shopping-cart.png" alt="cart" />
                 </Link>
-                <div className="mypage">
+                <Link className="mypage" to="/mypage">
                   <img src="./images/profileimg.png" alt="mypage" />
-                </div>
+                </Link>
                 <div className="enterPage">
                   <span className="navLogin">로그인</span>
                   <span className="navDivLine">⎮</span>

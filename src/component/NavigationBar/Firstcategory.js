@@ -35,11 +35,13 @@ const LIST = [
 
 class Firstcategory extends Component {
   render() {
+    const { onEnter, onLeave } = this.props;
+
     return (
       <div
         className="firstCategory"
-        onMouseEnterCommunity={() => this.props.onEnter()}
-        onMouseLeaveCommunity={() => this.props.onLeave()}
+        onMouseEnterCommunity={() => onEnter()}
+        onMouseLeaveCommunity={() => onLeave()}
       >
         {LIST.map((el) => {
           return <Link className="subNavContent">{el.name}</Link>;
