@@ -1,19 +1,9 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
 import './Signup.scss';
 import { Link } from 'react-router-dom';
 import Simplesignup from './Simplesignup.js';
 import Agree from './Agree';
-
-const API = 'http://10.58.5.85:8000/user/register';
-=======
-import React, { Component } from "react";
-import "./Signup.scss";
-import { Link } from "react-router-dom";
-import Simplesignup from "./Simplesignup.js";
-import Agree from "./Agree";
-import { API } from "../../config";
->>>>>>> master
+import { API } from '../../config';
 
 class Signup extends Component {
   state = {

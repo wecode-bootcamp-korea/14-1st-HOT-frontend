@@ -22,7 +22,6 @@ class NavigationBar extends React.Component {
 
     return (
       <>
-<<<<<<< HEAD
         <div className='backgourndContainer'>
           <div className='NavigationBar'>
             <div className='Nav'>
@@ -42,34 +41,10 @@ class NavigationBar extends React.Component {
                     스토어
                   </button>
                   <button className='category' to=''>
-=======
-        <div className="backgourndContainer">
-          <div className="NavigationBar">
-            <div className="Nav">
-              <div className="categoriesBox">
-                <div className="logoIcon">
-                  <img src="./images/logo_text.png" alt="home" />
-                </div>
-                <div className="categories">
-                  <button
-                    className="category"
-                    onMouseEnter={this.handleEnterCommunity}
-                  >
-                    커뮤니티
-                  </button>
-                  <button
-                    className="category"
-                    onMouseEnter={this.handleEnterStore}
-                  >
-                    스토어
-                  </button>
-                  <button className="category" to="">
->>>>>>> master
                     인테리어시공
                   </button>
                 </div>
               </div>
-<<<<<<< HEAD
               <div className='managementBox'>
                 <div className='searchBar'>
                   <input type='text' placeholder='오늘의집 통합검색' />
@@ -94,36 +69,6 @@ class NavigationBar extends React.Component {
                         src='/images/showIcon_white.png'
                         className='showIcon'
                         alt='showIcon'
-=======
-              <div className="managementBox">
-                <div className="searchBar">
-                  <input type="text" placeholder="오늘의집 통합검색" />
-                  <img src="./images/loupe.png" alt="search" />
-                </div>
-                <div className="management">
-                  <Link className="cart">
-                    <img src="./images/shopping-cart.png" alt="cart" />
-                  </Link>
-                  <Link className="mypage" to="/mypage">
-                    <img src="./images/profileimg.png" alt="mypage" />
-                  </Link>
-                  <div className="enterPage">
-                    <Link className="navLogin" to="/login">
-                      로그인
-                    </Link>
-                    <span className="navDivLine">⎮</span>
-                    <Link className="navSignup" to="/signup">
-                      회원가입
-                    </Link>
-                  </div>
-                  <button className="button">
-                    글쓰기
-                    <div className="showIconBox">
-                      <img
-                        src="/images/showIcon_white.png"
-                        className="showIcon"
-                        alt="showIcon"
->>>>>>> master
                       />
                     </div>
                   </button>
