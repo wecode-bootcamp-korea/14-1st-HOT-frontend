@@ -1,6 +1,7 @@
 .pinWrap {
   display: flex;
   flex-direction: column;
+
   &:hover {
     transition-property: all;
     transition-duration: 3s;
