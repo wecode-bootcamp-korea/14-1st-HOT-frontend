@@ -26,6 +26,10 @@ class Category extends Component {
   getCategoryOtherMenu = () => {
     fetch(`${API}/store/categories`, {
       method: 'GET',
+      header: {
+        authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+      },
     })
       .then((res) => res.json())
       .then((res) => {
@@ -38,6 +42,10 @@ class Category extends Component {
   getCategoryTitleMenu = () => {
     fetch(`${API}/store/categories?menu=1`, {
       method: 'GET',
+      header: {
+        authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+      },
     })
       .then((res) => res.json())
       .then((res) => {
@@ -50,6 +58,10 @@ class Category extends Component {
   changeTitleMenu = (otherElement) => {
     fetch(`${API}/store/categories?menu=${otherElement.menu_id}`, {
       method: 'GET',
+      header: {
+        authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+      },
     })
       .then((res) => res.json())
       .then((res) => {
@@ -62,6 +74,10 @@ class Category extends Component {
   getProductList = (categoryElement) => {
     fetch(`${API}/store/products?cat=${categoryElement.category_id}`, {
       method: 'GET',
+      header: {
+        authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+      },
     })
       .then((res) => res.json())
       .then((res) => {

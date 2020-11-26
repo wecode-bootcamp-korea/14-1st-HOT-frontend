@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import NextArrow from '../../../component/Slick/NextArrow';
-import PrevArrow from '../../../component/Slick/PrevArrow';
+import NextArrow from '../../../component/Banner/NextArrow';
+import PrevArrow from '../../../component/Banner/PrevArrow';
 import './Banner.scss';
 
 class Banner extends Component {

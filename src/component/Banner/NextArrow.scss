@@ -1,0 +1,24 @@
+.nextArrowBox {
+  display: block;
+  position: absolute;
+  top: 45%;
+  left: 98%;
+  width: 40px;
+
+  .nextArrow {
+    position: absolute;
+    width: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .nextArrow:hover {
+    opacity: 0%;
+    position: absolute;
+  }
+
+  .hideNextArrow {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+}
