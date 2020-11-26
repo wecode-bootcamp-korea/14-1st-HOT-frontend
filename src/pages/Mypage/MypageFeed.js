@@ -4,7 +4,7 @@ import React, { Component } from "react";
 class MypageFeed extends Component {
   render() {
     const { myPageImage } = this.props;
-    console.log(myPageImage);
+
     return (
       <div className="MypageFeed">
         <div className="rightContaienr">
