@@ -17,6 +17,8 @@ class Reply extends Component {
     this.setState({ showlist: !this.state.showlist });
   };
 
+  removeReply = () => {};
+
   handleInput = (e) => {
     this.setState({ text: e.target.value });
   };

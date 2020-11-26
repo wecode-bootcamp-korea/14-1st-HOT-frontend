@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Reply from "./Reply.js";
-import Furniture from "./Furniture";
+
 import PinPoint from "./PinPoint/PinPoint";
 import "./PostDetail.scss";
 
@@ -10,13 +10,6 @@ class posts extends Component {
     this.state = {
       reply: "",
       replyList: [],
-      furniture: [
-        {
-          link: "https://www.naver.com",
-          image:
-            "https://images.unsplash.com/photo-1583335513577-225dc0dee59e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        },
-      ],
       data: [],
       mouseHover: false,
     };
@@ -54,10 +47,13 @@ class posts extends Component {
         parent_id: null,
       };
 
-      this.setState({
-        replyList: [...replyList, replyToAdd],
-        reply: "",
-      });
+      this.setState(
+        {
+          replyList: [...replyList, replyToAdd],
+          reply: "",
+        },
+        () => console.log("List", this.state.reply)
+      );
     }
   };
   handleMouseMove = () => {
@@ -65,6 +61,7 @@ class posts extends Component {
   };
 
   render() {
+    console.log(this.pressForPost);
     return (
       <section className="FeedDetail">
         <div className="container">
@@ -83,11 +80,6 @@ class posts extends Component {
                       alt="MainImage"
                     />
                     {this.state.data.linked_products.map((el) => {
-                      // console.log(
-                      //   "el >>>>",
-                      //   this.state.data.linked_products[0].product_name
-                      // );
-                      console.log("호버", this.state.mouseHover);
                       return (
                         <div
                           className={
@@ -113,27 +105,14 @@ class posts extends Component {
                 )}
               </div>
 
-              <div className="furnitureWrap">
-                <ul className="furnitureList">
-                  {this.state.furniture.map((furniture, idx) => {
-                    return (
-                      <Furniture
-                        key={idx}
-                        link={furniture.link}
-                        image={furniture.image}
-                      />
-                    );
-                  })}
-                </ul>
-              </div>
-              <p className="feedPostWrite">1차프로젝트 14기 화이팅!!</p>
+              <p className="feedPostWrite">{this.state.data.content}</p>
               <div className="feedHashTags">
                 <ul>
                   {/* map 들어갈 자리  해쉬태그 클릭시 해당 상품 구매 페이지로 넘어가야하기 때문에 링크로 만들었음 */}
                   <li>
                     <a href="/">
                       <span>{this.props.hashtags}</span>
-                      <span># 위코드</span>
+                      <span>#{this.state.data.tags?.[0]}</span>
                     </a>
                   </li>
                 </ul>
@@ -152,8 +131,8 @@ class posts extends Component {
                 <div className="feedReplyProfile">
                   <img
                     className="feedReplyUser"
-                    src="/images/Communityimages/chair.jpg"
-                    alt=""
+                    src="/images/bannerSample.png"
+                    alt="profileImage"
                   />
                 </div>
                 <div className="feedReplyInput">
@@ -168,8 +147,8 @@ class posts extends Component {
                 </div>
               </form>
               <ul className="feedReplyList">
-                {this.state.data.comment?.length &&
-                  this.state.data.comment.map((el, idx) => {
+                {this.state.data.comments?.length &&
+                  this.state.data.comments.map((el, idx) => {
                     return (
                       <Reply
                         key={idx}
