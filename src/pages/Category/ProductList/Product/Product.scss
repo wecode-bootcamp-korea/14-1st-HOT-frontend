@@ -8,10 +8,11 @@
     margin: 10px;
 
     .productImage {
-      width: 150%;
-      position: relative;
+      width: 110%;
+      height: 100%;
+      position: relabative;
       right: 50px;
-      top: 30px;
+      top: 10px;
       transform: scale(1);
       -webkit-transform: scale(1);
       transition: all 0.2s ease-in-out;
@@ -21,6 +22,7 @@
     .productImage:hover {
       transform: scale(1.1);
       -webkit-transform: scale(1.1);
+      overflow: hidden;
     }
   }
   .productSummeryBox {

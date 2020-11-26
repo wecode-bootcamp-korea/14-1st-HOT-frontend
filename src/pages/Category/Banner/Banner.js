@@ -18,10 +18,10 @@ class Banner extends Component {
     };
 
     const slideSampleImage = [
-      { id: 1, url: 'images/event1.png' },
-      { id: 2, url: 'images/event1.png' },
-      { id: 3, url: 'images/event1.png' },
-      { id: 4, url: 'images/event1.png' },
+      { id: 1, url: 'https://ifh.cc/g/l0W00A.jpg' },
+      { id: 2, url: 'https://ifh.cc/g/l0W00A.jpg' },
+      { id: 3, url: 'https://ifh.cc/g/l0W00A.jpg' },
+      { id: 4, url: 'https://ifh.cc/g/l0W00A.jpg' },
     ];
     return (
       <>

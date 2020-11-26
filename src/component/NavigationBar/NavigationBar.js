@@ -26,7 +26,7 @@ class NavigationBar extends React.Component {
           <div className='Nav'>
             <div className='categoriesBox'>
               <div className='logoIcon'>
-                <img src='./images/logo_text.png' alt='home' />
+                <img src='https://ifh.cc/g/1xuPk5.png' alt='home' />
               </div>
               <div className='categories'>
                 <button
@@ -47,14 +47,14 @@ class NavigationBar extends React.Component {
             <div className='managementBox'>
               <div className='searchBar'>
                 <input type='text' placeholder='오늘의집 통합검색' />
-                <img src='./images/loupe.png' alt='search' />
+                <img src='https://ifh.cc/g/CYZqkI.png' alt='search' />
               </div>
               <div className='management'>
                 <Link className='cart'>
-                  <img src='./images/shopping-cart.png' alt='cart' />
+                  <img src='https://ifh.cc/g/UCgtvr.png' alt='cart' />
                 </Link>
                 <Link className='mypage' to='/mypage'>
-                  <img src='./images/profileimg.png' alt='mypage' />
+                  <img src='https://ifh.cc/g/5IdflM.png' alt='mypage' />
                 </Link>
                 <div className='enterPage'>
                   <span className='navLogin'>로그인</span>

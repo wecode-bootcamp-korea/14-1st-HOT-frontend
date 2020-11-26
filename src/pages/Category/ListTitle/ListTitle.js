@@ -13,6 +13,7 @@ class ListTitle extends Component {
 
   selectedCategory = (categoryElement) => {
     this.setState({ selectedCategory: categoryElement.category_name });
+    this.props.takeClickEvent(categoryElement);
   };
 
   selectedSubcategory = (subCategoriesElement) => {
@@ -22,13 +23,12 @@ class ListTitle extends Component {
   };
 
   render() {
-    const { menu_name, categories } = this.props.title;
+    const { menu_name, categories } = this.props.giveTitle;
     const {
       selectedCategory,
       selectedSubcategory,
       openCategorySwitch,
     } = this.state;
-    console.log('>>>>>', this.props.title);
     return (
       <div className='listTitle'>
         <div className='litleName'>
