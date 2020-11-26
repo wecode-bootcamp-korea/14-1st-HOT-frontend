@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.scss";
-import { API } from "../../config";
+import { LOGIN_API } from "../../config";
 
 class Login extends React.Component {
   constructor() {
@@ -16,7 +16,7 @@ class Login extends React.Component {
     console.log("성공");
     // e.preventDefault();
     const { id, pw } = this.state;
-    fetch(API, {
+    fetch(LOGIN_API, {
       method: "POST",
       body: JSON.stringify({
         email: id,
