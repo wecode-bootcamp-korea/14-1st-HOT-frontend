@@ -3,6 +3,7 @@ import './Cart.scss';
 import NavigationBar from '../../../../../component/NavigationBar/NavigationBar';
 import Footer from '../../../../../component/Footer/Footer';
 import Product from './Product/Product';
+import calcuration from '../../../Function/calcuration';
 
 class Cart extends Component {
   constructor() {
@@ -71,19 +72,7 @@ class Cart extends Component {
                     총 상품금액
                   </div>
                   <div className='totalProductPriceCount flexBox'>
-                    {selectProduct.length &&
-                      selectProduct
-                        .map((ele) =>
-                          ele.options.reduce(
-                            (accumulator, currentValue) =>
-                              accumulator +
-                              parseInt(currentValue.value * currentValue.count),
-                            0
-                          )
-                        )
-                        .reduce((acc, val) => acc + val)
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원'}
+                    {calcuration(selectProduct, 1, 1)}
                   </div>
                 </div>
                 <div className='totalDilivery flexSpaceBox'>
@@ -93,44 +82,13 @@ class Cart extends Component {
                 <div className='totalSale flexSpaceBox'>
                   <div className='totalSaleText flexBox'>총 할인금액</div>
                   <div className='totalSaleCount flexBox'>
-                    {selectProduct.length &&
-                      selectProduct
-                        .map((ele) =>
-                          ele.options.reduce(
-                            (accumulator, currentValue) =>
-                              accumulator +
-                              parseInt(
-                                currentValue.value * currentValue.count
-                              ) /
-                                10,
-                            0
-                          )
-                        )
-                        .reduce((acc, val) => acc + val)
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원'}
+                    {calcuration(selectProduct, 10, 1)}
                   </div>
                 </div>
                 <div className='totalPrice flexSpaceBox'>
                   <div className='totalPriceText flexBox'>결제금액</div>
                   <div className='totalPriceCount flexBox'>
-                    {selectProduct.length &&
-                      selectProduct
-                        .map((ele) =>
-                          ele.options.reduce(
-                            (accumulator, currentValue) =>
-                              accumulator +
-                              (parseInt(
-                                currentValue.value * currentValue.count
-                              ) /
-                                10) *
-                                9,
-                            0
-                          )
-                        )
-                        .reduce((acc, val) => acc + val)
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원'}
+                    {calcuration(selectProduct, 10, 9)}
                   </div>
                 </div>
               </div>

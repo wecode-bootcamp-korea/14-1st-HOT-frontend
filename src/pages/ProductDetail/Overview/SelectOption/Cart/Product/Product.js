@@ -5,7 +5,6 @@ import './Product.scss';
 class Product extends Component {
   render() {
     const { product_name, seller, options } = this.props.product;
-    console.log(options);
     return (
       <div className='Product'>
         <div className='productTitle flexBox'>{seller}</div>

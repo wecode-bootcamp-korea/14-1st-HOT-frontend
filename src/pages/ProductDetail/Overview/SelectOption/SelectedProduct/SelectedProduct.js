@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './SelectedProduct.scss';
 
+const counts = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 class SelectedProduct extends Component {
   getSelectedProduct = (e, targetProductInfo) => {
     this.props.takeCountValue(targetProductInfo, e.target.value);
@@ -11,7 +13,6 @@ class SelectedProduct extends Component {
   };
 
   render() {
-    const counts = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     const { giveSelectedProducts } = this.props;
     const { getSelectedProduct, handleDeleteButton } = this;
     return (

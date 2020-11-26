@@ -1,3 +1,5 @@
+@import '../../../../../styles/common.scss';
+
 .Cart {
   background-color: #f5f5f5;
   padding-bottom: 50px;
@@ -87,7 +89,7 @@
         height: 50px;
         margin: 0px 10px;
         color: white;
-        background-color: RGB(55, 197, 239);
+        background-color: $themeColor;
         font-size: 18px;
         font-weight: 800;
       }
