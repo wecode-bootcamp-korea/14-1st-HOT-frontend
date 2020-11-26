@@ -8,31 +8,36 @@ class PinPoint extends Component {
   constructor() {
     super();
     this.state = {
-      isHide: false,
+      isproductHide: false,
     };
   }
 
   handleMouseEnter = () => {
-    this.setState({ isHide: true });
+    this.setState({ isproductHide: true });
     // console.log(this.state.isHide);
   };
   handleMouseLeave = () => {
-    this.setState({ isHide: false });
+    this.setState({ isproductHide: false });
   };
 
   render() {
+    console.log("상품", this.state.isproductHide);
     const { productId, imageURL, productName } = this.props;
     return (
-      <div className="pinWrap">
+      <div
+        className="pinWrap"
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+      >
         <FcPlus
           className="circlePlus"
-          onMouseEnter={this.handleMouseEnter}
+          // onMouseEnter={this.handleMouseEnter}
           // onMouseLeave={this.handleHideInfo}
         />
-        <div onMouseLeave={this.handleMouseLeave}>
+        <div>
           <LinkedProduct
             className="linkedProduct"
-            isHide={this.state.isHide}
+            isproductHide={this.state.isproductHide}
             productId={productId}
             imageURL={imageURL}
             productName={productName}

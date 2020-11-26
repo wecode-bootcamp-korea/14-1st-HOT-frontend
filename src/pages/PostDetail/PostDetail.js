@@ -23,7 +23,8 @@ class posts extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.1.148:8000/posts/${this.props.match.params.id}`)
+    // fetch(`http://10.58.1.148:8000/posts/${this.props.match.params.id}`)
+    fetch("/Data/POSTDATA.json")
       .then((response) => response.json())
       .then((res) => {
         this.setState({
@@ -39,25 +40,25 @@ class posts extends Component {
   pressForPost = (e) => {
     e.preventDefault();
     const { reply, replyList } = this.state;
-    // if (reply.length) {
-    //   let replyToAdd = {
-    //     id: 0,
-    //     author: {
-    //       author_id: this.state.data.author.author_id,
-    //       username: this.state.data.author.author_username,
-    //       profile_image: null,
-    //     },
-    //     content: reply,
-    //     created_at: "",
-    //     updated_at: "",
-    //     parent_id: null,
-    //   };
+    if (reply.length) {
+      let replyToAdd = {
+        id: 0,
+        author: {
+          author_id: this.state.data.author.author_id,
+          username: this.state.data.author.author_username,
+          profile_image: null,
+        },
+        content: reply,
+        created_at: "",
+        updated_at: "",
+        parent_id: null,
+      };
 
-    //   this.setState({
-    //     replyList: [...replyList, replyToAdd],
-    //     reply: "",
-    //   });
-    // }
+      this.setState({
+        replyList: [...replyList, replyToAdd],
+        reply: "",
+      });
+    }
   };
   handleMouseMove = () => {
     this.setState({ mouseHover: !this.state.mouseHover });
@@ -82,6 +83,11 @@ class posts extends Component {
                       alt="MainImage"
                     />
                     {this.state.data.linked_products.map((el) => {
+                      // console.log(
+                      //   "el >>>>",
+                      //   this.state.data.linked_products[0].product_name
+                      // );
+                      console.log("호버", this.state.mouseHover);
                       return (
                         <div
                           className={
