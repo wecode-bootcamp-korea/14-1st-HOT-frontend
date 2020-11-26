@@ -21,6 +21,7 @@ class PinPoint extends Component {
 
   render() {
     const { productId, imageURL, productName } = this.props;
+
     return (
       <div
         className="pinWrap"

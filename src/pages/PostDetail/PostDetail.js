@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Reply from "./Reply.js";
+import { API_DY } from "../../config";
 
 import PinPoint from "./PinPoint/PinPoint";
 import "./PostDetail.scss";
@@ -16,8 +17,7 @@ class posts extends Component {
   }
 
   componentDidMount() {
-    // fetch(`http://10.58.1.148:8000/posts/${this.props.match.params.id}`)
-    fetch("/Data/POSTDATA.json")
+    fetch(`${API_DY}/posts/${this.props.match.params.id}`)
       .then((response) => response.json())
       .then((res) => {
         this.setState({
@@ -47,21 +47,30 @@ class posts extends Component {
         parent_id: null,
       };
 
-      this.setState(
-        {
-          replyList: [...replyList, replyToAdd],
-          reply: "",
-        },
-        () => console.log("List", this.state.reply)
-      );
+      this.setState({
+        replyList: [...replyList, replyToAdd],
+        reply: "",
+      });
     }
+
+    fetch(`${API_DY}/posts/${this.props.match.params.id}/comments`, {
+      method: "POST",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
+      },
+      body: { content: this.state.reply },
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(JSON.stringify(res)));
   };
   handleMouseMove = () => {
     this.setState({ mouseHover: !this.state.mouseHover });
   };
 
   render() {
-    console.log(this.pressForPost);
+    console.log("render", this.state.replyList);
+    console.log(this.state.reply);
     return (
       <section className="FeedDetail">
         <div className="container">

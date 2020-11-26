@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import ItemWrap from "./ItemWrap.js";
 import "./FeedList.scss";
-
-// const API = "http://10.58.7.154:8000/post";
+import { API_DY } from "../../../config";
 
 class FeedList extends Component {
   constructor() {
@@ -13,7 +12,7 @@ class FeedList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.1.148:8000/posts")
+    fetch(`${API_DY}/posts`)
       .then((response) => response.json())
       .then((res) => {
         this.setState(
