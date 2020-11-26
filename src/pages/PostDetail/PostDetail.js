@@ -68,7 +68,10 @@ class PostDetail extends Component {
           <div className="feedLeft">
             <article className="feedLetfArticle">
               <header className="feedHeader">
-                <div className="headerLeft">20평대</div>
+                <div className="headerLeft">
+                  20평대&nbsp;&nbsp;|&nbsp;&nbsp;내추럴
+                  스타일&nbsp;&nbsp;|&nbsp;&nbsp;아파트
+                </div>
                 <div>어제</div>
               </header>
               <div className="feedImageWrap">
@@ -161,13 +164,15 @@ class PostDetail extends Component {
           <div className="feedRight">
             <div className="rightSideBar">
               <div className="feedLikes">
-                <button className="likeButton">하트</button>
+                <button className="likeButton">
+                  <img src="./images/heart.png" alt="heart" />
+                </button>
                 <button className="scrapButton">스크랩</button>
               </div>
               <div className="feedUserProfile">
                 <div className="UserProfilePic">
                   <a href="/">
-                    <img src="/images/Communityimages/chair.jpg" />
+                    <img src="/images/Communityimages/chair.jpg" alt="chair" />
                   </a>
                 </div>
                 <div className="UserProfileWriter">

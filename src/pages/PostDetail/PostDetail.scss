@@ -9,6 +9,8 @@
 }
 
 .FeedDetail {
+  margin-top: 80px;
+  border-top: 1px solid rgb(224, 224, 224);
   @extend %displayCenter;
   width: 100%;
 
@@ -28,6 +30,10 @@
           margin: 40px 0 30px;
           font-size: 15px;
           line-height: 21px;
+
+          .headerLeft {
+            color: #757575;
+          }
         }
 
         .feedImageWrap {
@@ -174,6 +180,10 @@
           display: flex;
           justify-content: space-between;
           margin-bottom: 40px;
+
+          img {
+            width: 23px;
+          }
 
           button {
             width: 145px;
