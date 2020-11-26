@@ -14,7 +14,6 @@ class Login extends React.Component {
 
   checkValidation = (e) => {
     console.log("성공");
-    // e.preventDefault();
     const { id, pw } = this.state;
     fetch(LOGIN_API, {
       method: "POST",
