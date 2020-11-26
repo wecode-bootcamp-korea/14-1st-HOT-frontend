@@ -14,14 +14,12 @@ class PinPoint extends Component {
 
   handleMouseEnter = () => {
     this.setState({ isproductHide: true });
-    // console.log(this.state.isHide);
   };
   handleMouseLeave = () => {
     this.setState({ isproductHide: false });
   };
 
   render() {
-    console.log("상품", this.state.isproductHide);
     const { productId, imageURL, productName } = this.props;
     return (
       <div
@@ -29,11 +27,7 @@ class PinPoint extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-        <FcPlus
-          className="circlePlus"
-          // onMouseEnter={this.handleMouseEnter}
-          // onMouseLeave={this.handleHideInfo}
-        />
+        <FcPlus className="circlePlus" />
         <div>
           <LinkedProduct
             className="linkedProduct"

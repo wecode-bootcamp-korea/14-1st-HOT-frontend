@@ -7,20 +7,10 @@ class LinkedProduct extends Component {
     this.props.history.push();
   };
   render() {
-    const {
-      isproductHide,
-      productId,
-      imageURL,
-      productName,
-      // handleProductLeave,
-    } = this.props;
-    // console.log("프덕", this.props.imageURL);
+    const { isproductHide, productId, imageURL, productName } = this.props;
+
     return (
-      <div
-        // onMouseLeave={handleProductLeave}
-        className="LinkedProduct"
-        onClick={this.goToProduct}
-      >
+      <div className="LinkedProduct" onClick={this.goToProduct}>
         <div className={isproductHide ? "show" : "hide"}>
           <div className="productImage">
             <img className="imageURL" src={imageURL} alt="" />
