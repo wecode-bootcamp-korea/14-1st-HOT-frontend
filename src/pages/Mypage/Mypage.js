@@ -13,13 +13,22 @@ class Mypage extends Component {
   }
 
   componentDidMount() {
-    fetch(API)
+    fetch(`${API}`, {
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.iMDoMz-w6a80vqql99xn76L6YPntpzewn5eMUf3-MIQ",
+      },
+    })
       .then((res) => res.json())
-      .then((res) => this.setState({ myPageImage: res.context }));
+      .then((res) => {
+        this.setState({ myPageImage: res.context.bookmark_posts });
+        console.log("fetch", res);
+      });
   }
 
   render() {
     const { myPageImage } = this.state;
+    console.log("render", myPageImage);
 
     return (
       <section className="Mypage">
