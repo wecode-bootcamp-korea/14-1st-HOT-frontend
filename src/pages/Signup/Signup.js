@@ -3,8 +3,7 @@ import "./Signup.scss";
 import { Link } from "react-router-dom";
 import Simplesignup from "./Simplesignup.js";
 import Agree from "./Agree";
-
-const API = "http://10.58.3.106:8000/user/register";
+import { API } from "../../config";
 
 class Signup extends Component {
   state = {
