@@ -83,6 +83,7 @@ class NavigationBar extends React.Component {
             </div>
           </div>
         </div>
+        <div className="navBarBorder"></div>
         <div className="subNav">
           {communitytoggle && (
             <Firstcategory onEnter={this.handleEnterCommunity} />

@@ -1,0 +1,114 @@
+.listTitle {
+  .litleName {
+    margin: 0 0 19px 0;
+    font-size: 21px;
+    font-weight: 700;
+  }
+
+  .subTitle {
+    padding: 0 0 14px 0;
+    margin: 28px 0 28px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    cursor: pointer;
+
+    .subTitleMenubox {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+
+      .subTitleMenuAndButton {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+
+        .subTitleList {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+        }
+
+        .subTitleList:hover {
+          opacity: 50%;
+          cursor: pointer;
+        }
+
+        .subTitleButtonBox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20px;
+
+          .showButtonBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .showButton {
+              width: 10px;
+            }
+          }
+        }
+      }
+      .suOfSubTitleListBox {
+        max-height: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        .suOfSubTitleList {
+          margin-left: 10px;
+          margin-bottom: 10px;
+          font-weight: 400;
+        }
+
+        .suOfSubTitleList:hover {
+          opacity: 50%;
+          cursor: pointer;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.changeColorEvent {
+  color: RGB(55, 197, 239);
+  font-weight: 700;
+}
+
+.moveDropEvent {
+  animation: dropMove 1s 0.1s ease-in;
+  animation-fill-mode: both;
+}
+.moveCloseEvent {
+  animation: closeMove 1s ease-in;
+  animation-fill-mode: both;
+}
+
+@keyframes dropMove {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 500px;
+  }
+}
+
+@keyframes closeMove {
+  from {
+    max-height: 500px;
+  }
+  to {
+    max-height: 0px;
+  }
+}
