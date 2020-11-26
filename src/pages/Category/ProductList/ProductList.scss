@@ -1,0 +1,82 @@
+.mdPickTextBox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 867px;
+  padding: 0 10px 0 10px;
+  margin: 65px 0 10px 0;
+
+  .mdPickText {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(63, 63, 63);
+  }
+}
+
+.productFilterButtonBox {
+  display: flex;
+  width: 867px;
+  margin: 20px 0 0 0px;
+  padding: 0 10px 0 10px;
+
+  .productFilterButtons {
+    margin: 3px;
+
+    .productFilterButton {
+      display: flex;
+      align-items: center;
+      height: 35px;
+      border: 1px solid rgb(206, 206, 206);
+      border-radius: 4px;
+      color: rgb(66, 66, 66);
+      font-size: 15px;
+      padding: 5px 10px 5px 10px;
+
+      .filterButton {
+        width: 10px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.productInfoBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 867px;
+  height: 30px;
+  padding-top: 40px;
+  margin-bottom: 7px;
+  color: rgb(71, 71, 71);
+  font-size: 15px;
+
+  .productCountBox {
+    display: flex;
+    justify-content: center;
+    width: 90px;
+    border: 1px solid red;
+
+    .poductCount {
+      margin: 0 0 0 5px;
+    }
+  }
+  .popularSerch {
+    display: flex;
+    align-items: center;
+    width: 65px;
+
+    .serchBoxIcon {
+      width: 10px;
+      margin-left: 5px;
+    }
+  }
+}
+.smallProductList {
+  display: flex;
+  width: 867px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+}

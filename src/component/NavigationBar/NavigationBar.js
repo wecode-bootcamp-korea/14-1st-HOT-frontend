@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Firstcategory from "./Firstcategory";
-import Secondcategory from "./Secondcategory";
-import "./NavigationBar.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Firstcategory from './Firstcategory';
+import Secondcategory from './Secondcategory';
+import './NavigationBar.scss';
 
 class NavigationBar extends React.Component {
   state = {
@@ -21,55 +21,53 @@ class NavigationBar extends React.Component {
     const { communitytoggle, storetoggle } = this.state;
 
     return (
-      <div className="navBackgruond">
-        <div className="NavigationBar">
-          <div className="Nav">
-            <div className="categoriesBox">
-              <div className="logoIcon">
-                <img src="./images/logo_text.png" alt="home" />
+      <div className='navBackgruond'>
+        <div className='NavigationBar'>
+          <div className='Nav'>
+            <div className='categoriesBox'>
+              <div className='logoIcon'>
+                <img src='https://ifh.cc/g/1xuPk5.png' alt='home' />
               </div>
-              <div className="categories">
+              <div className='categories'>
                 <button
-                  className="category"
-                  onMouseEnter={this.handleEnterCommunity}
-                >
+                  className='category'
+                  onMouseEnter={this.handleEnterCommunity}>
                   커뮤니티
                 </button>
                 <button
-                  className="category"
-                  onMouseEnter={this.handleEnterStore}
-                >
+                  className='category'
+                  onMouseEnter={this.handleEnterStore}>
                   스토어
                 </button>
-                <button className="category" to="">
+                <button className='category' to=''>
                   인테리어시공
                 </button>
               </div>
             </div>
-            <div className="managementBox">
-              <div className="searchBar">
-                <input type="text" placeholder="오늘의집 통합검색" />
-                <img src="./images/loupe.png" alt="search" />
+            <div className='managementBox'>
+              <div className='searchBar'>
+                <input type='text' placeholder='오늘의집 통합검색' />
+                <img src='https://ifh.cc/g/CYZqkI.png' alt='search' />
               </div>
-              <div className="management">
-                <Link className="cart">
-                  <img src="./images/shopping-cart.png" alt="cart" />
+              <div className='management'>
+                <Link className='cart'>
+                  <img src='https://ifh.cc/g/UCgtvr.png' alt='cart' />
                 </Link>
-                <Link className="mypage" to="/mypage">
-                  <img src="./images/profileimg.png" alt="mypage" />
+                <Link className='mypage' to='/mypage'>
+                  <img src='https://ifh.cc/g/5IdflM.png' alt='mypage' />
                 </Link>
-                <div className="enterPage">
-                  <span className="navLogin">로그인</span>
-                  <span className="navDivLine">⎮</span>
-                  <span className="navSignup">회원가입</span>
+                <div className='enterPage'>
+                  <span className='navLogin'>로그인</span>
+                  <span className='navDivLine'>⎮</span>
+                  <span className='navSignup'>회원가입</span>
                 </div>
-                <button className="button">
+                <button className='button'>
                   글쓰기
-                  <div className="showIconBox">
+                  <div className='showIconBox'>
                     <img
-                      src="/images/showIcon_white.png"
-                      className="showIcon"
-                      alt="showIcon"
+                      src='/images/showIcon_white.png'
+                      className='showIcon'
+                      alt='showIcon'
                     />
                   </div>
                 </button>
@@ -77,8 +75,8 @@ class NavigationBar extends React.Component {
             </div>
           </div>
         </div>
-        <div className="navBarBorder"></div>
-        <div className="subNav">
+        <div className='navBarBorder'></div>
+        <div className='subNav'>
           {communitytoggle && (
             <Firstcategory onEnter={this.handleEnterCommunity} />
           )}
