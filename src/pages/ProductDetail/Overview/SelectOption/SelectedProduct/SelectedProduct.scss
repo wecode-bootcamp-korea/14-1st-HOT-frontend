@@ -1,0 +1,85 @@
+.selectedProductBox {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: rgb(243, 243, 243);
+  .selectedProductInnerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .flexSelectedProductBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+      height: 30px;
+
+      .selectedProductName {
+        color: #424242;
+        font-size: 15px;
+      }
+
+      .deleteButton {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 8px;
+        right: 8px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        color: rgb(99, 99, 99);
+        cursor: pointer;
+
+        &:hover {
+          color: rgb(172, 172, 172);
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .flexSelectedProductPriceBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 30px;
+
+      .selectProductCount {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 25px;
+        padding-left: 10px;
+        border-radius: 4px;
+        border-color: rgb(223, 223, 223);
+
+        &:focus {
+          border-color: rgb(223, 223, 223);
+          outline: none;
+        }
+
+        &:hover {
+          border-radius: 4px;
+          border-color: rgb(219, 219, 219);
+          background-color: rgb(238, 238, 238);
+        }
+      }
+
+      .selectedProductPrice {
+        font-family: Tahoma, sans-serif;
+        font-weight: 700;
+      }
+    }
+  }
+}

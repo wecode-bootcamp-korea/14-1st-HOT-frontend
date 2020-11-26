@@ -1,0 +1,53 @@
+.showMonalPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+
+  .cartButtonBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 250px;
+    background-color: white;
+    border-radius: 5px;
+
+    .notificationPhrase {
+      display: flex;
+      align-items: center;
+      height: 35px;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .moveCartButton {
+      width: 320px;
+      height: 60px;
+      color: white;
+      background-color: RGB(55, 197, 239);
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .cancleButton {
+      width: 320px;
+      height: 60px;
+      border: 1px solid RGB(55, 197, 239);
+      border-radius: 4px;
+
+      &:hover {
+        background-color: rgb(243, 243, 243);
+      }
+    }
+  }
+}
