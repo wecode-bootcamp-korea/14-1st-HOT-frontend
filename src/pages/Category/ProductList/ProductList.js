@@ -17,13 +17,13 @@ class ProductList extends Component {
   }
 
   getProductList = () => {
-    fetch('/Data/product.json', {
+    fetch('http://10.58.5.203:8000/store/products?menu=1', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          products: res.products,
+          products: res.result,
         });
       });
   };
@@ -37,9 +37,10 @@ class ProductList extends Component {
           <div className='mdPickText'>MD's PICK</div>
         </div>
         <div className='smallProductList'>
-          {products.map((productElement, productIndex) => (
-            <RandomProduct key={productIndex} product={productElement} />
-          ))}
+          {products.length &&
+            products.map((productElement, productIndex) => (
+              <RandomProduct key={productIndex} product={productElement} />
+            ))}
         </div>
         <div className='productFilterButtonBox'>
           {BUTTONTEXT.map((buttonTextElement, buttonTextIndex) => (

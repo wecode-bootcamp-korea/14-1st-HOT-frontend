@@ -8,7 +8,9 @@
     overflow: hidden;
 
     .randomProductImage {
-      width: 100%;
+      position: relative;
+      right: 30px;
+      width: 150%;
       transform: scale(1);
       -webkit-transform: scale(1);
       transition: all 0.2s ease-in-out;

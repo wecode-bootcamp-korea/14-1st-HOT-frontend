@@ -7,47 +7,51 @@ class ListTitle extends Component {
     this.state = {
       selectedCategory: '',
       selectedSubcategory: '',
+      openCategorySwitch: false,
     };
   }
 
-  selectedCategory = (subtitleElement) => {
-    this.setState({ selectedCategory: subtitleElement.subTitle });
+  selectedCategory = (categoryElement) => {
+    this.setState({ selectedCategory: categoryElement.category_name });
   };
 
-  selectedSubcategory = (susubTitleElement) => {
-    this.setState({ selectedSubcategory: susubTitleElement.susubTitle });
+  selectedSubcategory = (subCategoriesElement) => {
+    this.setState({
+      selectedSubcategory: subCategoriesElement.subcategory_name,
+    });
   };
 
   render() {
-    const { subtitle } = this.props.title;
+    const { menu_name, categories } = this.props.title;
     const {
       selectedCategory,
       selectedSubcategory,
       openCategorySwitch,
     } = this.state;
+    console.log('>>>>>', this.props.title);
     return (
       <div className='listTitle'>
         <div className='litleName'>
-          <span>{this.props.title}</span>
+          <span>{menu_name}</span>
         </div>
         <div className='subTitle'>
-          {subtitle &&
-            subtitle.map((subtitleElement, subtitleIndex) => (
-              <div key={subtitleIndex} className={'subTitleMenubox'}>
+          {categories.length > 0 &&
+            categories.map((categoryElement, categoriesIndex) => (
+              <div key={categoriesIndex} className={'subTitleMenubox'}>
                 <div className='subTitleMenuAndButton'>
                   <button
-                    onClick={() => this.selectedCategory(subtitleElement)}
+                    onClick={() => this.selectedCategory(categoryElement)}
                     className={
-                      selectedCategory === subtitleElement.subTitle
+                      selectedCategory === categoryElement.category_name
                         ? 'subTitleList changeColorEvent '
                         : 'subTitleList'
                     }>
-                    {subtitleElement.subTitle}
+                    {categoryElement.category_name}
                   </button>
                   <button className='subTitleButtonBox'>
                     <div
                       className='showButtonBox'
-                      onClick={() => this.selectedCategory(subtitleElement)}>
+                      onClick={() => this.selectedCategory(categoryElement)}>
                       <img
                         src={
                           openCategorySwitch
@@ -62,26 +66,28 @@ class ListTitle extends Component {
                 </div>
                 <div
                   className={
-                    selectedCategory === subtitleElement.subTitle
+                    selectedCategory === categories.category_name
                       ? 'suOfSubTitleListBox moveDropEvent'
                       : 'suOfSubTitleListBox moveCloseEvent'
                   }>
-                  {subtitleElement.susubtitle.map(
-                    (susubTitleElement, susubTitleIndex) => (
-                      <button
-                        key={susubTitleIndex}
-                        onClick={() =>
-                          this.selectedSubcategory(susubTitleElement)
-                        }
-                        className={
-                          selectedSubcategory === susubTitleElement.susubTitle
-                            ? 'suOfSubTitleList changeColorEvent'
-                            : 'suOfSubTitleList'
-                        }>
-                        {susubTitleElement.susubTitle}
-                      </button>
-                    )
-                  )}
+                  {categories.subcategories.length > 0 &&
+                    categories.subcategories.map(
+                      (subCategoriesElement, subCategoriesIndex) => (
+                        <button
+                          key={subCategoriesIndex}
+                          onClick={() =>
+                            this.selectedSubcategory(subCategoriesElement)
+                          }
+                          className={
+                            selectedSubcategory ===
+                            subCategoriesElement.subcategory_name
+                              ? 'suOfSubTitleList changeColorEvent'
+                              : 'suOfSubTitleList'
+                          }>
+                          {subCategoriesElement.subcategory_name}
+                        </button>
+                      )
+                    )}
                 </div>
               </div>
             ))}

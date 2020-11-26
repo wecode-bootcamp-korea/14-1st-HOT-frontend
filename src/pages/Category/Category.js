@@ -22,34 +22,32 @@ class Category extends Component {
   }
 
   getCategoryOtherMenu = () => {
-    fetch('/Data/categoryListView.json', {
+    fetch('http://10.58.5.203:8000/store/categories', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(this.state.categoryOther);
         this.setState({
-          // categoryOther: res.result,
+          categoryOther: res.result,
         });
       });
   };
 
   getCategoryTitleMenu = () => {
-    fetch('/Data/categoryListView.json', {
+    fetch('http://10.58.5.203:8000/store/categories?menu=1', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(this.state.categoryOther);
         this.setState({
-          // categoryTitle: res.result,
+          categoryTitle: res.result,
         });
       });
   };
 
   render() {
     const { categoryTitle, categoryOther } = this.state;
-    console.log(categoryOther, categoryTitle);
+    console.log(categoryTitle, categoryOther);
     return (
       <>
         <NavigationBar />

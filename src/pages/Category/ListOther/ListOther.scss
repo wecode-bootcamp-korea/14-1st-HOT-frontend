@@ -1,7 +1,11 @@
 .otherListBox {
-  .otherList {
-    margin: 0 0 19px 0;
-    font-size: 21px;
-    font-weight: 700;
+  .buttonBox {
+    cursor: pointer;
+
+    .otherList {
+      margin: 0 0 19px 0;
+      font-size: 21px;
+      font-weight: 700;
+    }
   }
 }
