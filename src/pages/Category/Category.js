@@ -30,6 +30,9 @@ class Category extends Component {
         this.setState({
           categoryOther: res.result,
         });
+        const categoryOther = [...this.state.categoryOther];
+        categoryOther.filter((category) => category !== category[0]);
+        this.setState({ categoryOther });
       });
   };
 

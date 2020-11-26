@@ -35,7 +35,7 @@ class ListTitle extends Component {
           <span>{menu_name}</span>
         </div>
         <div className='subTitle'>
-          {categories.length > 0 &&
+          {categories &&
             categories.map((categoryElement, categoriesIndex) => (
               <div key={categoriesIndex} className={'subTitleMenubox'}>
                 <div className='subTitleMenuAndButton'>
@@ -66,28 +66,27 @@ class ListTitle extends Component {
                 </div>
                 <div
                   className={
-                    selectedCategory === categories.category_name
+                    selectedCategory === categoryElement.category_name
                       ? 'suOfSubTitleListBox moveDropEvent'
                       : 'suOfSubTitleListBox moveCloseEvent'
                   }>
-                  {categories.subcategories.length > 0 &&
-                    categories.subcategories.map(
-                      (subCategoriesElement, subCategoriesIndex) => (
-                        <button
-                          key={subCategoriesIndex}
-                          onClick={() =>
-                            this.selectedSubcategory(subCategoriesElement)
-                          }
-                          className={
-                            selectedSubcategory ===
-                            subCategoriesElement.subcategory_name
-                              ? 'suOfSubTitleList changeColorEvent'
-                              : 'suOfSubTitleList'
-                          }>
-                          {subCategoriesElement.subcategory_name}
-                        </button>
-                      )
-                    )}
+                  {categoryElement.subcategories.map(
+                    (subCategoriesElement, subCategoriesIndex) => (
+                      <button
+                        key={subCategoriesIndex}
+                        onClick={() =>
+                          this.selectedSubcategory(subCategoriesElement)
+                        }
+                        className={
+                          selectedSubcategory ===
+                          subCategoriesElement.subcategory_name
+                            ? 'suOfSubTitleList changeColorEvent'
+                            : 'suOfSubTitleList'
+                        }>
+                        {subCategoriesElement.subcategory_name}
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
             ))}
