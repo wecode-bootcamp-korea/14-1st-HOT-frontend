@@ -9,7 +9,7 @@ class Signup extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "",
+      email: "",
       pw: "",
       username: "",
     };
