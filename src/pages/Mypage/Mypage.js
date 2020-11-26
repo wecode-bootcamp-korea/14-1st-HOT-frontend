@@ -8,27 +8,32 @@ class Mypage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      result: {},
       myPageImage: [],
+      bookmark_count: 0,
     };
   }
 
   componentDidMount() {
-    fetch(`${API}`, {
+    fetch(API, {
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.iMDoMz-w6a80vqql99xn76L6YPntpzewn5eMUf3-MIQ",
+        Authorization: localStorage.getItem("token"),
       },
     })
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((res) => {
-        this.setState({ myPageImage: res.context.bookmark_posts });
-        console.log("fetch", res);
+        this.setState({ result: res.context }, () =>
+          console.log("re", this.state.result)
+        );
+        this.setState({
+          myPageImage: this.state.result.bookmark_products,
+          bookmark_count: this.state.result.bookmark_count,
+        });
       });
   }
 
   render() {
-    const { myPageImage } = this.state;
-    console.log("render", myPageImage);
+    const { myPageImage, bookmark_count } = this.state;
 
     return (
       <section className="Mypage">
@@ -55,7 +60,7 @@ class Mypage extends Component {
                   <button className="button">설정</button>
                 </div>
               </div>
-              <Userlink />
+              <Userlink bookmark_count={bookmark_count} />
             </div>
             <div className="getCoupon">
               <span className="add">친구 초대하고</span>
