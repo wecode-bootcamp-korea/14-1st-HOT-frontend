@@ -60,9 +60,13 @@ class NavigationBar extends React.Component {
                     <img src="./images/profileimg.png" alt="mypage" />
                   </Link>
                   <div className="enterPage">
-                    <span className="navLogin">로그인</span>
+                    <Link className="navLogin" to="/login">
+                      로그인
+                    </Link>
                     <span className="navDivLine">⎮</span>
-                    <span className="navSignup">회원가입</span>
+                    <Link className="navSignup" to="/signup">
+                      회원가입
+                    </Link>
                   </div>
                   <button className="button">
                     글쓰기
