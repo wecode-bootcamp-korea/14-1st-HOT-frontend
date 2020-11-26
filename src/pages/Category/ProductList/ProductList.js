@@ -3,6 +3,8 @@ import Product from './Product/Product';
 import RandomProduct from './RandomProducts/RandomProducts';
 import './ProductList.scss';
 
+const BUTTONTEXT = ['색상', '우드톤', '소재', '사용 인원', '가격', '배송'];
+
 class ProductList extends Component {
   constructor() {
     super();
@@ -29,7 +31,6 @@ class ProductList extends Component {
   };
 
   render() {
-    const BUTTONTEXT = ['색상', '우드톤', '소재', '사용 인원', '가격', '배송'];
     const { products } = this.state;
     return (
       <>
