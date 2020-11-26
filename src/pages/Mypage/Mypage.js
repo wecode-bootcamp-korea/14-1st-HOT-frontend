@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Mypage.scss";
 import MypageFeed from "./MypageFeed";
 import Userlink from "./Userlink";
+import { API } from "../../config";
 
 class Mypage extends Component {
   constructor(props) {
@@ -12,11 +13,9 @@ class Mypage extends Component {
   }
 
   componentDidMount() {
-    fetch("/Data/mypageimage.json")
+    fetch(API)
       .then((res) => res.json())
-      .then((res) =>
-        this.setState({ myPageImage: res.context.bookmark_products })
-      );
+      .then((res) => this.setState({ myPageImage: res.context }));
   }
 
   render() {
