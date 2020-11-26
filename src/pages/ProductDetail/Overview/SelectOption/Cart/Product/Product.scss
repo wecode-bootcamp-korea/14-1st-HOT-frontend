@@ -1,0 +1,115 @@
+.Product {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 747px;
+
+  .productTitle {
+    width: 100%;
+    height: 43px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+  }
+
+  .productCheckBox {
+    position: absolute;
+    top: 62px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .deleteBox {
+    position: absolute;
+    top: 65px;
+    right: 17px;
+    width: 20px;
+    height: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+    cursor: pointer;
+  }
+
+  .product {
+    width: 676px;
+    margin-top: 20px;
+    margin-right: 17px;
+
+    .productOptionBox {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 15px;
+      cursor: pointer;
+
+      .productImageBox {
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
+        overflow: hidden;
+
+        .ProductImage {
+          width: 100%;
+          height: 100%;
+          transform: scale(1);
+          -webkit-transform: scale(1);
+          transition: all 0.2s ease-in-out;
+        }
+
+        .ProductImage:hover {
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+        }
+      }
+
+      .flexTitle {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        .title {
+          margin-bottom: 8px;
+          font-size: 16px;
+        }
+
+        .titleOption {
+          font-size: 11px;
+          color: rgb(117, 117, 117);
+        }
+      }
+
+      .flexTitle:hover {
+        color: gray;
+      }
+    }
+  }
+  .flexTotalBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    padding: 0 18px 0 55px;
+    margin-bottom: 10px;
+
+    .optionChange {
+      text-align: center;
+      width: auto;
+      font-size: 13px;
+      color: #646464;
+    }
+    .totalCalculation {
+      text-align: center;
+      width: auto;
+      font-size: 18px;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+  }
+  .deleveryCharge {
+    width: 100%;
+    height: 45px;
+    color: #424242;
+    border-top: 1px solid rgb(221, 221, 221);
+  }
+}
