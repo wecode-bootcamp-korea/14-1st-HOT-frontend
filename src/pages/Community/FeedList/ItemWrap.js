@@ -49,7 +49,7 @@ class ItemWrap extends Component {
       postWrite,
       comment,
     } = this.props;
-    console.log(comment);
+
     return (
       <div className="itemWrap">
         <article className="item">

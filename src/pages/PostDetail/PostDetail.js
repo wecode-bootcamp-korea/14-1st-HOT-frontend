@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Reply from "./Reply.js";
-import { API_DY } from "../../config";
-
 import PinPoint from "./PinPoint/PinPoint";
+import { API_DY } from "../../config";
 import "./PostDetail.scss";
+import { BsHeart } from "react-icons/bs";
+import { BsBookmark } from "react-icons/bs";
 
 class posts extends Component {
   constructor(props) {
@@ -20,8 +21,10 @@ class posts extends Component {
     fetch(`${API_DY}/posts/${this.props.match.params.id}`)
       .then((response) => response.json())
       .then((res) => {
+        console.log("results", res.results);
         this.setState({
           data: res.results,
+          replyList: res.results.comments,
         });
       });
   }
@@ -32,14 +35,14 @@ class posts extends Component {
 
   pressForPost = (e) => {
     e.preventDefault();
-    const { reply, replyList } = this.state;
+    const { reply, replyList, data } = this.state;
     if (reply.length) {
       let replyToAdd = {
         id: 0,
         author: {
-          author_id: this.state.data.author.author_id,
-          username: this.state.data.author.author_username,
-          profile_image: null,
+          author_id: data.author.author_id,
+          username: data.author.username,
+          profile_image: data.author.profile_image,
         },
         content: reply,
         created_at: "",
@@ -59,7 +62,7 @@ class posts extends Component {
         Authorization:
           "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
       },
-      body: { content: this.state.reply },
+      body: JSON.stringify({ content: this.state.reply }),
     })
       .then((res) => res.json())
       .then((res) => console.log(JSON.stringify(res)));
@@ -68,9 +71,11 @@ class posts extends Component {
     this.setState({ mouseHover: !this.state.mouseHover });
   };
 
+  removeComment = (id) => {
+    this.state.replyList.filter((el) => el.id !== id);
+  };
+
   render() {
-    console.log("render", this.state.replyList);
-    console.log(this.state.reply);
     return (
       <section className="FeedDetail">
         <div className="container">
@@ -130,7 +135,10 @@ class posts extends Component {
             {/* 댓글창  */}
             <section className="feedReplyWrap">
               <h1 className="feedReplyHeader">
-                댓글&nbsp;<span className="feedReplyHeaderCount"></span>
+                댓글&nbsp;
+                <span className="feedReplyHeaderCount">
+                  {this.state.replyList.length}
+                </span>
               </h1>
               <form
                 className="replyTypingForm"
@@ -156,15 +164,17 @@ class posts extends Component {
                 </div>
               </form>
               <ul className="feedReplyList">
-                {this.state.data.comments?.length &&
-                  this.state.data.comments.map((el, idx) => {
+                {this.state.replyList.length &&
+                  this.state.replyList.map((el) => {
                     return (
                       <Reply
-                        key={idx}
-                        id={el.author_id}
+                        id={el.id}
+                        removeComment={this.removeComment}
+                        authorId={el.author.author_id}
                         comment={el.content}
+                        params={this.props.match.params.id}
                         image={el.author.profile_image}
-                        username={el.author.username}
+                        userName={el.author.username}
                       />
                     );
                   })}
@@ -174,8 +184,12 @@ class posts extends Component {
           <div className="feedRight">
             <div className="rightSideBar">
               <div className="feedLikes">
-                <button className="likeButton">하트</button>
-                <button className="scrapButton">스크랩</button>
+                <button className="likeButton">
+                  <BsHeart className="detailLike" />
+                </button>
+                <button className="scrapButton">
+                  <BsBookmark className="detailBookmark" />
+                </button>
               </div>
               <div className="feedUserProfile">
                 <div className="UserProfilePic">

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { BsHeart } from "react-icons/bs";
 import ReplyComments from "./ReplyComments";
+// import {withRouter} from "react-router-dom"
+import { BsHeart } from "react-icons/bs";
+import { API_DY } from "../../config";
 
 class Reply extends Component {
   constructor() {
@@ -17,7 +19,17 @@ class Reply extends Component {
     this.setState({ showlist: !this.state.showlist });
   };
 
-  removeReply = () => {};
+  removeComment = () => {
+    fetch(`${API_DY}/posts/${this.props.params}/comments/${this.props.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => console.log("res", res));
+  };
 
   handleInput = (e) => {
     this.setState({ text: e.target.value });
@@ -35,7 +47,15 @@ class Reply extends Component {
   };
 
   render() {
-    const { id, image, username, comment } = this.props;
+    const {
+      authorId,
+      image,
+      userName,
+      comment,
+      removeComment,
+      id,
+      params,
+    } = this.props;
     return (
       <div className="Reply">
         <li className="ReplyList">
@@ -43,20 +63,20 @@ class Reply extends Component {
             <p className="ReplyText">
               <a className="ReplyUserName" href="/">
                 <img className="ReplyUserProfile" src={image} alt="" />
-                <span className="ReplyUserId">{username}</span>
+                <span className="ReplyUserId">{userName}</span>
               </a>
-              <span className="ReplyPostText">{comment}</span>
+              <div className="ReplyPostText">{comment}</div>
             </p>
             <footer className="ReplyFooter">
               <time className="ReplyFooterTime">몇분전</time>
               <button className="ReplyLike">
-                <BsHeart />
+                <BsHeart className="likeHeartIcon" />
                 좋아요
               </button>
               <button className="AddReReply" onClick={this.reReply}>
                 답글달기
               </button>
-              <button className="ReplyDelite" onClick={this.removeReply}>
+              <button className="ReplyDelite" onClick={this.removeComment}>
                 삭제
               </button>
             </footer>
@@ -69,9 +89,9 @@ class Reply extends Component {
                 return (
                   <ReplyComments
                     key={idx}
-                    id={id}
+                    id={authorId}
                     comment={text}
-                    userId={username}
+                    userId={userName}
                     userImage={image}
                   />
                 );

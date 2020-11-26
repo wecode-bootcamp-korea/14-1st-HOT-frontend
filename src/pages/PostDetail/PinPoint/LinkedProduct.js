@@ -4,7 +4,7 @@ import "./LinkedProduct.scss";
 
 class LinkedProduct extends Component {
   goToProduct = () => {
-    this.props.history.push();
+    this.props.history.push(`/store/product/${this.props.productId}`);
   };
   render() {
     const { isproductHide, productId, imageURL, productName } = this.props;

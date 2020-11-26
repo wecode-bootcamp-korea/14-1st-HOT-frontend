@@ -2,7 +2,7 @@
   .ReplyList {
     display: flex;
     flex-direction: column-reverse;
-    margin: 40px 0;
+    margin: 20px 0;
 
     .ReplyContent {
       .ReplyText {
@@ -12,29 +12,48 @@
         .ReplyUserName {
           display: flex;
           align-items: center;
-          margin: 5px 5px 5px 0px;
+          margin: 5px 5px 0 0;
+          position: relative;
 
           .ReplyUserProfile {
+            width: 35px;
+            height: 35px;
             margin: 5px;
-            width: 30px;
-            height: 30px;
             border-radius: 50%;
+            position: absolute;
+            right: 70px;
+            bottom: -20px;
           }
 
           .ReplyUserId {
-            margin: 5px;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 600;
+            margin-left: 40px;
           }
+        }
+
+        .ReplyPostText {
+          display: flex;
+          padding-top: 2px;
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.67);
+          font-weight: 500;
         }
       }
 
       .ReplyFooter {
         font-size: 11px;
         color: rgba(0, 0, 0, 0.5);
+        padding-left: 45px;
+
+        .ReplyFooterTime {
+          margin-right: 5px;
+        }
 
         button {
-          margin-right: 5px;
-          font-weight: 500;
-          font-size: 12px;
+          margin: 0 10px;
+          font-weight: 600;
+          font-size: 13px;
           color: rgba(0, 0, 0, 0.6);
         }
 
@@ -42,6 +61,10 @@
           margin: 0 5px;
           border: none;
           background-color: white;
+
+          .likeHeartIcon {
+            margin-top: 10px;
+          }
         }
       }
     }

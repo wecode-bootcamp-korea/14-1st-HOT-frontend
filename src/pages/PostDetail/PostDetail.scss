@@ -63,7 +63,7 @@
           font-weight: 600;
 
           .feedReplyHeaderCount {
-            color: rgba(64, 151, 246, 0.5);
+            color: #34c5ef;
           }
         }
 
@@ -102,9 +102,14 @@
             }
 
             button {
-              width: 10%;
+              width: 8%;
               border: none;
-              color: rgb(64, 151, 246);
+
+              font-size: 14px;
+              font-weight: 600;
+            }
+            .submit {
+              color: rgba(52, 197, 239, 0.7);
             }
           }
         }
@@ -131,12 +136,16 @@
           margin-bottom: 40px;
 
           button {
-            width: 145px;
-            height: 50px;
+            width: 150px;
+            height: 45px;
             margin: 0px 4px;
             border: none;
             border-radius: 5px;
             background-color: rgba(0, 0, 0, 0.03);
+
+            .detailLike .detailBookmark {
+              font-size: 22px;
+            }
           }
         }
 
