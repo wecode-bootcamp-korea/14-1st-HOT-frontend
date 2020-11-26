@@ -8,12 +8,14 @@ class Login extends React.Component {
     this.state = {
       id: "",
       pw: "",
+      token: "",
     };
   }
 
-  handleClick = (e) => {
+  checkValidation = (e) => {
+    console.log("성공");
+    // e.preventDefault();
     const { id, pw } = this.state;
-
     fetch(API, {
       method: "POST",
       body: JSON.stringify({
@@ -22,27 +24,30 @@ class Login extends React.Component {
       }),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((res) => {
+        if (res.message === "SUCCESS") {
+          this.setState({ token: res.access_token });
+          localStorage.setItem("token", res.access_token);
+          alert("성공, 다행이다..");
+          this.props.history.push("/feedList");
+        } else {
+          localStorage.removeItem("token");
+          alert(
+            "실패, data는 거짓말을 하지 않아요 천천히 email과 password를 살펴보아요!"
+          );
+        }
+      });
+  };
+
+  handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      this.checkValidation();
+    }
   };
 
   handleInputChange = (e) => {
     const { className, value } = e.target;
     this.setState({ [className]: value });
-  };
-
-  handleKeyPress = (e) => {
-    const { id, pw } = this.state;
-
-    if (e.key === "Enter") {
-      if (id && pw) {
-        alert("성공적으로 로그인했습니다.");
-        this.props.history.push("/main");
-      }
-
-      if (!id || !pw) {
-        alert("이메일 주소나 비밀번호가 틀립니다.");
-      }
-    }
   };
 
   render() {
@@ -68,22 +73,18 @@ class Login extends React.Component {
             className="pw"
             placeholder="비밀번호"
             onChange={this.handleInputChange}
-            onKeyPress={this.handleKeyPress}
+            // onKeyUp={this.handleKeyPress}
           />
           <button
             className="loginButton"
-            onClick={(this.checkValidation, this.handleClick)}
-            onKeyPress={(this.handleKeyPress, this.handleClick)}
+            onClick={this.checkValidation}
+            onKeyUp={this.handleKeyPress}
           >
             로그인
           </button>
           <div className="newJoin">
-            <span className="resetPw" href="dfd">
-              비밀번호 재설정
-            </span>
-            <span className="signIn" href="dfsdf">
-              회원가입
-            </span>
+            <span className="resetPw">비밀번호 재설정</span>
+            <span className="signIn">회원가입</span>
           </div>
           <div className="snsLogin">
             <h2 className="simpleLogin">SNS계정으로 간편 로그인/회원가입</h2>
