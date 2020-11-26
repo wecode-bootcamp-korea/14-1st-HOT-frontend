@@ -47,7 +47,7 @@ class Summary extends Component {
       }),
       headers: {
         Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU',
       },
     })
       .then((res) => res.json())
@@ -59,7 +59,7 @@ class Summary extends Component {
   postCartInfo = (e) => {
     if (this.state.selectedProducts.length) {
       e.preventDefault();
-      fetch('http://10.58.5.85:8000/order/cart', {
+      fetch('http://192.168.201.193:8000/order/cart', {
         method: 'POST',
         body: JSON.stringify(this.state.selectedProducts),
         headers: {
@@ -96,11 +96,12 @@ class Summary extends Component {
     } else {
       selectedProducts.push({
         product_id: this.state.productList.product_id,
-        sale: this.state.sale,
-        color: this.state.selectedColor,
-        label: options[selectedIndex].innerHTML,
         value: value,
         count: 1,
+        color: this.state.selectedColor,
+        label: options[selectedIndex].innerHTML,
+        sale: this.state.sale,
+        seller: this.state.productList.product_seller,
       });
       this.setState({
         selectedProducts,
@@ -175,6 +176,7 @@ class Summary extends Component {
       postCartInfo,
     } = this;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
+    console.log(selectedProducts);
     return (
       <>
         <div className='overview'>
