@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import React from 'react';
 import './Login.scss';
 
 const API = 'http://10.58.5.85:8000/user/login';
+=======
+import React from "react";
+import "./Login.scss";
+import { API } from "../../config";
+>>>>>>> master
 
 class Login extends React.Component {
   constructor() {

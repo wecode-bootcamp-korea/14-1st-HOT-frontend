@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import Footer from '../../component/Footer/Footer';
 import Overview from './Overview/Overview';
@@ -35,3 +36,5 @@ class ProductDetail extends Component {
 }
 
 export default ProductDetail;
+=======
+>>>>>>> master

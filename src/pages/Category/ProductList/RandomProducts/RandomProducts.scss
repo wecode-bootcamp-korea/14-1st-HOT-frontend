@@ -1,14 +1,14 @@
-.productContainer {
+.randomProductContainer {
   cursor: pointer;
-  .productImageBox {
-    width: 269px;
-    height: 300px;
+  .randomProductImageBox {
+    width: 153px;
+    height: 153px;
+    margin: 10px;
     border-radius: 5px;
     overflow: hidden;
-    margin: 10px;
 
-    .productImage {
-      width: 110%;
+    .randomProductImage {
+      width: 115%;
       height: 100%;
       position: relabative;
       right: 50px;
@@ -18,89 +18,86 @@
       transition: all 0.2s ease-in-out;
       overflow: hidden;
     }
-
-    .productImage:hover {
+    .randomProductImage:hover {
       transform: scale(1.1);
       -webkit-transform: scale(1.1);
-      overflow: hidden;
     }
   }
-  .productSummeryBox {
-    padding: 0 10px 0 10px;
-    margin: 10px 10px 10px 10px;
 
-    .productSeller {
+  .randomProductSummeryBox {
+    padding: 0 10px 0 10px;
+    margin: 10px 0 10px 0;
+
+    .randomProductSeller {
       font-size: 11px;
       color: #757575;
       margin: 15px 0 5px 0;
     }
 
-    .productTitle {
+    .randomProductTitle {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      width: 249px;
+      width: 153px;
       height: auto;
       margin-bottom: 5px;
       font-size: 14px;
       line-height: 18px;
     }
 
-    .productTitle:hover {
+    .randomProductTitle:hover {
       color: gray;
     }
 
-    .productPriceBox {
+    .randomProductPriceBox {
       display: flex;
       font-size: 17px;
       margin-bottom: 5px;
 
-      .productSale {
+      .randomProductSale {
         font-weight: 700;
         color: #35c5f0;
         margin-right: 6px;
       }
 
-      .productPrice {
+      .randomProductPrice {
         font-weight: 700;
       }
     }
 
-    .productPointBox {
+    .randomProductPointBox {
       display: flex;
       align-items: flex-end;
 
-      .productPoint {
+      .randomProductPoint {
         display: flex;
         align-items: flex-end;
         font-size: 13px;
         font-weight: 600;
         color: #161616;
 
-        .productPointImage {
+        .randomProductPointImage {
           width: 15px;
           margin-right: 3px;
         }
       }
-      .productReview {
+      .randomProductReview {
         font-size: 13px;
         font-weight: 600;
         color: rgb(138, 138, 138);
         margin-left: 5px;
       }
     }
-
-    .labelBox {
+    .randomProductLabelBox {
       display: flex;
       align-items: center;
       margin-top: 5px;
-
-      .freeIcon {
+      .randomProductFreeIcon {
         height: 19px;
         margin-right: 5px;
       }
 
-      .lowPriceIcon {
+      .randomProductLowPriceIcon {
         height: 19px;
       }
     }

@@ -1,0 +1,32 @@
+.bannerTitle {
+  width: 847px;
+  margin-bottom: 20px;
+
+  .bannerTitletext {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.bannerImageBox {
+  position: relative;
+  width: 847px;
+
+  .bannerImage {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+.slick-dots {
+  li {
+    margin: 0;
+    padding: 0;
+    button {
+      opacity: 0.75;
+      position: relative;
+      top: -40px;
+      padding: 0px;
+    }
+  }
+}
