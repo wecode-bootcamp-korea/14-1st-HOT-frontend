@@ -97,22 +97,20 @@ class PostDetail extends Component {
                   })}
                 </ul>
               </div>
-              <p className="feedPostWrite">1차프로젝트 14기 화이팅!!</p>
+              <p className="feedPostWrite">2020년이라면 이렇게 살아야져 🏠💕</p>
               <div className="feedHashTags">
                 <ul>
                   {/* map 들어갈 자리  해쉬태그 클릭시 해당 상품 구매 페이지로 넘어가야하기 때문에 링크로 만들었음 */}
                   <li>
-                    <a href="">
-                      <span>{this.props.hashtags}</span>
-                      <span># 위코드</span>
-                    </a>
+                    <span>{this.props.hashtags}</span>
+                    <span className="hashtag"># 위코드</span>
                   </li>
                 </ul>
               </div>
               <div className="views">
-                <span className="countViews">조회수1회</span>
-                <span className="countReply">댓글 1개</span>
-                <span className="countShare">공유 1회</span>
+                <span className="countViews">조회수 1 회</span>
+                <span className="countReply">댓글 1 개</span>
+                <span className="countShare">공유 1 회</span>
                 <button className="report">신고</button>
               </div>
             </article>

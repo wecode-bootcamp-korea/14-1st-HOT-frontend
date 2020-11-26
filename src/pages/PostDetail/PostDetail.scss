@@ -81,10 +81,15 @@
 
         .feedPostWrite {
           margin: 35px 0;
+          color: #757575;
         }
 
         .feedHashTags {
-          color: blue;
+          color: #757575;
+
+          .hashtag {
+            color: #757575;
+          }
         }
 
         .views {

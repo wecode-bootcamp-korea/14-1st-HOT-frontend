@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavigationBar from "./component/NavigationBar/NavigationBar";
-// import Mypage from "./pages/Mypage/Mypage";
 import Footer from "./component/Footer/Footer";
 import posts from "./pages/PostDetail/PostDetail";
 
