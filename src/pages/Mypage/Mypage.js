@@ -4,8 +4,8 @@ import MypageFeed from "./MypageFeed";
 import Userlink from "./Userlink";
 
 class Mypage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       myPageImage: [],
     };
@@ -32,7 +32,7 @@ class Mypage extends Component {
               </div>
               <div className="userProfile">
                 <div className="userimage">
-                  <img src="./images/profileimg.png" alt="user" />
+                  <img src="./images/wecode.jpeg" alt="user" />
                 </div>
                 <div className="userInfo">
                   <div className="username">wecode</div>
