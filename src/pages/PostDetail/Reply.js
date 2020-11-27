@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReplyComments from "./ReplyComments";
-// import {withRouter} from "react-router-dom"
+
 import { BsHeart } from "react-icons/bs";
 import { API_DY } from "../../config";
 
@@ -19,7 +19,7 @@ class Reply extends Component {
     this.setState({ showlist: !this.state.showlist });
   };
 
-  removeComment = () => {
+  removeComment = (e) => {
     fetch(`${API_DY}/posts/${this.props.params}/comments/${this.props.id}`, {
       method: "DELETE",
       headers: {
@@ -52,7 +52,7 @@ class Reply extends Component {
       image,
       userName,
       comment,
-      removeComment,
+      replyList,
       id,
       params,
     } = this.props;

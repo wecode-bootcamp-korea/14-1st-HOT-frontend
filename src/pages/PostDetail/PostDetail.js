@@ -27,6 +27,7 @@ class posts extends Component {
           replyList: res.results.comments,
         });
       });
+    console.log(this.state.data);
   }
 
   commentInput = (e) => {
@@ -69,10 +70,6 @@ class posts extends Component {
   };
   handleMouseMove = () => {
     this.setState({ mouseHover: !this.state.mouseHover });
-  };
-
-  removeComment = (id) => {
-    this.state.replyList.filter((el) => el.id !== id);
   };
 
   render() {
@@ -126,7 +123,6 @@ class posts extends Component {
                   <li>
                     <a href="/">
                       <span>{this.props.hashtags}</span>
-                      <span>#{this.state.data.tags?.[0]}</span>
                     </a>
                   </li>
                 </ul>
@@ -169,7 +165,7 @@ class posts extends Component {
                     return (
                       <Reply
                         id={el.id}
-                        removeComment={this.removeComment}
+                        replyList={this.state.replyList}
                         authorId={el.author.author_id}
                         comment={el.content}
                         params={this.props.match.params.id}
