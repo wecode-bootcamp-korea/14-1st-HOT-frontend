@@ -35,7 +35,7 @@ const LIST = [
 
 class Firstcategory extends Component {
   goToCommunity = () => {
-    this.props.history.push('/feedList');
+    this.props.history.push('/');
   };
 
   render() {
