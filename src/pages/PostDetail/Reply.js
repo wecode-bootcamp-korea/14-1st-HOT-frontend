@@ -42,6 +42,7 @@ class Reply extends Component {
         // localStorage.getItem("access_token"),
       },
     }).then((res) => res.json());
+    // if()
   };
 
   render() {
