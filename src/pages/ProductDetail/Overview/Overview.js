@@ -45,7 +45,7 @@ class Overview extends Component {
   };
 
   postProductId = () => {
-    fetch(this.state.bookMarkSwitch ? '/user/bookmark' : '/user/unbookmark', {
+    fetch(this.state.bookMarkSwitch ? 'm' : '/user/unbookmark', {
       method: 'POST',
       body: JSON.stringify({
         product_id: this.state.productList.product_id,
@@ -135,6 +135,9 @@ class Overview extends Component {
     this.postProductId();
   };
 
+  alertMessage = () => {
+    alert('신용불량 사업자입니다.');
+  };
   render() {
     console.log('>>>>>', this.props);
     const settings = {
@@ -176,9 +179,10 @@ class Overview extends Component {
       handleDeleteProduct,
       handleBookmarkEvent,
       postCartInfo,
+      alertMessage,
     } = this;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
-    console.log(selectedProducts);
+    console.log(bookMarkSwitch);
     return (
       <>
         <div className='overview'>
@@ -347,9 +351,12 @@ class Overview extends Component {
                           alt='branIcon'
                         />
                       </div>
-                      <Link to='/' className='linkReset brandName'>
+                      <button
+                        to='/'
+                        className='linkReset brandName'
+                        onClick={alertMessage}>
                         {product_seller + ' 브랜드홈'}
-                      </Link>
+                      </button>
                     </div>
                     <SelectOption
                       giveProductInfo={productList}
@@ -386,28 +393,28 @@ class Overview extends Component {
                 <Slider {...settings}>
                   <div class='feedBox'>
                     <img
-                      src='images/samplebed1.jpg'
+                      src='https://ifh.cc/g/rO4W1W.jpg'
                       alt='feedBox'
                       className='feed'
                     />
                   </div>
                   <div class='feedBox'>
                     <img
-                      src='images/samplebed2.jpg'
+                      src='https://ifh.cc/g/qzPGd0.jpg'
                       alt='feedBox'
                       className='feed'
                     />
                   </div>
                   <div class='feedBox'>
                     <img
-                      src='images/samplebed3.jpg'
+                      src='https://ifh.cc/g/0UzUGB.jpg'
                       alt='feedBox'
                       className='feed'
                     />
                   </div>
                   <div class='feedBox'>
                     <img
-                      src='images/samplebed4.jpg'
+                      src='https://ifh.cc/g/hlDS5O.jpg'
                       alt='feedBox'
                       className='feed'
                     />
