@@ -9,7 +9,7 @@ class MypageFeed extends Component {
       <div className="MypageFeed">
         <div className="rightContaienr">
           <div className="Feed">
-            {myPageImage.map((el) => {
+            {myPageImage?.map((el) => {
               return (
                 <div className="feedImgBox">
                   <img className="feedImg" src={el.image_url} alt={el.id} />
