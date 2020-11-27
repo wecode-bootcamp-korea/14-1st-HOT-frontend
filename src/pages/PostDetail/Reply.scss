@@ -2,7 +2,7 @@
   .ReplyList {
     display: flex;
     flex-direction: column-reverse;
-    margin: 40px 0;
+    margin: 20px 0;
 
     .ReplyContent {
       .ReplyText {
@@ -12,32 +12,59 @@
         .ReplyUserName {
           display: flex;
           align-items: center;
-          margin: 5px 5px 5px 0px;
+          margin: 5px 5px 0 0;
+          // position: relative;
 
           .ReplyUserProfile {
+            width: 35px;
+            height: 35px;
             margin: 5px;
-            width: 30px;
-            height: 30px;
             border-radius: 50%;
+            // position: absolute;
+            // right: 70px;
+            // bottom: -20px;
           }
 
           .ReplyUserId {
-            margin: 5px;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 600;
+            margin-left: 5px;
           }
+        }
+
+        .ReplyPostText {
+          display: flex;
+          padding-top: 2px;
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.67);
+          font-weight: 500;
         }
       }
 
       .ReplyFooter {
         font-size: 11px;
         color: rgba(0, 0, 0, 0.5);
+        padding-left: 45px;
+
+        .ReplyFooterTime {
+          margin-right: 5px;
+        }
+
+        button {
+          margin: 0 10px;
+          font-weight: 600;
+          font-size: 13px;
+          color: rgba(0, 0, 0, 0.6);
+        }
 
         .ReplyLike {
-          margin: 0 2px;
+          margin: 0 5px;
           border: none;
           background-color: white;
-          font-weight: 700;
-          font-size: 12px;
-          color: rgba(0, 0, 0, 0.6);
+
+          .likeHeartIcon {
+            margin-top: 10px;
+          }
         }
       }
     }
@@ -85,10 +112,10 @@
         display: flex;
         justify-content: space-between;
         margin-top: 5px;
-        height: 40px;
+        height: 30px;
 
         .reReplyUser {
-          width: 40px;
+          width: 30px;
           margin-right: 10px;
           img {
             width: 100%;
@@ -112,6 +139,9 @@
           }
           button {
             color: rgb(64, 151, 246);
+            padding-right: 15px;
+            font-size: 14px;
+            font-weight: 500;
           }
         }
       }

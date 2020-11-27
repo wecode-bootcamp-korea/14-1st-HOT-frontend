@@ -1,28 +1,36 @@
 import React, { Component } from "react";
 import ItemWrap from "./ItemWrap.js";
-import result from "./POSTDATA";
 import "./FeedList.scss";
-
-// const API = "http://10.58.7.154:8000/post";
+import { API_DY } from "../../../config";
 
 class FeedList extends Component {
   constructor() {
     super();
     this.state = {
-      PostData: result,
+      PostData: [],
     };
+  }
+
+  componentDidMount() {
+    fetch(`${API_DY}/posts`)
+      .then((response) => response.json())
+      .then((res) => {
+        this.setState({
+          PostData: res.result,
+        });
+      });
   }
 
   render() {
     return (
-      <>
-        <div className="nav"></div>
-        <main className="postContainer">
-          <div className="postWrap">
-            {this.state.PostData.map((el, idx) => {
+      <main className="postContainer">
+        <div className="postWrap">
+          {this.state.PostData &&
+            this.state.PostData.map((el, idx) => {
               return (
                 <ItemWrap
                   key={idx}
+                  id={el.post_id}
                   userName={el.post_author_username}
                   userImage={el.post_author_profile}
                   postImage={el.post_mainimage_url}
@@ -34,9 +42,8 @@ class FeedList extends Component {
                 />
               );
             })}
-          </div>
-        </main>
-      </>
+        </div>
+      </main>
     );
   }
 }
