@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import CategoryListTitle from './CategoryListTitle/CategoryListTitle';
-import CategoryListOther from './CategoryListOther/CategoryListOther';
-import CategoryBanner from './CategoryBanner/CategoryBanner';
+import './Category.scss';
+import ListTitle from './ListTitle/ListTitle';
+import ListOther from './ListOther/ListOther';
+import Banner from './Banner/Banner';
 import ProductList from './ProductList/ProductList';
-import Navigation from '../../component/NavigationBar/NavigationBar';
+import NavigationBar from '../../component/NavigationBar/NavigationBar';
+import { API } from '../../config';
 
 class Category extends Component {
   constructor() {
@@ -12,48 +14,91 @@ class Category extends Component {
       categoryTitle: [],
       categoryOther: [],
       titleSwitch: false,
+      productList: [],
     };
   }
 
   componentDidMount() {
-    this.getCategoryMenu();
+    this.getCategoryOtherMenu();
+    this.getCategoryTitleMenu();
   }
 
-  getCategoryMenu = () => {
-    fetch('/Data/category.json', {
+  getCategoryOtherMenu = () => {
+    fetch(`${API}/store/categories`, {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          categoryOther: res.category,
-        });
-        this.setState({
-          categoryTitle: res.category[0],
+          categoryOther: res.result,
         });
       });
   };
 
-  getOnclickMenu = (e) => {
-    e.preventDefault();
+  getCategoryTitleMenu = () => {
+    fetch(`${API}/store/categories?menu=1`, {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          categoryTitle: res.result,
+        });
+      });
+  };
+
+  changeTitleMenu = (otherElement) => {
+    fetch(`${API}/store/categories?menu=${otherElement.menu_id}`, {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          categoryTitle: res.result,
+        });
+      });
+  };
+
+  getProductList = (categoryElement) => {
+    fetch(`${API}/store/products?cat=${categoryElement.category_id}`, {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          productList: res.result,
+        });
+      });
   };
 
   render() {
-    const { categoryTitle, categoryOther } = this.state;
+    const { categoryTitle, categoryOther, productList } = this.state;
+    const { changeTitleMenu, getProductList } = this;
+    console.log(this.state.productList);
     return (
       <>
-        <Navigation />
-        <section className='categoryContainer'>
-          <aside className='categoryAsidContainer'>
-            <div className='categoryListBox'>
-              <CategoryListTitle title={categoryTitle} />
-              <CategoryListOther other={categoryOther} />
+        <NavigationBar />
+        <section className='Category'>
+          <aside className='asidContainer'>
+            <div className='listBox'>
+              {categoryTitle && (
+                <ListTitle
+                  giveTitle={categoryTitle}
+                  takeClickEvent={getProductList}
+                />
+              )}
+              {categoryOther.length && (
+                <ListOther
+                  giveOther={categoryOther}
+                  takeTitleMenu={changeTitleMenu}
+                />
+              )}
             </div>
           </aside>
-          <article className='categoryFeedContainer'>
-            <div className='categoryBannerbar'>
-              <CategoryBanner />
-              <ProductList />
+          <article className='feedContainer'>
+            <div className='bannerbar'>
+              <Banner />
+              <ProductList catProduct={productList} />
             </div>
           </article>
         </section>

@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import posts from "./pages/PostDetail/PostDetail";
 import FeedList from "./pages/Community/FeedList/FeedList";
-import PinPoint from "./pages/PostDetail/PinPoint/PinPoint";
 
 class Routes extends React.Component {
   render() {

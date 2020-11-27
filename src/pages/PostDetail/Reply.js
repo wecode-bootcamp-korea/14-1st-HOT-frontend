@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReplyComments from "./ReplyComments";
-
 import { BsHeart } from "react-icons/bs";
 import { API_DY } from "../../config";
 
@@ -25,6 +24,7 @@ class Reply extends Component {
       headers: {
         Authorization:
           "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
+        // localStorage.getItem("access_token"),
       },
     })
       .then((res) => res.json())

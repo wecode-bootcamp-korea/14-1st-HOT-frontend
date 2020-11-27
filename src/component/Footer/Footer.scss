@@ -1,0 +1,121 @@
+.homeFooter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 40px;
+  background-color: #fafafa;
+  z-index: 100;
+
+  .container {
+    display: flex;
+    width: 1255px;
+    padding: 0px 60px 40px 60px;
+    justify-content: center;
+    flex-direction: column;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+
+      .footerTop {
+        margin: 0 0 25px;
+
+        .customService {
+          font-weight: bold;
+          color: #424242;
+          text-decoration: none;
+          font-size: 12px;
+          line-height: 16px;
+
+          img {
+            width: 10px;
+            height: 10px;
+            padding: 0.75px 0 0 3px;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .phone {
+          margin: 2px 0 0;
+          color: #424242;
+          font-size: 30px;
+          font-weight: 700;
+          line-height: 36px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .time {
+          color: #757575;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: -0.4px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .logoIcons {
+        justify-content: space-between;
+        height: auto;
+      }
+
+      .logoIcons img {
+        width: 25px;
+        height: 25px;
+        margin: 0 6px;
+        padding: 3px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .footerlist {
+      display: flex;
+      height: 20px;
+      margin-bottom: 10px;
+
+      .content {
+        height: 20px;
+        margin: 0 3px;
+        padding: 2px;
+        color: #424242;
+        text-decoration: none;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 16px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .info {
+      padding-left: 3px;
+
+      .information {
+        font-size: 10px;
+        color: #757575;
+        line-height: 19px;
+      }
+
+      .copyright {
+        margin-top: 10px;
+        font-size: 10px;
+        color: #424242;
+        line-height: 17px;
+      }
+    }
+  }
+}

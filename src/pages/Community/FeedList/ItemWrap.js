@@ -8,7 +8,6 @@ import { BsHeartFill } from "react-icons/bs";
 import { BsBookmarkFill } from "react-icons/bs";
 import "./FeedList.scss";
 import "./itemWrap.scss";
-import post from "../../PostDetail/PostDetail";
 
 class ItemWrap extends Component {
   constructor() {
@@ -26,14 +25,12 @@ class ItemWrap extends Component {
   countLikes = () => {
     this.setState({
       heart: !this.state.heart,
-      // 어떤 사람이 좋아요를 눌렀는지 백엔드로 넘겨줘야함
     });
   };
 
   countBookmarks = () => {
     this.setState({
       bookmark: !this.state.bookmark,
-      // 어떤 사람이 북마크를 눌렀는지 백엔드로 넘겨줘야함
     });
   };
 
@@ -97,7 +94,6 @@ class ItemWrap extends Component {
             </div>
             {comment && comment.length > 0 && (
               <div className="itemContentComment">
-                {/* 디테일 페이지의 첫번째 댓글의 사진, 유저네임, 댓글내용 */}
                 <img src={comment[0].author_profile} alt="authorUserProfile" />
                 <div>{comment[0].author_username}</div>
                 <div>{comment[0].content}</div>

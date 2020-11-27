@@ -61,7 +61,8 @@ class posts extends Component {
       method: "POST",
       headers: {
         Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
+          // "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
+          localStorage.getItem("access_token"),
       },
       body: JSON.stringify({ content: this.state.reply }),
     })
@@ -119,7 +120,6 @@ class posts extends Component {
               <p className="feedPostWrite">{this.state.data.content}</p>
               <div className="feedHashTags">
                 <ul>
-                  {/* map 들어갈 자리  해쉬태그 클릭시 해당 상품 구매 페이지로 넘어가야하기 때문에 링크로 만들었음 */}
                   <li>
                     <a href="/">
                       <span>{this.props.hashtags}</span>
@@ -128,7 +128,7 @@ class posts extends Component {
                 </ul>
               </div>
             </article>
-            {/* 댓글창  */}
+
             <section className="feedReplyWrap">
               <h1 className="feedReplyHeader">
                 댓글&nbsp;

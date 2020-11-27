@@ -83,7 +83,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -135,9 +134,21 @@ table {
   box-sizing: border-box;
 }
 
-input,
 button {
-  background-color: white;
+  border: 0px;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+input {
+  text-decoration: none;
+  outline: none;
+  border: 0px;
+}
+button {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
   border: 0;
   outline: 0;
   cursor: pointer;

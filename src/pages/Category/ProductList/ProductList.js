@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Product from './Product/Product';
-import SmallProduct from './SmallProducts/SmallProduct';
+import RandomProduct from './RandomProducts/RandomProducts';
+import './ProductList.scss';
+
+const BUTTONTEXT = ['색상', '우드톤', '소재', '사용 인원', '가격', '배송'];
 
 class ProductList extends Component {
   constructor() {
@@ -16,19 +19,18 @@ class ProductList extends Component {
   }
 
   getProductList = () => {
-    fetch('/Data/product.json', {
+    fetch('http://10.58.5.203:8000/store/products?menu=1', {
       method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          products: res.products,
+          products: res.result,
         });
       });
   };
 
   render() {
-    const buttonText = ['색상', '우드톤', '소재', '사용 인원', '가격', '배송'];
     const { products } = this.state;
     return (
       <>
@@ -36,12 +38,13 @@ class ProductList extends Component {
           <div className='mdPickText'>MD's PICK</div>
         </div>
         <div className='smallProductList'>
-          {products.map((productElement, productIndex) => (
-            <SmallProduct key={productIndex} product={productElement} />
-          ))}
+          {products.length &&
+            products.map((productElement, productIndex) => (
+              <RandomProduct key={productIndex} product={productElement} />
+            ))}
         </div>
         <div className='productFilterButtonBox'>
-          {buttonText.map((buttonTextElement, buttonTextIndex) => (
+          {BUTTONTEXT.map((buttonTextElement, buttonTextIndex) => (
             <div key={buttonTextIndex} className='productFilterButtons'>
               <button className='productFilterButton'>
                 <span>{buttonTextElement}</span>
