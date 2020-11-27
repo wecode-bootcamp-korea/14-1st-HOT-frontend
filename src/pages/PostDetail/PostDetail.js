@@ -73,6 +73,12 @@ class posts extends Component {
     this.setState({ mouseHover: !this.state.mouseHover });
   };
 
+  removeComment = (targetId) => {
+    const { replyList } = this.state;
+    const newList = replyList.filter((el) => el.id !== targetId);
+    this.setState({ replyList: newList });
+  };
+
   // this.setState({replyList : }
   render() {
     return (
@@ -172,7 +178,7 @@ class posts extends Component {
                         params={this.props.match.params.id}
                         image={el.author.profile_image}
                         userName={el.author.username}
-                        removeComment={this.handleRemoveComment}
+                        removeComment={this.removeComment}
                       />
                     );
                   })}
