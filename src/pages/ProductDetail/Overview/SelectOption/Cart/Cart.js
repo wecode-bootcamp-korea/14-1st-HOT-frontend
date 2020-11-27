@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './Cart.scss';
-import NavigationBar from '../../../../../component/NavigationBar/NavigationBar';
-import Footer from '../../../../../component/Footer/Footer';
 import Product from './Product/Product';
 import calcuration from '../../../Function/calcuration';
 
@@ -40,7 +38,6 @@ class Cart extends Component {
     const { handleDelete } = this;
     return (
       <>
-        <NavigationBar />
         <div className='Cart'>
           <div className='selectAllContainer'>
             <div className='selectedProductsList'>
@@ -98,7 +95,6 @@ class Cart extends Component {
             </div>
           </div>
         </div>
-        <Footer />
       </>
     );
   }

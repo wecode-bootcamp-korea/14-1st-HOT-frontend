@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './OverView.scss';
 import Slider from 'react-slick';
 import SelectOption from './SelectOption/SelectOption';
 import PrevArrow from '../../../component/Slick/PrevArrow';
 import NextArrow from '../../../component/Slick/NextArrow';
+import { API } from '../../../config';
 
-class Summary extends Component {
+class Overview extends Component {
   constructor() {
     super();
     this.state = {
@@ -26,8 +27,12 @@ class Summary extends Component {
   }
 
   getProductList = () => {
-    fetch('/Data/productDetailView.json', {
+    fetch(`${API}/store/${this.props.match.params.id}`, {
       method: 'GET',
+      headers: {
+        authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+      },
     })
       .then((res) => res.json())
       .then((result) => {
@@ -51,9 +56,7 @@ class Summary extends Component {
       },
     })
       .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-      });
+      .then((result) => {});
   };
 
   postCartInfo = (e) => {
@@ -68,9 +71,7 @@ class Summary extends Component {
         },
       })
         .then((res) => res.json())
-        .then((result) => {
-          console.log(result);
-        });
+        .then((result) => {});
       this.props.takeModalEvent();
     }
   };
@@ -135,6 +136,7 @@ class Summary extends Component {
   };
 
   render() {
+    console.log('>>>>>', this.props);
     const settings = {
       arrows: true,
       className: 'center',
@@ -449,4 +451,4 @@ class Summary extends Component {
   }
 }
 
-export default Summary;
+export default withRouter(Overview);

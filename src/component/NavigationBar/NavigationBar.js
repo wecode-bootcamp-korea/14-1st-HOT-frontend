@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Firstcategory from './Firstcategory';
 import Secondcategory from './Secondcategory';
 import './NavigationBar.scss';
@@ -7,6 +7,18 @@ import './NavigationBar.scss';
 class NavigationBar extends React.Component {
   state = {
     communitytoggle: true,
+  };
+
+  goToSignUpPage = () => {
+    this.props.history.push('/signup');
+  };
+
+  goToLoginPage = () => {
+    this.props.history.push('/login');
+  };
+
+  goToCart = () => {
+    this.props.history.push('/cart');
   };
 
   handleEnterCommunity = (e) => {
@@ -19,7 +31,7 @@ class NavigationBar extends React.Component {
 
   render() {
     const { communitytoggle, storetoggle } = this.state;
-
+    const { goToSignUpPage, goToLoginPage, goToCart } = this;
     return (
       <>
         <div className='backgourndContainer'>
@@ -27,7 +39,7 @@ class NavigationBar extends React.Component {
             <div className='Nav'>
               <div className='categoriesBox'>
                 <div className='logoIcon'>
-                  <img src='./images/logo_text.png' alt='home' />
+                  <img src='https://ifh.cc/g/RggtKz.png' alt='home' />
                 </div>
                 <div className='categories'>
                   <button
@@ -37,7 +49,8 @@ class NavigationBar extends React.Component {
                   </button>
                   <button
                     className='category'
-                    onMouseEnter={this.handleEnterStore}>
+                    onMouseEnter={this.handleEnterStore}
+                    onClick>
                     스토어
                   </button>
                   <button className='category' to=''>
@@ -48,25 +61,29 @@ class NavigationBar extends React.Component {
               <div className='managementBox'>
                 <div className='searchBar'>
                   <input type='text' placeholder='오늘의집 통합검색' />
-                  <img src='./images/loupe.png' alt='search' />
+                  <img src='https://ifh.cc/g/urbj76.png' alt='search' />
                 </div>
                 <div className='management'>
-                  <Link className='cart'>
-                    <img src='./images/shopping-cart.png' alt='cart' />
-                  </Link>
-                  <Link className='mypage' to='/mypage'>
-                    <img src='./images/profileimg.png' alt='mypage' />
-                  </Link>
                   <div className='enterPage'>
-                    <span className='navLogin'>로그인</span>
-                    <span className='navDivLine'>⎮</span>
-                    <span className='navSignup'>회원가입</span>
+                    <span className='navLogin' onClick={goToLoginPage}>
+                      로그인
+                    </span>
+                    <span className='navDivLine'></span>
+                    <span className='navSignup' onClick={goToSignUpPage}>
+                      회원가입
+                    </span>
+                    <Link className='cart' onClick={goToCart}>
+                      <img src='https://ifh.cc/g/ZXGIqI.png' alt='cart' />
+                    </Link>
+                    <Link className='mypage' to='/mypage'>
+                      <img src='https://ifh.cc/g/YyKeNZ.png' alt='mypage' />
+                    </Link>
                   </div>
                   <button className='button'>
                     글쓰기
                     <div className='showIconBox'>
                       <img
-                        src='/images/showIcon_white.png'
+                        src='https://ifh.cc/g/DYWxew.png'
                         className='showIcon'
                         alt='showIcon'
                       />
@@ -88,4 +105,4 @@ class NavigationBar extends React.Component {
   }
 }
 
-export default NavigationBar;
+export default withRouter(NavigationBar);

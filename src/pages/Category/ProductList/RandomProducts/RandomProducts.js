@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './RandomProducts.scss';
+// import { API } from '../../../../config';
 
 class RandomProducts extends Component {
+  goProductDetail = () => {
+    this.props.history.push(`/store/${this.props.product.product_id}`);
+  };
+
   render() {
     const {
       product_image,
@@ -11,7 +17,10 @@ class RandomProducts extends Component {
       product_price,
     } = this.props.product;
     return (
-      <div className='randomProductContainer' type='button'>
+      <div
+        className='randomProductContainer'
+        type='button'
+        onClick={this.goProductDetail}>
         <div className='randomProductImageBox'>
           <img
             src={product_image}
@@ -62,4 +71,4 @@ class RandomProducts extends Component {
   }
 }
 
-export default RandomProducts;
+export default withRouter(RandomProducts);

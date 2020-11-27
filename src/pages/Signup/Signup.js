@@ -50,10 +50,6 @@ class Signup extends Component {
     return (
       <div className='Signup'>
         <section className='userContainer'>
-          <div className='logo'>
-            <img className='thou' src='./images/logo.png' alt='logo' />
-            <img className='text' src='./images/logo_text.png' alt='text' />
-          </div>
           <section className='box'>
             <Simplesignup />
             <section className='emailAddress'>

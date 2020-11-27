@@ -160,12 +160,13 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            width: 130px;
+            width: 200px;
+            margin-left: 10px;
 
             .navLogin,
             .navSignup {
               color: #757575;
-              font-size: 16px;
+              font-size: 14px;
               font-weight: 700;
               line-height: 20px;
 
@@ -218,11 +219,8 @@
   align-items: center;
   height: 50px;
   width: 100%;
-  background-color: white;
+  z-index: 80;
   border-bottom: 1px solid #ededed;
-  z-index: 70;
-
-  z-index: 10;
 
   .store {
     display: none;
@@ -236,7 +234,6 @@
     padding: 0 60px;
     display: flex;
     flex-direction: flex-start;
-    background-color: white;
     margin-top: 160px;
 
     .subNavContent {
