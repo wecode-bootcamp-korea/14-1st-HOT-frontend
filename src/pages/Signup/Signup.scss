@@ -1,0 +1,330 @@
+.Signup {
+  width: auto;
+
+  .userContainer {
+    width: 1136px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 40px 0 0;
+    box-sizing: border-box;
+
+    .logo {
+      .thou {
+        width: 30px;
+        height: 30px;
+      }
+
+      .text {
+        width: 60px;
+        height: 23px;
+        margin: 0 0 6px 3px;
+      }
+    }
+
+    .box {
+      margin: 0 378px;
+      padding: 60px 0;
+
+      .Simplesignup {
+        .signUp {
+          font-size: 20px;
+          font-weight: 700;
+          color: #424242;
+        }
+
+        .simple {
+          padding: 0 0 30px;
+          margin: 30px 0;
+          border-bottom: 1px solid #ededed;
+
+          .simpleSignup {
+            font-size: 12px;
+            text-align: center;
+            margin: 15px 0;
+            color: #757575;
+            letter-spacing: 0.2px;
+          }
+
+          .icons {
+            display: flex;
+            justify-content: center;
+
+            img {
+              width: 48px;
+              height: 48px;
+              margin: 0 10px;
+              // padding: 0;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      .emailAddress {
+        margin: 0 0 30px;
+
+        .email {
+          margin: 0 0 12px;
+          font-size: 15px;
+          font-weight: 700;
+        }
+
+        .emailInput {
+          width: 380px;
+          height: 40px;
+          font-size: 15px;
+          border-radius: 4px;
+          border: 1px solid #dbdbdb;
+          padding: 0 15px;
+
+          &:active {
+            background-color: #fafafa;
+          }
+
+          &::placeholder {
+            color: #dbdbdb;
+          }
+        }
+
+        .at {
+          padding: 0 3px;
+          text-align: center;
+          line-height: 40px;
+          color: #dbdbdb;
+          font-size: 15px;
+        }
+
+        select {
+          width: 170px;
+          height: 42px;
+          border: 1px solid #dbdbdb;
+          font-size: 15px;
+          line-height: 40px;
+          border-radius: 4px;
+          padding: 0 30px 0 15px;
+        }
+      }
+
+      .pwAddress {
+        margin: 0 0 30px;
+
+        .pw {
+          margin: 0 0 12px;
+          font-size: 15px;
+          font-weight: 700;
+        }
+        .condition {
+          font-size: 13px;
+          color: #757575;
+          line-height: 1.4;
+          letter-spacing: -0.4px;
+          margin: 0 0 12px;
+        }
+
+        .pwInput {
+          font-size: 15px;
+          border-radius: 4px;
+          height: 40px;
+          width: 380px;
+          border: 1px solid #dbdbdb;
+          padding: 0 15px;
+
+          &:active {
+            background-color: #fafafa;
+          }
+
+          &::placeholder {
+            color: #dbdbdb;
+          }
+        }
+      }
+
+      .rePwAddress {
+        margin: 0 0 30px;
+
+        .rePw {
+          margin: 0 0 12px;
+          font-size: 15px;
+          font-weight: 700;
+        }
+
+        .rePwInput {
+          font-size: 15px;
+          border-radius: 4px;
+          height: 40px;
+          width: 380px;
+          border: 1px solid #dbdbdb;
+          padding: 0 15px;
+
+          &:active {
+            background-color: #fafafa;
+          }
+
+          &::placeholder {
+            color: #dbdbdb;
+          }
+        }
+      }
+
+      .nickname {
+        margin: 0 0 30px;
+
+        .name {
+          margin: 0 0 12px;
+          font-size: 15px;
+          font-weight: 700;
+        }
+
+        .content {
+          font-size: 13px;
+          color: #757575;
+          line-height: 1.4;
+          letter-spacing: -0.4px;
+          margin: 0 0 12px;
+        }
+
+        .nicknameActivate {
+          font-size: 15px;
+          border-radius: 4px;
+          height: 40px;
+          width: 380px;
+          border: 1px solid #dbdbdb;
+          padding: 0 15px;
+
+          &:active {
+            background-color: #fafafa;
+          }
+
+          &::placeholder {
+            color: #dbdbdb;
+          }
+        }
+      }
+
+      .agree {
+        margin: 0 0 30px;
+
+        .contentAgree {
+          margin: 0 0 12px;
+          font-size: 15px;
+          font-weight: 700;
+        }
+
+        .agreeContainer {
+          padding: 23px 23px 6px 16px;
+          border: 1px solid #dbdbdb;
+
+          .userSignup {
+            margin: 0 0 16px;
+            padding: 0 0 33px 0;
+            height: 22px;
+            border-bottom: 1px solid #dbdbdb;
+
+            .checkBox {
+              border: 1px solid #dbdbdb;
+              border-radius: 4px;
+            }
+
+            .allAgree {
+              margin-left: 10px;
+              font-size: 15px;
+              font-weight: 600;
+              color: #424242;
+              line-height: 22px;
+              letter-spacing: -0.4px;
+            }
+          }
+          .addcontent {
+            margin: 0 0 0 10px;
+            font-size: 15px;
+            color: #424242;
+            line-height: 33px;
+            letter-spacing: -0.4px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .undercontent {
+            margin: 0 0 0 10px;
+            font-size: 15px;
+            color: #424242;
+            line-height: 33px;
+            letter-spacing: -0.4px;
+            text-decoration: underline;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .essential {
+            color: #35c5f0;
+            font-size: 12px;
+            margin-left: 4px;
+            line-height: 18px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .choice {
+            color: #bdbdbd;
+            font-size: 12px;
+            margin-left: 4px;
+            line-height: 18px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .signupButton {
+        background-color: #35c5f0;
+        color: #fff;
+        width: 360px;
+        text-align: center;
+        padding: 26px 0;
+        font-size: 18px;
+        border: none;
+        border-radius: 4px;
+        font-weight: 500;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #12abdb;
+        }
+      }
+
+      .alreadySignup {
+        margin: 30px 0 0;
+        text-align: center;
+
+        .haveId {
+          color: #424242;
+          font-size: 15px;
+        }
+
+        .reLogin {
+          text-decoration: underline;
+          font-weight: 600;
+          padding-left: 10px;
+
+          &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
