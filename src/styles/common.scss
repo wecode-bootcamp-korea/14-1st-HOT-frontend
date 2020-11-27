@@ -1,6 +1,6 @@
 * {
-  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
-    "Malgun Gothic", "sans-serif";
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', '맑은 고딕',
+    'Malgun Gothic', 'sans-serif';
   letter-spacing: -0.4px;
   box-sizing: border-box;
 }
@@ -15,3 +15,6 @@
   justify-content: center;
   align-items: center;
 }
+
+$themeColor: RGB(55, 197, 239);
+$borderColor: rgb(219, 219, 219);

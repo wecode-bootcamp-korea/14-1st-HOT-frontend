@@ -1,6 +1,7 @@
-.navBackgruond {
-  width: auto;
-  height: 130px;
+.backgourndContainer {
+  position: fixed;
+  width: 100%;
+  z-index: 80;
 
   .NavigationBar {
     display: flex;
@@ -8,11 +9,13 @@
     box-sizing: border-box;
     position: relative;
     background-color: #ffffff;
+    border-bottom: 1px solid rgb(224, 224, 224);
 
     .Nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background-color: white;
       width: 1255px;
       height: 80px;
       padding: 0 60px 0 60px;
@@ -39,19 +42,20 @@
         .categories {
           display: flex;
           justify-content: center;
-          width: 300px;
+          width: 330px;
           height: 100%;
           font-size: 18.5px;
-          margin: 0 0 0 35px;
+          margin: 0 0 0 30px;
           line-height: 26px;
-          font-weight: 700;
           text-decoration: none;
           color: #4b4b4b;
 
           .category {
             margin-top: 7px;
-            height: 100%;
-            margin-right: 20px;
+            margin-right: 25px;
+            margin-left: 10px;
+            font-weight: 700;
+            color: rgb(56, 56, 56);
             background-color: rgba($color: #000000, $alpha: 0);
             text-decoration: none;
 
@@ -83,6 +87,7 @@
           }
         }
       }
+
       .managementBox {
         display: flex;
         width: auto;
@@ -206,19 +211,18 @@
     }
   }
 }
-.navBarBorder {
-  width: 100%;
-  border-top: 1px solid #ededed;
-}
 
 .subNav {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 80px;
   height: 50px;
   width: 100%;
+  background-color: white;
   border-bottom: 1px solid #ededed;
+  z-index: 70;
+
+  z-index: 10;
 
   .store {
     display: none;
@@ -228,13 +232,18 @@
     display: flex;
     align-items: center;
     width: 1255px;
-    height: 40px;
+    height: 50px;
     padding: 0 60px;
     display: flex;
     flex-direction: flex-start;
+    background-color: white;
+    margin-top: 160px;
 
     .subNavContent {
-      padding: 7px;
+      display: flex;
+      align-items: center;
+      padding: 0 7px 0 7px;
+      height: 40px;
       margin-right: 10px;
       text-decoration: none;
       font-weight: 700;
@@ -247,8 +256,6 @@
       &:hover {
         cursor: pointer;
         color: #35c4f0;
-        border-bottom: 2px solid #35c4f0;
-        box-sizing: border-box;
       }
     }
   }
@@ -258,6 +265,7 @@
     padding: 0 60px;
     display: flex;
     flex-direction: flex-start;
+    margin-top: 160px;
 
     .subNavContent {
       padding: 15px 10px 10px;
@@ -273,7 +281,6 @@
       &:hover {
         cursor: pointer;
         color: #35c4f0;
-        border-bottom: 2px solid #35c4f0;
       }
     }
   }
