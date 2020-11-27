@@ -83,8 +83,11 @@
           display: flex;
           justify-content: space-between;
           margin: 16px 0;
-          padding: 0 10px;
+          padding: 0 22px;
           position: relative;
+          opacity: 70%;
+          font-size: 16px;
+          font-weight: 400;
 
           .counts {
             margin-left: 3px;
