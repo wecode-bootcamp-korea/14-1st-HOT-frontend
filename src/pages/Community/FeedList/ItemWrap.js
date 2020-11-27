@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 import { BsHeart } from "react-icons/bs";
 import { BsBookmark } from "react-icons/bs";
@@ -16,30 +17,26 @@ class ItemWrap extends Component {
       bookmark: true,
     };
   }
-  goToWriterProfile = () => {
-    this.props.history();
-  };
 
   goToDetail = () => {
-    this.props.history();
+    this.props.history.push(`/posts/${this.props.id}`);
   };
 
   countLikes = () => {
     this.setState({
       heart: !this.state.heart,
-      // 어떤 사람이 좋아요를 눌렀는지 백엔드로 넘겨줘야함
     });
   };
 
   countBookmarks = () => {
     this.setState({
       bookmark: !this.state.bookmark,
-      // 어떤 사람이 북마크를 눌렀는지 백엔드로 넘겨줘야함
     });
   };
 
   render() {
     const {
+      id,
       userImage,
       userName,
       postImage,
@@ -47,15 +44,14 @@ class ItemWrap extends Component {
       countBookmarks,
       countComments,
       postWrite,
-      postContent,
       comment,
     } = this.props;
-    console.log(comment);
+
     return (
       <div className="itemWrap">
         <article className="item">
           <div className="itemUser">
-            <div onClick={this.goToWriterProfile} className="itemUserImage">
+            <div className="itemUserImage">
               <img src={userImage} alt="userProfile" />
             </div>
             <div className="itemUserName">
@@ -98,7 +94,6 @@ class ItemWrap extends Component {
             </div>
             {comment && comment.length > 0 && (
               <div className="itemContentComment">
-                {/* 디테일 페이지의 첫번째 댓글의 사진, 유저네임, 댓글내용 */}
                 <img src={comment[0].author_profile} alt="authorUserProfile" />
                 <div>{comment[0].author_username}</div>
                 <div>{comment[0].content}</div>
@@ -111,4 +106,4 @@ class ItemWrap extends Component {
   }
 }
 
-export default ItemWrap;
+export default withRouter(ItemWrap);

@@ -2,25 +2,38 @@ import React, { Component } from "react";
 import "./Mypage.scss";
 import MypageFeed from "./MypageFeed";
 import Userlink from "./Userlink";
+import { API } from "../../config";
 
 class Mypage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      result: {},
       myPageImage: [],
+      bookmark_count: 0,
     };
   }
 
   componentDidMount() {
-    fetch("/Data/mypageimage.json")
-      .then((res) => res.json())
-      .then((res) =>
-        this.setState({ myPageImage: res.context.bookmark_products })
-      );
+    fetch(API, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        this.setState({ result: res.context }, () =>
+          console.log("re", this.state.result)
+        );
+        this.setState({
+          myPageImage: this.state.result.bookmark_products,
+          bookmark_count: this.state.result.bookmark_count,
+        });
+      });
   }
 
   render() {
-    const { myPageImage } = this.state;
+    const { myPageImage, bookmark_count } = this.state;
 
     return (
       <section className="Mypage">
@@ -47,7 +60,7 @@ class Mypage extends Component {
                   <button className="button">설정</button>
                 </div>
               </div>
-              <Userlink />
+              <Userlink bookmark_count={bookmark_count} />
             </div>
             <div className="getCoupon">
               <span className="add">친구 초대하고</span>

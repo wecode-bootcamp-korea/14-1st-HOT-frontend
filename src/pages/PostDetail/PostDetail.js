@@ -1,36 +1,33 @@
 import React, { Component } from "react";
 import Reply from "./Reply.js";
-import Furniture from "./Furniture";
+import PinPoint from "./PinPoint/PinPoint";
+import { API_DY } from "../../config";
 import "./PostDetail.scss";
+import { BsHeart } from "react-icons/bs";
+import { BsBookmark } from "react-icons/bs";
 
-const API = "http://10.58.0.153:8000/post/1";
-
-class PostDetail extends Component {
+class posts extends Component {
   constructor(props) {
     super(props);
     this.state = {
       reply: "",
       replyList: [],
-      furniture: [
-        {
-          link: "https://www.naver.com",
-          image:
-            "https://images.unsplash.com/photo-1583335513577-225dc0dee59e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        },
-      ],
-      data: {},
+      data: [],
+      mouseHover: false,
     };
   }
 
   componentDidMount() {
-    fetch(API, {})
+    fetch(`${API_DY}/posts/${this.props.match.params.id}`)
       .then((response) => response.json())
-      .then((result) => {
+      .then((res) => {
+        // console.log("results", res.results);
         this.setState({
-          data: result,
-          replyList: result.results.comments,
+          data: res.results,
+          replyList: res.results.comments,
         });
       });
+    // console.log(this.state.data);
   }
 
   commentInput = (e) => {
@@ -39,14 +36,14 @@ class PostDetail extends Component {
 
   pressForPost = (e) => {
     e.preventDefault();
-    const { reply, replyList } = this.state;
+    const { reply, replyList, data } = this.state;
     if (reply.length) {
       let replyToAdd = {
         id: 0,
         author: {
-          author_id: 0,
-          username: "seung_yun",
-          profile_image: null,
+          author_id: data.author.author_id,
+          username: data.author.username,
+          profile_image: data.author.profile_image,
         },
         content: reply,
         created_at: "",
@@ -59,64 +56,86 @@ class PostDetail extends Component {
         reply: "",
       });
     }
+
+    fetch(`${API_DY}/posts/${this.props.match.params.id}/comments`, {
+      method: "POST",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
+        // localStorage.getItem("access_token"),
+      },
+      body: JSON.stringify({ content: this.state.reply }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log("commentResponse", res));
+  };
+  handleMouseMove = () => {
+    this.setState({ mouseHover: !this.state.mouseHover });
   };
 
+  // this.setState({replyList : }
   render() {
     return (
       <section className="FeedDetail">
         <div className="container">
           <div className="feedLeft">
             <article className="feedLetfArticle">
-              <header className="feedHeader">
-                <div className="headerLeft">20평대</div>
-                <div>어제</div>
-              </header>
-              <div className="feedImageWrap">
-                {this.state.data.length !== 0 && (
-                  <img
-                    className="sofa"
-                    src={this.state.data.results?.post_images[0].image_url}
-                    alt="MainImage"
-                  />
+              <div
+                className="feedImageWrap"
+                onMouseEnter={this.handleMouseMove}
+                onMouseLeave={this.handleMouseMove}
+              >
+                {this.state.data.post_images && (
+                  <div style={{ position: "relative" }}>
+                    <img
+                      className="postMainImage"
+                      src={this.state.data.post_images[0].image_url}
+                      alt="MainImage"
+                    />
+                    {this.state.data.linked_products.map((el) => {
+                      return (
+                        <div
+                          className={
+                            this.state.mouseHover
+                              ? "circulerPlus"
+                              : "circleNone"
+                          }
+                          style={{
+                            position: "absolute",
+                            left: `${el.left}px`,
+                            top: `${el.top}px `,
+                          }}
+                        >
+                          <PinPoint
+                            productId={el.product_id}
+                            imageURL={el.image_url}
+                            productName={el.product_name}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
                 )}
               </div>
 
-              <div className="furnitureWrap">
-                <ul className="furnitureList">
-                  {this.state.furniture.map((furniture, idx) => {
-                    return (
-                      <Furniture
-                        key={idx}
-                        link={furniture.link}
-                        image={furniture.image}
-                      />
-                    );
-                  })}
-                </ul>
-              </div>
-              <p className="feedPostWrite">1차프로젝트 14기 화이팅!!</p>
+              <p className="feedPostWrite">{this.state.data.content}</p>
               <div className="feedHashTags">
                 <ul>
-                  {/* map 들어갈 자리  해쉬태그 클릭시 해당 상품 구매 페이지로 넘어가야하기 때문에 링크로 만들었음 */}
                   <li>
-                    <a href="">
+                    <a href="/">
                       <span>{this.props.hashtags}</span>
-                      <span># 위코드</span>
                     </a>
                   </li>
                 </ul>
               </div>
-              <div className="views">
-                <span className="countViews">조회수1회</span>
-                <span className="countReply">댓글 1개</span>
-                <span className="countShare">공유 1회</span>
-                <button className="report">신고</button>
-              </div>
             </article>
-            {/* 댓글창  */}
+
             <section className="feedReplyWrap">
               <h1 className="feedReplyHeader">
-                댓글&nbsp;<span className="feedReplyHeaderCount">1</span>
+                댓글&nbsp;
+                <span className="feedReplyHeaderCount">
+                  {this.state.replyList.length}
+                </span>
               </h1>
               <form
                 className="replyTypingForm"
@@ -126,8 +145,8 @@ class PostDetail extends Component {
                 <div className="feedReplyProfile">
                   <img
                     className="feedReplyUser"
-                    src="/images/Communityimages/chair.jpg"
-                    alt=""
+                    src="/images/bannerSample.png"
+                    alt="profileImage"
                   />
                 </div>
                 <div className="feedReplyInput">
@@ -142,36 +161,45 @@ class PostDetail extends Component {
                 </div>
               </form>
               <ul className="feedReplyList">
-                {this.state.replyList.length !== 0 &&
-                  this.state.replyList.map((reply, idx) => {
+                {this.state.replyList.length &&
+                  this.state.replyList.map((el) => {
                     return (
                       <Reply
-                        // user={}
-                        id={reply.id}
-                        comment={reply.content}
-                        image={reply.author.profile_image}
-                        username={reply.author.username}
+                        id={el.id}
+                        replyList={this.state.replyList}
+                        authorId={el.author.author_id}
+                        comment={el.content}
+                        params={this.props.match.params.id}
+                        image={el.author.profile_image}
+                        userName={el.author.username}
+                        removeComment={this.handleRemoveComment}
                       />
                     );
                   })}
               </ul>
-              {/* <ul className="feedReplyPaginator"></ul> */}
             </section>
           </div>
           <div className="feedRight">
             <div className="rightSideBar">
               <div className="feedLikes">
-                <button className="likeButton">하트</button>
-                <button className="scrapButton">스크랩</button>
+                <button className="likeButton">
+                  <BsHeart className="detailLike" />
+                </button>
+                <button className="scrapButton">
+                  <BsBookmark className="detailBookmark" />
+                </button>
               </div>
               <div className="feedUserProfile">
                 <div className="UserProfilePic">
                   <a href="/">
-                    <img src="/images/Communityimages/chair.jpg" />
+                    <img
+                      src={this.state.data.author?.profile_image}
+                      alt="proFile"
+                    />
                   </a>
                 </div>
                 <div className="UserProfileWriter">
-                  <span></span>
+                  <span>{this.state.data.author?.username}</span>
                   <button>팔로잉</button>
                 </div>
               </div>
@@ -193,4 +221,4 @@ class PostDetail extends Component {
   }
 }
 
-export default PostDetail;
+export default posts;

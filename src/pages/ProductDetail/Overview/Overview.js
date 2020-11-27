@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './OverView.scss';
 import Slider from 'react-slick';
 import SelectOption from './SelectOption/SelectOption';
@@ -139,7 +139,6 @@ class Overview extends Component {
     alert('신용불량 사업자입니다.');
   };
   render() {
-    console.log('>>>>>', this.props);
     const settings = {
       arrows: true,
       className: 'center',
