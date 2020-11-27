@@ -34,6 +34,7 @@ class Reply extends Component {
   };
 
   handleRemoveComment = () => {
+    this.props.removeComment(this.props.id);
     fetch(`${API_DY}/posts/${this.props.params}/comments/${this.props.id}`, {
       method: "DELETE",
       headers: {
