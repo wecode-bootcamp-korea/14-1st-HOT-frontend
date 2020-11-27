@@ -21,13 +21,13 @@ class posts extends Component {
     fetch(`${API_DY}/posts/${this.props.match.params.id}`)
       .then((response) => response.json())
       .then((res) => {
-        console.log("results", res.results);
+        // console.log("results", res.results);
         this.setState({
           data: res.results,
           replyList: res.results.comments,
         });
       });
-    console.log(this.state.data);
+    // console.log(this.state.data);
   }
 
   commentInput = (e) => {
@@ -61,18 +61,19 @@ class posts extends Component {
       method: "POST",
       headers: {
         Authorization:
-          // "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
-          localStorage.getItem("access_token"),
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
+        // localStorage.getItem("access_token"),
       },
       body: JSON.stringify({ content: this.state.reply }),
     })
       .then((res) => res.json())
-      .then((res) => console.log(JSON.stringify(res)));
+      .then((res) => console.log("commentResponse", res));
   };
   handleMouseMove = () => {
     this.setState({ mouseHover: !this.state.mouseHover });
   };
 
+  // this.setState({replyList : }
   render() {
     return (
       <section className="FeedDetail">
@@ -171,6 +172,7 @@ class posts extends Component {
                         params={this.props.match.params.id}
                         image={el.author.profile_image}
                         userName={el.author.username}
+                        removeComment={this.handleRemoveComment}
                       />
                     );
                   })}

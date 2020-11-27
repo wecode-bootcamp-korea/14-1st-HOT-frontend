@@ -18,19 +18,6 @@ class Reply extends Component {
     this.setState({ showlist: !this.state.showlist });
   };
 
-  removeComment = (e) => {
-    fetch(`${API_DY}/posts/${this.props.params}/comments/${this.props.id}`, {
-      method: "DELETE",
-      headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
-        // localStorage.getItem("access_token"),
-      },
-    })
-      .then((res) => res.json())
-      .then((res) => console.log("res", res));
-  };
-
   handleInput = (e) => {
     this.setState({ text: e.target.value });
   };
@@ -46,6 +33,17 @@ class Reply extends Component {
     }
   };
 
+  handleRemoveComment = () => {
+    fetch(`${API_DY}/posts/${this.props.params}/comments/${this.props.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
+        // localStorage.getItem("access_token"),
+      },
+    }).then((res) => res.json());
+  };
+
   render() {
     const {
       authorId,
@@ -55,6 +53,7 @@ class Reply extends Component {
       replyList,
       id,
       params,
+      removeComment,
     } = this.props;
     return (
       <div className="Reply">
@@ -76,7 +75,10 @@ class Reply extends Component {
               <button className="AddReReply" onClick={this.reReply}>
                 답글달기
               </button>
-              <button className="ReplyDelite" onClick={this.removeComment}>
+              <button
+                className="ReplyDelite"
+                onClick={this.handleRemoveComment}
+              >
                 삭제
               </button>
             </footer>
