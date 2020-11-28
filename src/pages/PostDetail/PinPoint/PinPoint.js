@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import LinkedProduct from "./LinkedProduct";
-import { FcPlus } from "react-icons/fc";
-import "./PinPoint.scss";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import LinkedProduct from './LinkedProduct';
+import { FcPlus } from 'react-icons/fc';
+import './PinPoint.scss';
 
 class PinPoint extends Component {
   constructor() {
@@ -21,17 +21,16 @@ class PinPoint extends Component {
 
   render() {
     const { productId, imageURL, productName } = this.props;
-
+    console.log(this.state.isproductHide);
     return (
       <div
-        className="pinWrap"
+        className='pinWrap'
         onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-      >
-        <FcPlus className="circlePlus" />
+        onMouseLeave={this.handleMouseLeave}>
+        <FcPlus className='circlePlus' />
         <div>
           <LinkedProduct
-            className="linkedProduct"
+            className='linkedProduct'
             isproductHide={this.state.isproductHide}
             productId={productId}
             imageURL={imageURL}

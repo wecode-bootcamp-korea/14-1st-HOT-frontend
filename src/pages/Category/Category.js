@@ -30,8 +30,7 @@ class Category extends Component {
     fetch(`${API}/store/categories`, {
       method: 'GET',
       headers: {
-        authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+        authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())
@@ -46,8 +45,7 @@ class Category extends Component {
     fetch(`${API}/store/products?menu=1`, {
       method: 'GET',
       headers: {
-        authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+        authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())
@@ -62,8 +60,7 @@ class Category extends Component {
     fetch(`${API}/store/categories?menu=1`, {
       method: 'GET',
       headers: {
-        authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+        authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())
@@ -78,8 +75,7 @@ class Category extends Component {
     fetch(`${API}/store/categories?menu=${otherElement.menu_id}`, {
       method: 'GET',
       headers: {
-        authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+        authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())
@@ -94,8 +90,7 @@ class Category extends Component {
     fetch(`${API}/store/products?cat=${categoryElement.category_id}`, {
       method: 'GET',
       headers: {
-        authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+        authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())
@@ -113,8 +108,7 @@ class Category extends Component {
     fetch(`${API}/store/products?sub=${subCategoriesElement.subcategory_id}`, {
       method: 'GET',
       headers: {
-        authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+        authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())

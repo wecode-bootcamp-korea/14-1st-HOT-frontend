@@ -16,13 +16,16 @@ class Cart extends Component {
   }
 
   getProductList = () => {
-    fetch('/Data/cart.json', {
+    fetch('http://13.125.3.178:8000/order/mycart', {
       method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
     })
       .then((res) => res.json())
       .then((result) => {
         this.setState({
-          selectProduct: result.cart,
+          selectProduct: result.context,
         });
       });
   };

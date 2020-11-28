@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './OverView.scss';
 import Slider from 'react-slick';
 import SelectOption from './SelectOption/SelectOption';
@@ -30,8 +30,7 @@ class Overview extends Component {
     fetch(`${API}/store/${this.props.match.params.id}`, {
       method: 'GET',
       headers: {
-        authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+        authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())
@@ -45,29 +44,29 @@ class Overview extends Component {
   };
 
   postProductId = () => {
-    fetch(this.state.bookMarkSwitch ? 'm' : '/user/unbookmark', {
+    fetch(`${API}/user/bookmark`, {
       method: 'POST',
       body: JSON.stringify({
         product_id: this.state.productList.product_id,
       }),
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU',
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())
-      .then((result) => {});
+      .then((result) => {
+        console.log(result);
+      });
   };
 
   postCartInfo = (e) => {
     if (this.state.selectedProducts.length) {
       e.preventDefault();
-      fetch('http://192.168.201.193:8000/order/cart', {
+      fetch(`${API}/order/cart`, {
         method: 'POST',
         body: JSON.stringify(this.state.selectedProducts),
         headers: {
-          Authorization:
-            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU',
+          Authorization: localStorage.getItem('token'),
         },
       })
         .then((res) => res.json())
@@ -390,34 +389,42 @@ class Overview extends Component {
               </div>
               <div className='userPostContainer'>
                 <Slider {...settings}>
-                  <div class='feedBox'>
-                    <img
-                      src='https://ifh.cc/g/rO4W1W.jpg'
-                      alt='feedBox'
-                      className='feed'
-                    />
-                  </div>
-                  <div class='feedBox'>
-                    <img
-                      src='https://ifh.cc/g/qzPGd0.jpg'
-                      alt='feedBox'
-                      className='feed'
-                    />
-                  </div>
-                  <div class='feedBox'>
-                    <img
-                      src='https://ifh.cc/g/0UzUGB.jpg'
-                      alt='feedBox'
-                      className='feed'
-                    />
-                  </div>
-                  <div class='feedBox'>
-                    <img
-                      src='https://ifh.cc/g/hlDS5O.jpg'
-                      alt='feedBox'
-                      className='feed'
-                    />
-                  </div>
+                  <Link to='/posts/6'>
+                    <div class='feedBox'>
+                      <img
+                        src='https://ifh.cc/g/rO4W1W.jpg'
+                        alt='feedBox'
+                        className='feed'
+                      />
+                    </div>
+                  </Link>
+                  <Link to='/posts/7'>
+                    <div class='feedBox'>
+                      <img
+                        src='https://ifh.cc/g/qzPGd0.jpg'
+                        alt='feedBox'
+                        className='feed'
+                      />
+                    </div>
+                  </Link>
+                  <Link to='/posts/8'>
+                    <div class='feedBox'>
+                      <img
+                        src='https://ifh.cc/g/0UzUGB.jpg'
+                        alt='feedBox'
+                        className='feed'
+                      />
+                    </div>
+                  </Link>
+                  <Link to='/posts/1'>
+                    <div class='feedBox'>
+                      <img
+                        src='https://ifh.cc/g/hlDS5O.jpg'
+                        alt='feedBox'
+                        className='feed'
+                      />
+                    </div>
+                  </Link>
                 </Slider>
               </div>
               <div className='feedTextContainer'>

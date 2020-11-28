@@ -28,7 +28,7 @@ class Login extends React.Component {
           this.setState({ token: res.access_token });
           localStorage.setItem('token', res.access_token);
           alert('성공, 다행이다..');
-          this.props.history.push('/feedList');
+          this.props.history.push('/');
         } else {
           localStorage.removeItem('token');
           alert(

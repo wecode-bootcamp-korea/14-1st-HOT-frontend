@@ -6,7 +6,7 @@ export default function calcuration(targetList, saleRate, multiplication) {
           (ele) =>
             (ele.options.reduce(
               (accumulator, currentValue) =>
-                accumulator + parseInt(currentValue.value * currentValue.count),
+                accumulator + parseInt(currentValue.price * currentValue.count),
               0
             ) /
               saleRate) *
