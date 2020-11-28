@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './OverView.scss';
 import Slider from 'react-slick';
 import SelectOption from './SelectOption/SelectOption';
 import PrevArrow from '../../../component/Slick/PrevArrow';
 import NextArrow from '../../../component/Slick/NextArrow';
+import { API } from '../../../config';
 
-class Summary extends Component {
+class Overview extends Component {
   constructor() {
     super();
     this.state = {
@@ -26,8 +27,11 @@ class Summary extends Component {
   }
 
   getProductList = () => {
-    fetch('/Data/productDetailView.json', {
+    fetch(`${API}/store/${this.props.match.params.id}`, {
       method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
     })
       .then((res) => res.json())
       .then((result) => {
@@ -40,14 +44,13 @@ class Summary extends Component {
   };
 
   postProductId = () => {
-    fetch(this.state.bookMarkSwitch ? '/user/bookmark' : '/user/unbookmark', {
+    fetch(`${API}/user/bookmark`, {
       method: 'POST',
       body: JSON.stringify({
         product_id: this.state.productList.product_id,
       }),
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.gskNoENb-XxLJnewpID43ddKxVgXH3LqXBZ4mQWpUBk',
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then((res) => res.json())
@@ -59,18 +62,15 @@ class Summary extends Component {
   postCartInfo = (e) => {
     if (this.state.selectedProducts.length) {
       e.preventDefault();
-      fetch('http://10.58.5.85:8000/order/cart', {
+      fetch(`${API}/order/cart`, {
         method: 'POST',
         body: JSON.stringify(this.state.selectedProducts),
         headers: {
-          Authorization:
-            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU',
+          Authorization: localStorage.getItem('token'),
         },
       })
         .then((res) => res.json())
-        .then((result) => {
-          console.log(result);
-        });
+        .then((result) => {});
       this.props.takeModalEvent();
     }
   };
@@ -96,11 +96,12 @@ class Summary extends Component {
     } else {
       selectedProducts.push({
         product_id: this.state.productList.product_id,
-        sale: this.state.sale,
-        color: this.state.selectedColor,
-        label: options[selectedIndex].innerHTML,
         value: value,
         count: 1,
+        color: this.state.selectedColor,
+        label: options[selectedIndex].innerHTML,
+        sale: this.state.sale,
+        seller: this.state.productList.product_seller,
       });
       this.setState({
         selectedProducts,
@@ -133,6 +134,9 @@ class Summary extends Component {
     this.postProductId();
   };
 
+  alertMessage = () => {
+    alert('신용불량 사업자입니다.');
+  };
   render() {
     const settings = {
       arrows: true,
@@ -173,8 +177,10 @@ class Summary extends Component {
       handleDeleteProduct,
       handleBookmarkEvent,
       postCartInfo,
+      alertMessage,
     } = this;
     const salePrice = Math.floor(lowestPrice - (lowestPrice * sale) / 100);
+    console.log(bookMarkSwitch);
     return (
       <>
         <div className='overview'>
@@ -343,9 +349,12 @@ class Summary extends Component {
                           alt='branIcon'
                         />
                       </div>
-                      <Link to='/' className='linkReset brandName'>
+                      <button
+                        to='/'
+                        className='linkReset brandName'
+                        onClick={alertMessage}>
                         {product_seller + ' 브랜드홈'}
-                      </Link>
+                      </button>
                     </div>
                     <SelectOption
                       giveProductInfo={productList}
@@ -380,34 +389,42 @@ class Summary extends Component {
               </div>
               <div className='userPostContainer'>
                 <Slider {...settings}>
-                  <div class='feedBox'>
-                    <img
-                      src='images/samplebed1.jpg'
-                      alt='feedBox'
-                      className='feed'
-                    />
-                  </div>
-                  <div class='feedBox'>
-                    <img
-                      src='images/samplebed2.jpg'
-                      alt='feedBox'
-                      className='feed'
-                    />
-                  </div>
-                  <div class='feedBox'>
-                    <img
-                      src='images/samplebed3.jpg'
-                      alt='feedBox'
-                      className='feed'
-                    />
-                  </div>
-                  <div class='feedBox'>
-                    <img
-                      src='images/samplebed4.jpg'
-                      alt='feedBox'
-                      className='feed'
-                    />
-                  </div>
+                  <Link to='/posts/6'>
+                    <div class='feedBox'>
+                      <img
+                        src='https://ifh.cc/g/rO4W1W.jpg'
+                        alt='feedBox'
+                        className='feed'
+                      />
+                    </div>
+                  </Link>
+                  <Link to='/posts/7'>
+                    <div class='feedBox'>
+                      <img
+                        src='https://ifh.cc/g/qzPGd0.jpg'
+                        alt='feedBox'
+                        className='feed'
+                      />
+                    </div>
+                  </Link>
+                  <Link to='/posts/8'>
+                    <div class='feedBox'>
+                      <img
+                        src='https://ifh.cc/g/0UzUGB.jpg'
+                        alt='feedBox'
+                        className='feed'
+                      />
+                    </div>
+                  </Link>
+                  <Link to='/posts/1'>
+                    <div class='feedBox'>
+                      <img
+                        src='https://ifh.cc/g/hlDS5O.jpg'
+                        alt='feedBox'
+                        className='feed'
+                      />
+                    </div>
+                  </Link>
                 </Slider>
               </div>
               <div className='feedTextContainer'>
@@ -447,4 +464,4 @@ class Summary extends Component {
   }
 }
 
-export default Summary;
+export default withRouter(Overview);

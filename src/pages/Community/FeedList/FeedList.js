@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import ItemWrap from "./ItemWrap.js";
-import "./FeedList.scss";
-import { API_DY } from "../../../config";
+import React, { Component } from 'react';
+import ItemWrap from './ItemWrap.js';
+import './FeedList.scss';
+import { API_DY } from '../../../config';
 
 class FeedList extends Component {
   constructor() {
@@ -23,8 +23,8 @@ class FeedList extends Component {
 
   render() {
     return (
-      <main className="postContainer">
-        <div className="postWrap">
+      <main className='postContainer'>
+        <div className='postWrap'>
           {this.state.PostData &&
             this.state.PostData.map((el, idx) => {
               return (

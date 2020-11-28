@@ -4,7 +4,6 @@ import ListTitle from './ListTitle/ListTitle';
 import ListOther from './ListOther/ListOther';
 import Banner from './Banner/Banner';
 import ProductList from './ProductList/ProductList';
-import NavigationBar from '../../component/NavigationBar/NavigationBar';
 import { API } from '../../config';
 
 class Category extends Component {
@@ -13,19 +12,26 @@ class Category extends Component {
     this.state = {
       categoryTitle: [],
       categoryOther: [],
-      titleSwitch: false,
       productList: [],
+      subProductList: [],
+      titleSwitch: false,
+      catTitle: '',
+      subTitle: '',
     };
   }
 
   componentDidMount() {
     this.getCategoryOtherMenu();
     this.getCategoryTitleMenu();
+    this.getALLProductList();
   }
 
   getCategoryOtherMenu = () => {
     fetch(`${API}/store/categories`, {
       method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
     })
       .then((res) => res.json())
       .then((res) => {
@@ -35,9 +41,27 @@ class Category extends Component {
       });
   };
 
+  getALLProductList = () => {
+    fetch(`${API}/store/products?menu=1`, {
+      method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          productList: res.result,
+        });
+      });
+  };
+
   getCategoryTitleMenu = () => {
     fetch(`${API}/store/categories?menu=1`, {
       method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
     })
       .then((res) => res.json())
       .then((res) => {
@@ -50,6 +74,9 @@ class Category extends Component {
   changeTitleMenu = (otherElement) => {
     fetch(`${API}/store/categories?menu=${otherElement.menu_id}`, {
       method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
     })
       .then((res) => res.json())
       .then((res) => {
@@ -62,22 +89,51 @@ class Category extends Component {
   getProductList = (categoryElement) => {
     fetch(`${API}/store/products?cat=${categoryElement.category_id}`, {
       method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
     })
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           productList: res.result,
         });
+        this.setState({
+          catTitle: categoryElement,
+        });
+      });
+  };
+
+  getSubProductList = (subCategoriesElement) => {
+    fetch(`${API}/store/products?sub=${subCategoriesElement.subcategory_id}`, {
+      method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          subProductList: res.result,
+        });
+        this.setState({
+          subTitle: subCategoriesElement,
+        });
       });
   };
 
   render() {
-    const { categoryTitle, categoryOther, productList } = this.state;
-    const { changeTitleMenu, getProductList } = this;
-    console.log(this.state.productList);
+    const {
+      categoryTitle,
+      categoryOther,
+      productList,
+      subProductList,
+      catTitle,
+      subTitle,
+    } = this.state;
+    const { changeTitleMenu, getProductList, getSubProductList } = this;
     return (
       <>
-        <NavigationBar />
         <section className='Category'>
           <aside className='asidContainer'>
             <div className='listBox'>
@@ -85,6 +141,7 @@ class Category extends Component {
                 <ListTitle
                   giveTitle={categoryTitle}
                   takeClickEvent={getProductList}
+                  takeSubClickEvent={getSubProductList}
                 />
               )}
               {categoryOther.length && (
@@ -97,8 +154,13 @@ class Category extends Component {
           </aside>
           <article className='feedContainer'>
             <div className='bannerbar'>
-              <Banner />
-              <ProductList catProduct={productList} />
+              {<Banner giveCarTitle={catTitle} giveSubTitle={subTitle} />}
+              {productList.length && (
+                <ProductList
+                  giveCatProduct={productList}
+                  giveSubProduct={subProductList}
+                />
+              )}
             </div>
           </article>
         </section>

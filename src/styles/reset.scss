@@ -107,7 +107,7 @@ q {
 blockquote {
   &:before,
   &:after {
-    content: "";
+    content: '';
     content: none;
   }
 }
@@ -115,7 +115,7 @@ blockquote {
 q {
   &:before,
   &:after {
-    content: "";
+    content: '';
     content: none;
   }
 }
@@ -146,6 +146,7 @@ input {
   outline: none;
   border: 0px;
 }
+
 button {
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0);

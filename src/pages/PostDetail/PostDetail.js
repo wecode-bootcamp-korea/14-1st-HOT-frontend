@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import Reply from "./Reply.js";
-import PinPoint from "./PinPoint/PinPoint";
-import { API_DY } from "../../config";
-import "./PostDetail.scss";
-import { BsHeart } from "react-icons/bs";
-import { BsBookmark } from "react-icons/bs";
+import React, { Component } from 'react';
+import Reply from './Reply.js';
+import PinPoint from './PinPoint/PinPoint';
+import { API_DY } from '../../config';
+import './PostDetail.scss';
+import { BsHeart } from 'react-icons/bs';
+import { BsBookmark } from 'react-icons/bs';
 
 class posts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reply: "",
+      reply: '',
       replyList: [],
       data: [],
       mouseHover: false,
@@ -46,28 +46,28 @@ class posts extends Component {
           profile_image: data.author.profile_image,
         },
         content: reply,
-        created_at: "",
-        updated_at: "",
+        created_at: '',
+        updated_at: '',
         parent_id: null,
       };
 
       this.setState({
         replyList: [...replyList, replyToAdd],
-        reply: "",
+        reply: '',
       });
     }
 
     fetch(`${API_DY}/posts/${this.props.match.params.id}/comments`, {
-      method: "POST",
+      method: 'POST',
       headers: {
         Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
-        // localStorage.getItem("access_token"),
+          // 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU',
+          localStorage.getItem('token'),
       },
       body: JSON.stringify({ content: this.state.reply }),
     })
       .then((res) => res.json())
-      .then((res) => console.log("commentResponse", res));
+      .then((res) => console.log('commentResponse', res));
   };
   handleMouseMove = () => {
     this.setState({ mouseHover: !this.state.mouseHover });
@@ -79,39 +79,40 @@ class posts extends Component {
     this.setState({ replyList: newList });
   };
 
-  // this.setState({replyList : }
   render() {
     return (
-      <section className="FeedDetail">
-        <div className="container">
-          <div className="feedLeft">
-            <article className="feedLetfArticle">
+      <section className='FeedDetail'>
+        <div className='container'>
+          <div className='feedLeft'>
+            <div className='categoryName'>
+              <div className='category'>30평대 | 내추럴 스타일 | 아파트</div>
+              <div className='date'>이틀 전</div>
+            </div>
+            <article className='feedLetfArticle'>
               <div
-                className="feedImageWrap"
+                className='feedImageWrap'
                 onMouseEnter={this.handleMouseMove}
-                onMouseLeave={this.handleMouseMove}
-              >
+                onMouseLeave={this.handleMouseMove}>
                 {this.state.data.post_images && (
-                  <div style={{ position: "relative" }}>
+                  <div style={{ position: 'relative' }}>
                     <img
-                      className="postMainImage"
+                      className='postMainImage'
                       src={this.state.data.post_images[0].image_url}
-                      alt="MainImage"
+                      alt='MainImage'
                     />
                     {this.state.data.linked_products.map((el) => {
                       return (
                         <div
                           className={
                             this.state.mouseHover
-                              ? "circulerPlus"
-                              : "circleNone"
+                              ? 'circulerPlus'
+                              : 'circleNone'
                           }
                           style={{
-                            position: "absolute",
+                            position: 'absolute',
                             left: `${el.left}px`,
                             top: `${el.top}px `,
-                          }}
-                        >
+                          }}>
                           <PinPoint
                             productId={el.product_id}
                             imageURL={el.image_url}
@@ -124,11 +125,11 @@ class posts extends Component {
                 )}
               </div>
 
-              <p className="feedPostWrite">{this.state.data.content}</p>
-              <div className="feedHashTags">
+              <p className='feedPostWrite'>{this.state.data.content}</p>
+              <div className='feedHashTags'>
                 <ul>
                   <li>
-                    <a href="/">
+                    <a href='/'>
                       <span>{this.props.hashtags}</span>
                     </a>
                   </li>
@@ -136,37 +137,36 @@ class posts extends Component {
               </div>
             </article>
 
-            <section className="feedReplyWrap">
-              <h1 className="feedReplyHeader">
+            <section className='feedReplyWrap'>
+              <h1 className='feedReplyHeader'>
                 댓글&nbsp;
-                <span className="feedReplyHeaderCount">
+                <span className='feedReplyHeaderCount'>
                   {this.state.replyList.length}
                 </span>
               </h1>
               <form
-                className="replyTypingForm"
-                action=""
-                onSubmit={this.pressForPost}
-              >
-                <div className="feedReplyProfile">
+                className='replyTypingForm'
+                action=''
+                onSubmit={this.pressForPost}>
+                <div className='feedReplyProfile'>
                   <img
-                    className="feedReplyUser"
-                    src="/images/bannerSample.png"
-                    alt="profileImage"
+                    className='feedReplyUser'
+                    src='/images/bannerSample.png'
+                    alt='profileImage'
                   />
                 </div>
-                <div className="feedReplyInput">
+                <div className='feedReplyInput'>
                   <input
-                    className="replyInput"
+                    className='replyInput'
                     value={this.state.reply}
-                    type="text"
-                    placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이  됩니다 :)"
+                    type='text'
+                    placeholder='칭찬과 격려의 댓글은 작성자에게 큰 힘이  됩니다 :)'
                     onChange={this.commentInput}
                   />
-                  <button className="submit">등록</button>
+                  <button className='submit'>등록</button>
                 </div>
               </form>
-              <ul className="feedReplyList">
+              <ul className='feedReplyList'>
                 {this.state.replyList.length &&
                   this.state.replyList.map((el) => {
                     return (
@@ -185,39 +185,51 @@ class posts extends Component {
               </ul>
             </section>
           </div>
-          <div className="feedRight">
-            <div className="rightSideBar">
-              <div className="feedLikes">
-                <button className="likeButton">
-                  <BsHeart className="detailLike" />
+          <div className='feedRight'>
+            <div className='rightSideBar'>
+              <div className='feedLikes'>
+                <button className='likeButton'>
+                  <BsHeart className='detailLike' />
                 </button>
-                <button className="scrapButton">
-                  <BsBookmark className="detailBookmark" />
+                <button className='scrapButton'>
+                  <BsBookmark className='detailBookmark' />
                 </button>
               </div>
-              <div className="feedUserProfile">
-                <div className="UserProfilePic">
-                  <a href="/">
+              <div className='feedUserProfile'>
+                <div className='UserProfilePic'>
+                  <a href='/'>
                     <img
                       src={this.state.data.author?.profile_image}
-                      alt="proFile"
+                      alt='proFile'
                     />
                   </a>
                 </div>
-                <div className="UserProfileWriter">
+                <div className='UserProfileWriter'>
                   <span>{this.state.data.author?.username}</span>
                   <button>팔로잉</button>
                 </div>
               </div>
-              <div className="pictureTable">
-                {/* 네모난모양으로 만들어야하는데 방법을 모르겠음.. */}
-                <ul>
-                  <li>
-                    <a href="/">
-                      <img src="" alt="" />
-                    </a>
-                  </li>
-                </ul>
+              <div className='pictureTable'>
+                <a href='/'>
+                  <div className='postListBox'>
+                    <img src='/images/post1.png' className='post1' alt='' />
+                  </div>
+                </a>
+                <a href='/'>
+                  <div className='postListBox'>
+                    <img src='/images/post2.png' className='post1' alt='' />
+                  </div>
+                </a>
+                <a href='/'>
+                  <div className='postListBox'>
+                    <img src='/images/post3.png' className='post1' alt='' />
+                  </div>
+                </a>
+                <a href='/'>
+                  <div className='postListBox'>
+                    <img src='/images/post4.png' className='post1' alt='' />
+                  </div>
+                </a>
               </div>
             </div>
           </div>

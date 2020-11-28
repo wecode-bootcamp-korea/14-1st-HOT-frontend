@@ -47,17 +47,18 @@
   width: 867px;
   height: 30px;
   padding-top: 40px;
-  margin-bottom: 7px;
+  margin-bottom: 17px;
   color: rgb(71, 71, 71);
-  font-size: 15px;
 
   .productCountBox {
     display: flex;
     justify-content: center;
-    width: 90px;
-    border: 1px solid red;
+    width: 130px;
+    font-weight: 700;
+    font-size: 17px;
 
     .poductCount {
+      font-size: 14px;
       margin: 0 0 0 5px;
     }
   }

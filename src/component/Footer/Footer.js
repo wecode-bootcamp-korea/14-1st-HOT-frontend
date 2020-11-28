@@ -15,7 +15,7 @@ class Footer extends React.Component {
             <div className='footerTop'>
               <div className='customService'>
                 고객센터
-                <img src='./images/right.png' alt='rightarrow' />
+                <img src='https://ifh.cc/g/b7mRAT.png' alt='rightarrow' />
               </div>
               <div className='phone'>1670-1234</div>
               <div className='time'>
@@ -23,19 +23,31 @@ class Footer extends React.Component {
               </div>
             </div>
             <div className='logoIcons'>
-              <img className='icon' src='./images/apple.png' alt='apple' />
               <img
                 className='icon'
-                src='./images/google-play.png'
+                src='https://ifh.cc/g/TYtfzn.png'
                 alt='apple'
               />
               <img
                 className='icon'
-                src='./images/facebook-logo.png'
+                src='https://ifh.cc/g/x95ltK.png'
                 alt='apple'
               />
-              <img className='icon' src='./images/instagram.png' alt='apple' />
-              <img className='icon' src='./images/twitter.png' alt='apple' />
+              <img
+                className='icon'
+                src='https://ifh.cc/g/S9rdtF.png'
+                alt='apple'
+              />
+              <img
+                className='icon'
+                src='https://ifh.cc/g/SR7KuJ.png'
+                alt='apple'
+              />
+              <img
+                className='icon'
+                src='https://ifh.cc/g/5gXx5p.png'
+                alt='apple'
+              />
             </div>
           </div>
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './NavigationBar.scss';
 
 const LIST = [
@@ -34,20 +34,28 @@ const LIST = [
 ];
 
 class Firstcategory extends Component {
+  goToCommunity = () => {
+    this.props.history.push('/');
+  };
+
   render() {
     const { onEnter, onLeave } = this.props;
-
+    const { goToCommunity } = this;
     return (
       <div
         className='firstCategory'
         onMouseEnterCommunity={() => onEnter()}
         onMouseLeaveCommunity={() => onLeave()}>
         {LIST.map((el) => {
-          return <Link className='subNavContent'>{el.name}</Link>;
+          return (
+            <Link className='subNavContent' onClick={goToCommunity}>
+              {el.name}
+            </Link>
+          );
         })}
       </div>
     );
   }
 }
 
-export default Firstcategory;
+export default withRouter(Firstcategory);

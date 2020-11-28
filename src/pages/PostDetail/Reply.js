@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import ReplyComments from "./ReplyComments";
-import { BsHeart } from "react-icons/bs";
-import { API_DY } from "../../config";
+import React, { Component } from 'react';
+import ReplyComments from './ReplyComments';
+import { BsHeart } from 'react-icons/bs';
+import { API_DY } from '../../config';
 
 class Reply extends Component {
   constructor() {
@@ -9,7 +9,7 @@ class Reply extends Component {
     this.state = {
       showlist: true,
 
-      text: "",
+      text: '',
       list: [],
     };
   }
@@ -28,7 +28,7 @@ class Reply extends Component {
     if (text.length) {
       this.setState({
         list: [...list, text],
-        text: "",
+        text: '',
       });
     }
   };
@@ -36,11 +36,11 @@ class Reply extends Component {
   handleRemoveComment = () => {
     this.props.removeComment(this.props.id);
     fetch(`${API_DY}/posts/${this.props.params}/comments/${this.props.id}`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
         Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
-        // localStorage.getItem("access_token"),
+          // "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.zj5stc70m93-fyPZH4Pn7vKF9zvJb-5T5r-BKOiDGyU",
+          localStorage.getItem('token'),
       },
     }).then((res) => res.json());
     // if()
@@ -58,37 +58,36 @@ class Reply extends Component {
       removeComment,
     } = this.props;
     return (
-      <div className="Reply">
-        <li className="ReplyList">
-          <article className="ReplyContent">
-            <p className="ReplyText">
-              <a className="ReplyUserName" href="/">
-                <img className="ReplyUserProfile" src={image} alt="" />
-                <span className="ReplyUserId">{userName}</span>
+      <div className='Reply'>
+        <li className='ReplyList'>
+          <article className='ReplyContent'>
+            <p className='ReplyText'>
+              <a className='ReplyUserName' href='/'>
+                <img className='ReplyUserProfile' src={image} alt='' />
+                <span className='ReplyUserId'>{userName}</span>
               </a>
-              <div className="ReplyPostText">{comment}</div>
+              <div className='ReplyPostText'>{comment}</div>
             </p>
-            <footer className="ReplyFooter">
-              <time className="ReplyFooterTime">몇분전</time>
-              <button className="ReplyLike">
-                <BsHeart className="likeHeartIcon" />
+            <footer className='ReplyFooter'>
+              <time className='ReplyFooterTime'>몇분전</time>
+              <button className='ReplyLike'>
+                <BsHeart className='likeHeartIcon' />
                 좋아요
               </button>
-              <button className="AddReReply" onClick={this.reReply}>
+              <button className='AddReReply' onClick={this.reReply}>
                 답글달기
               </button>
               <button
-                className="ReplyDelite"
-                onClick={this.handleRemoveComment}
-              >
+                className='ReplyDelite'
+                onClick={this.handleRemoveComment}>
                 삭제
               </button>
             </footer>
           </article>
         </li>
-        <div className={this.state.showlist ? "hide" : "show"}>
-          <div className="reReplyWrap">
-            <ul className="reReplyList">
+        <div className={this.state.showlist ? 'hide' : 'show'}>
+          <div className='reReplyWrap'>
+            <ul className='reReplyList'>
               {this.state.list.map((text, idx) => {
                 return (
                   <ReplyComments
@@ -101,18 +100,18 @@ class Reply extends Component {
                 );
               })}
             </ul>
-            <form onSubmit={this.addReReply} className="reReplyForm">
-              <div className="reReplyUser">
-                <img src="/images/Communityimages/chair.jpg" alt="" />
+            <form onSubmit={this.addReReply} className='reReplyForm'>
+              <div className='reReplyUser'>
+                <img src='/images/Communityimages/chair.jpg' alt='' />
               </div>
-              <div className="reReplyText">
+              <div className='reReplyText'>
                 <input
                   value={this.state.text}
-                  className="reReplyInput"
+                  className='reReplyInput'
                   onChange={this.handleInput}
-                  type="text"
+                  type='text'
                 />
-                <button className="reReplyButton">등록</button>
+                <button className='reReplyButton'>등록</button>
               </div>
             </form>
           </div>

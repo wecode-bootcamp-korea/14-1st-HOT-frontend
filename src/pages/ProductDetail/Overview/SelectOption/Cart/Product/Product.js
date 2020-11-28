@@ -17,7 +17,7 @@ class Product extends Component {
           <div className='productOptionBox'>
             <div className='productImageBox'>
               <img
-                src='/images/post1.png'
+                src='/images/princessMin2.jpg'
                 className='ProductImage'
                 alt='productImage'
               />
@@ -38,7 +38,7 @@ class Product extends Component {
                 .reduce(
                   (accumulator, currentValue) =>
                     accumulator +
-                    parseInt(currentValue.value * currentValue.count),
+                    parseInt(currentValue.price * currentValue.count),
                   0
                 )
                 .toString()

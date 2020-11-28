@@ -3,12 +3,12 @@ import './ProductOptions.scss';
 
 class ProductOptions extends Component {
   render() {
-    const { color, label, value, count } = this.props.option;
+    const { color, size, price, count } = this.props.option;
     return (
       <>
         <div className='productOption'>
           <div className='flexOptionBox'>
-            <div className='sizeOption'>{color + ' ' + label}</div>
+            <div className='sizeOption'>{color + ' ' + size}</div>
             <div className='deleteButton'>X</div>
           </div>
           <div className='countOption'>
@@ -18,7 +18,10 @@ class ProductOptions extends Component {
               </option>
             </select>
             <div className='price'>
-              {value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원
+              {parseInt(price * count)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+              원
             </div>
           </div>
         </div>
