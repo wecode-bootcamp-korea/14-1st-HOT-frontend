@@ -31,8 +31,6 @@
          {id : 2,
           'name': '공주민',
           'task': 'SignIn', 'SignUp', 'MyPage'}]
-         
-         https://github.com/wecode-bootcamp-korea/14-1st-HOT-backend
 ```
 
 # We are H.O.T's Back-End Team
