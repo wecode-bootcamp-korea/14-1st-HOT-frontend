@@ -18,7 +18,7 @@
 - Library: React
 - Third-party: React-Router, SCSS, React-Slick
 
-# We are H.O.T's Front-End Team
+# We are H.O.T Team's Front-End
 
 ```javascript
   const member = 
@@ -33,9 +33,21 @@
           'task': 'SignIn', 'SignUp', 'MyPage'}]
 ```
 
-# We are H.O.T's Back-End Team
+# We are H.O.T Team's Back-End
 
-- https://github.com/wecode-bootcamp-korea/14-1st-HOT-backend
+```javascript
+  const member = 
+        [{id : 0,
+          'name': '강두연',
+          'task': 'Post'},
+         {id : 1,
+          'name': '김기용',
+          'task': 'Product'},
+         {id : 2,
+          'name': '김민서',
+          'task': 'User', 'Order'}]
+```
+Back-end <a href='https://github.com/wecode-bootcamp-korea/14-1st-HOT-backend'> (github repo) </a>
 
 # What we did
 
