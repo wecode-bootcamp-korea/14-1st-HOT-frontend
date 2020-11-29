@@ -1,7 +1,8 @@
 <img src='https://ifh.cc/g/N2yMPa.png'>
 
-# Team Name: House Of Tomorrow
+# Team Name: House Of Tomorrow(H.O.T)
 
+# Introduction
 > 오늘의집과 정말 정말 똑같이 클론 코딩 해보자.
 
 <img src='https://ifh.cc/g/jTLOWz.png' >
@@ -18,7 +19,7 @@
 - Library: React
 - Third-party: React-Router, SCSS, React-Slick
 
-# We are H.O.T Team's Front-End
+# Team Members : Front-End
 
 ```javascript
   const member = 
@@ -33,7 +34,7 @@
           'task': 'SignIn', 'SignUp', 'MyPage'}]
 ```
 
-# We are H.O.T Team's Back-End
+# Team Members : Back-End
 
 ```javascript
   const member = 
