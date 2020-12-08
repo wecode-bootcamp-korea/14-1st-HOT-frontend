@@ -84,7 +84,8 @@ Back-end <a href='https://github.com/wecode-bootcamp-korea/14-1st-HOT-backend'> 
  - [x] Function : 회원가입 기능 구현
  - [x] Function : Mypage에 로그인 시 받은 토큰 가져와서 데이터 불러오기
  - [x] Function : 네비게이션바 카테고리에 호버 시 해당하는 Subcategory 구현
-
+ - [x] Function : map을 이용해서 최대한 깔끔한 코드 구현
+ - [x] Function : 북마크시 넘어온 데이터를 Mypage에 구현
 
 #### 못다한 미션
- - [x] Posting 기능 (Multer)
+ - [] Posting 기능 (Multer)
