@@ -88,4 +88,4 @@ Back-end <a href='https://github.com/wecode-bootcamp-korea/14-1st-HOT-backend'> 
  - [x] Function : 북마크시 넘어온 데이터를 Mypage에 구현
 
 #### 못다한 미션
- - [] Posting 기능 (Multer)
+ - [ ] Posting 기능 (Multer)
