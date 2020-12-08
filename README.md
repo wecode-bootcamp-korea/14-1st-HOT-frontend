@@ -80,7 +80,11 @@ Back-end <a href='https://github.com/wecode-bootcamp-korea/14-1st-HOT-backend'> 
 ### 공주민
 #### 완성한 미션
  - [x] Layout, CSS : 상단 네비게이션바, 마이페이지, 로그인, 회원가입, 풋터
- - [x] Fuction : 로그인 기능 구현(로컬에 토큰 추가)
- - [x] Fuction : 회원가입 기능 구현
+ - [x] Function : 로그인 기능 구현(로컬에 토큰 추가)
+ - [x] Function : 회원가입 기능 구현
+ - [x] Function : Mypage에 로그인 시 받은 토큰 가져와서 데이터 불러오기
+ - [x] Function : 네비게이션바 카테고리에 호버 시 해당하는 Subcategory 구현
+
 
 #### 못다한 미션
+ - [x] Posting 기능 (Multer)
