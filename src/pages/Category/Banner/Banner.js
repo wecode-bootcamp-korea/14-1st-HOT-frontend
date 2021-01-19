@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import NextArrow from '../../../component/Slick/NextArrow';
-import PrevArrow from '../../../component/Slick/PrevArrow';
+import NextArrow from '../../../component/Banner/NextArrow';
+import PrevArrow from '../../../component/Banner/PrevArrow';
 import './Banner.scss';
 
 class Banner extends Component {
@@ -19,16 +19,25 @@ class Banner extends Component {
 
     const slideSampleImage = [
       { id: 1, url: 'https://ifh.cc/g/l0W00A.jpg' },
-      { id: 2, url: 'https://ifh.cc/g/l0W00A.jpg' },
+      { id: 2, url: 'https://ifh.cc/g/EfWFgX.jpg' },
       { id: 3, url: 'https://ifh.cc/g/l0W00A.jpg' },
-      { id: 4, url: 'https://ifh.cc/g/l0W00A.jpg' },
+      { id: 4, url: 'https://ifh.cc/g/EfWFgX.jpg' },
     ];
+    const { category_name, subcategories } = this.props.giveCarTitle;
+    const { subcategory_name } = this.props.giveSubTitle;
     return (
       <>
         <div className='bannerTitle'>
-          <span className='bannerTitletext'>가구</span>
+          <span className='bannerTitletext'>{category_name}</span>
           <span> {'>'} </span>
-          <span className='bannerTitletext'>소파/거실</span>
+          <span className='bannerTitletext'>
+            {subcategories &&
+            subcategories.some(
+              (ele) => ele.subcategory_name === subcategory_name
+            )
+              ? subcategory_name
+              : ''}
+          </span>
         </div>
         <div className='bannerImageBox'>
           <Slider {...settings}>

@@ -9,37 +9,20 @@ class ProductList extends Component {
   constructor() {
     super();
     this.state = {
-      products: [],
-      randomProducts: [],
+      productsList: [],
     };
   }
 
-  componentDidMount() {
-    this.getProductList();
-  }
-
-  getProductList = () => {
-    fetch('http://10.58.5.203:8000/store/products?menu=1', {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          products: res.result,
-        });
-      });
-  };
-
   render() {
-    const { products } = this.state;
+    const { giveCatProduct, giveSubProduct } = this.props;
     return (
       <>
         <div className='mdPickTextBox'>
-          <div className='mdPickText'>MD's PICK</div>
+          <div className='mdPickText'>CATEGORY</div>
         </div>
         <div className='smallProductList'>
-          {products.length &&
-            products.map((productElement, productIndex) => (
+          {giveCatProduct.length &&
+            giveCatProduct.map((productElement, productIndex) => (
               <RandomProduct key={productIndex} product={productElement} />
             ))}
         </div>
@@ -59,23 +42,11 @@ class ProductList extends Component {
         </div>
         <div className='productInfoBox'>
           <div className='productCountBox'>
-            <span>전체</span>
-            <span className='poductCount'> 1,394</span>
-            <span>개</span>
-          </div>
-          <div className='popularSerch'>
-            <span>인기순 </span>
-            <span>
-              <img
-                src='/images/showIcon.png'
-                className='serchBoxIcon'
-                alt='showIcon'
-              />
-            </span>
+            <span>SUB CATEGORY</span>
           </div>
         </div>
         <div className='productList'>
-          {products.map((productElement, productIndex) => (
+          {giveSubProduct.map((productElement, productIndex) => (
             <Product key={productIndex} product={productElement} />
           ))}
         </div>

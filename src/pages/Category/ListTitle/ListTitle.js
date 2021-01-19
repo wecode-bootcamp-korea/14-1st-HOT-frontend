@@ -20,6 +20,7 @@ class ListTitle extends Component {
     this.setState({
       selectedSubcategory: subCategoriesElement.subcategory_name,
     });
+    this.props.takeSubClickEvent(subCategoriesElement);
   };
 
   render() {

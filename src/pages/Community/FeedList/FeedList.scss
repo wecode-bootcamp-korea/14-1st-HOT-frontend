@@ -1,20 +1,22 @@
 .postContainer {
   display: flex;
   justify-content: center;
+  margin-top: 100px;
 
   .postWrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: baseline;
     flex-wrap: wrap;
-    width: 1157px;
-    margin: 0 260px;
+    width: 1255px;
+    padding: 0 50px;
 
     .itemWrap {
-      width: 270px;
+      width: 272px;
       height: 515px;
       padding-bottom: 40px;
-      margin-right: 15px;
+      margin: 8px;
+      cursor: pointer;
 
       :hover {
         opacity: 80%;
@@ -48,6 +50,7 @@
             font-size: 16px;
             font-weight: 700;
             border: 1px solid white;
+            margin-left: 5px;
           }
           button:focus {
             color: rgba(10, 172, 218, 0.3);
@@ -61,7 +64,7 @@
           align-items: center;
           justify-content: center;
           width: 100%;
-          height: 271px;
+          height: 260px;
           border-radius: 10px;
           object-fit: cover;
           overflow: hidden;
@@ -82,8 +85,11 @@
           display: flex;
           justify-content: space-between;
           margin: 16px 0;
-          padding: 0 10px;
+          padding: 0 22px;
           position: relative;
+          opacity: 70%;
+          font-size: 16px;
+          font-weight: 400;
 
           .counts {
             margin-left: 3px;

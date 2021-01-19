@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Mypage.scss";
 import MypageFeed from "./MypageFeed";
 import Userlink from "./Userlink";
-import { API } from "../../config";
+import { MYPAGE } from "../../config";
 
 class Mypage extends Component {
   constructor(props) {
@@ -15,11 +15,7 @@ class Mypage extends Component {
   }
 
   componentDidMount() {
-    fetch(API, {
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    })
+    fetch(MYPAGE)
       .then((response) => response.json())
       .then((res) => {
         this.setState({ result: res.context }, () =>

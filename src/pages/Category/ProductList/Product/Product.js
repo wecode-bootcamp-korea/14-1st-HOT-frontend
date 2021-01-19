@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './Product.scss';
+import { API } from '../../../../config';
 
 class Product extends Component {
   goProductDetail = () => {
-    this.props.history.push(
-      `http://10.58.1.135:8000/store/categories?menu=1/${this.props.product_id}`
-    );
+    this.props.history.push(`/store/${this.props.product.product_id}`);
   };
   render() {
     const {
@@ -63,4 +63,4 @@ class Product extends Component {
   }
 }
 
-export default Product;
+export default withRouter(Product);
